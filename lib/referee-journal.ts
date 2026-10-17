@@ -11,7 +11,7 @@ export const journalKey=(league:string)=>`referee-journal/v${JOURNAL_VERSION}/${
 
 type Side={home:number|null,away:number|null,total:number|null};
 export type JournalRecord={id:string,league:string,date:string,home:string,away:string,score:string|null,referee:string|null,
- yellow:Side,red:Side,fouls:Side,source:string,checkedAt:string};
+ yellow:Side,red:Side,fouls:Side,source:string,checkedAt:string,attempts?:number};
 
 const pair=(home:number|null,away:number|null):Side=>({home,away,total:home!==null&&away!==null?home+away:null});
 export const nameKey=(s:string)=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z]/g,'');
@@ -30,10 +30,16 @@ export function journalRecord(doc:any,league:string,checkedAt:string):JournalRec
   source:`https://www.espn.com/soccer/match/_/gameId/${id}`,checkedAt};
 }
 
-// One record per match id; a newer check replaces an older one.
+// One record per match id. A newer check wins field by field, but an empty field never erases a
+// value confirmed earlier (a later summary can omit officials or statistics).
+const side=(a:Side,b:Side):Side=>pair(b.home??a.home,b.away??a.away);
+export function mergeRecord(old:JournalRecord,next:JournalRecord):JournalRecord{
+ const [a,b]=Date.parse(next.checkedAt)>=Date.parse(old.checkedAt)?[old,next]:[next,old];
+ return {...a,...b,attempts:Math.max(a.attempts||1,b.attempts||1),referee:b.referee??a.referee,score:b.score??a.score,yellow:side(a.yellow,b.yellow),red:side(a.red,b.red),fouls:side(a.fouls,b.fouls)};
+}
 export function mergeRecords(...lists:JournalRecord[][]){
  const out=new Map<string,JournalRecord>();
- for(const r of lists.flat())if(r?.id){const old=out.get(r.id);if(!old||Date.parse(r.checkedAt)>=Date.parse(old.checkedAt))out.set(r.id,r)}
+ for(const r of lists.flat())if(r?.id){const old=out.get(r.id);out.set(r.id,old?mergeRecord(old,r):r)}
  return [...out.values()].sort((a,b)=>b.date.localeCompare(a.date));
 }
 

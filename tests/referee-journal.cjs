@@ -16,6 +16,7 @@ function doc(id,date,{referee='Anthony Taylor',hy=2,ay=3,hr=0,ar=1,hf=10,af=12,s
   gameInfo:{officials:officials??(referee?[{fullName:referee,position:{name:'Referee'}},{fullName:'Assistant One',position:{name:'Assistant Referee'}}]:[])}};
 }
 (async()=>{
+ R.journalTiming.paceMs=0;
  // Record parsing.
  const r=J.journalRecord(doc(700000001,'2026-09-01T15:00Z'),'epl','2026-09-02T00:00Z');
  check(r&&r.referee==='Anthony Taylor'&&r.yellow.total===5&&r.red.total===1&&r.fouls.total===22&&r.score==='2 - 1','finished match parsed with both teams');
@@ -41,7 +42,7 @@ function doc(id,date,{referee='Anthony Taylor',hy=2,ay=3,hr=0,ar=1,hf=10,af=12,s
  // Collection with mocked ESPN and R2.
  const events=Array.from({length:40},(_,i)=>({id:String(710000000+i),date:`2026-09-${String(1+i%28).padStart(2,'0')}T15:00Z`,status:{type:{state:'post'}}}));
  events.push({id:'719999999',date:'2026-10-25T15:00Z',status:{type:{state:'pre'}}});
- let calls=[];global.fetch=async url=>{url=String(url);calls.push(url);if(url.includes('scoreboard'))return Response.json({events:url.includes('202609')||url.includes('202610')?events.filter(e=>e.date.slice(0,7).replace('-','')===url.slice(-6)):[]});const id=new URL(url).searchParams.get('event');return Response.json(doc(id,events.find(e=>e.id===id).date,{referee:Number(id)%2?'Anthony Taylor':'Michael Oliver'}))};
+ let calls=[];global.fetch=async url=>{url=String(url);calls.push(url);if(url.includes('scoreboard'))return Response.json({events:url.includes('202609')||url.includes('202610')?events.filter(e=>e.date.slice(0,7).replace('-','')===new URL(url).searchParams.get('dates')):[]});const id=new URL(url).searchParams.get('event');return Response.json(doc(id,events.find(e=>e.id===id).date,{referee:Number(id)%2?'Anthony Taylor':'Michael Oliver'}))};
  values.set('history/v1/epl/710000000.json',{data:doc(710000000,events[0].date),checkedAt:'2026-09-03T00:00Z'});
  let res=await R.refreshRefereeJournal('epl',bucket);
  const summaries=calls.filter(u=>u.includes('summary')).length;
@@ -54,17 +55,47 @@ function doc(id,date,{referee='Anthony Taylor',hy=2,ay=3,hr=0,ar=1,hf=10,af=12,s
  const total=calls.length;res=await R.refreshRefereeJournal('epl',bucket);check(res.cached&&calls.length===total,'one-hour gate');
  now+=3600001;calls=[];res=await R.refreshRefereeJournal('epl',bucket);
  check(res.coverage.collected===40&&res.complete,'next run completes the remaining matches');
- check(calls.filter(u=>u.includes('scoreboard')).length===1&&calls.some(u=>u.endsWith('202610')),'only the open month is scanned again');
+ check(calls.filter(u=>u.includes('scoreboard')).length===1&&calls.some(u=>u.includes('dates=202610&limit=500')),'only the open month is scanned again');
  const prof=await(await Route.GET(new Request('https://site/api/referee-journal?referee='+encodeURIComponent('Anthony Taylor')))).json();
  const epl=prof.leagues.find(l=>l.league==='epl');
  check(epl&&epl.records.length===21&&epl.records.every(x=>x.referee==='Anthony Taylor'),'referee endpoint returns only that referee');
  check(epl.average.n===19,'league comparison excludes the referee');
+ // Field-wise merge: an empty later answer never erases confirmed values.
+ const confirmed={...r,checkedAt:'2026-09-02T00:00Z'},emptyLater={...r,checkedAt:'2026-09-03T00:00Z',referee:null,yellow:{home:null,away:null,total:null},red:{home:0,away:2,total:2}};
+ const kept=J.mergeRecords([confirmed],[emptyLater])[0];
+ check(kept.referee==='Anthony Taylor'&&kept.yellow.total===5&&kept.red.total===2,'newer values win, empty fields keep confirmed data');
+ // Shrinking calendar must not delete confirmed records; repeated runs create no duplicates.
+ const before=(values.get('referee-journal/v1/epl.json')).records.length;
+ const open=values.get('referee-journal/v1/epl.json');open.months['202609'].final=false;values.set('referee-journal/v1/epl.json',open);
+ now+=3600001;const shrink=global.fetch;global.fetch=async url=>String(url).includes('scoreboard')?Response.json({events:[]}):shrink(url);
+ res=await R.refreshRefereeJournal('epl',bucket);const stored=values.get('referee-journal/v1/epl.json');
+ check(stored.records.length===before&&res.coverage.collected===40,'empty calendar answer keeps all 40 confirmed matches');
+ check(stored.errors.some(e=>e.includes('нет 40 ранее найденных'))&&stored.months['202609'].ids.length===40&&!stored.months['202609'].final,'shrinking answer is reported; month list kept and stays open for recheck');
+ global.fetch=shrink;for(let i=0;i<3;i++){now+=3600001;await R.refreshRefereeJournal('epl',bucket)}
+ const ids=values.get('referee-journal/v1/epl.json').records.map(x=>x.id);check(ids.length===40&&new Set(ids).size===40,'three more cycles: no duplicates, nothing lost');
+ // Rotation scheduler: one league per call, global gap, never-collected first, shared backoff.
+ now+=3600001;values.delete('referee-journal/v1/_scheduler.json');calls=[];
+ let step=await R.runScheduledJournal(bucket);check(step.status==='ran'&&step.league!=='epl','never-collected league runs before a collected one');
+ const firstLeague=step.league;step=await R.runScheduledJournal(bucket);check(step.status==='spacing'&&Date.parse(step.nextAt)-now===R.MIN_GAP_MS,'second call within the gap is refused');
+ const seen=new Set([firstLeague]);for(let i=0;i<9;i++){now+=R.MIN_GAP_MS;const x=await R.runScheduledJournal(bucket);if(x.status==='ran')seen.add(x.league)}
+ check(seen.size===9,'all 9 leagues covered by rotation');
+ now+=R.MIN_GAP_MS;step=await R.runScheduledJournal(bucket);check(step.status==='idle'||step.status==='ran','after a full sweep the scheduler idles until a league is due');
+ check(R.nextLeague({epl:'2026-10-17T10:00Z',ucl:null},Date.parse('2026-10-17T10:30Z'))==='ucl'&&R.nextLeague(Object.fromEntries(['epl','ucl','laliga','segunda','seriea','bundesliga','ligue1','superlig','primeira'].map(k=>[k,'2026-10-17T10:00Z'])),Date.parse('2026-10-17T10:30Z'))===null,'due-league selection');
+ now+=R.MIN_GAP_MS+3600001;values.set('referee-updates/source-backoff/site.api.espn.com.json',{until:now+600000});
+ step=await R.runScheduledJournal(bucket);check(step.status==='source-limited','scheduler honours the shared ESPN backoff');values.delete('referee-updates/source-backoff/site.api.espn.com.json');
+ const viaRoute=await Route.GET(new Request('https://site/api/referee-journal?next=1'));check(viaRoute.status===200&&['ran','spacing','idle'].includes((await viaRoute.json()).status),'next=1 endpoint');
+ check((await Route.GET(new Request('https://site/api/referee-journal?next=1&league=epl'))).status===400,'next=1 takes no other parameters');
+ // Pacing between ESPN requests.
+ R.journalTiming.paceMs=30;const stamps=[];const realFetch=global.fetch;global.fetch=async u=>{stamps.push(realNow());return realFetch(u)};values.delete('referee-journal/v1/ligue1.json');
+ await R.refreshRefereeJournal('ligue1',bucket);global.fetch=realFetch;R.journalTiming.paceMs=0;
+ check(stamps.length>1&&stamps.slice(1).every((t,i)=>t-stamps[i]>=25),'requests are spaced by the pace interval');
  // 429 handling.
  now+=3600001;values.delete('referee-journal/v1/laliga.json');let hits=0;global.fetch=async()=>{hits++;return new Response('',{status:429,headers:{'Retry-After':'7200'}})};
  res=await R.refreshRefereeJournal('laliga',bucket);check(hits===1&&res.errors.some(e=>e.includes('429'))&&res.coverage.collected===0,'429 stops the run after one request');
  check(values.get('referee-updates/source-backoff/site.api.espn.com.json').until===now+7200000,'shared ESPN backoff stored');
  // Validation and storage failures.
  for(const q of ['league=bad','league=epl&read=2','referee=ab','referee=<script>','league=epl&referee=Anthony%20Taylor','league=epl&url=https://x'])check((await Route.GET(new Request('https://site/api/referee-journal?'+q))).status===400,'invalid query rejected: '+q);
+ values.delete('referee-journal/v1/seriea.json');
  const all=await(await Route.GET(new Request('https://site/api/referee-journal'))).json();check(all.leagues.length===9&&all.leagues.find(l=>l.league==='seriea').status==='not-collected','status of all 9 leagues; missing ones explicit');
  env.BUCKET={get:async()=>null,put:async()=>{throw Error('down')}};
  const failed=await Route.GET(new Request('https://site/api/referee-journal?league=seriea'));check(failed.status===503&&!(await failed.json()).persisted,'unconfirmed storage is not reported as success');

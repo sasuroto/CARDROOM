@@ -2,14 +2,19 @@ import {env} from 'cloudflare:workers';
 import {LEAGUES} from '../../../lib/fixtures';
 import {readCache} from '../../../lib/cache';
 import {journalKey,refereeRecords,refereeSummary,JOURNAL_START} from '../../../lib/referee-journal';
-import {refreshRefereeJournal,summary} from '../../../lib/referee-journal-refresh';
+import {refreshRefereeJournal,runScheduledJournal,summary} from '../../../lib/referee-journal-refresh';
 export const dynamic='force-dynamic';
 const headers={'Cache-Control':'no-store'};
-// ?league=X runs one bounded collection pass (scheduler); &read=1 only reads the stored journal.
+// ?next=1 runs the rotation step (the one URL a scheduler needs); ?league=X runs one league;
+// &read=1 only reads the stored journal.
 // ?referee=Name returns, with the league average without that referee, one referee's matches across all stored leagues (exact name in ESPN spelling).
 export async function GET(req:Request){
  const params=new URL(req.url).searchParams,league=params.get('league'),referee=params.get('referee'),bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET;
- if([...params.keys()].some(k=>!['league','read','referee'].includes(k))||(league&&!LEAGUES[league])||(params.has('read')&&params.get('read')!=='1')||(referee!==null&&(referee.length<5||referee.length>80||!/^[\p{L}\s.'-]+$/u.test(referee)))||(referee&&league))return Response.json({error:'Некорректный запрос'},{status:400,headers});
+ if([...params.keys()].some(k=>!['league','read','referee','next'].includes(k))||(params.has('next')&&(params.get('next')!=='1'||[...params.keys()].length>1))||(league&&!LEAGUES[league])||(params.has('read')&&params.get('read')!=='1')||(referee!==null&&(referee.length<5||referee.length>80||!/^[\p{L}\s.'-]+$/u.test(referee)))||(referee&&league))return Response.json({error:'Некорректный запрос'},{status:400,headers});
+ if(params.get('next')==='1'){
+  try{return Response.json(await runScheduledJournal(bucket),{headers})}
+  catch(error){return Response.json({status:'failed',persisted:false,error:String(error)},{status:503,headers})}
+ }
  if(referee){
   const stored=await Promise.all(Object.keys(LEAGUES).map(async id=>({id,report:await readCache(bucket,journalKey(id))})));
   const leagues=stored.filter(s=>s.report).map(({id,report})=>{const records=refereeRecords(report.records||[],referee);return {league:id,completedAt:report.completedAt,coverage:report.coverage,average:refereeSummary((report.records||[]).filter((r:any)=>!records.includes(r))),records,...refereeSummary(records)}}).filter(l=>l.records.length);
