@@ -98,7 +98,9 @@ async function refresh(league:string,bucket:R2Bucket){
 export function summary(report:any,withRecords=false){
  const records:JournalRecord[]=report?.records||[],coverage=report?.coverage||{finished:0,collected:records.length};
  return {league:report?.league,runId:report?.runId,startedAt:report?.startedAt,completedAt:report?.completedAt,nextCheckAt:report?.nextCheckAt,
-  source:report?.source,period:report?.period,errors:report?.errors||[],...leagueJournal(records,coverage),...(withRecords?{records}:{})};
+  source:report?.source,period:report?.period,errors:report?.errors||[],...leagueJournal(records,coverage),
+  // Integrity for QA: a duplicate match id would make records > uniqueIds.
+  integrity:{records:records.length,uniqueIds:new Set(records.map(r=>r.id)).size},...(withRecords?{records}:{})};
 }
 
 // ── Rotation: one league per call ─────────────────────────────────────────────

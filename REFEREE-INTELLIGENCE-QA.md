@@ -153,7 +153,28 @@
 [SportsDataIO — покрытие футбола](https://sportsdata.io/developers/coverages/soccer),
 [TheStatsAPI — сравнение с football-data.org](https://www.thestatsapi.com/compare/football-data-org-alternative) (конкурент, использовать осторожно).
 
-## 9. Перед публикацией
+## 9. Тестовый деплой (staging)
+
+Статус на 17.10.2026: **не развёрнут.** Из среды разработки нет учётных данных Cloudflare или Sites, а сеть блокирует `api.cloudflare.com`, `*.workers.dev` и ESPN.
+
+Подготовлено:
+- **`node scripts/deploy-staging.mjs`** — отдельный Worker `cardroom-referees-staging` и отдельный R2 `cardroom-referees-staging`.
+  - Cron `*/10`, публикация только на workers.dev.
+  - Скрипт отказывается работать с production-именами и маршрутами домена.
+  - `--dry-run` проверен: bindings только staging, размер в gzip — 390 КБ.
+- **`node scripts/staging-check.mjs <url> --cycles 5 --interval 11`** — QA в реальном времени, без имитации:
+  - API и валидация;
+  - циклы с настоящими паузами;
+  - покрытие по лигам, дубликаты, уменьшение числа записей;
+  - рендер карточек в headless Chromium;
+  - выборка матчей для ручной сверки.
+  - Механика проверена на локальном Worker.
+
+Чтобы запустить, нужны:
+1. в Allowed domains: `api.cloudflare.com`, `*.workers.dev`, `site.api.espn.com`, `www.espn.com`;
+2. в настройках среды: `CLOUDFLARE_API_TOKEN` (Workers Scripts: Edit, R2: Edit) и `CLOUDFLARE_ACCOUNT_ID`.
+
+## 10. Перед публикацией
 
 1. Деплой на тестовый адрес, не на production.
 2. В расписании Sites: `/api/referee-journal?next=1` каждые 10 минут.

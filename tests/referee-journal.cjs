@@ -52,6 +52,7 @@ function doc(id,date,{referee='Anthony Taylor',hy=2,ay=3,hr=0,ar=1,hf=10,af=12,s
  check(calls.filter(u=>u.includes('scoreboard')).length===5&&5<=R.MAX_MONTHS,'every month since June scanned once in the first run');
  let read=await(await Route.GET(new Request('https://site/api/referee-journal?league=epl&read=1'))).json();
  check(read.runId===res.runId&&read.persisted&&!read.records,'readback confirms the run without raw records');
+ check(read.integrity.records===read.integrity.uniqueIds&&read.integrity.records===31,'integrity counters exposed');
  const total=calls.length;res=await R.refreshRefereeJournal('epl',bucket);check(res.cached&&calls.length===total,'one-hour gate');
  now+=3600001;calls=[];res=await R.refreshRefereeJournal('epl',bucket);
  check(res.coverage.collected===40&&res.complete,'next run completes the remaining matches');
