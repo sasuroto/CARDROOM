@@ -42,3 +42,16 @@
 .riSplit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:18px}
 @media(max-width:900px){.riMetrics{grid-template-columns:repeat(3,minmax(0,1fr))}.riSplit{grid-template-columns:1fr}}
 @media(max-width:650px){.riMetrics{grid-template-columns:repeat(2,minmax(0,1fr))}.riMetrics strong{font-size:24px}.riCompareGrid,.riScenario{grid-template-columns:1fr}.refIntel .sectionHead{flex-direction:column}.riDistribution{gap:3px;padding:12px 8px}}
+.riKind{display:inline-block;vertical-align:middle;margin-left:8px;font-size:10px;letter-spacing:.6px;text-transform:none;font-weight:700;padding:3px 8px;border-radius:10px;background:var(--surface);color:var(--muted)}
+.riKind-model{border:1px dashed var(--line-strong)}
+.riKind-low{border:1px dashed var(--line-strong);margin-left:0}
+.riKind-fact.riKind{margin-left:0}
+.riCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.riCard{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--white)}
+.riCardHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:14px}
+.riCardHead button{background:none;border:0;padding:0;font-weight:700;text-align:left;color:var(--link)}
+.riCard .riBar{grid-template-columns:80px minmax(0,1fr) auto}
+.riCard small{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:6px}
+.riLeague{margin:20px 0 28px}
+@media(max-width:900px){.riCards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.riCards{grid-template-columns:1fr}}
