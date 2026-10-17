@@ -1,0 +1,44 @@
+/* Referee Intelligence — uses CARDROOM tokens only. */
+.refIntel{margin-top:18px}
+.refIntel h4{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin:28px 0 12px}
+.refIntel h5{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.refIntel .sectionHead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.riStatus{display:inline-block;font-size:11px;letter-spacing:.6px;line-height:1.3;padding:5px 10px;border-radius:20px;border:1px solid var(--line-strong);color:var(--muted);background:var(--white);white-space:nowrap}
+.overviewReferee .riStatus{margin:6px 0 2px;display:table}
+.riStatus-official{border-color:var(--accent);color:var(--accent)}
+.riStatus-unconfirmed{border-style:dashed}
+.riMetrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.riMetrics>div{background:var(--surface);padding:18px}
+.riMetrics span{display:block;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.riMetrics strong{display:block;font-size:28px;margin-top:8px}
+.riMetrics strong.riMissing,.riCompare strong:empty{font-size:14px;color:var(--muted);font-weight:700}
+.riCompareGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.riCompare{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--white)}
+.riCompareHead{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:12px}
+.riCompareHead span{color:var(--muted);font-size:12px;text-align:right}
+.riBar{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:10px;font-size:12px;margin:6px 0;position:relative}
+.riBar span{color:var(--muted)}
+.riBar i{display:block;height:10px;border-radius:5px;background:var(--accent);min-width:0;max-width:100%}
+.riBarMuted i{background:var(--line-strong)}
+.riBar strong{font-size:13px;min-width:44px;text-align:right}
+.riCompare small{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:8px}
+.riScenario{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.riScenario>div{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--white)}
+.riScenario span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.riScenario strong{display:block;font-size:32px;margin:8px 0 12px}
+.riScenario small{display:block;font-size:11px;color:var(--muted);margin-top:8px}
+.riRange{position:relative;height:8px;border-radius:4px;background:var(--surface)}
+.riRange i{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--line-strong)}
+.riRange b{position:absolute;top:-3px;width:2px;height:14px;background:var(--accent);transform:translateX(-1px)}
+.riDistribution{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;align-items:end;margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--white)}
+.riDistribution>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:11px}
+.riDistribution i{display:block;width:100%;max-width:36px;border-radius:4px 4px 0 0;background:var(--accent);opacity:.75}
+.riDistribution small{color:var(--muted);font-size:10px}
+.riTable{width:100%;border-collapse:collapse;font-size:13px}
+.riTable th{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line-strong)}
+.riTable td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.riTable td small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.riTable a{color:var(--link)}
+.riSplit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:18px}
+@media(max-width:900px){.riMetrics{grid-template-columns:repeat(3,minmax(0,1fr))}.riSplit{grid-template-columns:1fr}}
+@media(max-width:650px){.riMetrics{grid-template-columns:repeat(2,minmax(0,1fr))}.riMetrics strong{font-size:24px}.riCompareGrid,.riScenario{grid-template-columns:1fr}.refIntel .sectionHead{flex-direction:column}.riDistribution{gap:3px;padding:12px 8px}}

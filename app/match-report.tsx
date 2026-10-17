@@ -11,6 +11,7 @@ import {findRefereeRow} from '../lib/referee-match';
 import playerResearch from '../lib/player-research.json';
 import PlayerIntelligence,{hasPlayerIntelligence} from './player-intelligence';
 import {RefereeResearchProfile,findRefereeResearch} from './referee-research';
+import RefereeIntelligence from './referee-intelligence';
 import ReadingGuide from './reading-guide';
 import {readableScenario,sampleText} from '../lib/readable-markets';
 import {poissonUnder} from '../lib/market-model';
@@ -23,11 +24,12 @@ function average(team:any,metric:string){const rows=(team?.events||[]).filter((e
 function MatchRefereeTab({match,profile,data}:{match:any,profile:any,data:any}){
  const [official,setOfficial]=useState<any>(match),[loading,setLoading]=useState(true),[error,setError]=useState('');
  useEffect(()=>{const c=new AbortController();setOfficial(match);setLoading(true);fetch(`/api/match?id=${match.id}&league=${match.league}`,{signal:c.signal}).then(r=>{if(!r.ok)throw Error();return r.json()}).then((d:any)=>{setOfficial((old:any)=>withAppointment(old,d));setError(d.error||(d.stale?'Показано сохранённое назначение.':''))}).catch(e=>{if(e.name!=='AbortError')setError('Проверка назначения недоступна. Показаны сохранённые данные.')}).finally(()=>{if(!c.signal.aborted)setLoading(false)});return()=>c.abort()},[match.id,match.league]);
- const name=official.referee,hasResearch=name&&findRefereeResearch(name),group=data.refereesByLeague?.[match.league],row=findRefereeRow(group?.rows||[],name||''),stats=row?{...row,label:data.leagues.find((l:any)=>l.id===match.league)?.name}:null;
+ const name=official.referee,hasResearch=name&&findRefereeResearch(name);
  return <section className="matchRefereeTab" aria-label="Арбитр матча"><div className="sectionHead"><div><span className="eyebrow">АРБИТР МАТЧА</span><h3>{name||(loading?'Проверяю назначение…':'Имя арбитра пока не получено')}</h3><p>{official.refereeCountry||'Главный арбитр'}{official.appointmentType?' · '+official.appointmentType:''}</p></div></div>{loading&&<p role="status">Проверяю назначение…</p>}{error&&<p className="notice">{error}</p>}{!name&&!loading&&<p>Источник не передал имя судьи. Это не означает, что назначение отсутствует.</p>}
  {official.lastAttemptAt&&<p className="definition">Последняя проверка назначения: {new Date(official.lastAttemptAt).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi'})} · Тбилиси (UTC+4).</p>}
  {name&&<><dl className="refAppointmentDetails">{[['Ассистенты',official.assistants?.join(' · ')],['Видеобригада',official.videoOfficials?.join(' · ')],['VAR',official.var],['Ассистент VAR',official.avar],['Резервный арбитр',official.fourthOfficial]].filter(([,v])=>v).map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>{(official.appointmentSource||official.source)&&<a href={official.appointmentSource||official.source} target="_blank" rel="noreferrer">Источник назначения ↗</a>}{official.checkedAt&&<p className="definition">Проверено {new Date(official.appointmentCheckedAt||official.checkedAt).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi'})} · Тбилиси</p>}
- {hasResearch?<RefereeResearchProfile key={name} name={name}/>:stats?<><div className="refResearchMetrics">{[['Матчей',stats.n],['Жёлтых / матч',fmt(stats.yellow)],['Красных / матч',fmt(stats.red,2)],['Фолов / матч',fmt(stats.fouls,2)]].map(([label,value])=><div key={label}><span>{label}</span><strong>{value??'—'}</strong></div>)}</div><p className="definition">В статистике: {stats.name}. {group?.source&&<a href={group.source} target="_blank" rel="noreferrer">Источник статистики ↗</a>}</p><p className="definition">{stats.label} · {group?.periodLabel||'2026/27'} · проверено {group?.checkedAt?new Date(group.checkedAt).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi'}):'—'} · Тбилиси. Показатели относятся к указанной выборке, а не к текущему матчу.</p></>:<p className="notice">Назначение известно; подтверждённой статистики этого арбитра в базе пока нет.</p>}</>}
+ <RefereeIntelligence name={name} league={match.league} data={data} match={official}/>
+ {hasResearch&&<details className="refResearchDetails"><summary>Полный журнал исследования и сверка источников</summary><RefereeResearchProfile key={name} name={name}/></details>}</>}
  </section>
 }
 export default function MatchReport({match:inputMatch,data,profile,showOverview=true}:{match:any,data:any,profile:any,showOverview?:boolean}){
