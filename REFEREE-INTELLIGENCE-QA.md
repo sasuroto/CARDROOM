@@ -155,7 +155,7 @@
 
 ## 9. Тестовый деплой (staging)
 
-Статус на 17.10.2026: **не развёрнут.** Из среды разработки нет учётных данных Cloudflare или Sites, а сеть блокирует `api.cloudflare.com`, `*.workers.dev` и ESPN.
+Статус на 17.10.2026: **не развёрнут** (ожидает действий владельца из списка ниже). Из среды разработки нет учётных данных Cloudflare или Sites, а сеть блокирует `api.cloudflare.com`, `*.workers.dev` и ESPN.
 
 Подготовлено:
 - **`node scripts/deploy-staging.mjs`** — отдельный Worker `cardroom-referees-staging` и отдельный R2 `cardroom-referees-staging`.
@@ -170,9 +170,39 @@
   - выборка матчей для ручной сверки.
   - Механика проверена на локальном Worker.
 
-Чтобы запустить, нужны:
-1. в Allowed domains: `api.cloudflare.com`, `*.workers.dev`, `site.api.espn.com`, `www.espn.com`;
-2. в настройках среды: `CLOUDFLARE_API_TOKEN` (Workers Scripts: Edit, R2: Edit) и `CLOUDFLARE_ACCOUNT_ID`.
+### Что нужно от владельца (секреты в чат не передаются)
+
+**A. Cloudflare — staging-деплой.** API-токен создаётся в Cloudflare: My Profile → API Tokens → Create Custom Token, область — только ваш аккаунт, без зон.
+
+| Разрешение | Уровень | Зачем |
+|---|---|---|
+| Account · Workers Scripts | Edit | Загрузить Worker `cardroom-referees-staging`, cron и workers.dev |
+| Account · Workers R2 Storage | Edit | Создать и использовать bucket `cardroom-referees-staging` |
+| Account · Workers Tail | Read | Необязательно: логи staging при разборе ошибок |
+| User · User Details | Read | Только если wrangler попросит при деплое |
+| Zone (любые) | — | Не нужны: staging живёт только на workers.dev |
+
+Кроме токена:
+- У аккаунта должен быть включён поддомен workers.dev (Workers & Pages → Overview — один раз в панели).
+- В настройках облачной среды (меню среды → Edit):
+  - переменные `CLOUDFLARE_API_TOKEN` и `CLOUDFLARE_ACCOUNT_ID` в разделе Network secrets или как переменные окружения;
+  - затем новая сессия.
+
+**B. Сеть среды разработки** (Network access → Allowed domains):
+
+| Домен | Зачем |
+|---|---|
+| `api.cloudflare.com` | Деплой staging |
+| `*.workers.dev` | Проверки staging-URL (`staging-check.mjs`) |
+| `www.espn.com`, `site.api.espn.com` | Ручная сверка выборки со страницами матчей ESPN |
+| `www.premierleague.com`, `www.laliga.com`, `www.legaseriea.it`, `www.bundesliga.com`, `ligue1.com`, `www.tff.org`, `www.ligaportugal.pt`, `www.uefa.com` | Сверка арбитров и карточек с официальными протоколами |
+
+Сам сбор журнала выполняет Worker в Cloudflare. Его исходящие запросы к ESPN сетевая политика этой среды не ограничивает.
+
+**C. Источники данных**
+- **ESPN** — открытые JSON-эндпоинты без ключа и без лицензии, публичных лимитов нет. Подходит для staging. Перед production — юридическая оценка условий использования.
+- **Лицензированная альтернатива** (если ESPN ограничит доступ или нужны пенальти) — Sportmonks (раздел 8): ключ `SPORTMONKS_API_TOKEN` в секретах Worker и среды. Подключение — отдельный PR, около одного дня.
+- **Альтернатива Cloudflare** — отдельный проект ChatGPT Sites, не production `project_id`. Создаётся только в интерфейсе Sites, из среды разработки недоступно.
 
 ## 10. Перед публикацией
 
