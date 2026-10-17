@@ -1,0 +1,59 @@
+# CI for pull requests and main: locked install, typecheck, unit/regression tests, production build,
+# and (when scripts/responsive-audit.cjs exists) a responsive audit of the built Worker in Chrome.
+# Read-only token; nothing is deployed or published. ESLint is not a gate yet: main carries a
+# baseline of existing findings (mostly no-explicit-any).
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install (pnpm 11.25.0, frozen lockfile)
+        run: node scripts/install-pnpm-portable.mjs
+      - name: Typecheck
+        run: npx tsc --noEmit -p .
+      - name: Tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          for t in tests/*.cjs; do
+            echo "::group::$t"
+            node "$t"
+            echo "::endgroup::"
+          done
+      - name: Production build
+        run: npm run build
+      - name: Responsive audit (320–1440 px)
+        if: hashFiles('scripts/responsive-audit.cjs') != ''
+        shell: bash
+        env:
+          CHROME: /usr/bin/google-chrome
+          BASE_URL: http://127.0.0.1:8787
+        run: |
+          set -euo pipefail
+          # Separate prefix: npm must not touch the pnpm-managed node_modules.
+          npm i --prefix /tmp/audit-tools --no-audit --no-fund playwright-core@1.56.1
+          export PLAYWRIGHT_CORE=/tmp/audit-tools/node_modules/playwright-core
+          npm start > /tmp/preview.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf "$BASE_URL/" > /dev/null && break; sleep 2; done
+          node scripts/responsive-audit.cjs /tmp/responsive
+      - name: Upload audit report
+        if: always() && hashFiles('scripts/responsive-audit.cjs') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-audit
+          path: /tmp/responsive.json
+          if-no-files-found: ignore

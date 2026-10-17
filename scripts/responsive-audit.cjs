@@ -1,7 +1,9 @@
 // Responsive audit: page overflow, content clipped by overflow:hidden, elements past the viewport that
 // are not inside a scroll container, and open dialogs, for each route x width. Needs a running preview
-// (npm run build && npm start) and playwright-core, which is not a project dependency:
-//   npm i --no-save playwright-core && node scripts/responsive-audit.cjs [out-prefix] [--shots]
+// (npm run build && npm start) and playwright-core, which is not a project dependency; install it outside
+// the pnpm-managed node_modules:
+//   npm i --prefix /tmp/audit-tools playwright-core@1.56.1
+//   PLAYWRIGHT_CORE=/tmp/audit-tools/node_modules/playwright-core node scripts/responsive-audit.cjs [out-prefix] [--shots]
 // BASE_URL (default http://127.0.0.1:8787) and CHROME (Chromium path) can be overridden.
 const {chromium}=require(process.env.PLAYWRIGHT_CORE||'playwright-core');const fs=require('fs');
 const BASE=process.env.BASE_URL||'http://127.0.0.1:8787',CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1194/chrome-linux/chrome';

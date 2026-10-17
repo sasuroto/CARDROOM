@@ -11,3 +11,9 @@
 .refDialog .refHeroTop{padding-top:24px}
 
 .leagueExplorer .standingsWrap{position:relative}
+
+/* WCAG AA on accent-green tiles (#008000): muted labels measured 1.23:1; white is 5.14:1, as the numbers. */
+.heroStatGrid label,.refProfile .eyebrow{color:#fff}
+/* WCAG 2.2 AA 2.5.8: interactive targets at least 24 px high (selects, refresh, source and method links, disclosures). */
+.filters select,.refresh,.methodLink,.sectionHead a,.tableFoot a,.dataFreshness summary{min-height:24px}
+.refresh,.methodLink,.sectionHead a,.tableFoot a{display:inline-flex;align-items:center}
