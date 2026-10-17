@@ -1,0 +1,63 @@
+{
+  "matchId": "401915435",
+  "checkedAt": "2026-10-13T20:05:00Z",
+  "players": [
+    {
+      "team": "Барселона",
+      "name": "Ламин Ямаль",
+      "priority": "Основной кандидат",
+      "fact": "8 голов за 9 матчей",
+      "scope": "Все турниры 2026/27, до этой встречи",
+      "reason": "Лидер этой подборки по подтверждённой сезонной результативности.",
+      "source": "https://fbref.com/en/squads/206d90db/2026-2027/all_comps/Barcelona-Stats-All-Competitions"
+    },
+    {
+      "team": "Барселона",
+      "name": "Дани Ольмо",
+      "priority": "Внимание по игре",
+      "fact": "Стартовал в центре атаки",
+      "scope": "Матч 13 октября: роль ложной девятки",
+      "reason": "В первом тайме имел выход один на один и момент после подачи. Числовой сезонный показатель здесь не подтверждён.",
+      "source": "https://www.barcablaugranes.com/barcelona-uefa-champions-league/134988/hansi-flick-decision-start-dani-olmo-as-a-false-nine-galatasaray",
+      "extraSource": "https://elpais.com/deportes/futbol/2026-10-13/galatasaray-barcelona-en-directo-el-partido-de-la-champions-league-en-vivo.html"
+    },
+    {
+      "team": "Барселона",
+      "name": "Энтони Гордон",
+      "priority": "Дополнительный кандидат",
+      "fact": "Гол «Хетафе» 10 октября",
+      "scope": "Последний матч перед этой встречей",
+      "reason": "В первом тайме против «Галатасарая» имел выход один на один.",
+      "source": "https://www.theguardian.com/football/2026/oct/10/european-football-bayern-concede-fastest-goal-bundeliga-history",
+      "extraSource": "https://elpais.com/deportes/futbol/2026-10-13/galatasaray-barcelona-en-directo-el-partido-de-la-champions-league-en-vivo.html"
+    },
+    {
+      "team": "Галатасарай",
+      "name": "Виктор Осимхен",
+      "priority": "Основной кандидат",
+      "fact": "13 голов за 17 матчей",
+      "scope": "Еврокубки за «Галатасарай», до этой встречи",
+      "reason": "Основной центральный нападающий. Это многосезонная статистика, не только текущий сезон.",
+      "source": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/maca-dogru-galatasaray-barcelona/61119"
+    },
+    {
+      "team": "Галатасарай",
+      "name": "Рафаэл Леау",
+      "priority": "Дополнительный кандидат",
+      "fact": "Подтверждён в стартовом составе",
+      "scope": "Матч 13 октября 2026",
+      "reason": "Адресат быстрых атак. Выбор по роли в игре; подтверждённой сезонной частоты голов в этом блоке нет.",
+      "source": "https://beinsports.com.tr/haber/uefa-sampiyonlar-ligi-galatasaray-barcelona",
+      "extraSource": "https://elpais.com/deportes/futbol/2026-10-13/galatasaray-barcelona-en-directo-el-partido-de-la-champions-league-en-vivo.html"
+    },
+    {
+      "team": "Галатасарай",
+      "name": "Юнус Акгюн",
+      "priority": "Дополнительный кандидат",
+      "fact": "1 гол за 6 матчей",
+      "scope": "Доступный срез Суперлиги 2026/27",
+      "reason": "В стартовом составе. Основание слабее, чем у Осимхена; высокая вероятность гола не установлена.",
+      "source": "https://www.beinsports.com.tr/takim/galatasaray/istatistikler"
+    }
+  ]
+}

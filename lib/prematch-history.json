@@ -1,0 +1,340 @@
+{
+  "matchId": "401883158",
+  "league": "segunda",
+  "date": "2026-10-16T18:30Z",
+  "checkedAt": "2026-10-16T14:52:08.121Z",
+  "history": [
+    {
+      "id": "17534",
+      "name": "Leganés",
+      "events": [
+        {
+          "id": "401883189",
+          "date": "2026-10-11T14:15Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883189",
+          "opponent": "Almería",
+          "own": {
+            "goals": 0,
+            "corners": 3,
+            "yellow": 5,
+            "shots": 7,
+            "target": 1,
+            "fouls": 25,
+            "offsides": 0,
+            "saves": 5,
+            "red": 0,
+            "possession": 35.8
+          },
+          "against": {
+            "goals": 3,
+            "corners": 8,
+            "yellow": 2,
+            "shots": 18,
+            "target": 8,
+            "fouls": 15,
+            "offsides": 1,
+            "saves": 1,
+            "red": 0,
+            "possession": 64.2
+          }
+        },
+        {
+          "id": "401883194",
+          "date": "2026-10-03T16:30Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883194",
+          "opponent": "Cádiz",
+          "own": {
+            "goals": 0,
+            "corners": 4,
+            "yellow": 3,
+            "shots": 12,
+            "target": 1,
+            "fouls": 17,
+            "offsides": 1,
+            "saves": 4,
+            "red": 0,
+            "possession": 54.7
+          },
+          "against": {
+            "goals": 4,
+            "corners": 5,
+            "yellow": 2,
+            "shots": 24,
+            "target": 9,
+            "fouls": 10,
+            "offsides": 0,
+            "saves": 1,
+            "red": 0,
+            "possession": 45.3
+          }
+        },
+        {
+          "id": "401883199",
+          "date": "2026-09-28T18:30Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883199",
+          "opponent": "Castellón",
+          "own": {
+            "goals": 0,
+            "corners": 4,
+            "yellow": 6,
+            "shots": 15,
+            "target": 2,
+            "fouls": 17,
+            "offsides": 3,
+            "saves": 4,
+            "red": 0,
+            "possession": 43.8
+          },
+          "against": {
+            "goals": 2,
+            "corners": 3,
+            "yellow": 1,
+            "shots": 20,
+            "target": 6,
+            "fouls": 11,
+            "offsides": 0,
+            "saves": 2,
+            "red": 1,
+            "possession": 56.2
+          }
+        },
+        {
+          "id": "401883204",
+          "date": "2026-09-20T19:00Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883204",
+          "opponent": "Granada",
+          "own": {
+            "goals": 3,
+            "corners": 6,
+            "yellow": 2,
+            "shots": 21,
+            "target": 12,
+            "fouls": 12,
+            "offsides": 0,
+            "saves": 6,
+            "red": 0,
+            "possession": 42.7
+          },
+          "against": {
+            "goals": 2,
+            "corners": 4,
+            "yellow": 4,
+            "shots": 21,
+            "target": 7,
+            "fouls": 13,
+            "offsides": 2,
+            "saves": 9,
+            "red": 0,
+            "possession": 57.3
+          }
+        },
+        {
+          "id": "401883209",
+          "date": "2026-09-13T19:00Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883209",
+          "opponent": "Tenerife",
+          "own": {
+            "goals": 0,
+            "corners": 4,
+            "yellow": 2,
+            "shots": 10,
+            "target": 2,
+            "fouls": 20,
+            "offsides": 3,
+            "saves": 2,
+            "red": 0,
+            "possession": 58.4
+          },
+          "against": {
+            "goals": 2,
+            "corners": 4,
+            "yellow": 2,
+            "shots": 11,
+            "target": 4,
+            "fouls": 15,
+            "offsides": 3,
+            "saves": 2,
+            "red": 0,
+            "possession": 41.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "8447",
+      "name": "Córdoba",
+      "events": [
+        {
+          "id": "401883184",
+          "date": "2026-10-10T16:30Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883184",
+          "opponent": "Eldense",
+          "own": {
+            "goals": 1,
+            "corners": 4,
+            "yellow": 3,
+            "shots": 12,
+            "target": 6,
+            "fouls": 15,
+            "offsides": 5,
+            "saves": 1,
+            "red": 0,
+            "possession": 49.2
+          },
+          "against": {
+            "goals": 2,
+            "corners": 6,
+            "yellow": 3,
+            "shots": 14,
+            "target": 4,
+            "fouls": 11,
+            "offsides": 4,
+            "saves": 5,
+            "red": 0,
+            "possession": 50.8
+          }
+        },
+        {
+          "id": "401883161",
+          "date": "2026-10-05T18:30Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883161",
+          "opponent": "Tenerife",
+          "own": {
+            "goals": 3,
+            "corners": 4,
+            "yellow": 4,
+            "shots": 16,
+            "target": 6,
+            "fouls": 18,
+            "offsides": 0,
+            "saves": 0,
+            "red": 0,
+            "possession": 61.7
+          },
+          "against": {
+            "goals": 2,
+            "corners": 8,
+            "yellow": 5,
+            "shots": 10,
+            "target": 2,
+            "fouls": 13,
+            "offsides": 4,
+            "saves": 3,
+            "red": 1,
+            "possession": 38.3
+          }
+        },
+        {
+          "id": "401883197",
+          "date": "2026-09-27T12:00Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883197",
+          "opponent": "Real Valladolid",
+          "own": {
+            "goals": 1,
+            "corners": 5,
+            "yellow": 3,
+            "shots": 16,
+            "target": 4,
+            "fouls": 19,
+            "offsides": 0,
+            "saves": 4,
+            "red": 0,
+            "possession": 61.7
+          },
+          "against": {
+            "goals": 3,
+            "corners": 2,
+            "yellow": 3,
+            "shots": 12,
+            "target": 7,
+            "fouls": 16,
+            "offsides": 6,
+            "saves": 3,
+            "red": 0,
+            "possession": 38.3
+          }
+        },
+        {
+          "id": "401883171",
+          "date": "2026-09-18T18:30Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883171",
+          "opponent": "Albacete",
+          "own": {
+            "goals": 2,
+            "corners": 3,
+            "yellow": 6,
+            "shots": 13,
+            "target": 5,
+            "fouls": 22,
+            "offsides": 2,
+            "saves": 2,
+            "red": 0,
+            "possession": 53.5
+          },
+          "against": {
+            "goals": 1,
+            "corners": 4,
+            "yellow": 1,
+            "shots": 13,
+            "target": 3,
+            "fouls": 12,
+            "offsides": 3,
+            "saves": 3,
+            "red": 0,
+            "possession": 46.5
+          }
+        },
+        {
+          "id": "401883213",
+          "date": "2026-09-12T19:00Z",
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "source": "https://www.espn.com/soccer/match/_/gameId/401883213",
+          "opponent": "Almería",
+          "own": {
+            "goals": 0,
+            "corners": 9,
+            "yellow": 4,
+            "shots": 21,
+            "target": 4,
+            "fouls": 13,
+            "offsides": 4,
+            "saves": 0,
+            "red": 0,
+            "possession": 59.3
+          },
+          "against": {
+            "goals": 2,
+            "corners": 0,
+            "yellow": 4,
+            "shots": 4,
+            "target": 2,
+            "fouls": 17,
+            "offsides": 1,
+            "saves": 4,
+            "red": 1,
+            "possession": 40.7
+          }
+        }
+      ]
+    }
+  ]
+}

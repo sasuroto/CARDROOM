@@ -1,0 +1,4561 @@
+{
+  "checkedAt": "2026-10-16T16:22:22.940Z",
+  "matches": [
+    {
+      "matchId": "401883158",
+      "league": "segunda",
+      "venue": "Estadio Municipal de Butarque",
+      "city": "Leganés, Madrid",
+      "country": "Spain",
+      "state": "pre",
+      "clock": null,
+      "status": "Scheduled",
+      "teams": [
+        {
+          "id": "17534",
+          "name": "Leganés",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
+          "side": "home",
+          "score": null,
+          "stats": {}
+        },
+        {
+          "id": "8447",
+          "name": "Córdoba",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8447.png",
+          "side": "away",
+          "score": null,
+          "stats": {}
+        }
+      ],
+      "season": "2026-27 Spanish LALIGA 2, Regular Season",
+      "leagueName": "Spanish LALIGA 2",
+      "date": "2026-10-16T18:30Z",
+      "history": [
+        {
+          "id": "17534",
+          "name": "Leganés",
+          "events": [
+            {
+              "id": "401883189",
+              "date": "2026-10-11T14:15Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883189",
+              "opponent": "Almería",
+              "own": {
+                "goals": 0,
+                "corners": 3,
+                "yellow": 5,
+                "shots": 7,
+                "target": 1,
+                "fouls": 25,
+                "offsides": 0,
+                "saves": 5,
+                "red": 0,
+                "possession": 35.8
+              },
+              "against": {
+                "goals": 3,
+                "corners": 8,
+                "yellow": 2,
+                "shots": 18,
+                "target": 8,
+                "fouls": 15,
+                "offsides": 1,
+                "saves": 1,
+                "red": 0,
+                "possession": 64.2
+              }
+            },
+            {
+              "id": "401883194",
+              "date": "2026-10-03T16:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883194",
+              "opponent": "Cádiz",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 3,
+                "shots": 12,
+                "target": 1,
+                "fouls": 17,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 54.7
+              },
+              "against": {
+                "goals": 4,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 24,
+                "target": 9,
+                "fouls": 10,
+                "offsides": 0,
+                "saves": 1,
+                "red": 0,
+                "possession": 45.3
+              }
+            },
+            {
+              "id": "401883199",
+              "date": "2026-09-28T18:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883199",
+              "opponent": "Castellón",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 6,
+                "shots": 15,
+                "target": 2,
+                "fouls": 17,
+                "offsides": 3,
+                "saves": 4,
+                "red": 0,
+                "possession": 43.8
+              },
+              "against": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 20,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 0,
+                "saves": 2,
+                "red": 1,
+                "possession": 56.2
+              }
+            },
+            {
+              "id": "401883204",
+              "date": "2026-09-20T19:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883204",
+              "opponent": "Granada",
+              "own": {
+                "goals": 3,
+                "corners": 6,
+                "yellow": 2,
+                "shots": 21,
+                "target": 12,
+                "fouls": 12,
+                "offsides": 0,
+                "saves": 6,
+                "red": 0,
+                "possession": 42.7
+              },
+              "against": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 4,
+                "shots": 21,
+                "target": 7,
+                "fouls": 13,
+                "offsides": 2,
+                "saves": 9,
+                "red": 0,
+                "possession": 57.3
+              }
+            },
+            {
+              "id": "401883209",
+              "date": "2026-09-13T19:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883209",
+              "opponent": "Tenerife",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 10,
+                "target": 2,
+                "fouls": 20,
+                "offsides": 3,
+                "saves": 2,
+                "red": 0,
+                "possession": 58.4
+              },
+              "against": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 11,
+                "target": 4,
+                "fouls": 15,
+                "offsides": 3,
+                "saves": 2,
+                "red": 0,
+                "possession": 41.6
+              }
+            },
+            {
+              "id": "401883176",
+              "date": "2026-09-04T18:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883176",
+              "opponent": "Las Palmas",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 10,
+                "target": 2,
+                "fouls": 15,
+                "offsides": 8,
+                "saves": 1,
+                "red": 0,
+                "possession": 50.5
+              },
+              "against": {
+                "goals": 0,
+                "corners": 3,
+                "yellow": 3,
+                "shots": 3,
+                "target": 1,
+                "fouls": 12,
+                "offsides": 3,
+                "saves": 2,
+                "red": 0,
+                "possession": 49.5
+              }
+            },
+            {
+              "id": "401883245",
+              "date": "2026-08-29T17:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883245",
+              "opponent": "Eldense",
+              "own": {
+                "goals": 1,
+                "corners": 0,
+                "yellow": 1,
+                "shots": 11,
+                "target": 6,
+                "fouls": 13,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 52
+              },
+              "against": {
+                "goals": 0,
+                "corners": 8,
+                "yellow": 0,
+                "shots": 16,
+                "target": 4,
+                "fouls": 10,
+                "offsides": 2,
+                "saves": 5,
+                "red": 0,
+                "possession": 48
+              }
+            },
+            {
+              "id": "401883251",
+              "date": "2026-08-22T15:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883251",
+              "opponent": "Real Oviedo",
+              "own": {
+                "goals": 1,
+                "corners": 2,
+                "yellow": 0,
+                "shots": 5,
+                "target": 2,
+                "fouls": 7,
+                "offsides": 1,
+                "saves": 4,
+                "red": 1,
+                "possession": 30.1
+              },
+              "against": {
+                "goals": 0,
+                "corners": 9,
+                "yellow": 3,
+                "shots": 24,
+                "target": 5,
+                "fouls": 16,
+                "offsides": 2,
+                "saves": 1,
+                "red": 0,
+                "possession": 69.9
+              }
+            },
+            {
+              "id": "401883259",
+              "date": "2026-08-16T17:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883259",
+              "opponent": "Girona",
+              "own": {
+                "goals": 1,
+                "corners": 0,
+                "yellow": 3,
+                "shots": 5,
+                "target": 3,
+                "fouls": 16,
+                "offsides": 1,
+                "saves": 6,
+                "red": 0,
+                "possession": 31
+              },
+              "against": {
+                "goals": 1,
+                "corners": 10,
+                "yellow": 2,
+                "shots": 27,
+                "target": 7,
+                "fouls": 6,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 69
+              }
+            }
+          ]
+        },
+        {
+          "id": "8447",
+          "name": "Córdoba",
+          "events": [
+            {
+              "id": "401883184",
+              "date": "2026-10-10T16:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883184",
+              "opponent": "Eldense",
+              "own": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 3,
+                "shots": 12,
+                "target": 6,
+                "fouls": 15,
+                "offsides": 5,
+                "saves": 1,
+                "red": 0,
+                "possession": 49.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 6,
+                "yellow": 3,
+                "shots": 14,
+                "target": 4,
+                "fouls": 11,
+                "offsides": 4,
+                "saves": 5,
+                "red": 0,
+                "possession": 50.8
+              }
+            },
+            {
+              "id": "401883161",
+              "date": "2026-10-05T18:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883161",
+              "opponent": "Tenerife",
+              "own": {
+                "goals": 3,
+                "corners": 4,
+                "yellow": 4,
+                "shots": 16,
+                "target": 6,
+                "fouls": 18,
+                "offsides": 0,
+                "saves": 0,
+                "red": 0,
+                "possession": 61.7
+              },
+              "against": {
+                "goals": 2,
+                "corners": 8,
+                "yellow": 5,
+                "shots": 10,
+                "target": 2,
+                "fouls": 13,
+                "offsides": 4,
+                "saves": 3,
+                "red": 1,
+                "possession": 38.3
+              }
+            },
+            {
+              "id": "401883197",
+              "date": "2026-09-27T12:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883197",
+              "opponent": "Real Valladolid",
+              "own": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 3,
+                "shots": 16,
+                "target": 4,
+                "fouls": 19,
+                "offsides": 0,
+                "saves": 4,
+                "red": 0,
+                "possession": 61.7
+              },
+              "against": {
+                "goals": 3,
+                "corners": 2,
+                "yellow": 3,
+                "shots": 12,
+                "target": 7,
+                "fouls": 16,
+                "offsides": 6,
+                "saves": 3,
+                "red": 0,
+                "possession": 38.3
+              }
+            },
+            {
+              "id": "401883171",
+              "date": "2026-09-18T18:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883171",
+              "opponent": "Albacete",
+              "own": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 6,
+                "shots": 13,
+                "target": 5,
+                "fouls": 22,
+                "offsides": 2,
+                "saves": 2,
+                "red": 0,
+                "possession": 53.5
+              },
+              "against": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 1,
+                "shots": 13,
+                "target": 3,
+                "fouls": 12,
+                "offsides": 3,
+                "saves": 3,
+                "red": 0,
+                "possession": 46.5
+              }
+            },
+            {
+              "id": "401883213",
+              "date": "2026-09-12T19:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883213",
+              "opponent": "Almería",
+              "own": {
+                "goals": 0,
+                "corners": 9,
+                "yellow": 4,
+                "shots": 21,
+                "target": 4,
+                "fouls": 13,
+                "offsides": 4,
+                "saves": 0,
+                "red": 0,
+                "possession": 59.3
+              },
+              "against": {
+                "goals": 2,
+                "corners": 0,
+                "yellow": 4,
+                "shots": 4,
+                "target": 2,
+                "fouls": 17,
+                "offsides": 1,
+                "saves": 4,
+                "red": 1,
+                "possession": 40.7
+              }
+            },
+            {
+              "id": "401883216",
+              "date": "2026-09-07T18:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883216",
+              "opponent": "CD Sabadell",
+              "own": {
+                "goals": 2,
+                "corners": 5,
+                "yellow": 3,
+                "shots": 13,
+                "target": 4,
+                "fouls": 8,
+                "offsides": 2,
+                "saves": 6,
+                "red": 0,
+                "possession": 64.9
+              },
+              "against": {
+                "goals": 3,
+                "corners": 3,
+                "yellow": 2,
+                "shots": 20,
+                "target": 10,
+                "fouls": 20,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 35.1
+              }
+            },
+            {
+              "id": "401883221",
+              "date": "2026-08-30T19:30Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883221",
+              "opponent": "Granada",
+              "own": {
+                "goals": 1,
+                "corners": 6,
+                "yellow": 1,
+                "shots": 15,
+                "target": 3,
+                "fouls": 21,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 57.9
+              },
+              "against": {
+                "goals": 3,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 17,
+                "target": 5,
+                "fouls": 18,
+                "offsides": 4,
+                "saves": 2,
+                "red": 0,
+                "possession": 42.1
+              }
+            },
+            {
+              "id": "401883224",
+              "date": "2026-08-21T19:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883224",
+              "opponent": "Girona",
+              "own": {
+                "goals": 2,
+                "corners": 2,
+                "yellow": 4,
+                "shots": 11,
+                "target": 3,
+                "fouls": 23,
+                "offsides": 2,
+                "saves": 2,
+                "red": 0,
+                "possession": 44.6
+              },
+              "against": {
+                "goals": 1,
+                "corners": 3,
+                "yellow": 5,
+                "shots": 10,
+                "target": 3,
+                "fouls": 10,
+                "offsides": 1,
+                "saves": 1,
+                "red": 0,
+                "possession": 55.4
+              }
+            },
+            {
+              "id": "401883230",
+              "date": "2026-08-16T17:00Z",
+              "leagueName": "Spanish LALIGA 2",
+              "season": "2026-27 Spanish LALIGA 2, Regular Season",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883230",
+              "opponent": "Burgos",
+              "own": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 3,
+                "shots": 20,
+                "target": 8,
+                "fouls": 11,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 58.6
+              },
+              "against": {
+                "goals": 3,
+                "corners": 1,
+                "yellow": 1,
+                "shots": 13,
+                "target": 5,
+                "fouls": 14,
+                "offsides": 2,
+                "saves": 6,
+                "red": 0,
+                "possession": 41.4
+              }
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "325005",
+          "name": "Naim García",
+          "team": "Leganés",
+          "teamId": "17534",
+          "position": "RB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 2,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/325005/naim-garcia",
+          "matches": [
+            {
+              "id": "401883189",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883189",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883194",
+              "date": "2026-10-03T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883194",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883199",
+              "date": "2026-09-28T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883199",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883204",
+              "date": "2026-09-20T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883204",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883209",
+              "date": "2026-09-13T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883209",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883176",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883176",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883245",
+              "date": "2026-08-29T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883245",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883251",
+              "date": "2026-08-22T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883251",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883259",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883259",
+              "minutes": null,
+              "goals": 1
+            }
+          ]
+        },
+        {
+          "id": "264124",
+          "name": "Miguel Atienza",
+          "team": "Leganés",
+          "teamId": "17534",
+          "position": "CM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/264124/miguel-atienza",
+          "matches": [
+            {
+              "id": "401883189",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883189",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883194",
+              "date": "2026-10-03T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883194",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883199",
+              "date": "2026-09-28T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883199",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883204",
+              "date": "2026-09-20T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883204",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883209",
+              "date": "2026-09-13T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883209",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883176",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883176",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883245",
+              "date": "2026-08-29T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883245",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883251",
+              "date": "2026-08-22T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883251",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883259",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883259",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "260078",
+          "name": "Serge Patrick Njoh",
+          "team": "Leganés",
+          "teamId": "17534",
+          "position": "SUB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/260078/serge-patrick-njoh",
+          "matches": [
+            {
+              "id": "401883189",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883189",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883194",
+              "date": "2026-10-03T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883194",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883199",
+              "date": "2026-09-28T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883199",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883204",
+              "date": "2026-09-20T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883204",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883209",
+              "date": "2026-09-13T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883209",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883176",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883176",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883245",
+              "date": "2026-08-29T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883245",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883251",
+              "date": "2026-08-22T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883251",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883259",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883259",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "331812",
+          "name": "Percan",
+          "team": "Córdoba",
+          "teamId": "8447",
+          "position": "F",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 3,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/331812/percan",
+          "matches": [
+            {
+              "id": "401883184",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883184",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883161",
+              "date": "2026-10-05T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883161",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883197",
+              "date": "2026-09-27T12:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883197",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883171",
+              "date": "2026-09-18T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883171",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883213",
+              "date": "2026-09-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883213",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883216",
+              "date": "2026-09-07T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883216",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883221",
+              "date": "2026-08-30T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883221",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883224",
+              "date": "2026-08-21T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883224",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883230",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883230",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "108464",
+          "name": "Isma Ruiz",
+          "team": "Córdoba",
+          "teamId": "8447",
+          "position": "CM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 2,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/108464/isma-ruiz",
+          "matches": [
+            {
+              "id": "401883184",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883184",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883161",
+              "date": "2026-10-05T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883161",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883197",
+              "date": "2026-09-27T12:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883197",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883171",
+              "date": "2026-09-18T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883171",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883213",
+              "date": "2026-09-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883213",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883216",
+              "date": "2026-09-07T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883216",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883221",
+              "date": "2026-08-30T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883221",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883224",
+              "date": "2026-08-21T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883224",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883230",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883230",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "300285",
+          "name": "Cristian Carracedo",
+          "team": "Córdoba",
+          "teamId": "8447",
+          "position": "RF",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 9,
+          "n": 9,
+          "historyN": 9,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 9,
+          "leagueName": "Spanish LALIGA 2",
+          "season": "2026-27 Spanish LALIGA 2, Regular Season",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/300285/cristian-carracedo",
+          "matches": [
+            {
+              "id": "401883184",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883184",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883161",
+              "date": "2026-10-05T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883161",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883197",
+              "date": "2026-09-27T12:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883197",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883171",
+              "date": "2026-09-18T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883171",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883213",
+              "date": "2026-09-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883213",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883216",
+              "date": "2026-09-07T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883216",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401883221",
+              "date": "2026-08-30T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883221",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883224",
+              "date": "2026-08-21T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883224",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401883230",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401883230",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        }
+      ],
+      "lineups": [],
+      "errors": [],
+      "checkedAt": "2026-10-16T16:22:19.676Z",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401883158"
+    },
+    {
+      "matchId": "401884770",
+      "league": "bundesliga",
+      "venue": "Deutsche Bank Park",
+      "city": "Frankfurt",
+      "country": "Germany",
+      "state": "pre",
+      "clock": null,
+      "status": "Scheduled",
+      "teams": [
+        {
+          "id": "125",
+          "name": "Eintracht Frankfurt",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/125.png",
+          "side": "home",
+          "score": null,
+          "stats": {}
+        },
+        {
+          "id": "122",
+          "name": "FC Cologne",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
+          "side": "away",
+          "score": null,
+          "stats": {}
+        }
+      ],
+      "season": "2026-27 German Bundesliga",
+      "leagueName": "German Bundesliga",
+      "date": "2026-10-16T18:30Z",
+      "history": [
+        {
+          "id": "125",
+          "name": "Eintracht Frankfurt",
+          "events": [
+            {
+              "id": "401884780",
+              "date": "2026-10-10T16:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884780",
+              "opponent": "RB Leipzig",
+              "own": {
+                "goals": 0,
+                "corners": 6,
+                "yellow": 3,
+                "shots": 18,
+                "target": 9,
+                "fouls": 13,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 53.4
+              },
+              "against": {
+                "goals": 6,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 20,
+                "target": 10,
+                "fouls": 16,
+                "offsides": 1,
+                "saves": 9,
+                "red": 0,
+                "possession": 46.6
+              }
+            },
+            {
+              "id": "401884787",
+              "date": "2026-09-19T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884787",
+              "opponent": "SC Freiburg",
+              "own": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 2,
+                "shots": 10,
+                "target": 3,
+                "fouls": 12,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 41.7
+              },
+              "against": {
+                "goals": 2,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 22,
+                "target": 7,
+                "fouls": 11,
+                "offsides": 2,
+                "saves": 1,
+                "red": 0,
+                "possession": 58.3
+              }
+            },
+            {
+              "id": "401884794",
+              "date": "2026-09-12T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884794",
+              "opponent": "Mainz",
+              "own": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 11,
+                "target": 5,
+                "fouls": 9,
+                "offsides": 3,
+                "saves": 4,
+                "red": 0,
+                "possession": 45.4
+              },
+              "against": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 0,
+                "shots": 18,
+                "target": 5,
+                "fouls": 11,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 54.6
+              }
+            },
+            {
+              "id": "401884805",
+              "date": "2026-09-06T15:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884805",
+              "opponent": "FC Augsburg",
+              "own": {
+                "goals": 1,
+                "corners": 9,
+                "yellow": 1,
+                "shots": 22,
+                "target": 8,
+                "fouls": 10,
+                "offsides": 3,
+                "saves": 4,
+                "red": 0,
+                "possession": 60.1
+              },
+              "against": {
+                "goals": 4,
+                "corners": 4,
+                "yellow": 1,
+                "shots": 17,
+                "target": 7,
+                "fouls": 13,
+                "offsides": 0,
+                "saves": 7,
+                "red": 0,
+                "possession": 39.9
+              }
+            },
+            {
+              "id": "401884811",
+              "date": "2026-08-29T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884811",
+              "opponent": "1. FC Union Berlin",
+              "own": {
+                "goals": 3,
+                "corners": 2,
+                "yellow": 4,
+                "shots": 12,
+                "target": 3,
+                "fouls": 10,
+                "offsides": 2,
+                "saves": 8,
+                "red": 0,
+                "possession": 51.5
+              },
+              "against": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 19,
+                "target": 10,
+                "fouls": 11,
+                "offsides": 2,
+                "saves": 0,
+                "red": 0,
+                "possession": 48.5
+              }
+            }
+          ]
+        },
+        {
+          "id": "122",
+          "name": "FC Cologne",
+          "events": [
+            {
+              "id": "401884774",
+              "date": "2026-10-11T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884774",
+              "opponent": "Borussia Mönchengladbach",
+              "own": {
+                "goals": 2,
+                "corners": 6,
+                "yellow": 1,
+                "shots": 20,
+                "target": 7,
+                "fouls": 8,
+                "offsides": 1,
+                "saves": 6,
+                "red": 0,
+                "possession": 47.6
+              },
+              "against": {
+                "goals": 1,
+                "corners": 6,
+                "yellow": 3,
+                "shots": 16,
+                "target": 7,
+                "fouls": 17,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 52.4
+              }
+            },
+            {
+              "id": "401884785",
+              "date": "2026-09-19T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884785",
+              "opponent": "Hamburg SV",
+              "own": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 3,
+                "shots": 18,
+                "target": 5,
+                "fouls": 14,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 68.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 12,
+                "target": 7,
+                "fouls": 12,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 31.8
+              }
+            },
+            {
+              "id": "401884792",
+              "date": "2026-09-12T16:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884792",
+              "opponent": "Werder Bremen",
+              "own": {
+                "goals": 1,
+                "corners": 8,
+                "yellow": 2,
+                "shots": 15,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 47.2
+              },
+              "against": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 1,
+                "shots": 14,
+                "target": 5,
+                "fouls": 12,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 52.8
+              }
+            },
+            {
+              "id": "401884808",
+              "date": "2026-09-04T18:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884808",
+              "opponent": "VfB Stuttgart",
+              "own": {
+                "goals": 1,
+                "corners": 8,
+                "yellow": 3,
+                "shots": 18,
+                "target": 5,
+                "fouls": 6,
+                "offsides": 0,
+                "saves": 4,
+                "red": 0,
+                "possession": 41.8
+              },
+              "against": {
+                "goals": 4,
+                "corners": 10,
+                "yellow": 1,
+                "shots": 22,
+                "target": 8,
+                "fouls": 5,
+                "offsides": 1,
+                "saves": 3,
+                "red": 0,
+                "possession": 58.2
+              }
+            },
+            {
+              "id": "401884810",
+              "date": "2026-08-29T13:30Z",
+              "leagueName": "German Bundesliga",
+              "season": "2026-27 German Bundesliga",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884810",
+              "opponent": "TSG Hoffenheim",
+              "own": {
+                "goals": 3,
+                "corners": 6,
+                "yellow": 0,
+                "shots": 18,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 0,
+                "saves": 2,
+                "red": 0,
+                "possession": 41.3
+              },
+              "against": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 2,
+                "shots": 15,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 0,
+                "saves": 3,
+                "red": 0,
+                "possession": 58.7
+              }
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "359793",
+          "name": "Younes Ebnoutalib",
+          "team": "Eintracht Frankfurt",
+          "teamId": "125",
+          "position": "SUB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 4,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/359793/younes-ebnoutalib",
+          "matches": [
+            {
+              "id": "401884780",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884780",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884787",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884787",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884794",
+              "date": "2026-09-12T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884794",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884805",
+              "date": "2026-09-06T15:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884805",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884811",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884811",
+              "minutes": null,
+              "goals": 3
+            }
+          ]
+        },
+        {
+          "id": "274887",
+          "name": "Jonathan Burkardt",
+          "team": "Eintracht Frankfurt",
+          "teamId": "125",
+          "position": "F",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 3,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/274887/jonathan-burkardt",
+          "matches": [
+            {
+              "id": "401884780",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884780",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884787",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884787",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884794",
+              "date": "2026-09-12T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884794",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884805",
+              "date": "2026-09-06T15:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884805",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884811",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884811",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "355369",
+          "name": "Can Uzun",
+          "team": "Eintracht Frankfurt",
+          "teamId": "125",
+          "position": "CF-L",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 2,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-10T16:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/355369/can-uzun",
+          "matches": [
+            {
+              "id": "401884780",
+              "date": "2026-10-10T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884780",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884787",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884787",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884794",
+              "date": "2026-09-12T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884794",
+              "minutes": null,
+              "goals": 2
+            },
+            {
+              "id": "401884805",
+              "date": "2026-09-06T15:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884805",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884811",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884811",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "286815",
+          "name": "Ísak Jóhannesson",
+          "team": "FC Cologne",
+          "teamId": "122",
+          "position": "RM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-11T13:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/286815/isak-johannesson",
+          "matches": [
+            {
+              "id": "401884774",
+              "date": "2026-10-11T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884774",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884785",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884785",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884792",
+              "date": "2026-09-12T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884792",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884808",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884808",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884810",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884810",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "231173",
+          "name": "Linton Maina",
+          "team": "FC Cologne",
+          "teamId": "122",
+          "position": "LM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-11T13:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/231173/linton-maina",
+          "matches": [
+            {
+              "id": "401884774",
+              "date": "2026-10-11T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884774",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884785",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884785",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884792",
+              "date": "2026-09-12T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884792",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884808",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884808",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884810",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884810",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "275797",
+          "name": "Marius Bulter",
+          "team": "FC Cologne",
+          "teamId": "122",
+          "position": "CF-R",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 5,
+          "n": 5,
+          "historyN": 5,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 5,
+          "leagueName": "German Bundesliga",
+          "season": "2026-27 German Bundesliga",
+          "period": {
+            "from": "2026-08-29T13:30Z",
+            "to": "2026-10-11T13:30Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/275797/marius-bulter",
+          "matches": [
+            {
+              "id": "401884774",
+              "date": "2026-10-11T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884774",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884785",
+              "date": "2026-09-19T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884785",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884792",
+              "date": "2026-09-12T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884792",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401884808",
+              "date": "2026-09-04T18:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884808",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401884810",
+              "date": "2026-08-29T13:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401884810",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        }
+      ],
+      "lineups": [],
+      "errors": [],
+      "checkedAt": "2026-10-16T16:22:20.415Z",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401884770"
+    },
+    {
+      "matchId": "401876437",
+      "league": "ligue1",
+      "venue": "Stade Marie-Marvingt",
+      "city": "Le Mans",
+      "country": "France",
+      "state": "pre",
+      "clock": null,
+      "status": "Scheduled",
+      "teams": [
+        {
+          "id": "2697",
+          "name": "Le Mans",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2697.png",
+          "side": "home",
+          "score": null,
+          "stats": {}
+        },
+        {
+          "id": "179",
+          "name": "Toulouse",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/179.png",
+          "side": "away",
+          "score": null,
+          "stats": {}
+        }
+      ],
+      "season": "2026-27 Ligue 1",
+      "leagueName": "French Ligue 1",
+      "date": "2026-10-16T18:45Z",
+      "history": [
+        {
+          "id": "2697",
+          "name": "Le Mans",
+          "events": [
+            {
+              "id": "401876442",
+              "date": "2026-10-10T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876442",
+              "opponent": "Paris Saint-Germain",
+              "own": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 5,
+                "shots": 11,
+                "target": 3,
+                "fouls": 17,
+                "offsides": 5,
+                "saves": 5,
+                "red": 0,
+                "possession": 27.4
+              },
+              "against": {
+                "goals": 3,
+                "corners": 4,
+                "yellow": 0,
+                "shots": 22,
+                "target": 8,
+                "fouls": 3,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 72.6
+              }
+            },
+            {
+              "id": "401876455",
+              "date": "2026-09-19T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876455",
+              "opponent": "Lorient",
+              "own": {
+                "goals": 2,
+                "corners": 1,
+                "yellow": 3,
+                "shots": 11,
+                "target": 7,
+                "fouls": 15,
+                "offsides": 0,
+                "saves": 1,
+                "red": 0,
+                "possession": 51.4
+              },
+              "against": {
+                "goals": 1,
+                "corners": 3,
+                "yellow": 3,
+                "shots": 9,
+                "target": 2,
+                "fouls": 15,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 48.6
+              }
+            },
+            {
+              "id": "401876463",
+              "date": "2026-09-13T15:15Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876463",
+              "opponent": "Lens",
+              "own": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 2,
+                "shots": 13,
+                "target": 5,
+                "fouls": 17,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 52.4
+              },
+              "against": {
+                "goals": 2,
+                "corners": 9,
+                "yellow": 3,
+                "shots": 16,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 3,
+                "saves": 3,
+                "red": 0,
+                "possession": 47.6
+              }
+            },
+            {
+              "id": "401876470",
+              "date": "2026-09-05T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876470",
+              "opponent": "Nice",
+              "own": {
+                "goals": 1,
+                "corners": 2,
+                "yellow": 2,
+                "shots": 8,
+                "target": 3,
+                "fouls": 11,
+                "offsides": 1,
+                "saves": 1,
+                "red": 0,
+                "possession": 41.7
+              },
+              "against": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 8,
+                "target": 2,
+                "fouls": 4,
+                "offsides": 3,
+                "saves": 2,
+                "red": 0,
+                "possession": 58.3
+              }
+            },
+            {
+              "id": "401876478",
+              "date": "2026-08-30T15:15Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876478",
+              "opponent": "Stade Rennais",
+              "own": {
+                "goals": 2,
+                "corners": 6,
+                "yellow": 2,
+                "shots": 12,
+                "target": 5,
+                "fouls": 15,
+                "offsides": 3,
+                "saves": 5,
+                "red": 1,
+                "possession": 36
+              },
+              "against": {
+                "goals": 3,
+                "corners": 8,
+                "yellow": 3,
+                "shots": 22,
+                "target": 8,
+                "fouls": 15,
+                "offsides": 2,
+                "saves": 3,
+                "red": 0,
+                "possession": 64
+              }
+            },
+            {
+              "id": "401876491",
+              "date": "2026-08-22T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876491",
+              "opponent": "Brest",
+              "own": {
+                "goals": 2,
+                "corners": 1,
+                "yellow": 1,
+                "shots": 8,
+                "target": 5,
+                "fouls": 14,
+                "offsides": 3,
+                "saves": 4,
+                "red": 0,
+                "possession": 49.9
+              },
+              "against": {
+                "goals": 2,
+                "corners": 10,
+                "yellow": 1,
+                "shots": 26,
+                "target": 7,
+                "fouls": 12,
+                "offsides": 2,
+                "saves": 3,
+                "red": 0,
+                "possession": 50.1
+              }
+            }
+          ]
+        },
+        {
+          "id": "179",
+          "name": "Toulouse",
+          "events": [
+            {
+              "id": "401876444",
+              "date": "2026-10-10T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876444",
+              "opponent": "AS Monaco",
+              "own": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 8,
+                "target": 4,
+                "fouls": 16,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 41.8
+              },
+              "against": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 16,
+                "target": 4,
+                "fouls": 10,
+                "offsides": 0,
+                "saves": 2,
+                "red": 0,
+                "possession": 58.2
+              }
+            },
+            {
+              "id": "401876450",
+              "date": "2026-09-19T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876450",
+              "opponent": "Le Havre AC",
+              "own": {
+                "goals": 3,
+                "corners": 6,
+                "yellow": 3,
+                "shots": 14,
+                "target": 5,
+                "fouls": 17,
+                "offsides": 3,
+                "saves": 5,
+                "red": 0,
+                "possession": 53.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 1,
+                "shots": 18,
+                "target": 7,
+                "fouls": 15,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 46.8
+              }
+            },
+            {
+              "id": "401876461",
+              "date": "2026-09-12T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876461",
+              "opponent": "Lorient",
+              "own": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 0,
+                "shots": 13,
+                "target": 4,
+                "fouls": 18,
+                "offsides": 1,
+                "saves": 1,
+                "red": 0,
+                "possession": 59
+              },
+              "against": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 1,
+                "shots": 10,
+                "target": 3,
+                "fouls": 8,
+                "offsides": 2,
+                "saves": 2,
+                "red": 0,
+                "possession": 41
+              }
+            },
+            {
+              "id": "401876468",
+              "date": "2026-09-03T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876468",
+              "opponent": "Lille",
+              "own": {
+                "goals": 0,
+                "corners": 6,
+                "yellow": 1,
+                "shots": 24,
+                "target": 10,
+                "fouls": 16,
+                "offsides": 3,
+                "saves": 5,
+                "red": 0,
+                "possession": 53.4
+              },
+              "against": {
+                "goals": 1,
+                "corners": 2,
+                "yellow": 0,
+                "shots": 10,
+                "target": 6,
+                "fouls": 9,
+                "offsides": 0,
+                "saves": 9,
+                "red": 0,
+                "possession": 46.6
+              }
+            },
+            {
+              "id": "401876483",
+              "date": "2026-08-29T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876483",
+              "opponent": "Brest",
+              "own": {
+                "goals": 2,
+                "corners": 2,
+                "yellow": 3,
+                "shots": 6,
+                "target": 2,
+                "fouls": 18,
+                "offsides": 0,
+                "saves": 5,
+                "red": 0,
+                "possession": 49.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 2,
+                "shots": 26,
+                "target": 7,
+                "fouls": 19,
+                "offsides": 5,
+                "saves": 0,
+                "red": 0,
+                "possession": 50.8
+              }
+            },
+            {
+              "id": "401876486",
+              "date": "2026-08-22T18:45Z",
+              "leagueName": "French Ligue 1",
+              "season": "2026-27 Ligue 1",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876486",
+              "opponent": "Lyon",
+              "own": {
+                "goals": 0,
+                "corners": 6,
+                "yellow": 1,
+                "shots": 17,
+                "target": 2,
+                "fouls": 15,
+                "offsides": 2,
+                "saves": 1,
+                "red": 0,
+                "possession": 47.8
+              },
+              "against": {
+                "goals": 2,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 11,
+                "target": 3,
+                "fouls": 15,
+                "offsides": 0,
+                "saves": 2,
+                "red": 0,
+                "possession": 52.2
+              }
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "268720",
+          "name": "Louis Mafouta",
+          "team": "Le Mans",
+          "teamId": "2697",
+          "position": "CF-L",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 4,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/268720/louis-mafouta",
+          "matches": [
+            {
+              "id": "401876442",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876442",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876455",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876455",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876463",
+              "date": "2026-09-13T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876463",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876470",
+              "date": "2026-09-05T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876470",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876478",
+              "date": "2026-08-30T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876478",
+              "minutes": null,
+              "goals": 2
+            },
+            {
+              "id": "401876491",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876491",
+              "minutes": null,
+              "goals": 1
+            }
+          ]
+        },
+        {
+          "id": "233702",
+          "name": "Dame Guèye",
+          "team": "Le Mans",
+          "teamId": "2697",
+          "position": "",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/233702/dame-gueye",
+          "matches": [
+            {
+              "id": "401876442",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876442",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876455",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876455",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876463",
+              "date": "2026-09-13T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876463",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876470",
+              "date": "2026-09-05T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876470",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876478",
+              "date": "2026-08-30T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876478",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876491",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876491",
+              "minutes": null,
+              "goals": 1
+            }
+          ]
+        },
+        {
+          "id": "331636",
+          "name": "Lucas Calodat",
+          "team": "Le Mans",
+          "teamId": "2697",
+          "position": "LM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/331636/lucas-calodat",
+          "matches": [
+            {
+              "id": "401876442",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876442",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876455",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876455",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876463",
+              "date": "2026-09-13T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876463",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876470",
+              "date": "2026-09-05T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876470",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876478",
+              "date": "2026-08-30T15:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876478",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876491",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876491",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "362777",
+          "name": "Thomas Jørgensen",
+          "team": "Toulouse",
+          "teamId": "179",
+          "position": "AM-R",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 2,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/362777/thomas-jørgensen",
+          "matches": [
+            {
+              "id": "401876444",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876444",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876450",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876450",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876461",
+              "date": "2026-09-12T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876461",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876468",
+              "date": "2026-09-03T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876468",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876483",
+              "date": "2026-08-29T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876483",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876486",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876486",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "385000",
+          "name": "Christ Tapé",
+          "team": "Toulouse",
+          "teamId": "179",
+          "position": "LB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/385000/christ-tape",
+          "matches": [
+            {
+              "id": "401876444",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876444",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876450",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876450",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876461",
+              "date": "2026-09-12T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876461",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876468",
+              "date": "2026-09-03T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876468",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876483",
+              "date": "2026-08-29T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876483",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876486",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876486",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "297121",
+          "name": "Jacen Russell-Rowe",
+          "team": "Toulouse",
+          "teamId": "179",
+          "position": "F",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "French Ligue 1",
+          "season": "2026-27 Ligue 1",
+          "period": {
+            "from": "2026-08-22T18:45Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/297121/jacen-russell-rowe",
+          "matches": [
+            {
+              "id": "401876444",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876444",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876450",
+              "date": "2026-09-19T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876450",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876461",
+              "date": "2026-09-12T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876461",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876468",
+              "date": "2026-09-03T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876468",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401876483",
+              "date": "2026-08-29T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876483",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401876486",
+              "date": "2026-08-22T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401876486",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        }
+      ],
+      "lineups": [],
+      "errors": [],
+      "checkedAt": "2026-10-16T16:22:21.213Z",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401876437"
+    },
+    {
+      "matchId": "401874959",
+      "league": "seriea",
+      "venue": "Stadio Benito Stirpe",
+      "city": "Frosinone",
+      "country": "Italy",
+      "state": "pre",
+      "clock": null,
+      "status": "Scheduled",
+      "teams": [
+        {
+          "id": "4057",
+          "name": "Frosinone",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4057.png",
+          "side": "home",
+          "score": null,
+          "stats": {}
+        },
+        {
+          "id": "3997",
+          "name": "Sassuolo",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
+          "side": "away",
+          "score": null,
+          "stats": {}
+        }
+      ],
+      "season": "2026-27 Italian Serie A",
+      "leagueName": "Italian Serie A",
+      "date": "2026-10-16T18:45Z",
+      "history": [
+        {
+          "id": "4057",
+          "name": "Frosinone",
+          "events": [
+            {
+              "id": "401874754",
+              "date": "2026-10-10T18:45Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874754",
+              "opponent": "Napoli",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 0,
+                "shots": 17,
+                "target": 1,
+                "fouls": 12,
+                "offsides": 2,
+                "saves": 5,
+                "red": 0,
+                "possession": 49.2
+              },
+              "against": {
+                "goals": 3,
+                "corners": 6,
+                "yellow": 2,
+                "shots": 19,
+                "target": 8,
+                "fouls": 8,
+                "offsides": 1,
+                "saves": 1,
+                "red": 0,
+                "possession": 50.8
+              }
+            },
+            {
+              "id": "401874752",
+              "date": "2026-09-20T13:00Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874752",
+              "opponent": "Como",
+              "own": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 3,
+                "shots": 22,
+                "target": 6,
+                "fouls": 21,
+                "offsides": 2,
+                "saves": 7,
+                "red": 0,
+                "possession": 35.2
+              },
+              "against": {
+                "goals": 0,
+                "corners": 8,
+                "yellow": 2,
+                "shots": 27,
+                "target": 8,
+                "fouls": 8,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 64.8
+              }
+            },
+            {
+              "id": "401874991",
+              "date": "2026-09-12T13:00Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874991",
+              "opponent": "Genoa",
+              "own": {
+                "goals": 1,
+                "corners": 9,
+                "yellow": 2,
+                "shots": 26,
+                "target": 6,
+                "fouls": 12,
+                "offsides": 3,
+                "saves": 4,
+                "red": 0,
+                "possession": 56.1
+              },
+              "against": {
+                "goals": 1,
+                "corners": 8,
+                "yellow": 1,
+                "shots": 17,
+                "target": 5,
+                "fouls": 12,
+                "offsides": 2,
+                "saves": 5,
+                "red": 1,
+                "possession": 43.9
+              }
+            },
+            {
+              "id": "401874768",
+              "date": "2026-09-06T13:00Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874768",
+              "opponent": "Venezia",
+              "own": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 13,
+                "target": 8,
+                "fouls": 18,
+                "offsides": 6,
+                "saves": 2,
+                "red": 0,
+                "possession": 39.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 2,
+                "yellow": 4,
+                "shots": 15,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 60.8
+              }
+            },
+            {
+              "id": "401874942",
+              "date": "2026-08-29T16:30Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874942",
+              "opponent": "Fiorentina",
+              "own": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 3,
+                "shots": 12,
+                "target": 6,
+                "fouls": 21,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 40.4
+              },
+              "against": {
+                "goals": 0,
+                "corners": 8,
+                "yellow": 3,
+                "shots": 25,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 1,
+                "saves": 3,
+                "red": 0,
+                "possession": 59.6
+              }
+            },
+            {
+              "id": "401874930",
+              "date": "2026-08-23T16:30Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874930",
+              "opponent": "Juventus",
+              "own": {
+                "goals": 0,
+                "corners": 3,
+                "yellow": 2,
+                "shots": 11,
+                "target": 2,
+                "fouls": 15,
+                "offsides": 4,
+                "saves": 4,
+                "red": 0,
+                "possession": 36.7
+              },
+              "against": {
+                "goals": 1,
+                "corners": 12,
+                "yellow": 2,
+                "shots": 20,
+                "target": 5,
+                "fouls": 18,
+                "offsides": 1,
+                "saves": 2,
+                "red": 0,
+                "possession": 63.3
+              }
+            }
+          ]
+        },
+        {
+          "id": "3997",
+          "name": "Sassuolo",
+          "events": [
+            {
+              "id": "401874789",
+              "date": "2026-10-11T16:00Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874789",
+              "opponent": "AC Milan",
+              "own": {
+                "goals": 1,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 10,
+                "target": 4,
+                "fouls": 13,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 41.1
+              },
+              "against": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 4,
+                "shots": 11,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 0,
+                "saves": 3,
+                "red": 0,
+                "possession": 58.9
+              }
+            },
+            {
+              "id": "401874756",
+              "date": "2026-09-18T18:45Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874756",
+              "opponent": "Monza",
+              "own": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 1,
+                "shots": 20,
+                "target": 8,
+                "fouls": 6,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 64.9
+              },
+              "against": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 4,
+                "shots": 15,
+                "target": 6,
+                "fouls": 13,
+                "offsides": 0,
+                "saves": 7,
+                "red": 0,
+                "possession": 35.1
+              }
+            },
+            {
+              "id": "401874750",
+              "date": "2026-09-13T18:45Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874750",
+              "opponent": "Juventus",
+              "own": {
+                "goals": 3,
+                "corners": 3,
+                "yellow": 2,
+                "shots": 10,
+                "target": 6,
+                "fouls": 8,
+                "offsides": 3,
+                "saves": 6,
+                "red": 0,
+                "possession": 41.7
+              },
+              "against": {
+                "goals": 2,
+                "corners": 10,
+                "yellow": 2,
+                "shots": 19,
+                "target": 8,
+                "fouls": 13,
+                "offsides": 2,
+                "saves": 3,
+                "red": 0,
+                "possession": 58.3
+              }
+            },
+            {
+              "id": "401874751",
+              "date": "2026-09-06T16:00Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874751",
+              "opponent": "Bologna",
+              "own": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 1,
+                "shots": 15,
+                "target": 6,
+                "fouls": 8,
+                "offsides": 2,
+                "saves": 3,
+                "red": 0,
+                "possession": 38.6
+              },
+              "against": {
+                "goals": 2,
+                "corners": 10,
+                "yellow": 3,
+                "shots": 21,
+                "target": 5,
+                "fouls": 14,
+                "offsides": 0,
+                "saves": 4,
+                "red": 0,
+                "possession": 61.4
+              }
+            },
+            {
+              "id": "401874743",
+              "date": "2026-08-29T16:30Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874743",
+              "opponent": "Torino",
+              "own": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 3,
+                "shots": 19,
+                "target": 7,
+                "fouls": 12,
+                "offsides": 5,
+                "saves": 3,
+                "red": 0,
+                "possession": 45.6
+              },
+              "against": {
+                "goals": 1,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 10,
+                "target": 4,
+                "fouls": 9,
+                "offsides": 0,
+                "saves": 5,
+                "red": 0,
+                "possession": 54.4
+              }
+            },
+            {
+              "id": "401874748",
+              "date": "2026-08-23T18:45Z",
+              "leagueName": "Italian Serie A",
+              "season": "2026-27 Italian Serie A",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874748",
+              "opponent": "Atalanta",
+              "own": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 0,
+                "shots": 22,
+                "target": 8,
+                "fouls": 10,
+                "offsides": 1,
+                "saves": 5,
+                "red": 0,
+                "possession": 44.2
+              },
+              "against": {
+                "goals": 2,
+                "corners": 4,
+                "yellow": 0,
+                "shots": 14,
+                "target": 7,
+                "fouls": 9,
+                "offsides": 0,
+                "saves": 7,
+                "red": 0,
+                "possession": 55.8
+              }
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "319265",
+          "name": "Antonio Raimondo",
+          "team": "Frosinone",
+          "teamId": "4057",
+          "position": "F",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 4,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T16:30Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/319265/antonio-raimondo",
+          "matches": [
+            {
+              "id": "401874754",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874754",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874752",
+              "date": "2026-09-20T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874752",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874991",
+              "date": "2026-09-12T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874991",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874768",
+              "date": "2026-09-06T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874768",
+              "minutes": null,
+              "goals": 2
+            },
+            {
+              "id": "401874942",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874942",
+              "minutes": null,
+              "goals": 2
+            },
+            {
+              "id": "401874930",
+              "date": "2026-08-23T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874930",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "360714",
+          "name": "Giorgi Kvernadze",
+          "team": "Frosinone",
+          "teamId": "4057",
+          "position": "AM-L",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 3,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T16:30Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/360714/giorgi-kvernadze",
+          "matches": [
+            {
+              "id": "401874754",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874754",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874752",
+              "date": "2026-09-20T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874752",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874991",
+              "date": "2026-09-12T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874991",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874768",
+              "date": "2026-09-06T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874768",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874942",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874942",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874930",
+              "date": "2026-08-23T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874930",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "346974",
+          "name": "Gabriele Bracaglia",
+          "team": "Frosinone",
+          "teamId": "4057",
+          "position": "LB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T16:30Z",
+            "to": "2026-10-10T18:45Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/346974/gabriele-bracaglia",
+          "matches": [
+            {
+              "id": "401874754",
+              "date": "2026-10-10T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874754",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874752",
+              "date": "2026-09-20T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874752",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874991",
+              "date": "2026-09-12T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874991",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874768",
+              "date": "2026-09-06T13:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874768",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874942",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874942",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874930",
+              "date": "2026-08-23T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874930",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "344917",
+          "name": "Vasilije Adzic",
+          "team": "Sassuolo",
+          "teamId": "3997",
+          "position": "RM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 3,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T18:45Z",
+            "to": "2026-10-11T16:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/344917/vasilije-adzic",
+          "matches": [
+            {
+              "id": "401874789",
+              "date": "2026-10-11T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874789",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874756",
+              "date": "2026-09-18T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874756",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874750",
+              "date": "2026-09-13T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874750",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874751",
+              "date": "2026-09-06T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874751",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874743",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874743",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874748",
+              "date": "2026-08-23T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874748",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "290418",
+          "name": "Josh Doig",
+          "team": "Sassuolo",
+          "teamId": "3997",
+          "position": "LB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T18:45Z",
+            "to": "2026-10-11T16:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/290418/josh-doig",
+          "matches": [
+            {
+              "id": "401874789",
+              "date": "2026-10-11T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874789",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874756",
+              "date": "2026-09-18T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874756",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874750",
+              "date": "2026-09-13T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874750",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874751",
+              "date": "2026-09-06T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874751",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874743",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874743",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874748",
+              "date": "2026-08-23T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874748",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "283375",
+          "name": "Kieron Bowie",
+          "team": "Sassuolo",
+          "teamId": "3997",
+          "position": "SUB",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 6,
+          "n": 6,
+          "historyN": 6,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 6,
+          "leagueName": "Italian Serie A",
+          "season": "2026-27 Italian Serie A",
+          "period": {
+            "from": "2026-08-23T18:45Z",
+            "to": "2026-10-11T16:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/283375/kieron-bowie",
+          "matches": [
+            {
+              "id": "401874789",
+              "date": "2026-10-11T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874789",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874756",
+              "date": "2026-09-18T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874756",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874750",
+              "date": "2026-09-13T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874750",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401874751",
+              "date": "2026-09-06T16:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874751",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874743",
+              "date": "2026-08-29T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874743",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401874748",
+              "date": "2026-08-23T18:45Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401874748",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        }
+      ],
+      "lineups": [],
+      "errors": [],
+      "checkedAt": "2026-10-16T16:22:22.027Z",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401874959"
+    },
+    {
+      "matchId": "401882844",
+      "league": "laliga",
+      "venue": "Riazor",
+      "city": "La Coruña",
+      "country": "Spain",
+      "state": "pre",
+      "clock": null,
+      "status": "Scheduled",
+      "teams": [
+        {
+          "id": "90",
+          "name": "Deportivo",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
+          "side": "home",
+          "score": null,
+          "stats": {}
+        },
+        {
+          "id": "1538",
+          "name": "Levante",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
+          "side": "away",
+          "score": null,
+          "stats": {}
+        }
+      ],
+      "season": "2026-27 LALIGA",
+      "leagueName": "Spanish LALIGA",
+      "date": "2026-10-16T19:00Z",
+      "history": [
+        {
+          "id": "90",
+          "name": "Deportivo",
+          "events": [
+            {
+              "id": "401882847",
+              "date": "2026-10-11T14:15Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882847",
+              "opponent": "Real Sociedad",
+              "own": {
+                "goals": 2,
+                "corners": 10,
+                "yellow": 2,
+                "shots": 21,
+                "target": 7,
+                "fouls": 13,
+                "offsides": 0,
+                "saves": 1,
+                "red": 1,
+                "possession": 60
+              },
+              "against": {
+                "goals": 3,
+                "corners": 7,
+                "yellow": 1,
+                "shots": 12,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 4,
+                "saves": 6,
+                "red": 1,
+                "possession": 40
+              }
+            },
+            {
+              "id": "401882863",
+              "date": "2026-09-20T16:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882863",
+              "opponent": "Real Betis",
+              "own": {
+                "goals": 1,
+                "corners": 11,
+                "yellow": 1,
+                "shots": 24,
+                "target": 7,
+                "fouls": 6,
+                "offsides": 4,
+                "saves": 2,
+                "red": 0,
+                "possession": 42.9
+              },
+              "against": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 1,
+                "shots": 11,
+                "target": 4,
+                "fouls": 9,
+                "offsides": 0,
+                "saves": 6,
+                "red": 0,
+                "possession": 57.1
+              }
+            },
+            {
+              "id": "401882873",
+              "date": "2026-09-16T17:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882873",
+              "opponent": "Sevilla",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 1,
+                "shots": 4,
+                "target": 3,
+                "fouls": 15,
+                "offsides": 0,
+                "saves": 5,
+                "red": 1,
+                "possession": 53.1
+              },
+              "against": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 4,
+                "shots": 11,
+                "target": 6,
+                "fouls": 16,
+                "offsides": 0,
+                "saves": 3,
+                "red": 0,
+                "possession": 46.9
+              }
+            },
+            {
+              "id": "401882884",
+              "date": "2026-09-13T16:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882884",
+              "opponent": "Getafe",
+              "own": {
+                "goals": 1,
+                "corners": 7,
+                "yellow": 1,
+                "shots": 10,
+                "target": 3,
+                "fouls": 9,
+                "offsides": 1,
+                "saves": 3,
+                "red": 0,
+                "possession": 64.1
+              },
+              "against": {
+                "goals": 1,
+                "corners": 3,
+                "yellow": 3,
+                "shots": 15,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 2,
+                "saves": 2,
+                "red": 0,
+                "possession": 35.9
+              }
+            },
+            {
+              "id": "401882887",
+              "date": "2026-09-05T19:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882887",
+              "opponent": "Villarreal",
+              "own": {
+                "goals": 3,
+                "corners": 1,
+                "yellow": 2,
+                "shots": 8,
+                "target": 3,
+                "fouls": 14,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 37.6
+              },
+              "against": {
+                "goals": 2,
+                "corners": 7,
+                "yellow": 2,
+                "shots": 17,
+                "target": 5,
+                "fouls": 14,
+                "offsides": 2,
+                "saves": 0,
+                "red": 0,
+                "possession": 62.4
+              }
+            },
+            {
+              "id": "401882904",
+              "date": "2026-08-30T17:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882904",
+              "opponent": "Valencia",
+              "own": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 0,
+                "shots": 11,
+                "target": 4,
+                "fouls": 14,
+                "offsides": 1,
+                "saves": 3,
+                "red": 1,
+                "possession": 44.5
+              },
+              "against": {
+                "goals": 1,
+                "corners": 5,
+                "yellow": 1,
+                "shots": 12,
+                "target": 4,
+                "fouls": 5,
+                "offsides": 3,
+                "saves": 3,
+                "red": 0,
+                "possession": 55.5
+              }
+            },
+            {
+              "id": "401882910",
+              "date": "2026-08-24T19:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882910",
+              "opponent": "Málaga",
+              "own": {
+                "goals": 1,
+                "corners": 4,
+                "yellow": 4,
+                "shots": 6,
+                "target": 4,
+                "fouls": 12,
+                "offsides": 2,
+                "saves": 1,
+                "red": 0,
+                "possession": 44.8
+              },
+              "against": {
+                "goals": 1,
+                "corners": 8,
+                "yellow": 1,
+                "shots": 13,
+                "target": 2,
+                "fouls": 12,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 55.2
+              }
+            },
+            {
+              "id": "401882923",
+              "date": "2026-08-17T19:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882923",
+              "opponent": "Elche",
+              "own": {
+                "goals": 1,
+                "corners": 2,
+                "yellow": 2,
+                "shots": 8,
+                "target": 3,
+                "fouls": 17,
+                "offsides": 2,
+                "saves": 5,
+                "red": 0,
+                "possession": 38.8
+              },
+              "against": {
+                "goals": 1,
+                "corners": 7,
+                "yellow": 2,
+                "shots": 11,
+                "target": 6,
+                "fouls": 12,
+                "offsides": 0,
+                "saves": 2,
+                "red": 0,
+                "possession": 61.2
+              }
+            }
+          ]
+        },
+        {
+          "id": "1538",
+          "name": "Levante",
+          "events": [
+            {
+              "id": "401882852",
+              "date": "2026-10-12T19:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882852",
+              "opponent": "Sevilla",
+              "own": {
+                "goals": 3,
+                "corners": 5,
+                "yellow": 2,
+                "shots": 20,
+                "target": 8,
+                "fouls": 7,
+                "offsides": 0,
+                "saves": 2,
+                "red": 0,
+                "possession": 56.7
+              },
+              "against": {
+                "goals": 3,
+                "corners": 2,
+                "yellow": 4,
+                "shots": 18,
+                "target": 5,
+                "fouls": 17,
+                "offsides": 0,
+                "saves": 5,
+                "red": 1,
+                "possession": 43.3
+              }
+            },
+            {
+              "id": "401882857",
+              "date": "2026-09-20T16:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882857",
+              "opponent": "Villarreal",
+              "own": {
+                "goals": 1,
+                "corners": 1,
+                "yellow": 1,
+                "shots": 6,
+                "target": 1,
+                "fouls": 10,
+                "offsides": 0,
+                "saves": 3,
+                "red": 0,
+                "possession": 37.8
+              },
+              "against": {
+                "goals": 3,
+                "corners": 7,
+                "yellow": 1,
+                "shots": 21,
+                "target": 7,
+                "fouls": 9,
+                "offsides": 1,
+                "saves": 0,
+                "red": 0,
+                "possession": 62.2
+              }
+            },
+            {
+              "id": "401882883",
+              "date": "2026-09-13T14:15Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882883",
+              "opponent": "Barcelona",
+              "own": {
+                "goals": 2,
+                "corners": 3,
+                "yellow": 1,
+                "shots": 13,
+                "target": 7,
+                "fouls": 11,
+                "offsides": 4,
+                "saves": 2,
+                "red": 0,
+                "possession": 25.1
+              },
+              "against": {
+                "goals": 4,
+                "corners": 5,
+                "yellow": 1,
+                "shots": 12,
+                "target": 6,
+                "fouls": 11,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 74.9
+              }
+            },
+            {
+              "id": "401882890",
+              "date": "2026-09-06T16:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882890",
+              "opponent": "Málaga",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 2,
+                "shots": 11,
+                "target": 3,
+                "fouls": 11,
+                "offsides": 0,
+                "saves": 3,
+                "red": 0,
+                "possession": 37.2
+              },
+              "against": {
+                "goals": 0,
+                "corners": 6,
+                "yellow": 4,
+                "shots": 10,
+                "target": 3,
+                "fouls": 15,
+                "offsides": 3,
+                "saves": 3,
+                "red": 0,
+                "possession": 62.8
+              }
+            },
+            {
+              "id": "401882902",
+              "date": "2026-08-29T15:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882902",
+              "opponent": "Real Betis",
+              "own": {
+                "goals": 5,
+                "corners": 6,
+                "yellow": 1,
+                "shots": 19,
+                "target": 10,
+                "fouls": 9,
+                "offsides": 1,
+                "saves": 4,
+                "red": 0,
+                "possession": 39.8
+              },
+              "against": {
+                "goals": 2,
+                "corners": 8,
+                "yellow": 1,
+                "shots": 20,
+                "target": 6,
+                "fouls": 7,
+                "offsides": 2,
+                "saves": 4,
+                "red": 0,
+                "possession": 60.2
+              }
+            },
+            {
+              "id": "401882909",
+              "date": "2026-08-24T17:30Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882909",
+              "opponent": "Osasuna",
+              "own": {
+                "goals": 0,
+                "corners": 4,
+                "yellow": 1,
+                "shots": 11,
+                "target": 1,
+                "fouls": 12,
+                "offsides": 3,
+                "saves": 7,
+                "red": 0,
+                "possession": 54.3
+              },
+              "against": {
+                "goals": 0,
+                "corners": 9,
+                "yellow": 2,
+                "shots": 12,
+                "target": 7,
+                "fouls": 9,
+                "offsides": 5,
+                "saves": 1,
+                "red": 0,
+                "possession": 45.7
+              }
+            },
+            {
+              "id": "401882922",
+              "date": "2026-08-16T17:00Z",
+              "leagueName": "Spanish LALIGA",
+              "season": "2026-27 LALIGA",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882922",
+              "opponent": "Espanyol",
+              "own": {
+                "goals": 0,
+                "corners": 1,
+                "yellow": 0,
+                "shots": 4,
+                "target": 0,
+                "fouls": 7,
+                "offsides": 1,
+                "saves": 3,
+                "red": 0,
+                "possession": 46.3
+              },
+              "against": {
+                "goals": 3,
+                "corners": 1,
+                "yellow": 3,
+                "shots": 16,
+                "target": 6,
+                "fouls": 17,
+                "offsides": 1,
+                "saves": 0,
+                "red": 0,
+                "possession": 53.7
+              }
+            }
+          ]
+        }
+      ],
+      "players": [
+        {
+          "id": "324166",
+          "name": "Luismi Cruz",
+          "team": "Deportivo",
+          "teamId": "90",
+          "position": "AM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 8,
+          "n": 8,
+          "historyN": 8,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 8,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-17T19:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/324166/luismi-cruz",
+          "matches": [
+            {
+              "id": "401882847",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882847",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882863",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882863",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882873",
+              "date": "2026-09-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882873",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882884",
+              "date": "2026-09-13T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882884",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882887",
+              "date": "2026-09-05T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882887",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882904",
+              "date": "2026-08-30T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882904",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882910",
+              "date": "2026-08-24T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882910",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882923",
+              "date": "2026-08-17T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882923",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "297353",
+          "name": "Mario Soriano Carreno",
+          "team": "Deportivo",
+          "teamId": "90",
+          "position": "LM",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 8,
+          "n": 8,
+          "historyN": 8,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 8,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-17T19:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/297353/mario-soriano-carreno",
+          "matches": [
+            {
+              "id": "401882847",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882847",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882863",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882863",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882873",
+              "date": "2026-09-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882873",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882884",
+              "date": "2026-09-13T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882884",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882887",
+              "date": "2026-09-05T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882887",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882904",
+              "date": "2026-08-30T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882904",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882910",
+              "date": "2026-08-24T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882910",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882923",
+              "date": "2026-08-17T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882923",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "414299",
+          "name": "Bil Nsongo",
+          "team": "Deportivo",
+          "teamId": "90",
+          "position": "F",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 8,
+          "n": 8,
+          "historyN": 8,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 0,
+          "goalsN": 8,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-17T19:00Z",
+            "to": "2026-10-11T14:15Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/414299/bil-nsongo",
+          "matches": [
+            {
+              "id": "401882847",
+              "date": "2026-10-11T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882847",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882863",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882863",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882873",
+              "date": "2026-09-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882873",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882884",
+              "date": "2026-09-13T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882884",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882887",
+              "date": "2026-09-05T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882887",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882904",
+              "date": "2026-08-30T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882904",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882910",
+              "date": "2026-08-24T19:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882910",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882923",
+              "date": "2026-08-17T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882923",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "311054",
+          "name": "Iván Romero",
+          "team": "Levante",
+          "teamId": "1538",
+          "position": "CF-R",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 7,
+          "n": 7,
+          "historyN": 7,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 3,
+          "goalsN": 7,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-12T19:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/311054/ivan-romero",
+          "matches": [
+            {
+              "id": "401882852",
+              "date": "2026-10-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882852",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882857",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882857",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882883",
+              "date": "2026-09-13T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882883",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882890",
+              "date": "2026-09-06T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882890",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882902",
+              "date": "2026-08-29T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882902",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882909",
+              "date": "2026-08-24T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882909",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882922",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882922",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "276841",
+          "name": "Adrián de la Fuente",
+          "team": "Levante",
+          "teamId": "1538",
+          "position": "CD-R",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 7,
+          "n": 7,
+          "historyN": 7,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 2,
+          "goalsN": 7,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-12T19:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/276841/adrian-de-la-fuente",
+          "matches": [
+            {
+              "id": "401882852",
+              "date": "2026-10-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882852",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882857",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882857",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882883",
+              "date": "2026-09-13T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882883",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882890",
+              "date": "2026-09-06T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882890",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882902",
+              "date": "2026-08-29T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882902",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882909",
+              "date": "2026-08-24T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882909",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882922",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882922",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        },
+        {
+          "id": "317784",
+          "name": "Jon Ander Olasagasti",
+          "team": "Levante",
+          "teamId": "1538",
+          "position": "CM-L",
+          "starter": null,
+          "lineupStatus": "unknown",
+          "appearances": 7,
+          "n": 7,
+          "historyN": 7,
+          "minutes": null,
+          "minutesN": 0,
+          "goals": 1,
+          "goalsN": 7,
+          "leagueName": "Spanish LALIGA",
+          "season": "2026-27 LALIGA",
+          "period": {
+            "from": "2026-08-16T17:00Z",
+            "to": "2026-10-12T19:00Z"
+          },
+          "source": "https://www.espn.com/soccer/player/_/id/317784/jon-ander-olasagasti",
+          "matches": [
+            {
+              "id": "401882852",
+              "date": "2026-10-12T19:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882852",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882857",
+              "date": "2026-09-20T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882857",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882883",
+              "date": "2026-09-13T14:15Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882883",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882890",
+              "date": "2026-09-06T16:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882890",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882902",
+              "date": "2026-08-29T15:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882902",
+              "minutes": null,
+              "goals": 1
+            },
+            {
+              "id": "401882909",
+              "date": "2026-08-24T17:30Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882909",
+              "minutes": null,
+              "goals": 0
+            },
+            {
+              "id": "401882922",
+              "date": "2026-08-16T17:00Z",
+              "source": "https://www.espn.com/soccer/match/_/gameId/401882922",
+              "minutes": null,
+              "goals": 0
+            }
+          ]
+        }
+      ],
+      "lineups": [],
+      "errors": [],
+      "checkedAt": "2026-10-16T16:22:22.939Z",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401882844"
+    }
+  ]
+}

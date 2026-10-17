@@ -1,0 +1,3940 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-13T17:20:00Z",
+  "lastAttempt": "2026-10-16T16:20:31.751Z",
+  "refreshStatus": "updated",
+  "scheduleEnabled": false,
+  "leagues": [
+    {
+      "id": "epl",
+      "name": "Premier League",
+      "country": "Англия",
+      "code": "EN",
+      "season": "2026/27",
+      "cards": {
+        "n": 60,
+        "avg": 4.08,
+        "home": 1.78,
+        "away": 2.3,
+        "source": "https://footystats.org/england/premier-league/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "Liverpool",
+          "n": 6,
+          "yellow": 2.5,
+          "opp": 2,
+          "over45": 50,
+          "home": 2.33,
+          "away": 2.67
+        },
+        {
+          "name": "Everton",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 1.83,
+          "over45": 33,
+          "home": 1.67,
+          "away": 1.33
+        },
+        {
+          "name": "Ipswich",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 2.33,
+          "over45": 17,
+          "home": 0.67,
+          "away": 2.67
+        },
+        {
+          "name": "Arsenal",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 3.5,
+          "over45": 67,
+          "home": 1.33,
+          "away": 1.33
+        },
+        {
+          "name": "Coventry",
+          "n": 6,
+          "yellow": 0.83,
+          "opp": 1.5,
+          "over45": 17,
+          "home": 0.67,
+          "away": 1
+        },
+        {
+          "name": "Tottenham",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 2.17,
+          "over45": 17,
+          "home": 0.67,
+          "away": 2
+        },
+        {
+          "name": "Sunderland",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 1.33,
+          "over45": 33,
+          "home": 1.67,
+          "away": 2
+        },
+        {
+          "name": "Leeds",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 2.5,
+          "over45": 50,
+          "home": 1,
+          "away": 2.67
+        },
+        {
+          "name": "Man Utd",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 2.67,
+          "over45": 33,
+          "home": 2,
+          "away": 1.33
+        },
+        {
+          "name": "Crystal Palace",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.5,
+          "over45": 17,
+          "home": 1.33,
+          "away": 1.33
+        },
+        {
+          "name": "Brentford",
+          "n": 6,
+          "yellow": 2.67,
+          "opp": 1.67,
+          "over45": 50,
+          "home": 2,
+          "away": 3.33
+        },
+        {
+          "name": "Hull",
+          "n": 6,
+          "yellow": 3.17,
+          "opp": 0.67,
+          "over45": 50,
+          "home": 2,
+          "away": 4.33
+        },
+        {
+          "name": "Nottm Forest",
+          "n": 6,
+          "yellow": 2.5,
+          "opp": 1.83,
+          "over45": 33,
+          "home": 2,
+          "away": 3
+        },
+        {
+          "name": "Brighton",
+          "n": 6,
+          "yellow": 2.17,
+          "opp": 1.33,
+          "over45": 50,
+          "home": 3,
+          "away": 1.33
+        },
+        {
+          "name": "Man City",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.67,
+          "over45": 17,
+          "home": 0.67,
+          "away": 2
+        },
+        {
+          "name": "Newcastle",
+          "n": 6,
+          "yellow": 2.17,
+          "opp": 2.17,
+          "over45": 50,
+          "home": 2.67,
+          "away": 1.67
+        },
+        {
+          "name": "Aston Villa",
+          "n": 6,
+          "yellow": 2,
+          "opp": 2.67,
+          "over45": 50,
+          "home": 2.33,
+          "away": 1.67
+        },
+        {
+          "name": "Bournemouth",
+          "n": 6,
+          "yellow": 3,
+          "opp": 1.33,
+          "over45": 50,
+          "home": 3,
+          "away": 3
+        },
+        {
+          "name": "Fulham",
+          "n": 6,
+          "yellow": 2,
+          "opp": 0.67,
+          "over45": 33,
+          "home": 1.67,
+          "away": 2.33
+        },
+        {
+          "name": "Chelsea",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 3,
+          "over45": 50,
+          "home": 0.67,
+          "away": 2.33
+        }
+      ],
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-premier-league/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": false,
+      "yellowSummary": {
+        "n": 60,
+        "avg": 3.83,
+        "derived": true,
+        "source": "https://www.betaminic.com/statistics/yellow-card-stats-premier-league/",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "corners": [
+        {
+          "name": "Liverpool",
+          "n": 6,
+          "for": 4.17,
+          "against": 4.67,
+          "over95": 33
+        },
+        {
+          "name": "Everton",
+          "n": 6,
+          "for": 5.17,
+          "against": 4.83,
+          "over95": 50
+        },
+        {
+          "name": "Ipswich",
+          "n": 6,
+          "for": 3.33,
+          "against": 5.17,
+          "over95": 17
+        },
+        {
+          "name": "Arsenal",
+          "n": 6,
+          "for": 4.5,
+          "against": 3.33,
+          "over95": 33
+        },
+        {
+          "name": "Coventry",
+          "n": 6,
+          "for": 3.5,
+          "against": 4.83,
+          "over95": 17
+        },
+        {
+          "name": "Tottenham",
+          "n": 6,
+          "for": 7,
+          "against": 4.5,
+          "over95": 83
+        },
+        {
+          "name": "Sunderland",
+          "n": 6,
+          "for": 4.5,
+          "against": 4,
+          "over95": 33
+        },
+        {
+          "name": "Leeds",
+          "n": 6,
+          "for": 4.33,
+          "against": 4.33,
+          "over95": 50
+        },
+        {
+          "name": "Man Utd",
+          "n": 6,
+          "for": 6.67,
+          "against": 3.83,
+          "over95": 50
+        },
+        {
+          "name": "Crystal Palace",
+          "n": 6,
+          "for": 2.83,
+          "against": 5.33,
+          "over95": 17
+        },
+        {
+          "name": "Brentford",
+          "n": 6,
+          "for": 4,
+          "against": 4.5,
+          "over95": 50
+        },
+        {
+          "name": "Hull",
+          "n": 6,
+          "for": 4,
+          "against": 5.83,
+          "over95": 50
+        },
+        {
+          "name": "Nottm Forest",
+          "n": 6,
+          "for": 4.17,
+          "against": 4.67,
+          "over95": 33
+        },
+        {
+          "name": "Brighton",
+          "n": 6,
+          "for": 5.33,
+          "against": 5,
+          "over95": 67
+        },
+        {
+          "name": "Man City",
+          "n": 6,
+          "for": 6.17,
+          "against": 4.33,
+          "over95": 67
+        },
+        {
+          "name": "Newcastle",
+          "n": 6,
+          "for": 4.67,
+          "against": 5.33,
+          "over95": 50
+        },
+        {
+          "name": "Aston Villa",
+          "n": 6,
+          "for": 2.83,
+          "against": 4.33,
+          "over95": 17
+        },
+        {
+          "name": "Bournemouth",
+          "n": 6,
+          "for": 4.67,
+          "against": 4,
+          "over95": 33
+        },
+        {
+          "name": "Fulham",
+          "n": 6,
+          "for": 5.5,
+          "against": 4.67,
+          "over95": 50
+        },
+        {
+          "name": "Chelsea",
+          "n": 6,
+          "for": 5.67,
+          "against": 5.5,
+          "over95": 67
+        }
+      ],
+      "cornerSource": "https://www.betaminic.com/statistics/corner-stats-premier-league/",
+      "cornerCheckedAt": "2026-10-16T16:20:31.751Z",
+      "overview": {
+        "goals": 2.95,
+        "btts": 55,
+        "shots": 27.65,
+        "fouls": 22.85,
+        "source": "https://footystats.org/england/premier-league",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Полная таблица источника; сезон 2026/27"
+    },
+    {
+      "id": "ucl",
+      "name": "Лига чемпионов",
+      "country": "Европа",
+      "code": "EU",
+      "season": "2026/27",
+      "cards": {
+        "n": 126,
+        "avg": 4.33,
+        "home": 2.08,
+        "away": 2.25,
+        "source": "https://footystats.org/europe/uefa-champions-league/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "Shakhtar Donetsk",
+          "n": 1,
+          "yellow": 6,
+          "opp": 3,
+          "over45": 100,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Sabah Baku",
+          "n": 2,
+          "yellow": 2,
+          "opp": 1.5,
+          "over45": 50,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Slovan Bratislava",
+          "n": 2,
+          "yellow": 1,
+          "opp": 1.5,
+          "over45": 0,
+          "home": null,
+          "away": null
+        }
+      ],
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time-europe-champions-league/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "yellowSummary": null,
+      "corners": [],
+      "overview": {
+        "goals": 3.26,
+        "btts": 56,
+        "shots": 24.73,
+        "fouls": 24.18,
+        "source": "https://footystats.org/europe/uefa-champions-league",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Источник отдаёт лишь 3 команды с одним матчем. Это неполная выборка, не рейтинг всей ЛЧ. Сводка турнира включает квалификацию; основной этап отдельно не подтверждён."
+    },
+    {
+      "id": "laliga",
+      "name": "La Liga",
+      "country": "Испания · Примера",
+      "code": "ES",
+      "season": "2026/27",
+      "cards": {
+        "n": 78,
+        "avg": 4.88,
+        "home": 2.38,
+        "away": 2.5,
+        "source": "https://footystats.org/spain/la-liga/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "CD Alaves",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 2.38,
+          "over45": 50,
+          "home": 1.8,
+          "away": 1.67
+        },
+        {
+          "name": "Getafe",
+          "n": 8,
+          "yellow": 3.25,
+          "opp": 2.5,
+          "over45": 75,
+          "home": 2.75,
+          "away": 3.75
+        },
+        {
+          "name": "Valencia",
+          "n": 8,
+          "yellow": 2.13,
+          "opp": 1.88,
+          "over45": 38,
+          "home": 1.75,
+          "away": 2.5
+        },
+        {
+          "name": "Athletic Bilbao",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 1.5,
+          "over45": 33,
+          "home": 1.5,
+          "away": 2.5
+        },
+        {
+          "name": "Celta Vigo",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 2.25,
+          "over45": 50,
+          "home": 0.75,
+          "away": 2.75
+        },
+        {
+          "name": "Real Betis",
+          "n": 8,
+          "yellow": 1.5,
+          "opp": 2.5,
+          "over45": 50,
+          "home": 2.25,
+          "away": 0.75
+        },
+        {
+          "name": "Real Sociedad",
+          "n": 8,
+          "yellow": 2,
+          "opp": 2.75,
+          "over45": 63,
+          "home": 1.75,
+          "away": 2.25
+        },
+        {
+          "name": "Sevilla",
+          "n": 8,
+          "yellow": 3,
+          "opp": 1.88,
+          "over45": 63,
+          "home": 2,
+          "away": 4
+        },
+        {
+          "name": "Racing Santander",
+          "n": 8,
+          "yellow": 2.63,
+          "opp": 2.5,
+          "over45": 75,
+          "home": 2.25,
+          "away": 3
+        },
+        {
+          "name": "Espanyol",
+          "n": 8,
+          "yellow": 3.13,
+          "opp": 2.38,
+          "over45": 75,
+          "home": 3,
+          "away": 3.25
+        },
+        {
+          "name": "Rayo Vallecano",
+          "n": 7,
+          "yellow": 2.43,
+          "opp": 1.71,
+          "over45": 57,
+          "home": 3,
+          "away": 2
+        },
+        {
+          "name": "Villarreal",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 2.63,
+          "over45": 50,
+          "home": 1.33,
+          "away": 2
+        },
+        {
+          "name": "Levante",
+          "n": 7,
+          "yellow": 1,
+          "opp": 2.43,
+          "over45": 29,
+          "home": 1.33,
+          "away": 0.75
+        },
+        {
+          "name": "Deportivo La Coruna",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 1.88,
+          "over45": 25,
+          "home": 1.25,
+          "away": 2.25
+        },
+        {
+          "name": "Elche",
+          "n": 8,
+          "yellow": 2.25,
+          "opp": 1.75,
+          "over45": 38,
+          "home": 2.5,
+          "away": 2
+        },
+        {
+          "name": "Atletico Madrid",
+          "n": 8,
+          "yellow": 1.88,
+          "opp": 1.5,
+          "over45": 13,
+          "home": 2,
+          "away": 1.75
+        },
+        {
+          "name": "Malaga",
+          "n": 8,
+          "yellow": 2.75,
+          "opp": 2.25,
+          "over45": 75,
+          "home": 3.5,
+          "away": 2
+        },
+        {
+          "name": "Real Madrid",
+          "n": 8,
+          "yellow": 2,
+          "opp": 2.75,
+          "over45": 63,
+          "home": 2,
+          "away": 2
+        },
+        {
+          "name": "Osasuna",
+          "n": 8,
+          "yellow": 2.75,
+          "opp": 1.75,
+          "over45": 50,
+          "home": 3,
+          "away": 2.5
+        },
+        {
+          "name": "Barcelona",
+          "n": 8,
+          "yellow": 1.25,
+          "opp": 1.63,
+          "over45": 25,
+          "home": 1.5,
+          "away": 1
+        }
+      ],
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-la-liga/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": false,
+      "yellowSummary": {
+        "n": 78,
+        "avg": 4.3,
+        "derived": true,
+        "source": "https://www.betaminic.com/statistics/yellow-card-stats-la-liga/",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "corners": [
+        {
+          "name": "CD Alaves",
+          "n": 8,
+          "for": 3.75,
+          "against": 5.75,
+          "over95": 50
+        },
+        {
+          "name": "Getafe",
+          "n": 8,
+          "for": 3.75,
+          "against": 5.75,
+          "over95": 50
+        },
+        {
+          "name": "Valencia",
+          "n": 8,
+          "for": 4,
+          "against": 4.25,
+          "over95": 50
+        },
+        {
+          "name": "Athletic Bilbao",
+          "n": 6,
+          "for": 6.17,
+          "against": 4.83,
+          "over95": 67
+        },
+        {
+          "name": "Celta Vigo",
+          "n": 8,
+          "for": 3.13,
+          "against": 4.75,
+          "over95": 25
+        },
+        {
+          "name": "Real Betis",
+          "n": 8,
+          "for": 5.13,
+          "against": 6.63,
+          "over95": 75
+        },
+        {
+          "name": "Real Sociedad",
+          "n": 8,
+          "for": 7.25,
+          "against": 4.88,
+          "over95": 75
+        },
+        {
+          "name": "Sevilla",
+          "n": 8,
+          "for": 3,
+          "against": 3.75,
+          "over95": 25
+        },
+        {
+          "name": "Racing Santander",
+          "n": 8,
+          "for": 4.75,
+          "against": 8.38,
+          "over95": 88
+        },
+        {
+          "name": "Espanyol",
+          "n": 8,
+          "for": 2,
+          "against": 4.5,
+          "over95": 13
+        },
+        {
+          "name": "Rayo Vallecano",
+          "n": 7,
+          "for": 5.29,
+          "against": 6.14,
+          "over95": 57
+        },
+        {
+          "name": "Villarreal",
+          "n": 8,
+          "for": 6.75,
+          "against": 4.38,
+          "over95": 63
+        },
+        {
+          "name": "Levante",
+          "n": 7,
+          "for": 3.29,
+          "against": 5.29,
+          "over95": 43
+        },
+        {
+          "name": "Deportivo La Coruna",
+          "n": 8,
+          "for": 5.5,
+          "against": 5.25,
+          "over95": 50
+        },
+        {
+          "name": "Elche",
+          "n": 8,
+          "for": 4.5,
+          "against": 4,
+          "over95": 25
+        },
+        {
+          "name": "Atletico Madrid",
+          "n": 8,
+          "for": 5.63,
+          "against": 2.63,
+          "over95": 38
+        },
+        {
+          "name": "Malaga",
+          "n": 8,
+          "for": 5.75,
+          "against": 4.88,
+          "over95": 75
+        },
+        {
+          "name": "Real Madrid",
+          "n": 8,
+          "for": 7.13,
+          "against": 4,
+          "over95": 63
+        },
+        {
+          "name": "Osasuna",
+          "n": 8,
+          "for": 3.13,
+          "against": 5,
+          "over95": 25
+        },
+        {
+          "name": "Barcelona",
+          "n": 8,
+          "for": 7.63,
+          "against": 2.5,
+          "over95": 50
+        }
+      ],
+      "cornerSource": "https://www.betaminic.com/statistics/corner-stats-la-liga/",
+      "cornerCheckedAt": "2026-10-16T16:20:31.751Z",
+      "overview": {
+        "goals": 3.09,
+        "btts": 59,
+        "shots": 26.72,
+        "fouls": 24.63,
+        "source": "https://footystats.org/spain/la-liga",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Полная таблица источника; сезон 2026/27"
+    },
+    {
+      "id": "segunda",
+      "name": "Segunda",
+      "country": "Испания · Второй дивизион",
+      "code": "ES",
+      "season": "2026/27",
+      "cards": {
+        "n": 99,
+        "avg": 5.47,
+        "home": 2.32,
+        "away": 3.15,
+        "source": "https://footystats.org/spain/segunda-division/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [],
+      "teamSource": "https://footiqo.com/statistics/leagues/cards/full-time/",
+      "teamCheckedAt": "2026-10-13T17:20:00Z",
+      "partial": true,
+      "yellowSummary": {
+        "n": 95,
+        "avg": 5.07,
+        "home": 2.19,
+        "away": 2.88,
+        "over35": 79,
+        "over45": 58,
+        "over55": 42,
+        "source": "https://footiqo.com/statistics/leagues/cards/full-time/",
+        "checkedAt": "2026-10-13T17:20:00Z"
+      },
+      "corners": [],
+      "overview": {
+        "goals": 2.65,
+        "btts": 49,
+        "shots": 26.04,
+        "fouls": 27.32,
+        "source": "https://footystats.org/spain/segunda-division",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Жёлтые карточки: 95 матчей. Сводка всех карточек: 99 матчей. Разные охваты источников; вычитать показатели нельзя."
+    },
+    {
+      "id": "seriea",
+      "name": "Serie A",
+      "country": "Италия",
+      "code": "IT",
+      "season": "2026/27",
+      "cards": {
+        "n": 60,
+        "avg": 3.42,
+        "home": 1.77,
+        "away": 1.65,
+        "source": "https://footystats.org/italy/serie-a/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "Venezia",
+          "n": 6,
+          "yellow": 3,
+          "opp": 1.17,
+          "over45": 33,
+          "home": 3,
+          "away": 3
+        },
+        {
+          "name": "Genoa",
+          "n": 6,
+          "yellow": 2.5,
+          "opp": 1.83,
+          "over45": 33,
+          "home": 2.5,
+          "away": 2.5
+        },
+        {
+          "name": "Napoli",
+          "n": 6,
+          "yellow": 1,
+          "opp": 1,
+          "over45": 0,
+          "home": 1,
+          "away": 1
+        },
+        {
+          "name": "Udinese",
+          "n": 6,
+          "yellow": 2,
+          "opp": 0.5,
+          "over45": 17,
+          "home": 3.33,
+          "away": 0.67
+        },
+        {
+          "name": "Inter Milan",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.67,
+          "over45": 17,
+          "home": 1,
+          "away": 2
+        },
+        {
+          "name": "Cagliari",
+          "n": 6,
+          "yellow": 1.17,
+          "opp": 1.17,
+          "over45": 0,
+          "home": 1.67,
+          "away": 0.67
+        },
+        {
+          "name": "Como",
+          "n": 6,
+          "yellow": 1,
+          "opp": 2,
+          "over45": 33,
+          "home": 1.5,
+          "away": 0.75
+        },
+        {
+          "name": "Monza",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 1.67,
+          "over45": 17,
+          "home": 2.5,
+          "away": 1.25
+        },
+        {
+          "name": "Parma",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.67,
+          "over45": 33,
+          "home": 1.67,
+          "away": 1
+        },
+        {
+          "name": "Frosinone",
+          "n": 6,
+          "yellow": 2,
+          "opp": 2.5,
+          "over45": 50,
+          "home": 2.33,
+          "away": 1.67
+        },
+        {
+          "name": "Atalanta",
+          "n": 6,
+          "yellow": 0.67,
+          "opp": 0.5,
+          "over45": 0,
+          "home": 0.25,
+          "away": 1.5
+        },
+        {
+          "name": "Torino",
+          "n": 6,
+          "yellow": 0.67,
+          "opp": 1.17,
+          "over45": 0,
+          "home": 0,
+          "away": 1.33
+        },
+        {
+          "name": "Lecce",
+          "n": 6,
+          "yellow": 2.17,
+          "opp": 0.83,
+          "over45": 17,
+          "home": 2,
+          "away": 2.33
+        },
+        {
+          "name": "Juventus",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 2.33,
+          "over45": 17,
+          "home": 1.33,
+          "away": 1.67
+        },
+        {
+          "name": "Sassuolo",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 2.33,
+          "over45": 33,
+          "home": 2,
+          "away": 0.67
+        },
+        {
+          "name": "AC Milan",
+          "n": 6,
+          "yellow": 2,
+          "opp": 1.33,
+          "over45": 33,
+          "home": 0.5,
+          "away": 2.75
+        },
+        {
+          "name": "Bologna",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 2,
+          "over45": 33,
+          "home": 2.33,
+          "away": 1
+        },
+        {
+          "name": "Roma",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 1.5,
+          "over45": 33,
+          "home": 1.67,
+          "away": 2
+        },
+        {
+          "name": "Lazio",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 3.5,
+          "over45": 67,
+          "home": 2,
+          "away": 1.67
+        },
+        {
+          "name": "Fiorentina",
+          "n": 6,
+          "yellow": 2,
+          "opp": 2,
+          "over45": 33,
+          "home": 2,
+          "away": 2
+        }
+      ],
+      "teamSource": "https://www.betaminic.com/es/estadisticas/estadisticas-tarjetas-amarillas-serie-a/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": false,
+      "yellowSummary": {
+        "n": 60,
+        "avg": 3.27,
+        "derived": true,
+        "source": "https://www.betaminic.com/es/estadisticas/estadisticas-tarjetas-amarillas-serie-a/",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "corners": [],
+      "overview": {
+        "goals": 2.87,
+        "btts": 60,
+        "shots": 29.1,
+        "fouls": 22.1,
+        "source": "https://footystats.org/italy/serie-a",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Полная таблица источника; сезон 2026/27"
+    },
+    {
+      "id": "bundesliga",
+      "name": "Bundesliga",
+      "country": "Германия",
+      "code": "DE",
+      "season": "2026/27",
+      "cards": {
+        "n": 45,
+        "avg": 3.62,
+        "home": 1.8,
+        "away": 1.82,
+        "source": "https://footystats.org/germany/bundesliga/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "B. Monchengladbach",
+          "n": 5,
+          "yellow": 3.2,
+          "opp": 1.8,
+          "over45": 40,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Dortmund",
+          "n": 5,
+          "yellow": 2.4,
+          "opp": 1.8,
+          "over45": 40,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Mainz",
+          "n": 5,
+          "yellow": 2.4,
+          "opp": 2.4,
+          "over45": 20,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Union Berlin",
+          "n": 5,
+          "yellow": 2.4,
+          "opp": 1.8,
+          "over45": 20,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Eintracht Frankfurt",
+          "n": 5,
+          "yellow": 2.4,
+          "opp": 1.2,
+          "over45": 20,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Elversberg",
+          "n": 5,
+          "yellow": 1.8,
+          "opp": 1.6,
+          "over45": 20,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Hoffenheim",
+          "n": 5,
+          "yellow": 1.8,
+          "opp": 0.4,
+          "over45": 20,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "FC Koln",
+          "n": 5,
+          "yellow": 1.8,
+          "opp": 1.6,
+          "over45": 0,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Bayer Leverkusen",
+          "n": 5,
+          "yellow": 1.6,
+          "opp": 2.4,
+          "over45": 40,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Augsburg",
+          "n": 5,
+          "yellow": 1.6,
+          "opp": 0.8,
+          "over45": 0,
+          "home": null,
+          "away": null
+        }
+      ],
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time-germany-bundesliga/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "yellowSummary": null,
+      "corners": [],
+      "overview": {
+        "goals": 3.82,
+        "btts": 60,
+        "shots": 31.49,
+        "fouls": 22.2,
+        "source": "https://footystats.org/germany/bundesliga",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Доступны 10 команд из первой страницы источника. Это неполная таблица."
+    },
+    {
+      "id": "ligue1",
+      "name": "Ligue 1",
+      "country": "Франция",
+      "code": "FR",
+      "season": "2026/27",
+      "cards": {
+        "n": 54,
+        "avg": 3.54,
+        "home": 1.83,
+        "away": 1.7,
+        "source": "https://footystats.org/france/ligue-1/card-stats",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teams": [
+        {
+          "name": "Marseille",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 2.33,
+          "over45": 17,
+          "home": 1.33,
+          "away": 1.33
+        },
+        {
+          "name": "Toulouse",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 1.33,
+          "over45": 17,
+          "home": 1.67,
+          "away": 1.67
+        },
+        {
+          "name": "Le Mans",
+          "n": 6,
+          "yellow": 2.5,
+          "opp": 2,
+          "over45": 67,
+          "home": 2,
+          "away": 3
+        },
+        {
+          "name": "Brest",
+          "n": 6,
+          "yellow": 1.17,
+          "opp": 1.5,
+          "over45": 17,
+          "home": 1.33,
+          "away": 1
+        },
+        {
+          "name": "Lorient",
+          "n": 6,
+          "yellow": 1,
+          "opp": 2,
+          "over45": 33,
+          "home": 0.67,
+          "away": 1.33
+        },
+        {
+          "name": "Lyon",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 1.67,
+          "over45": 17,
+          "home": 2,
+          "away": 1.33
+        },
+        {
+          "name": "Paris FC",
+          "n": 6,
+          "yellow": 2.17,
+          "opp": 1.17,
+          "over45": 33,
+          "home": 1.67,
+          "away": 2.67
+        },
+        {
+          "name": "Strasbourg",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 1.5,
+          "over45": 17,
+          "home": 1.5,
+          "away": 1.5
+        },
+        {
+          "name": "Lens",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 1.33,
+          "over45": 17,
+          "home": 1.67,
+          "away": 2
+        },
+        {
+          "name": "Troyes",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 1.17,
+          "over45": 33,
+          "home": 2.33,
+          "away": 0.67
+        },
+        {
+          "name": "Nice",
+          "n": 6,
+          "yellow": 1.5,
+          "opp": 0.83,
+          "over45": 0,
+          "home": 1.75,
+          "away": 1
+        },
+        {
+          "name": "Auxerre",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.83,
+          "over45": 17,
+          "home": 1.67,
+          "away": 1
+        },
+        {
+          "name": "Angers",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 1.67,
+          "over45": 33,
+          "home": 2,
+          "away": 1.33
+        },
+        {
+          "name": "Le Havre",
+          "n": 6,
+          "yellow": 1.67,
+          "opp": 1.5,
+          "over45": 17,
+          "home": 1.67,
+          "away": 1.67
+        },
+        {
+          "name": "Rennes",
+          "n": 6,
+          "yellow": 2.17,
+          "opp": 2,
+          "over45": 33,
+          "home": 2.5,
+          "away": 1.5
+        },
+        {
+          "name": "Lille",
+          "n": 6,
+          "yellow": 1.33,
+          "opp": 1.5,
+          "over45": 0,
+          "home": 1.67,
+          "away": 1
+        },
+        {
+          "name": "Monaco",
+          "n": 6,
+          "yellow": 1.83,
+          "opp": 1.33,
+          "over45": 17,
+          "home": 2.33,
+          "away": 1.33
+        },
+        {
+          "name": "PSG",
+          "n": 6,
+          "yellow": 1.17,
+          "opp": 2.33,
+          "over45": 17,
+          "home": 0.5,
+          "away": 1.5
+        }
+      ],
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-ligue-1/",
+      "teamCheckedAt": "2026-10-16T16:20:31.751Z",
+      "partial": false,
+      "yellowSummary": {
+        "n": 54,
+        "avg": 3.22,
+        "derived": true,
+        "source": "https://www.betaminic.com/statistics/yellow-card-stats-ligue-1/",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "corners": [
+        {
+          "name": "Marseille",
+          "n": 6,
+          "for": 4.33,
+          "against": 4.83,
+          "over95": 33
+        },
+        {
+          "name": "Toulouse",
+          "n": 6,
+          "for": 4.5,
+          "against": 4.83,
+          "over95": 33
+        },
+        {
+          "name": "Le Mans",
+          "n": 6,
+          "for": 2.83,
+          "against": 6.5,
+          "over95": 50
+        },
+        {
+          "name": "Brest",
+          "n": 6,
+          "for": 5.33,
+          "against": 3.83,
+          "over95": 50
+        },
+        {
+          "name": "Lorient",
+          "n": 6,
+          "for": 2.5,
+          "against": 5.83,
+          "over95": 33
+        },
+        {
+          "name": "Lyon",
+          "n": 6,
+          "for": 4.83,
+          "against": 5.83,
+          "over95": 83
+        },
+        {
+          "name": "Paris FC",
+          "n": 6,
+          "for": 4,
+          "against": 3.5,
+          "over95": 17
+        },
+        {
+          "name": "Strasbourg",
+          "n": 6,
+          "for": 1.83,
+          "against": 4.83,
+          "over95": 17
+        },
+        {
+          "name": "Lens",
+          "n": 6,
+          "for": 6.5,
+          "against": 3,
+          "over95": 67
+        },
+        {
+          "name": "Troyes",
+          "n": 6,
+          "for": 7.33,
+          "against": 1.83,
+          "over95": 33
+        },
+        {
+          "name": "Nice",
+          "n": 6,
+          "for": 5.17,
+          "against": 3.33,
+          "over95": 50
+        },
+        {
+          "name": "Auxerre",
+          "n": 6,
+          "for": 5.83,
+          "against": 7.67,
+          "over95": 100
+        },
+        {
+          "name": "Angers",
+          "n": 6,
+          "for": 7.17,
+          "against": 5.83,
+          "over95": 83
+        },
+        {
+          "name": "Le Havre",
+          "n": 6,
+          "for": 5.5,
+          "against": 5,
+          "over95": 83
+        },
+        {
+          "name": "Rennes",
+          "n": 6,
+          "for": 6.17,
+          "against": 6.83,
+          "over95": 83
+        },
+        {
+          "name": "Lille",
+          "n": 6,
+          "for": 3,
+          "against": 5.33,
+          "over95": 33
+        },
+        {
+          "name": "Monaco",
+          "n": 6,
+          "for": 3.67,
+          "against": 5.67,
+          "over95": 50
+        },
+        {
+          "name": "PSG",
+          "n": 6,
+          "for": 5.67,
+          "against": 1.67,
+          "over95": 33
+        }
+      ],
+      "cornerSource": "https://www.betaminic.com/statistics/corner-stats-ligue-1/",
+      "cornerCheckedAt": "2026-10-16T16:20:31.751Z",
+      "overview": {
+        "goals": 2.91,
+        "btts": 61,
+        "shots": 27.56,
+        "fouls": 23.7,
+        "source": "https://footystats.org/france/ligue-1",
+        "checkedAt": "2026-10-16T16:20:31.751Z"
+      },
+      "teamNote": "Полная таблица источника; сезон 2026/27"
+    },
+    {
+      "id": "superlig",
+      "name": "Süper Lig",
+      "country": "Турция",
+      "code": "TR",
+      "season": "2026/27",
+      "cards": {
+        "avg": 4.33,
+        "home": 2.19,
+        "away": 2.14,
+        "n": 63,
+        "source": "https://footystats.org/turkey/super-lig/card-stats",
+        "checkedAt": "2026-10-16T17:19:50.705919+00:00"
+      },
+      "teams": [
+        {
+          "name": "Alanyaspor",
+          "n": 7,
+          "yellow": 1.43,
+          "opp": 2.43,
+          "over45": 43,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Amedspor",
+          "n": 7,
+          "yellow": 3.14,
+          "opp": 2.71,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Basaksehir",
+          "n": 7,
+          "yellow": 2.14,
+          "opp": 1.57,
+          "over45": 29,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Besiktas",
+          "n": 7,
+          "yellow": 2.29,
+          "opp": 2.71,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Corum",
+          "n": 7,
+          "yellow": 2.29,
+          "opp": 1.43,
+          "over45": 43,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Erzurumspor",
+          "n": 7,
+          "yellow": 1.57,
+          "opp": 2.29,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Eyupspor",
+          "n": 7,
+          "yellow": 1.57,
+          "opp": 1.57,
+          "over45": 14,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Fenerbahce",
+          "n": 7,
+          "yellow": 1.43,
+          "opp": 1.57,
+          "over45": 29,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Galatasaray",
+          "n": 7,
+          "yellow": 1.71,
+          "opp": 2.14,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Gaziantep",
+          "n": 7,
+          "yellow": 2.14,
+          "opp": 2.14,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Genclerbirligi",
+          "n": 7,
+          "yellow": 2.14,
+          "opp": 2.43,
+          "over45": 43,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Goztepe",
+          "n": 7,
+          "yellow": 2.71,
+          "opp": 1.71,
+          "over45": 43,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Kasimpasa",
+          "n": 7,
+          "yellow": 3,
+          "opp": 2.29,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Kocaelispor",
+          "n": 7,
+          "yellow": 1.57,
+          "opp": 1.57,
+          "over45": 14,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Konyaspor",
+          "n": 7,
+          "yellow": 2.29,
+          "opp": 2,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Rizespor",
+          "n": 7,
+          "yellow": 1.71,
+          "opp": 1.29,
+          "over45": 29,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Samsunspor",
+          "n": 7,
+          "yellow": 0.86,
+          "opp": 1.86,
+          "over45": 29,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Trabzonspor",
+          "n": 7,
+          "yellow": 2.29,
+          "opp": 2.57,
+          "over45": 57,
+          "home": null,
+          "away": null
+        }
+      ],
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time/",
+      "teamCheckedAt": "2026-10-16T17:21:23.707138+00:00",
+      "partial": false,
+      "yellowSummary": null,
+      "corners": [],
+      "cornerSource": null,
+      "cornerCheckedAt": null,
+      "overview": {
+        "goals": 2.94,
+        "btts": 44,
+        "shots": 28.17,
+        "fouls": 25.3,
+        "source": "https://footystats.org/turkey/super-lig",
+        "checkedAt": "2026-10-16T17:19:45.236520+00:00"
+      },
+      "teamNote": "Footiqo обозначает период как «текущий сезон» без номера года. Все 18 команд источника; объём выборки сопоставлен со сводкой 2026/27, но даты всех матчей не проверены. Автообновление таблицы не подключено; дом/выезд и угловые не подтверждены.",
+      "teamRefreshMode": "snapshot",
+      "teamPeriod": "ЖК · текущий сезон Footiqo · отдельный сохранённый срез",
+      "teamSeasonConfirmed": false
+    },
+    {
+      "id": "primeira",
+      "name": "Primeira Liga",
+      "country": "Португалия",
+      "code": "PT",
+      "season": "2026/27",
+      "cards": {
+        "avg": 4.58,
+        "home": 2.04,
+        "away": 2.54,
+        "n": 71,
+        "source": "https://footystats.org/portugal/liga-nos/card-stats",
+        "checkedAt": "2026-10-16T17:19:50.782181+00:00"
+      },
+      "teams": [
+        {
+          "name": "Academico Viseu",
+          "n": 8,
+          "yellow": 2.88,
+          "opp": 1.63,
+          "over45": 50,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Alverca",
+          "n": 8,
+          "yellow": 2.25,
+          "opp": 2,
+          "over45": 38,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Arouca",
+          "n": 8,
+          "yellow": 3,
+          "opp": 2.88,
+          "over45": 75,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Benfica",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 3.13,
+          "over45": 75,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Braga",
+          "n": 7,
+          "yellow": 1.86,
+          "opp": 2.71,
+          "over45": 57,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Casa Pia",
+          "n": 8,
+          "yellow": 2.25,
+          "opp": 2.13,
+          "over45": 38,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Estoril",
+          "n": 8,
+          "yellow": 2.38,
+          "opp": 1.38,
+          "over45": 38,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Estrela",
+          "n": 8,
+          "yellow": 2.38,
+          "opp": 2.38,
+          "over45": 63,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Famalicao",
+          "n": 8,
+          "yellow": 2.25,
+          "opp": 2.25,
+          "over45": 50,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "FC Porto",
+          "n": 8,
+          "yellow": 1,
+          "opp": 1.75,
+          "over45": 25,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Gil Vicente",
+          "n": 7,
+          "yellow": 2,
+          "opp": 2,
+          "over45": 43,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Maritimo",
+          "n": 8,
+          "yellow": 1.75,
+          "opp": 2.25,
+          "over45": 25,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Moreirense",
+          "n": 8,
+          "yellow": 2.63,
+          "opp": 2,
+          "over45": 50,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Nacional",
+          "n": 8,
+          "yellow": 1.13,
+          "opp": 2.38,
+          "over45": 13,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Rio Ave",
+          "n": 8,
+          "yellow": 1.5,
+          "opp": 1.13,
+          "over45": 13,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Santa Clara",
+          "n": 8,
+          "yellow": 2.88,
+          "opp": 2.13,
+          "over45": 38,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Sporting CP",
+          "n": 8,
+          "yellow": 2.38,
+          "opp": 2.38,
+          "over45": 38,
+          "home": null,
+          "away": null
+        },
+        {
+          "name": "Vitoria Guimaraes",
+          "n": 8,
+          "yellow": 2.63,
+          "opp": 2.5,
+          "over45": 63,
+          "home": null,
+          "away": null
+        }
+      ],
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time/",
+      "teamCheckedAt": "2026-10-16T17:29:04.254995+00:00",
+      "partial": false,
+      "yellowSummary": null,
+      "corners": [],
+      "cornerSource": null,
+      "cornerCheckedAt": null,
+      "overview": {
+        "goals": 2.75,
+        "btts": 51,
+        "shots": 24.52,
+        "fouls": 25.23,
+        "source": "https://footystats.org/portugal/liga-nos",
+        "checkedAt": "2026-10-16T17:19:45.239810+00:00"
+      },
+      "teamNote": "Footiqo обозначает период как «текущий сезон» без номера года. Все 18 команд источника; объём выборки сопоставлен со сводкой 2026/27, но даты всех матчей не проверены. Автообновление таблицы не подключено; дом/выезд и угловые не подтверждены.",
+      "teamRefreshMode": "snapshot",
+      "teamPeriod": "ЖК · текущий сезон Footiqo · отдельный сохранённый срез",
+      "teamSeasonConfirmed": false
+    }
+  ],
+  "referees": [
+    {
+      "name": "Adrian Cordero Vega",
+      "league": "La Liga",
+      "n": 2,
+      "yellow": 6.5,
+      "over45": 100,
+      "careerN": null,
+      "careerYellow": null
+    },
+    {
+      "name": "Alejandro Hernandez",
+      "league": "La Liga",
+      "n": 3,
+      "yellow": 6,
+      "over45": 100,
+      "careerN": null,
+      "careerYellow": null
+    },
+    {
+      "name": "Alejandro Quintero Gonzalez",
+      "league": "La Liga",
+      "n": 3,
+      "yellow": 3,
+      "over45": 33,
+      "careerN": null,
+      "careerYellow": null
+    }
+  ],
+  "refSource": "https://footiqo.com/statistics/referees/cards/full-time/",
+  "refCheckedAt": "2026-10-16T16:20:31.751Z",
+  "updatedFields": 31,
+  "refreshErrors": [],
+  "parserVersion": 6,
+  "refereesByLeague": {
+    "epl": {
+      "rows": [
+        {
+          "name": "Stuart Attwell",
+          "n": 4,
+          "yellowTotal": 25,
+          "yellow": 6.25,
+          "yellowN": 4,
+          "red": 0.5,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Peter Bankes",
+          "n": 4,
+          "yellowTotal": 14,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Sam Barrott",
+          "n": 4,
+          "yellowTotal": 13,
+          "yellow": 3.25,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Thomas Bramall",
+          "n": 4,
+          "yellowTotal": 9,
+          "yellow": 2.25,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "John Brooks",
+          "n": 4,
+          "yellowTotal": 20,
+          "yellow": 5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Darren England",
+          "n": 4,
+          "yellowTotal": 14,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Jarred Gillett",
+          "n": 4,
+          "yellowTotal": 15,
+          "yellow": 3.75,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Farai Hallam",
+          "n": 2,
+          "yellowTotal": 9,
+          "yellow": 4.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Tony Harrington",
+          "n": 3,
+          "yellowTotal": 10,
+          "yellow": 3.3333333333333335,
+          "yellowN": 3,
+          "red": 0.3333333333333333,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Adam Herczeg",
+          "n": 1,
+          "yellowTotal": 5,
+          "yellow": 5,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Robert Jones",
+          "n": 3,
+          "yellowTotal": 9,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Chris Kavanagh",
+          "n": 4,
+          "yellowTotal": 21,
+          "yellow": 5.25,
+          "yellowN": 4,
+          "red": 0.5,
+          "redN": 4,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Andy Madley",
+          "n": 3,
+          "yellowTotal": 12,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Michael Oliver",
+          "n": 5,
+          "yellowTotal": 14,
+          "yellow": 2.8,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Craig Pawson",
+          "n": 3,
+          "yellowTotal": 15,
+          "yellow": 5,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Michael Salisbury",
+          "n": 3,
+          "yellowTotal": 7,
+          "yellow": 2.3333333333333335,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Josh Smith",
+          "n": 1,
+          "yellowTotal": 5,
+          "yellow": 5,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Lewis Smith",
+          "n": 1,
+          "yellowTotal": 6,
+          "yellow": 6,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Paul Tierney",
+          "n": 3,
+          "yellowTotal": 9,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": null,
+          "foulsN": null
+        }
+      ],
+      "source": "https://www.soccerbase.com/referees/home.sd",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": false,
+      "secondary": {
+        "rows": [
+          {
+            "name": "M. Oliver",
+            "n": 4,
+            "yellow": 2.75,
+            "yellowN": 4,
+            "red": 0.25,
+            "redN": 4,
+            "fouls": 22.75,
+            "foulsN": 4
+          },
+          {
+            "name": "A. Madley",
+            "n": 3,
+            "yellow": 4,
+            "yellowN": 3,
+            "red": 0,
+            "redN": 3,
+            "fouls": 21,
+            "foulsN": 3
+          },
+          {
+            "name": "Chris Kavanagh",
+            "n": 3,
+            "yellow": 5,
+            "yellowN": 3,
+            "red": 0.33,
+            "redN": 3,
+            "fouls": 25.33,
+            "foulsN": 3
+          },
+          {
+            "name": "D. England",
+            "n": 3,
+            "yellow": 3,
+            "yellowN": 3,
+            "red": 0,
+            "redN": 3,
+            "fouls": 20,
+            "foulsN": 3
+          },
+          {
+            "name": "J. Brooks",
+            "n": 3,
+            "yellow": 6.33,
+            "yellowN": 3,
+            "red": 0.33,
+            "redN": 3,
+            "fouls": 22,
+            "foulsN": 3
+          },
+          {
+            "name": "J. Gillett",
+            "n": 3,
+            "yellow": 4.33,
+            "yellowN": 3,
+            "red": 0,
+            "redN": 3,
+            "fouls": 22.67,
+            "foulsN": 3
+          },
+          {
+            "name": "T. Bramall",
+            "n": 3,
+            "yellow": 2.67,
+            "yellowN": 3,
+            "red": 0,
+            "redN": 3,
+            "fouls": 23.33,
+            "foulsN": 3
+          },
+          {
+            "name": "C. Pawson",
+            "n": 2,
+            "yellow": 4,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 27.5,
+            "foulsN": 2
+          },
+          {
+            "name": "F. Hallam",
+            "n": 2,
+            "yellow": 4.5,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 22.5,
+            "foulsN": 2
+          },
+          {
+            "name": "M. Salisbury",
+            "n": 2,
+            "yellow": 2.5,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 23,
+            "foulsN": 2
+          },
+          {
+            "name": "Paul Tierney",
+            "n": 2,
+            "yellow": 2,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 22,
+            "foulsN": 2
+          },
+          {
+            "name": "P. Bankes",
+            "n": 2,
+            "yellow": 4,
+            "yellowN": 2,
+            "red": 0.5,
+            "redN": 2,
+            "fouls": 23.5,
+            "foulsN": 2
+          },
+          {
+            "name": "R. Jones",
+            "n": 2,
+            "yellow": 4,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 32.5,
+            "foulsN": 2
+          },
+          {
+            "name": "S. Attwell",
+            "n": 2,
+            "yellow": 7,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 30,
+            "foulsN": 2
+          },
+          {
+            "name": "S. Barrott",
+            "n": 2,
+            "yellow": 3,
+            "yellowN": 2,
+            "red": 0,
+            "redN": 2,
+            "fouls": 18,
+            "foulsN": 2
+          },
+          {
+            "name": "T. Harrington",
+            "n": 2,
+            "yellow": 2,
+            "yellowN": 2,
+            "red": 0.5,
+            "redN": 2,
+            "fouls": 21,
+            "foulsN": 2
+          },
+          {
+            "name": "J. Smith",
+            "n": 1,
+            "yellow": 5,
+            "yellowN": 1,
+            "red": 0,
+            "redN": 1,
+            "fouls": 19,
+            "foulsN": 1
+          }
+        ],
+        "source": "https://valuestats.com/en/league/premier-league/referees/",
+        "checkedAt": "2026-10-13T17:40:00Z"
+      },
+      "refreshError": null
+    },
+    "laliga": {
+      "rows": [
+        {
+          "name": "F. Hernández Maeso",
+          "n": 5,
+          "yellow": 3.6,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 20.6,
+          "foulsN": 5
+        },
+        {
+          "name": "I. Díaz de Mera Escuderos",
+          "n": 5,
+          "yellow": 5.4,
+          "yellowN": 5,
+          "red": 0.4,
+          "redN": 5,
+          "fouls": 20.6,
+          "foulsN": 5
+        },
+        {
+          "name": "J. Alberola Rojas",
+          "n": 5,
+          "yellow": 4.8,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 33,
+          "foulsN": 5
+        },
+        {
+          "name": "M. Ortiz Arias",
+          "n": 5,
+          "yellow": 4.2,
+          "yellowN": 5,
+          "red": 0.6,
+          "redN": 5,
+          "fouls": 21.4,
+          "foulsN": 5
+        },
+        {
+          "name": "M. Sesma Espinosa",
+          "n": 5,
+          "yellow": 4.2,
+          "yellowN": 5,
+          "red": 0.8,
+          "redN": 5,
+          "fouls": 25.8,
+          "foulsN": 5
+        },
+        {
+          "name": "Carlos Muñiz Muñoz",
+          "n": 4,
+          "yellow": 3.75,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 26,
+          "foulsN": 4
+        },
+        {
+          "name": "J. Gil Manzano",
+          "n": 4,
+          "yellow": 5.25,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 27.75,
+          "foulsN": 4
+        },
+        {
+          "name": "J. González Esteban",
+          "n": 4,
+          "yellow": 4.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 24.25,
+          "foulsN": 4
+        },
+        {
+          "name": "J. Martínez Munuera",
+          "n": 4,
+          "yellow": 2.5,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 22.25,
+          "foulsN": 4
+        },
+        {
+          "name": "J. Munuera Montero",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 21.25,
+          "foulsN": 4
+        },
+        {
+          "name": "Manuel Jesús Orellana Cid",
+          "n": 4,
+          "yellow": 6,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 29.75,
+          "foulsN": 4
+        },
+        {
+          "name": "M. Busquets Ferrer",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 20.5,
+          "foulsN": 4
+        },
+        {
+          "name": "R. De Burgos Bengoetxea",
+          "n": 4,
+          "yellow": 5.25,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 24.75,
+          "foulsN": 4
+        },
+        {
+          "name": "V. García Verdura",
+          "n": 4,
+          "yellow": 2.75,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 24,
+          "foulsN": 4
+        },
+        {
+          "name": "A. Hernández Hernández",
+          "n": 3,
+          "yellow": 5.67,
+          "yellowN": 3,
+          "red": 0.67,
+          "redN": 3,
+          "fouls": 26.67,
+          "foulsN": 3
+        },
+        {
+          "name": "A. Quintero González",
+          "n": 3,
+          "yellow": 3.33,
+          "yellowN": 3,
+          "red": 1,
+          "redN": 3,
+          "fouls": 25.67,
+          "foulsN": 3
+        },
+        {
+          "name": "C. Soto Grado",
+          "n": 3,
+          "yellow": 4.67,
+          "yellowN": 3,
+          "red": 0.67,
+          "redN": 3,
+          "fouls": 19.67,
+          "foulsN": 3
+        },
+        {
+          "name": "J. Sánchez Martínez",
+          "n": 3,
+          "yellow": 5,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 30,
+          "foulsN": 3
+        }
+      ],
+      "source": "https://valuestats.com/en/league/la-liga/referees/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "segunda": {
+      "rows": [
+        {
+          "name": "A. Domínguez Cervantes",
+          "n": 5,
+          "yellow": 5.2,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 26.8,
+          "foulsN": 5
+        },
+        {
+          "name": "A. Fuentes Molina",
+          "n": 5,
+          "yellow": 6.6,
+          "yellowN": 5,
+          "red": 0.6,
+          "redN": 5,
+          "fouls": 27.2,
+          "foulsN": 5
+        },
+        {
+          "name": "D. Miranda Bolaño",
+          "n": 5,
+          "yellow": 5.4,
+          "yellowN": 5,
+          "red": 0.4,
+          "redN": 5,
+          "fouls": 27.8,
+          "foulsN": 5
+        },
+        {
+          "name": "D. Palencia Caballero",
+          "n": 5,
+          "yellow": 6.2,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 34.2,
+          "foulsN": 5
+        },
+        {
+          "name": "E. Mallo Fernández",
+          "n": 5,
+          "yellow": 5.4,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 28.8,
+          "foulsN": 5
+        },
+        {
+          "name": "Gorka Etayo Herrera",
+          "n": 5,
+          "yellow": 4.4,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 27.6,
+          "foulsN": 5
+        },
+        {
+          "name": "G. Romero Freixas",
+          "n": 5,
+          "yellow": 5.2,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 30.8,
+          "foulsN": 5
+        },
+        {
+          "name": "I. Galech Apezteguía",
+          "n": 5,
+          "yellow": 4.8,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 27.4,
+          "foulsN": 5
+        },
+        {
+          "name": "J. Guzmán Mansilla",
+          "n": 5,
+          "yellow": 4,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 28.2,
+          "foulsN": 5
+        },
+        {
+          "name": "M. Pérez Hernández",
+          "n": 5,
+          "yellow": 7,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 27.8,
+          "foulsN": 5
+        },
+        {
+          "name": "O. Rivera Olmedo",
+          "n": 5,
+          "yellow": 4.4,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 24.2,
+          "foulsN": 5
+        },
+        {
+          "name": "P. Morales Moreno",
+          "n": 5,
+          "yellow": 4.2,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 30,
+          "foulsN": 5
+        },
+        {
+          "name": "R. Sánchez López",
+          "n": 5,
+          "yellow": 4.8,
+          "yellowN": 5,
+          "red": 0,
+          "redN": 5,
+          "fouls": 28,
+          "foulsN": 5
+        },
+        {
+          "name": "S. Lax Franco",
+          "n": 5,
+          "yellow": 4.6,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 19.8,
+          "foulsN": 5
+        },
+        {
+          "name": "Alejandro Morilla Turrión",
+          "n": 4,
+          "yellow": 4.25,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 27.5,
+          "foulsN": 4
+        },
+        {
+          "name": "A. Ojaos Valera",
+          "n": 4,
+          "yellow": 5.75,
+          "yellowN": 4,
+          "red": 0.75,
+          "redN": 4,
+          "fouls": 23.75,
+          "foulsN": 4
+        },
+        {
+          "name": "G. Cid Camacho",
+          "n": 4,
+          "yellow": 6,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 25,
+          "foulsN": 4
+        },
+        {
+          "name": "J. Gordillo Escamilla",
+          "n": 4,
+          "yellow": 7,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 26,
+          "foulsN": 4
+        }
+      ],
+      "source": "https://valuestats.com/en/league/la-liga-2/referees/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "ucl": {
+      "rows": [
+        {
+          "name": "G. Nyberg",
+          "n": 4,
+          "yellow": 1.75,
+          "yellowN": 4,
+          "red": 0.5,
+          "redN": 4,
+          "fouls": 21.75,
+          "foulsN": 4
+        },
+        {
+          "name": "D. Massa",
+          "n": 3,
+          "yellow": 2.67,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 20.33,
+          "foulsN": 3
+        },
+        {
+          "name": "M. Oliver",
+          "n": 3,
+          "yellow": 3.67,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 21,
+          "foulsN": 3
+        },
+        {
+          "name": "Serdar Gozubuyuk",
+          "n": 3,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 19.67,
+          "foulsN": 3
+        },
+        {
+          "name": "S. Marciniak",
+          "n": 3,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 31.67,
+          "foulsN": 3
+        },
+        {
+          "name": "Sven Jablonski",
+          "n": 3,
+          "yellow": 2.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 23,
+          "foulsN": 3
+        },
+        {
+          "name": "A. Hernández Hernández",
+          "n": 2,
+          "yellow": 5.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 26,
+          "foulsN": 2
+        },
+        {
+          "name": "Chris Kavanagh",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 31,
+          "foulsN": 2
+        },
+        {
+          "name": "C. Turpin",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 27,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Rumšas",
+          "n": 2,
+          "yellow": 3,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 26.5,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Siebert",
+          "n": 2,
+          "yellow": 6,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23.5,
+          "foulsN": 2
+        },
+        {
+          "name": "F. Letexier",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2
+        },
+        {
+          "name": "F. Zwayer",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23.5,
+          "foulsN": 2
+        },
+        {
+          "name": "G. Kabakov",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 1,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2
+        },
+        {
+          "name": "I. Kovacs",
+          "n": 2,
+          "yellow": 6.5,
+          "yellowN": 2,
+          "red": 2.5,
+          "redN": 2,
+          "fouls": 27.5,
+          "foulsN": 2
+        },
+        {
+          "name": "I. Kružliak",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 18.5,
+          "foulsN": 2
+        },
+        {
+          "name": "I. Peljto",
+          "n": 2,
+          "yellow": 5.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 25.5,
+          "foulsN": 2
+        },
+        {
+          "name": "J. Gil Manzano",
+          "n": 2,
+          "yellow": 7.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 28.5,
+          "foulsN": 2
+        }
+      ],
+      "source": "https://valuestats.com/en/league/champions-league/referees/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "ligue1": {
+      "rows": [
+        {
+          "name": "J. Stinat",
+          "n": 5,
+          "yellow": 3.4,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 24,
+          "foulsN": 5
+        },
+        {
+          "name": "E. Wattellier",
+          "n": 4,
+          "yellow": 3,
+          "yellowN": 4,
+          "red": 0.5,
+          "redN": 4,
+          "fouls": 19.25,
+          "foulsN": 4
+        },
+        {
+          "name": "G. Paradis",
+          "n": 4,
+          "yellow": 3,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 28.25,
+          "foulsN": 4
+        },
+        {
+          "name": "J. Brisard",
+          "n": 4,
+          "yellow": 4,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 27.75,
+          "foulsN": 4
+        },
+        {
+          "name": "Mathieu Vernice",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 24.75,
+          "foulsN": 4
+        },
+        {
+          "name": "R. Buquet",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 22.75,
+          "foulsN": 4
+        },
+        {
+          "name": "Willy Delajod",
+          "n": 4,
+          "yellow": 3.75,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 21.75,
+          "foulsN": 4
+        },
+        {
+          "name": "B. Dechepy",
+          "n": 3,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 21,
+          "foulsN": 3
+        },
+        {
+          "name": "F. Letexier",
+          "n": 3,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 16.67,
+          "foulsN": 3
+        },
+        {
+          "name": "H. Ben El Hadj",
+          "n": 3,
+          "yellow": 4.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 27.33,
+          "foulsN": 3
+        },
+        {
+          "name": "J. Pignard",
+          "n": 3,
+          "yellow": 3.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 17,
+          "foulsN": 3
+        },
+        {
+          "name": "Romain Lissorgue",
+          "n": 3,
+          "yellow": 2.33,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 28,
+          "foulsN": 3
+        },
+        {
+          "name": "A. Petit",
+          "n": 2,
+          "yellow": 1.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 26,
+          "foulsN": 2
+        },
+        {
+          "name": "A. Souifi",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 24.5,
+          "foulsN": 2
+        },
+        {
+          "name": "C. Turpin",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23,
+          "foulsN": 2
+        },
+        {
+          "name": "Geoffrey Kubler",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 27.5,
+          "foulsN": 2
+        },
+        {
+          "name": "M. Bollengier",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 27.5,
+          "foulsN": 2
+        }
+      ],
+      "source": "https://valuestats.com/en/league/ligue-1/referees/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "seriea": {
+      "rows": [
+        {
+          "name": "F. Fourneau",
+          "n": 3,
+          "yellow": 4.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 25.33,
+          "foulsN": 3
+        },
+        {
+          "name": "F. Maresca",
+          "n": 3,
+          "yellow": 6,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 28.33,
+          "foulsN": 3
+        },
+        {
+          "name": "L. Pairetto",
+          "n": 3,
+          "yellow": 2.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 19,
+          "foulsN": 3
+        },
+        {
+          "name": "M. Marcenaro",
+          "n": 3,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 23.67,
+          "foulsN": 3
+        },
+        {
+          "name": "Valerio Crezzini",
+          "n": 3,
+          "yellow": 1,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 20,
+          "foulsN": 3
+        },
+        {
+          "name": "A. Arena",
+          "n": 2,
+          "yellow": 1.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 20.5,
+          "foulsN": 2
+        },
+        {
+          "name": "A. Rapuano",
+          "n": 2,
+          "yellow": 4.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Chiffi",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Doveri",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21.5,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Massa",
+          "n": 2,
+          "yellow": 3,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21,
+          "foulsN": 2
+        },
+        {
+          "name": "D. Perenzoni",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 22.5,
+          "foulsN": 2
+        },
+        {
+          "name": "E. Feliciani",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2
+        },
+        {
+          "name": "Federico La Penna",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 28,
+          "foulsN": 2
+        },
+        {
+          "name": "G. Collu",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 27,
+          "foulsN": 2
+        },
+        {
+          "name": "Gianluca Manganiello",
+          "n": 2,
+          "yellow": 3,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 18.5,
+          "foulsN": 2
+        },
+        {
+          "name": "Juan Luca Sacchi",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21.5,
+          "foulsN": 2
+        },
+        {
+          "name": "K. Bonacina",
+          "n": 2,
+          "yellow": 0.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23.5,
+          "foulsN": 2
+        },
+        {
+          "name": "L. Zufferli",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 19.5,
+          "foulsN": 2
+        }
+      ],
+      "source": "https://valuestats.com/en/league/serie-a-italy/referees/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "bundesliga": {
+      "rows": [
+        {
+          "name": "Daniel Siebert",
+          "n": 3,
+          "yellow": 2.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 25.3,
+          "foulsN": 3,
+          "penalties": 0,
+          "results": "2-1-0"
+        },
+        {
+          "name": "Felix Zwayer",
+          "n": 3,
+          "yellow": 2,
+          "yellowN": 3,
+          "red": 0.3333333333333333,
+          "redN": 3,
+          "fouls": 24.3,
+          "foulsN": 3,
+          "penalties": 0,
+          "results": "1-0-2"
+        },
+        {
+          "name": "Florian Badstübner",
+          "n": 3,
+          "yellow": 1.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 24.5,
+          "foulsN": 3,
+          "penalties": 0,
+          "results": "3-0-0"
+        },
+        {
+          "name": "Sven Jablonski",
+          "n": 3,
+          "yellow": 0.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 23,
+          "foulsN": 3,
+          "penalties": 0,
+          "results": "2-1-0"
+        },
+        {
+          "name": "Robert Hartmann",
+          "n": 2,
+          "yellow": 8,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 29.5,
+          "foulsN": 2,
+          "penalties": 1,
+          "results": "1-0-1"
+        },
+        {
+          "name": "Tobias Stieler",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 20.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "0-1-1"
+        },
+        {
+          "name": "Bastian Dankert",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-1-0"
+        },
+        {
+          "name": "Matthias Jöllenbeck",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-0-1"
+        },
+        {
+          "name": "Max Burda",
+          "n": 2,
+          "yellow": 5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "0-0-2"
+        },
+        {
+          "name": "Robert Schröder",
+          "n": 2,
+          "yellow": 4.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 19.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-1-0"
+        },
+        {
+          "name": "Sören Storks",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 25,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-1-0"
+        },
+        {
+          "name": "Martin Petersen",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 25.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-0-1"
+        },
+        {
+          "name": "Robin Braun",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-1-0"
+        },
+        {
+          "name": "Christian Dingert",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 15.5,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-1-0"
+        },
+        {
+          "name": "Tobias Reichel",
+          "n": 2,
+          "yellow": 3.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 28,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-0-1"
+        },
+        {
+          "name": "Benjamin Brand",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 21,
+          "foulsN": 2,
+          "penalties": 1,
+          "results": "2-0-0"
+        },
+        {
+          "name": "Harm Osmers",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-0-1"
+        },
+        {
+          "name": "Sascha Stegemann",
+          "n": 2,
+          "yellow": 1.5,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 14,
+          "foulsN": 2,
+          "penalties": 0,
+          "results": "1-0-1"
+        }
+      ],
+      "source": "https://balonario.com/en/referees/bundesliga/",
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "partial": true,
+      "refreshError": null
+    },
+    "superlig": {
+      "source": "https://valuestats.com/en/league/super-lig/referees/",
+      "checkedAt": "2026-10-16T18:07:10Z",
+      "partial": true,
+      "refreshError": null,
+      "periodLabel": "Süper Lig · 2026/27",
+      "seasonConfirmed": true,
+      "refreshMode": "snapshot",
+      "dataNote": "Срез сезонной таблицы ValueStats 2026/27: 21 арбитр с сыгранными матчами; ещё у двух нет выборки. Учитываются завершённые игры с данными обеих команд. Это не полный журнал с июня. У Davut Dakul Çelik 16 ЖК в 3 играх по Soccerbase; другие профили источников дают 17, поэтому используется согласованный с таблицей лиги срез. Срез обновлён вручную.",
+      "rows": [
+        {
+          "name": "A. Karaoğlan",
+          "n": 5,
+          "yellow": 4.4,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 23.4,
+          "foulsN": 5
+        },
+        {
+          "name": "B. Kolak",
+          "n": 5,
+          "yellow": 2.4,
+          "yellowN": 5,
+          "red": 0.4,
+          "redN": 5,
+          "fouls": 24.6,
+          "foulsN": 5
+        },
+        {
+          "name": "H. Meler",
+          "n": 5,
+          "yellow": 4.2,
+          "yellowN": 5,
+          "red": 0.2,
+          "redN": 5,
+          "fouls": 28,
+          "foulsN": 5
+        },
+        {
+          "name": "G. Hasova",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 23,
+          "foulsN": 4
+        },
+        {
+          "name": "O. Çakır",
+          "n": 4,
+          "yellow": 5,
+          "yellowN": 4,
+          "red": 0.5,
+          "redN": 4,
+          "fouls": 27.75,
+          "foulsN": 4
+        },
+        {
+          "name": "Ümit Öztürk",
+          "n": 4,
+          "yellow": 5,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 26,
+          "foulsN": 4,
+          "sourceName": "?. Öztürk",
+          "identitySource": "https://valuestats.com/en/referee/15775-umit-ozturk"
+        },
+        {
+          "name": "Y. Kol",
+          "n": 4,
+          "yellow": 4.5,
+          "yellowN": 4,
+          "red": 0,
+          "redN": 4,
+          "fouls": 30.5,
+          "foulsN": 4
+        },
+        {
+          "name": "Cagdas Altay",
+          "n": 3,
+          "yellow": 3.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 22.33,
+          "foulsN": 3,
+          "sourceName": "?. Altay",
+          "identitySource": "https://valuestats.com/en/referee/14763-cagdas-altay"
+        },
+        {
+          "name": "A. Şansalan",
+          "n": 3,
+          "yellow": 8,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 31,
+          "foulsN": 3
+        },
+        {
+          "name": "A. Taşkınsoy",
+          "n": 3,
+          "yellow": 3.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 24,
+          "foulsN": 3
+        },
+        {
+          "name": "C. Aydın",
+          "n": 3,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 26.33,
+          "foulsN": 3
+        },
+        {
+          "name": "Davut Dakul Çelik",
+          "n": 3,
+          "yellow": 5.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 26,
+          "foulsN": 3
+        },
+        {
+          "name": "K. Sağlam",
+          "n": 3,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 23.67,
+          "foulsN": 3
+        },
+        {
+          "name": "Mehmet Türkmen",
+          "n": 3,
+          "yellow": 5,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 23,
+          "foulsN": 3
+        },
+        {
+          "name": "R. Coşkunses",
+          "n": 3,
+          "yellow": 2.67,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 28.33,
+          "foulsN": 3
+        },
+        {
+          "name": "O. Aksu",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 20,
+          "foulsN": 2
+        },
+        {
+          "name": "O. Ergün",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 14,
+          "foulsN": 2
+        },
+        {
+          "name": "A. Akarsu",
+          "n": 1,
+          "yellow": 5,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": 30,
+          "foulsN": 1
+        },
+        {
+          "name": "A. Kayatepe",
+          "n": 1,
+          "yellow": 0,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": 28,
+          "foulsN": 1
+        },
+        {
+          "name": "Fatih Tokail",
+          "n": 1,
+          "yellow": 4,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": 25,
+          "foulsN": 1
+        },
+        {
+          "name": "Ömer Faruk Turtay",
+          "n": 1,
+          "yellow": 2,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": 24,
+          "foulsN": 1
+        }
+      ]
+    },
+    "primeira": {
+      "rows": [
+        {
+          "name": "David Rafael Oliveira da Silva",
+          "n": 5,
+          "yellow": 6.6,
+          "yellowN": 5,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Gustavo Correia",
+          "n": 5,
+          "yellow": 4,
+          "yellowN": 5,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Luís Godinho",
+          "n": 5,
+          "yellow": 5.2,
+          "yellowN": 5,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Miguel Nogueira",
+          "n": 5,
+          "yellow": 4.6,
+          "yellowN": 5,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Carlos Macedo",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Fabio Jose Costa Verissimo",
+          "n": 4,
+          "yellow": 5.5,
+          "yellowN": 4,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Joao Antonio Ferreira Goncalves",
+          "n": 4,
+          "yellow": 4,
+          "yellowN": 4,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Jonathan Benkenstein Pinheiro",
+          "n": 4,
+          "yellow": 2.25,
+          "yellowN": 4,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Sergio Guelho",
+          "n": 4,
+          "yellow": 3.5,
+          "yellowN": 4,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Andre Filipe Domingues Narciso",
+          "n": 3,
+          "yellow": 5.67,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Bruno Jose Ribeiro Pires Costa",
+          "n": 3,
+          "yellow": 3.33,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Jose Bessa",
+          "n": 3,
+          "yellow": 5.67,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Luis Carlos Mateus Filipe",
+          "n": 3,
+          "yellow": 6.33,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Miguel Andre Monteiro Fonseca",
+          "n": 3,
+          "yellow": 2,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Pedro Ramalho",
+          "n": 3,
+          "yellow": 3.33,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Vasilica Iancu",
+          "n": 3,
+          "yellow": 5,
+          "yellowN": 3,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Anzhony Rodrigues",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Helder Filipe Claudio Carvalho",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Vitor Ferreira",
+          "n": 2,
+          "yellow": 6.5,
+          "yellowN": 2,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Antonio Nobre",
+          "n": 1,
+          "yellow": 3,
+          "yellowN": 1,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Cleisson Veloso Pereira",
+          "n": 1,
+          "yellow": 4,
+          "yellowN": 1,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Diogo Rosa",
+          "n": 1,
+          "yellow": 3,
+          "yellowN": 1,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        },
+        {
+          "name": "Fabio Melo",
+          "n": 1,
+          "yellow": 4,
+          "yellowN": 1,
+          "red": null,
+          "redN": null,
+          "fouls": null,
+          "foulsN": null
+        }
+      ],
+      "source": "https://footiqo.com/statistics/referees/cards/full-time/",
+      "checkedAt": "2026-10-16T17:22:09.753349+00:00",
+      "partial": true,
+      "refreshError": null,
+      "periodLabel": "Текущий сезон Footiqo",
+      "dataNote": "Сохранённый срез Footiqo: только жёлтые карточки. Период назван «текущий сезон» без номера года; объём выборки сопоставлен со сводкой 2026/27. Полнота с июня не подтверждена, автообновление этой таблицы не подключено. Красные и фолы неизвестны.",
+      "refreshMode": "snapshot",
+      "seasonConfirmed": false
+    }
+  }
+}

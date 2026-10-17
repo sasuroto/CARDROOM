@@ -1,0 +1,24 @@
+const fs=require('node:fs'),ts=require('typescript'),assert=require('node:assert/strict');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const React=require('react');let state=[],index=0,effects=[],timer,focus,visible,requests=0,aborted=false,now=Date.parse('2026-10-17T00:00Z');
+React.useState=initial=>{const i=index++;if(!(i in state))state[i]=initial;return[state[i],v=>state[i]=typeof v==='function'?v(state[i]):v]};React.useEffect=f=>effects.push(f);
+global.window={addEventListener:(name,f)=>focus=f,removeEventListener:()=>focus=null};global.document={visibilityState:'visible',addEventListener:(name,f)=>visible=f,removeEventListener:()=>visible=null};
+global.setInterval=f=>{timer=f;return 1};global.clearInterval=()=>timer=null;Date.now=()=>now;
+const {useMatchDetails}=require('../app/use-match-details.ts'),input={id:'401878771',league:'epl',homeScore:'2',checkedAt:'calendar'},render=()=>{index=0;effects=[];return useMatchDetails(input)};
+let next={...input,referee:'Paul Tierney',appointmentCheckedAt:new Date(now).toISOString(),currentVerified:true},offline=false;
+global.fetch=async(url,{signal})=>{requests++;signal.addEventListener('abort',()=>aborted=true);if(offline)throw Error('offline');return Response.json(next)};
+const flush=()=>new Promise(r=>setImmediate(r));let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
+(async()=>{
+ render();const cleanup=effects[0]();await flush();check(render().match.referee==='Paul Tierney','opening card loads confirmed appointment');
+ focus();await flush();check(requests===1,'focus does not duplicate a fresh in-flight/cached check');
+ now+=61000;next={...next,referee:'Updated Referee',appointmentCheckedAt:new Date(now).toISOString()};timer();await flush();check(render().match.referee==='Updated Referee','open card receives newer assignment without reopening');
+ check(render().match.homeScore==='2'&&render().match.checkedAt==='calendar','appointment refresh does not roll back live score or calendar timestamp');
+ now+=61000;next={...next,referee:null,lastAttemptAt:new Date(now).toISOString()};timer();await flush();let m=render().match;check(m.referee==='Updated Referee'&&m.appointmentStale,'missing newer response keeps name but marks its confirmation stale');
+ now+=61000;offline=true;timer();await flush();m=render().match;check(m.referee==='Updated Referee'&&m.appointmentError,'network failure preserves last known name with explicit limitation');
+ document.visibilityState='hidden';now+=61000;const before=requests;timer();await flush();check(requests===before,'hidden card does not repeatedly fetch');
+ document.visibilityState='visible';visible();await flush();check(requests===before+1,'returning to visible card rechecks stale appointment');
+ cleanup();check(aborted&&!timer&&!focus&&!visible,'closing cleans up requests, interval and focus/visibility listeners');
+ input.referee='Saved Referee';input.appointmentCheckedAt='2026-10-16T23:00Z';state=[];offline=false;next={...input,referee:null,lastAttemptAt:new Date(now).toISOString()};render();const emptyCleanup=effects[0]();await flush();check(render().match.referee==='Saved Referee'&&render().match.appointmentStale,'empty first refresh preserves and marks the initial appointment stale');emptyCleanup();
+ state=[];offline=true;render();const offlineCleanup=effects[0]();await flush();check(render().match.referee==='Saved Referee'&&render().match.appointmentError,'offline first refresh preserves the input appointment with a warning');offlineCleanup();
+ console.log(`PASS ${n} card refresh assertions: opening, newer assignment, missing data, offline preservation, visibility and cleanup.`);
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,0 +1,2 @@
+const requests=new Map<string,{at:number,promise:Promise<any>}>();
+export function loadLeague(league:string,season:number,refresh=false):Promise<any>{const key=league+':'+season,cached=requests.get(key);if(!refresh&&cached&&Date.now()-cached.at<300000)return cached.promise;const promise=fetch(`/api/standings?league=${encodeURIComponent(league)}&season=${season}`).then(async r=>{if(!r.ok)throw Error('Таблица временно недоступна');return r.json()}).catch(error=>{requests.delete(key);throw error});requests.set(key,{at:Date.now(),promise});return promise}

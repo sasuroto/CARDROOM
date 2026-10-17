@@ -1,0 +1,37 @@
+const fs=require('node:fs'),Module=require('node:module'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const env={},load=Module._load;Module._load=function(id,...args){return id==='cloudflare:workers'?{env}:load.call(this,id,...args)};
+const {refreshLeagueReferees,hourlySource,refereeWindow}=require('../lib/referee-hourly.ts');
+const {mergeRefereeUpdates,attachRefereeUpdates,refereeUpdateKey}=require('../lib/referee-updates.ts');
+const Referees=require('../app/api/referees/route.ts'),Match=require('../app/api/match/route.ts');
+const seed=require('../lib/referees.json');let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
+const realNow=Date.now;let now=realNow();Date.now=()=>now;
+const values=new Map(),bucket={get:async key=>values.has(key)?{json:async()=>structuredClone(values.get(key))}:null,put:async(key,text)=>values.set(key,JSON.parse(text))};env.BUCKET=bucket;
+const date=refereeWindow().from+'T16:00:00Z';
+const event=(id)=>({id:String(id),date,status:{type:{state:'pre'}},competitions:[{id:String(id),date,competitors:[{homeAway:'home',team:{displayName:'Home'}},{homeAway:'away',team:{displayName:'Away'}}]}]});
+const events=Array.from({length:26},(_,i)=>event(888100000+i));let calls=[],missing=false;
+const html='<h1>2026/27 Premier League</h1><table><tr><th>Referee</th><th></th><th>GAMES</th><th>YELLOW CARDS</th><th>RED CARDS</th></tr>'+seed.epl.rows.map(r=>`<tr><td>${r.name}</td><td></td><td>${r.n+1}</td><td>30</td><td>1</td></tr>`).join('')+'</table>';
+function online(){global.fetch=async url=>{calls.push(String(url));if(String(url).includes('soccerbase'))return new Response(html);if(String(url).includes('scoreboard'))return Response.json({events});const id=new URL(url).searchParams.get('event');return Response.json({header:{id,league:{slug:'eng.1'},competitions:event(id).competitions},gameInfo:{officials:missing?[]:[{fullName:'Verified Referee',position:{name:'Referee'}}]}})}}
+(async()=>{
+ online();let r=await refreshLeagueReferees('epl',bucket);
+ check(r.persisted&&r.coverage.checked===24&&r.coverage.deferred===2,'bounded refresh persists checked and deferred coverage');
+ check(r.statsStatus==='updated'&&r.stats.rows.length===19,'fresh seasonal statistics parsed');
+ check(r.matches.filter(m=>m.referee==='Verified Referee').length===24,'appointments persisted without a visitor');
+ let status=await(await Referees.GET(new Request('https://site/api/referees?league=epl&read=1'))).json();check(status.updates[0].runId===r.runId&&status.updates[0].persisted,'independent readback confirms the same persisted run');
+ const total=calls.length,again=await refreshLeagueReferees('epl',bucket);check(again.cached&&again.runId===r.runId&&calls.length===total,'one-hour gate prevents repeat upstream reads');
+ const merged=await mergeRefereeUpdates({leagues:[{id:'epl'}],refereesByLeague:{epl:seed.epl}},bucket);check(merged.refereesByLeague.epl.checkedAt===r.stats.checkedAt,'site data exposes new statistics');
+ const enriched=await attachRefereeUpdates([{id:events[0].id,league:'epl',homeScore:'2',checkedAt:'original'}],bucket);check(enriched[0].referee==='Verified Referee'&&enriched[0].homeScore==='2'&&enriched[0].checkedAt==='original','calendar gains appointment without overwriting score or calendar timestamp');
+ now+=3600001;r=await refreshLeagueReferees('epl',bucket);check(r.matches[24].referee&&r.matches[25].referee,'deferred matches have priority in the next run');
+ const old=values.get(`match/v6/epl/${events[0].id}.json`),oldStamp=old.appointmentCheckedAt;missing=true;now+=3600001;
+ const noName=await(await Match.GET(new Request('https://site/api/match?league=epl&id='+events[0].id))).json();check(noName.referee==='Verified Referee'&&noName.stale&&noName.appointmentCheckedAt===oldStamp&&noName.lastAttemptAt!==oldStamp,'empty response retains name and original confirmation date, with a separate new attempt');
+ const unknown=await Referees.GET(new Request('https://site/api/referees?league=bad'));check(unknown.status===400,'unknown competition rejected');
+ const injected=await Referees.GET(new Request('https://site/api/referees?league=epl&url=https://other.example'));check(injected.status===400,'arbitrary upstream URL rejected');
+ let requests=0;global.fetch=async()=>{requests++;return new Response('',{status:429,headers:{'Retry-After':'7200'}})};
+ await hourlySource(bucket,'https://source.example/a').catch(()=>{});await hourlySource(bucket,'https://source.example/b').catch(()=>{});check(requests===1&&values.get('referee-updates/source-backoff/source.example.json').until===now+7200000,'429 Retry-After persists across separate source calls');
+ await Match.GET(new Request('https://site/api/match?league=epl&id=888900999'));const before=requests;await Match.GET(new Request('https://site/api/match?league=epl&id=888900998'));check(requests===before,'match endpoint observes shared ESPN backoff');
+ const broken={get:async()=>null,put:async()=>{throw Error('storage unavailable')}};env.BUCKET=broken;online();
+ await assert.rejects(()=>refreshLeagueReferees('primeira',broken),/постоянном хранилище/);n++;
+ const failed=await Referees.GET(new Request('https://site/api/referees?league=primeira'));check(failed.status===503&&!(await failed.json()).persisted,'failed storage cannot report a successful update');
+ check(refereeWindow(new Date('2026-12-30T23:00:00Z')).until==='2027-01-06','seven local days cross year boundary');
+ Date.now=realNow;console.log(`PASS ${n} hourly referee assertions: persistence/readback, cooldown, coverage rotation, missing data, stats/calendar integration, source limits, invalid input and failed storage.`);
+})().catch(e=>{Date.now=realNow;console.error(e);process.exitCode=1});

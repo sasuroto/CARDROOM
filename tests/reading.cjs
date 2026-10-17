@@ -1,0 +1,25 @@
+require('./qa.cjs');
+const assert=require('node:assert/strict'),React=require('react'),{renderToStaticMarkup:render}=require('react-dom/server');
+const {readableScenario,sampleText}=require('../lib/readable-markets.ts');
+assert.equal(readableScenario({metric:'away',line:.5,title:'ТБ 0,5'},'Feyenoord','Como'),'Como забьёт хотя бы один гол');
+assert.equal(readableScenario({metric:'corners',line:9.5,title:'ТМ 9,5'},'A','B'),'Не больше 9 угловых за матч');
+assert.equal(readableScenario({metric:'goals',line:2.5,title:'ТБ 2,5'},'A','B'),'3 и больше голов за матч');
+assert.equal(readableScenario({metric:'home',line:.5,title:'ТМ 0,5'},'Roma','Real'),'Roma останется без гола');
+assert.equal(readableScenario({metric:'btts',line:0,title:'Обе забьют: нет'},'A','B'),'Хотя бы одна команда останется без гола');
+assert.equal(readableScenario({metric:'btts',line:0,title:'Обе забьют'},'A','B'),'Обе забьют','Missing model data must not imply a no-goal scenario');
+assert.deepEqual([1,2,5,11,21].map(sampleText),['1 матч','2 матча','5 матчей','11 матчей','21 матч']);
+const Report=require('../app/match-report.tsx').default;
+const fallback=require('../lib/analysis-fallback.ts'),original=fallback.savedAnalysis;
+function report(n){const stats={goals:4.5,corners:3,yellow:2,red:0,shots:12,target:4,fouls:10,offsides:1,saves:3};
+const analysis={state:'pre',teams:[{id:'a',side:'home',name:'Feyenoord'},{id:'b',side:'away',name:'Como'}],history:['a','b'].map(id=>({id,name:id,events:Array.from({length:n},(_,i)=>({id:id+i,date:'2026-10-01',own:stats,against:stats}))}))};
+fallback.savedAnalysis=()=>analysis;
+try{return render(React.createElement(Report,{match:{id:'test',league:'test',home:'Feyenoord',away:'Como',date:'2027-10-14'},data:{leagues:[]},profile:{}}))}finally{fallback.savedAnalysis=original}}
+const sparse=report(1),full=report(5);
+assert.ok(sparse.includes('Como забьёт хотя бы один гол'));
+assert.ok(sparse.includes('Данных слишком мало'));
+assert.ok(!sparse.includes('99%'),'Extreme chance must not be displayed for one game');
+assert.ok(sparse.includes('4,5'),'Model average remains available with explanation');
+assert.ok(full.includes('По модели — около'),'Adequate sample retains labelled model estimate');
+assert.ok(!sparse.includes('Цена по модели:'));
+assert.ok(sparse.includes('Сколько')||sparse.includes('СКОЛЬКО ИГР'));
+console.log('PASS readable scenarios, whole-number boundaries, sample labels, sparse-data suppression and disclosed model estimates.');

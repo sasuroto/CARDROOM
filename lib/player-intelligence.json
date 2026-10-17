@@ -1,0 +1,4067 @@
+{
+  "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+  "matches": [
+    {
+      "matchId": "401915416",
+      "title": "Feyenoord Rotterdam — Como",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Nacho Ferri",
+          "team": "Feyenoord Rotterdam",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "Забил на 13-й минуте победного матча с AZ 10 октября.",
+              "source": "https://www.feyenoord.com/nl/news/feyenoord-verslaat-az-en-neemt-koppositie-over-101026"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 2,
+              "scope": "Эредивизи: только последние две проверенные игры · 20.09 и 10.10.2026",
+              "source": "https://www.feyenoord.com/nl/news/feyenoord-verslaat-az-en-neemt-koppositie-over-101026"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Эредивизи: только последние две проверенные игры · 20.09 и 10.10.2026",
+              "source": "https://www.feyenoord.com/nl/news/feyenoord-verslaat-az-en-neemt-koppositie-over-101026"
+            }
+          ],
+          "availability": {
+            "text": "В прогнозируемом составе; официальный старт на момент проверки не объявлен.",
+            "source": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-como-prediction-team-news-lineups_606743.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Завершение атак: забил Utrecht и AZ; кандидат на решающий удар в штрафной."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Полный свежий сезонный итог не подтверждён: источники расходятся по голам Zwolle; форма лиги не гарантирует успех в ЛЧ."
+          },
+          "reason": "Два гола в двух последних проверенных матчах, возможный старт в центре атаки.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.feyenoord.com/nl/news/feyenoord-verslaat-az-en-neemt-koppositie-over-101026"
+          ]
+        },
+        {
+          "name": "Anis Hadj Moussa",
+          "team": "Feyenoord Rotterdam",
+          "role": "Правый вингер",
+          "facts": [
+            {
+              "text": "В последней встрече с Utrecht оформил дубль; против AZ сыграл 90 минут.",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 7,
+              "scope": "Эредивизи · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Минуты",
+              "value": 616,
+              "scope": "Эредивизи · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Голы",
+              "value": 5,
+              "scope": "Эредивизи · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Эредивизи · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Эредивизи · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Минуты",
+              "value": 72,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/7588/anis-hadj-moussa"
+            }
+          ],
+          "availability": {
+            "text": "В прогнозируемом составе; старт не подтверждён.",
+            "source": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-como-prediction-team-news-lineups_606743.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Смещение под левую ногу и завершение: 5 голов и передача в семи матчах лиги."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В единственном матче ЛЧ результативных действий не было; эффективность против Como ещё не подтверждена."
+          },
+          "reason": "Наиболее продуктивный фланговый кандидат в выбранной выборке Feyenoord.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/7588/anis-hadj-moussa"
+          ]
+        },
+        {
+          "name": "Nico Paz",
+          "team": "Como",
+          "role": "Атакующий полузащитник",
+          "facts": [
+            {
+              "text": "Официальное соглашение оставляет Paz в Como на сезон 2026/27.",
+              "source": "https://comofootball.com/en/club-statement-nico-paz/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Минуты",
+              "value": 510,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4596/nico-paz"
+            }
+          ],
+          "availability": {
+            "text": "В прогнозируемом составе; Como официально подтвердил сохранение игрока на сезон 2026/27.",
+            "source": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-como-prediction-team-news-lineups_606743.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Создание моментов между линиями: две передачи в стартовом матче ЛЧ."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Пока один гол в шести матчах Серии A; созидательная роль надёжнее предположения об обязательном голе."
+          },
+          "reason": "Два ассиста в европейском дебюте и шесть стартов в чемпионате.",
+          "fan": {
+            "text": "В индексированном разборе на r/feyenoord свободные перемещения Paz называют проблемой для взаимопонимания защитников. Полная ветка недоступна; это мнение автора, не консенсус. Индексированный фрагмент, 12.10.2026",
+            "source": "https://www.reddit.com/r/feyenoord/comments/1x4ai4f/dit_kan_feyenoord_verwachten_van_como/",
+            "scope": "Индексированный фрагмент, 12.10.2026",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4596/nico-paz"
+          ]
+        },
+        {
+          "name": "Martin Baturina",
+          "team": "Como",
+          "role": "Атакующий полузащитник",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Минуты",
+              "value": 283,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 2,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Минуты",
+              "value": 66,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/5854/martin-baturina"
+            }
+          ],
+          "availability": {
+            "text": "В прогнозируемом составе; старт не подтверждён.",
+            "source": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-como-prediction-team-news-lineups_606743.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Гол или последний пас: в первой игре ЛЧ уже был гол+ассист."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск ограниченных минут: против Roma вышел только на 12 минут; роль зависит от выбора состава."
+          },
+          "reason": "Продуктивен, но объём игрового времени нестабилен.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/5854/martin-baturina"
+          ]
+        },
+        {
+          "name": "Anastasios Douvikas",
+          "team": "Como",
+          "role": "Центральный нападающий",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Минуты",
+              "value": 408,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Минуты",
+              "value": 65,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1560/tasos-douvikas"
+            }
+          ],
+          "availability": {
+            "text": "В прогнозируемом составе; Kean отмечен в превью как травмированный.",
+            "source": "https://www.sportsmole.co.uk/football/feyenoord/champions-league/preview/feyenoord-vs-como-prediction-team-news-lineups_606743.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Завершение передач Paz и Baturina: гол в первом матче ЛЧ."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Результат зависит от доставки мяча в штрафную; малой европейской выборки недостаточно для уверенного прогноза."
+          },
+          "reason": "Три гола в семи играх двух турниров; возможная ключевая роль при отсутствии Kean.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1560/tasos-douvikas"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915415",
+      "title": "LASK Linz — Liverpool",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Florian Wirtz",
+          "team": "Liverpool",
+          "role": "Атакующий полузащитник",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Минуты",
+              "value": 470,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/135/florian-wirtz"
+            }
+          ],
+          "availability": {
+            "text": "Тренер сообщил о возможной ротации; старт не подтверждён.",
+            "source": "https://www.liverpoolfc.com/news/lask-v-liverpool-champions-league-team-news"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Связь полузащиты с атакой; при кадровых потерях творческая нагрузка может возрасти."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Низкая текущая результативность: 0 голов и 1 ассист в шести матчах лиги."
+          },
+          "reason": "Влияние на создание атак вероятнее, чем доказанный высокий шанс личного гола.",
+          "fan": {
+            "text": "В предматчевой ветке спорят: дать Wirtz старт для уверенности или поберечь перед выходными. Часть участников считает его игру в Европе убедительнее.",
+            "source": "https://www.reddit.com/r/LiverpoolFC/comments/1x4qfu2/prematch_thread_lask_vs_liverpool/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/135/florian-wirtz"
+          ]
+        },
+        {
+          "name": "Bradley Barcola",
+          "team": "Liverpool",
+          "role": "Вингер",
+          "facts": [
+            {
+              "text": "Перешёл из PSG в Liverpool в августе 2026 года.",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Минуты",
+              "value": 258,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Минуты",
+              "value": 60,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3542/bradley-barcola"
+            }
+          ],
+          "availability": {
+            "text": "Участвовал в подготовке к LASK; старт не подтверждён.",
+            "source": "https://www.liverpoolfc.com/news/lask-v-liverpool-champions-league-team-news"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Продвижение по флангу и атака свободного пространства; травмы других нападающих повышают значимость его роли."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "За первые четыре матча АПЛ нет голов и ассистов; ожидание прорыва пока не подтверждено цифрами."
+          },
+          "reason": "Вероятный важный участник атаки, но доказательств высокой результативности в новом клубе мало.",
+          "fan": {
+            "text": "В предматчевой ветке предлагают варианты атаки с Barcola и молодыми партнёрами, но опасаются нехватки проверенных бомбардиров.",
+            "source": "https://www.reddit.com/r/LiverpoolFC/comments/1x4qfu2/prematch_thread_lask_vs_liverpool/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3542/bradley-barcola"
+          ]
+        },
+        {
+          "name": "Ryan Gravenberch",
+          "team": "Liverpool",
+          "role": "Центральный / опорный полузащитник",
+          "facts": [
+            {
+              "text": "Opta содержит ошибочное отрицательное число ЖК в тексте: показатель исключён; удаление 11 октября подтверждено.",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Минуты",
+              "value": 254,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 1,
+              "scope": "Премьер-лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Минуты",
+              "value": 21,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4099/ryan-gravenberch"
+            }
+          ],
+          "availability": {
+            "text": "В превью ожидается доступным для ЛЧ; старт не подтверждён.",
+            "source": "https://www.sportsmole.co.uk/football/lask-linz/champions-league/preview/lask-vs-liverpool-prediction-team-news-lineups_606769.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Контроль центра и выход из давления: возможная важная роль при отсутствии Szoboszlai."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Дисциплина — наблюдение после удаления против Manchester City; одного эпизода недостаточно для прогноза новой красной."
+          },
+          "reason": "Польза прежде всего в продвижении мяча и балансе, а не в голах.",
+          "fan": {
+            "text": "Болельщики ждут его в старте и обсуждают, сможет ли он восстановиться психологически после удаления; предлагаются пары с Mac Allister или Nyoni.",
+            "source": "https://www.reddit.com/r/LiverpoolFC/comments/1x4qfu2/prematch_thread_lask_vs_liverpool/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4099/ryan-gravenberch"
+          ]
+        },
+        {
+          "name": "Christoph Lang",
+          "team": "LASK Linz",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "Клубная карточка: 8 игр, 5 голов, 0 ассистов. Турнирный охват блока не обозначен, поэтому эти числа не смешиваются с отдельной статистикой ЛЧ.",
+              "source": "https://www.lask.at/de/m/teams/pros"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            },
+            {
+              "label": "Минуты",
+              "value": 74,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+            }
+          ],
+          "availability": {
+            "text": "Указан в прогнозируемой атакующей паре; старт не подтверждён.",
+            "source": "https://www.sportsmole.co.uk/football/lask-linz/champions-league/preview/lask-vs-liverpool-prediction-team-news-lineups_606769.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Один из основных вариантов LASK для завершения быстрых атак."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В первой игре ЛЧ 74 минуты без результативного действия; против сильного соперника может не хватить владения."
+          },
+          "reason": "Официальная клубная карточка показывает 5 голов в 8 играх, однако точный охват турниров там не обозначен.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250162184--christoph-lang/statistics/"
+          ]
+        },
+        {
+          "name": "Saša Kalajdžić",
+          "team": "LASK Linz",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В клубной карточке 3 игры, 0 голов и 0 передач; охват турниров прямо не указан.",
+              "source": "https://www.lask.at/de/m/teams/pros"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Минуты",
+              "value": 16,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Удары",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+            }
+          ],
+          "availability": {
+            "text": "Возможный старт при отсутствии Harakate и сомнениях по Usor; не подтверждён.",
+            "source": "https://www.sportsmole.co.uk/football/lask-linz/champions-league/preview/lask-vs-liverpool-prediction-team-news-lineups_606769.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: ограниченный",
+            "text": "Возможный адресат передач в штрафную, если получит место в атакующей паре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Пока лишь 16 минут в основном этапе ЛЧ; и шанс старта, и результативность остаются неопределёнными."
+          },
+          "reason": "Превью предполагает более важную роль из-за проблем у других форвардов, но свежая европейская выборка минимальна.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250116789--sasa-kalajdzic/statistics/"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915414",
+      "title": "AS Roma — Real Madrid",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Donyell Malen",
+          "team": "AS Roma",
+          "role": "Центральный нападающий",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Минуты",
+              "value": 398,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Голы",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 1,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Минуты",
+              "value": 87,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/108/donyell-malen"
+            }
+          ],
+          "availability": {
+            "text": "В официальной заявке Roma; старт не подтверждён.",
+            "source": "https://www.asroma.com/en/news/76066/the-giallorossi-squad-for-roma-v-real-madrid"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Главный адресат голевых передач: шесть голов за шесть матчей Серии A."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Последняя игра с Como закончилась удалением; важно избегать рискованных единоборств. Это не прогноз повторной красной."
+          },
+          "reason": "Лучший бомбардир Roma в лиге; включён в официальную заявку на этот матч.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/108/donyell-malen"
+          ]
+        },
+        {
+          "name": "Paulo Dybala",
+          "team": "AS Roma",
+          "role": "Второй нападающий / плеймейкер",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Минуты",
+              "value": 496,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 4,
+              "scope": "Серия A · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/4467/paulo-dybala"
+            }
+          ],
+          "availability": {
+            "text": "В официальной заявке Roma; старт не подтверждён.",
+            "source": "https://www.asroma.com/en/news/76066/the-giallorossi-squad-for-roma-v-real-madrid"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Последний пас: четыре ассиста в Серии A, лидер лиги на момент проверки."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Личных голов пока нет; ожидание результативности разумнее связывать с созданием моментов."
+          },
+          "reason": "Регулярные старты и четыре голевые передачи показывают центральную созидательную роль.",
+          "fan": {
+            "text": "В индексированном посте r/ASRoma 14 октября обсуждают сочетание высокой созидательной роли Dybala и отсутствия голов. Полная ветка недоступна; фанатские цифры не добавлены к проверенной статистике. Индексированный фрагмент",
+            "source": "https://www.reddit.com/r/ASRoma/comments/1x5q2sw/dybala_has_made_more_chances_than_anyone_in_serie/",
+            "scope": "Индексированный фрагмент",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4467/paulo-dybala"
+          ]
+        },
+        {
+          "name": "Kylian Mbappé",
+          "team": "Real Madrid",
+          "role": "Центральный нападающий",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 8,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Минуты",
+              "value": 720,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Голы",
+              "value": 7,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1634/kylian-mbappe"
+            }
+          ],
+          "availability": {
+            "text": "В официальной заявке Real Madrid; старт не подтверждён.",
+            "source": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/convocatorias/convocatoria-del-real-madrid-contra-la-roma-13-10-2026"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Завершение и рывки за линию защиты: восемь голов в девяти матчах двух турниров."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Против Villarreal отыграл 90 минут без гола; высокий сезонный итог не означает результативность в каждой игре."
+          },
+          "reason": "Самый результативный выбранный игрок Madrid; играл все минуты первых восьми матчей Ла Лиги.",
+          "fan": {
+            "text": "После Villarreal отдельные участники r/realmadrid критиковали его влияние и решение оставить на все 90 минут. Это недовольство частью фанатов, а не объективная оценка всего сезона.",
+            "source": "https://www.reddit.com/r/realmadrid/comments/1x2pypq/postmatch_thread_real_madrid_10_villarreal_la_liga/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1634/kylian-mbappe"
+          ]
+        },
+        {
+          "name": "Vinícius Júnior",
+          "team": "Real Madrid",
+          "role": "Левый вингер",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 8,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Минуты",
+              "value": 585,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 3,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Минуты",
+              "value": 87,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1644/vinicius-junior"
+            }
+          ],
+          "availability": {
+            "text": "В официальной заявке Real Madrid; старт не подтверждён.",
+            "source": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/convocatorias/convocatoria-del-real-madrid-contra-la-roma-13-10-2026"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Обострение с фланга и последний пас: три ассиста в восьми турах."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Пока один гол в чемпионате; сдвоенная опека может снизить влияние — тактический сценарий, не установленная слабость."
+          },
+          "reason": "Возможный поставщик моментов для Mbappé; нынешние цифры сильнее по передачам, чем по голам.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1644/vinicius-junior"
+          ]
+        },
+        {
+          "name": "Jude Bellingham",
+          "team": "Real Madrid",
+          "role": "Атакующий / центральный полузащитник",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 8,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Минуты",
+              "value": 619,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Голы",
+              "value": 3,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 2,
+              "scope": "Ла Лига · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/1650/jude-bellingham"
+            }
+          ],
+          "availability": {
+            "text": "В официальной заявке Real Madrid; старт не подтверждён.",
+            "source": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/convocatorias/convocatoria-del-real-madrid-contra-la-roma-13-10-2026"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Подключения из глубины: три гола и две передачи в восьми матчах лиги."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Влияние зависит от позиции и обязанностей без мяча; в первой игре ЛЧ не было гола или ассиста."
+          },
+          "reason": "Пять результативных действий в лиге и регулярные старты делают его значимым вторым источником угрозы.",
+          "fan": {
+            "text": "Достоверное отдельное обсуждение этого игрока перед матчем не найдено.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1650/jude-bellingham"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915409",
+      "title": "Aston Villa — Fenerbahce",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Nicolas Jackson",
+          "team": "Aston Villa",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 81 мин., 1 гол, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "text": "Против Tottenham в 5-м туре АПЛ: 6 ударов, 3 из штрафной; 6 успешных обводок из 12. Первый гол за Villa в АПЛ.",
+              "source": "https://next.gc.avfcservices.co.uk/news/2026/october/06/news-Three-Villans-to-watch-out-for-in-FPL/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3922/nicolas-jackson"
+            },
+            {
+              "label": "Минуты",
+              "value": 380,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3922/nicolas-jackson"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3922/nicolas-jackson"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3922/nicolas-jackson"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 2,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3922/nicolas-jackson"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Минуты",
+              "value": 81,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Удары",
+              "value": 3,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 86,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Основной сценарий — ударами и завершением: 3 удара и гол в первом туре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск: высокий объём атак не гарантирует реализацию; выборка ЛЧ — один матч."
+          },
+          "reason": "Высокий приоритет наблюдения за ударами и завершением: 3 удара и гол в первом туре.",
+          "fan": {
+            "status": "verified_indexed",
+            "text": "В обсуждении 22 сентября отдельный болельщик признаёт, что скептически относился к трансферу, но теперь впечатлён качеством игры и самоотдачей. Это личное мнение, не консенсус. Проверен индексированный фрагмент; полная ветка недоступна.",
+            "source": "https://www.reddit.com/r/avfc/comments/1wklgby/jackson/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3922/nicolas-jackson",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250163689--nicolas-jackson/"
+          ]
+        },
+        {
+          "name": "Mason Greenwood",
+          "team": "Fenerbahce",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 0 голов, 1 ассист, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 7,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3508/mason-greenwood"
+            },
+            {
+              "label": "Минуты",
+              "value": 530,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3508/mason-greenwood"
+            },
+            {
+              "label": "Голы",
+              "value": 4,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3508/mason-greenwood"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3508/mason-greenwood"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3508/mason-greenwood"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Удары",
+              "value": 3,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 86,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+            }
+          ],
+          "availability": {
+            "text": "В выездной заявке Fenerbahçe, опубликованной AA со ссылкой на клуб; AA включает его в предполагаемый старт. Официальный старт ещё не объявлен.",
+            "source": "https://www.aa.com.tr/tr/spor/fenerbahce-uefa-sampiyonlar-liginde-aston-villaya-konuk-olacak/4086794"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Основной сценарий — созданием моментов: 3 удара и голевая передача за 90 минут первого тура."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск — участие в обороне при потере мяча; это фанатская гипотеза, а не подтверждённая метриками слабость."
+          },
+          "reason": "Высокий приоритет наблюдения за созданием моментов: 3 удара и голевая передача за 90 минут первого тура.",
+          "fan": {
+            "status": "verified_indexed",
+            "text": "В теме сезона DonanımHaber один участник критикует оборонительную работу Greenwood и предлагает использовать его свободнее в центре. Это частное тактическое мнение. Проверен индексированный фрагмент; полная ветка недоступна.",
+            "source": "https://forum.donanimhaber.com/fenerbahce-2026-2027-sezonu-ana-konu--163525609-2052",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3508/mason-greenwood",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250116767--mason-greenwood/"
+          ]
+        },
+        {
+          "name": "Emiliano Buendía",
+          "team": "Aston Villa",
+          "role": "Атакующий полузащитник",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 68 мин., 1 гол, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3825/emiliano-buendia"
+            },
+            {
+              "label": "Минуты",
+              "value": 468,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3825/emiliano-buendia"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3825/emiliano-buendia"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3825/emiliano-buendia"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3825/emiliano-buendia"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Минуты",
+              "value": 68,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 73,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Потенциал заметного участия в атаке: гол в первом туре за 68 минут."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск потери влияния при плотном прессинге: 73% точности передач в первом туре; устойчивой слабостью это пока не считается."
+          },
+          "reason": "Потенциал заметного участия в атаке: гол в первом туре за 68 минут.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3825/emiliano-buendia",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250080569--emiliano-buendia/"
+          ]
+        },
+        {
+          "name": "John McGinn",
+          "team": "Aston Villa",
+          "role": "Полузащитник",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 1 гол, 0 ассистов, 1 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3816/john-mcginn"
+            },
+            {
+              "label": "Минуты",
+              "value": 526,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3816/john-mcginn"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3816/john-mcginn"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3816/john-mcginn"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 2,
+              "scope": "Premier League 2026/27 · Данные включают 10 октября.",
+              "source": "https://theanalyst.com/players/3816/john-mcginn"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 77,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Потенциал повлиять через подключения из глубины: гол и полный матч в первом туре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Дисциплина — точка наблюдения: 1 ЖК в первом туре, но этого недостаточно для вероятности новой карточки."
+          },
+          "reason": "Потенциал повлиять через подключения из глубины: гол и полный матч в первом туре.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3816/john-mcginn",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250058958--john-mcginn/"
+          ]
+        },
+        {
+          "name": "Romelu Lukaku",
+          "team": "Fenerbahce",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 19 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "text": "8 голов в последних 7 встречах с Aston Villa за Everton и Chelsea; историческая статистика, не сезон 2026/27.",
+              "source": "https://www.uefa.com/uefachampionsleague/news/02aa-21c3b5b66478-08e7878681a3-1000--champions-league-matchday-2-aston-villa-vs-fenerbahce-facts/"
+            },
+            {
+              "text": "Включён в выездную заявку (AA, 14 октября), но 13 октября работал отдельно после удара в матче Rizespor (DHA); старт и минуты под вопросом.",
+              "source": "https://www.dha.com.tr/spor/fenerbahce-aston-villa-macina-hazir-2961757"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября. Только 1 старт, 5 выходов на замену.",
+              "source": "https://theanalyst.com/players/4855/romelu-lukaku"
+            },
+            {
+              "label": "Минуты",
+              "value": 165,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября. Только 1 старт, 5 выходов на замену.",
+              "source": "https://theanalyst.com/players/4855/romelu-lukaku"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября. Только 1 старт, 5 выходов на замену.",
+              "source": "https://theanalyst.com/players/4855/romelu-lukaku"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября. Только 1 старт, 5 выходов на замену.",
+              "source": "https://theanalyst.com/players/4855/romelu-lukaku"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 2,
+              "scope": "Süper Lig 2026/27 · Данные включают 10 октября. Только 1 старт, 5 выходов на замену.",
+              "source": "https://theanalyst.com/players/4855/romelu-lukaku"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Минуты",
+              "value": 19,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Удары",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 57,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+            }
+          ],
+          "availability": {
+            "text": "Включён в выездную заявку (AA, 14 октября), но 13 октября работал отдельно после удара в матче Rizespor (DHA); старт и минуты под вопросом.",
+            "source": "https://www.aa.com.tr/tr/spor/fenerbahce-uefa-sampiyonlar-liginde-aston-villaya-konuk-olacak/4086794"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "При выходе на поле способен стать адресатом завершающих передач; UEFA отмечает 8 голов в последних 7 играх против Villa за прежние клубы."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Участие и объём минут под вопросом: после удара в матче Rizespor 13 октября не тренировался с командой. В чемпионате 165 минут и 0 голов за 6 выходов."
+          },
+          "reason": "Возможный адресат передач в штрафную, но сейчас важнее проверить готовность и минуты, чем ожидать гол.",
+          "fan": {
+            "status": "verified_indexed",
+            "text": "В обсуждении приезда в Стамбул один фанат выражает оптимизм, но отдельно надеется, что нападающий избежит травм. Это ожидание, не медицинские сведения. Проверен индексированный фрагмент; полная ветка недоступна.",
+            "source": "https://www.reddit.com/r/FenerbahceSK/comments/1vmp53h/lukaku_in_istanbul/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4855/romelu-lukaku",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250010802--romelu-lukaku/"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915406",
+      "title": "Shakhtar Donetsk — AEK Athens",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Răzvan Marin",
+          "team": "AEK Athens",
+          "role": "Центральный полузащитник",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 1 гол, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Super League Greece 2026/27 · Данные включают 10 октября; 4 ассиста — лучший показатель лиги на дату источника.",
+              "source": "https://theanalyst.com/players/4561/razvan-marin"
+            },
+            {
+              "label": "Минуты",
+              "value": 512,
+              "scope": "Super League Greece 2026/27 · Данные включают 10 октября; 4 ассиста — лучший показатель лиги на дату источника.",
+              "source": "https://theanalyst.com/players/4561/razvan-marin"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Super League Greece 2026/27 · Данные включают 10 октября; 4 ассиста — лучший показатель лиги на дату источника.",
+              "source": "https://theanalyst.com/players/4561/razvan-marin"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 4,
+              "scope": "Super League Greece 2026/27 · Данные включают 10 октября; 4 ассиста — лучший показатель лиги на дату источника.",
+              "source": "https://theanalyst.com/players/4561/razvan-marin"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 89,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Основной сценарий — стандартами и организацией атак: победный гол со штрафного в первом туре и 89% передач."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск — ожидать повторения гола по одной успешной игре; вероятность гола со стандарта не рассчитана."
+          },
+          "reason": "Высокий приоритет наблюдения за стандартами и организацией атак: победный гол со штрафного в первом туре и 89% передач.",
+          "fan": {
+            "status": "verified_indexed",
+            "text": "В треде после победы над LASK 8 сентября один фанат просит монтаж, сопоставляющий штрафной Marin с голом Declan Rice против Real. Комментарий показывает восторг эпизодом, а не прогноз следующего матча. Проверен индексированный фрагмент; полная ветка недоступна.",
+            "source": "https://www.reddit.com/r/AEKAthensFC/comments/1wax1i9/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4561/razvan-marin",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250055294--razvan-marin/"
+          ]
+        },
+        {
+          "name": "Barnabás Varga",
+          "team": "AEK Athens",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Удары",
+              "value": 4,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 50,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+            },
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "Super League Greece 2026/27 · Снимок до 10 октября: источник ещё называет OFI следующим матчем. Не выдавать за актуальный итог.",
+              "source": "https://theanalyst.com/players/10844/barnabas-varga"
+            },
+            {
+              "label": "Минуты",
+              "value": 272,
+              "scope": "Super League Greece 2026/27 · Снимок до 10 октября: источник ещё называет OFI следующим матчем. Не выдавать за актуальный итог.",
+              "source": "https://theanalyst.com/players/10844/barnabas-varga"
+            },
+            {
+              "label": "Голы",
+              "value": 4,
+              "scope": "Super League Greece 2026/27 · Снимок до 10 октября: источник ещё называет OFI следующим матчем. Не выдавать за актуальный итог.",
+              "source": "https://theanalyst.com/players/10844/barnabas-varga"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Super League Greece 2026/27 · Снимок до 10 октября: источник ещё называет OFI следующим матчем. Не выдавать за актуальный итог.",
+              "source": "https://theanalyst.com/players/10844/barnabas-varga"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Основной сценарий — завершением: 4 удара за полный первый матч."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Сценарий нереализации: 4 удара без гола в первом туре. Без xG качество моментов и устойчивость проблемы неизвестны."
+          },
+          "reason": "Высокий приоритет наблюдения за завершением: 4 удара за полный первый матч.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250183450--barnabas-varga/",
+            "https://theanalyst.com/players/10844/barnabas-varga"
+          ]
+        },
+        {
+          "name": "Gleiker Mendoza",
+          "team": "Shakhtar Donetsk",
+          "role": "Атакующий полузащитник",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 67 мин., 1 гол, 0 ассистов, 1 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Минуты",
+              "value": 67,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 72,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+            },
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; обновление после 5 игр не подтверждено.",
+              "source": "https://theanalyst.com/players/10566/gleiker-mendoza"
+            },
+            {
+              "label": "Минуты",
+              "value": 248,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; обновление после 5 игр не подтверждено.",
+              "source": "https://theanalyst.com/players/10566/gleiker-mendoza"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; обновление после 5 игр не подтверждено.",
+              "source": "https://theanalyst.com/players/10566/gleiker-mendoza"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; обновление после 5 игр не подтверждено.",
+              "source": "https://theanalyst.com/players/10566/gleiker-mendoza"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Потенциал результативного подключения: единственный гол Shakhtar в первом туре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск — потери и дисциплина: 72% передач, 1 ЖК; один матч не доказывает системный недостаток."
+          },
+          "reason": "Потенциал результативного подключения: единственный гол Shakhtar в первом туре.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250220576--gleiker-mendoza/",
+            "https://theanalyst.com/players/10566/gleiker-mendoza"
+          ]
+        },
+        {
+          "name": "Kauã Elias",
+          "team": "Shakhtar Donetsk",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 66 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Минуты",
+              "value": 66,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Удары",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 65,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+            },
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; устаревшее био Fluminense проигнорировано, взят только структурированный блок 2026/27.",
+              "source": "https://theanalyst.com/players/15330/kaua-elias"
+            },
+            {
+              "label": "Минуты",
+              "value": 287,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; устаревшее био Fluminense проигнорировано, взят только структурированный блок 2026/27.",
+              "source": "https://theanalyst.com/players/15330/kaua-elias"
+            },
+            {
+              "label": "Голы",
+              "value": 3,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; устаревшее био Fluminense проигнорировано, взят только структурированный блок 2026/27.",
+              "source": "https://theanalyst.com/players/15330/kaua-elias"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; устаревшее био Fluminense проигнорировано, взят только структурированный блок 2026/27.",
+              "source": "https://theanalyst.com/players/15330/kaua-elias"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Сценарий как центральному нападающему: важен выход на ударную позицию."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Сценарий слабого влияния заслуживает внимания: в первом туре 66 минут без ударов. Это наблюдение, не устойчивая характеристика."
+          },
+          "reason": "Средний приоритет как центральному нападающему: важен выход на ударную позицию.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250209227--kaua-elias/",
+            "https://theanalyst.com/players/15330/kaua-elias"
+          ]
+        },
+        {
+          "name": "Dmytro Riznyk",
+          "team": "Shakhtar Donetsk",
+          "role": "Вратарь",
+          "facts": [],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 60,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Сейвы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Сухие матчи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Пропущенные голы",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+            },
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; взят структурированный блок 2026/27, старое био Vorskla не используется.",
+              "source": "https://theanalyst.com/players/10812/dmytro-riznyk"
+            },
+            {
+              "label": "Минуты",
+              "value": 450,
+              "scope": "Украинская Премьер-лига 2026/27 · Снимок источника за сентябрь; взят структурированный блок 2026/27, старое био Vorskla не используется.",
+              "source": "https://theanalyst.com/players/10812/dmytro-riznyk"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Влияние через отражение ударов и начало атак; в первом туре сыграл 90 минут."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск при розыгрыше под давлением: 60% точности передач в первом туре, но типы передач не учтены."
+          },
+          "reason": "Влияние через отражение ударов и начало атак; в первом туре сыграл 90 минут.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250121017--dmytro-riznyk/",
+            "https://theanalyst.com/players/10812/dmytro-riznyk"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915393",
+      "title": "Bodo/Glimt — Borussia Dortmund",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Serhou Guirassy",
+          "team": "Borussia Dortmund",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 2 гол., 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "text": "К 12 октября — 21 гол в первых 29 матчах ЛЧ за карьеру; отдельный исторический показатель.",
+              "source": "https://www.bvb.de/de/en/news/news-overview/news.html/2026/10/12/Why-the-match-in-Bod-could-be-a-high-scoring-one.html"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/121/serhou-guirassy"
+            },
+            {
+              "label": "Минуты",
+              "value": 431,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/121/serhou-guirassy"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/121/serhou-guirassy"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/121/serhou-guirassy"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Удары",
+              "value": 6,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 88,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+            }
+          ],
+          "availability": {
+            "status": "travelling_squad",
+            "text": "Включён клубом в выездную заявку на Bodø 13 октября; старт не подтверждён.",
+            "source": "https://www.bvb.de/de/en/news/news-overview/news.html/2026/10/13/Schlotterbeck-out-Ryerson-in-These-BVB-first-team-players-are-heading-to-Norway.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Высокий приоритет как завершителю: 6 ударов и 2 гола за 90 минут первого тура."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск — переоценить разовую результативность; 2 гола из одной игры не задают вероятность на сегодня."
+          },
+          "reason": "Высокий приоритет как завершителю: 6 ударов и 2 гола за 90 минут первого тура.",
+          "fan": {
+            "status": "verified_indexed",
+            "text": "В июльском обсуждении один участник называет Guirassy лучшим имеющимся форвардом, одновременно обсуждая возраст и возможное усиление позиции. Мнение относится к лету, не к подтверждённому прогнозу на Bodø. Проверен индексированный фрагмент; полная ветка недоступна.",
+            "source": "https://www.reddit.com/r/borussiadortmund/comments/1uwfw9q/what_are_we_doing_with_guirassy/",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/121/serhou-guirassy",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250080553--serhou-guirassy/"
+          ]
+        },
+        {
+          "name": "Maximilian Beier",
+          "team": "Borussia Dortmund",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "Ассисты ЛЧ: UEFA — 1, Opta — 0. Значение спорное и исключено из числовой сводки.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "text": "Альтернативная статистика: Opta показывает 0 ассистов в ЛЧ.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            },
+            {
+              "label": "Минуты",
+              "value": 359,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Bundesliga 2026/27 · Данные включают 9 октября.",
+              "source": "https://theanalyst.com/players/133/maximilian-beier"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Минуты",
+              "value": 82,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Удары",
+              "value": 2,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 69,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+            }
+          ],
+          "availability": {
+            "status": "travelling_squad",
+            "text": "Включён клубом в выездную заявку на Bodø 13 октября; старт не подтверждён.",
+            "source": "https://www.bvb.de/de/en/news/news-overview/news.html/2026/10/13/Schlotterbeck-out-Ryerson-in-These-BVB-first-team-players-are-heading-to-Norway.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Поддержка атаки: 1 гол и 2 ассиста в пяти матчах Bundesliga; 2 удара в первой игре ЛЧ."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск потерь при комбинациях: 69% точности передач в первом туре; показатель зависит от сложности передач."
+          },
+          "reason": "Связующее звено атаки; 359 минут и три результативных действия в пяти турах Bundesliga.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/133/maximilian-beier",
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250124222--maximilian-beier/"
+          ]
+        },
+        {
+          "name": "Andreas Helmersen",
+          "team": "Bodo/Glimt",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 81 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Минуты",
+              "value": 81,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Удары",
+              "value": 2,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 88,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+            },
+            {
+              "label": "Матчи",
+              "value": 16,
+              "scope": "Eliteserien 2026 · Снимок источника за сентябрь; календарный сезон целиком, включая игры до июня. Старое био Rosenborg игнорируется.",
+              "source": "https://theanalyst.com/players/9575/andreas-helmersen"
+            },
+            {
+              "label": "Минуты",
+              "value": 706,
+              "scope": "Eliteserien 2026 · Снимок источника за сентябрь; календарный сезон целиком, включая игры до июня. Старое био Rosenborg игнорируется.",
+              "source": "https://theanalyst.com/players/9575/andreas-helmersen"
+            },
+            {
+              "label": "Голы",
+              "value": 8,
+              "scope": "Eliteserien 2026 · Снимок источника за сентябрь; календарный сезон целиком, включая игры до июня. Старое био Rosenborg игнорируется.",
+              "source": "https://theanalyst.com/players/9575/andreas-helmersen"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Eliteserien 2026 · Снимок источника за сентябрь; календарный сезон целиком, включая игры до июня. Старое био Rosenborg игнорируется.",
+              "source": "https://theanalyst.com/players/9575/andreas-helmersen"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Сценарий среди завершителей Bodø: 81 минута и 2 удара в первом туре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск — ограниченное число моментов против сильного соперника; в первом туре гола не было."
+          },
+          "reason": "Средний приоритет среди завершителей Bodø: 81 минута и 2 удара в первом туре.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250078507--andreas-helmersen/",
+            "https://theanalyst.com/players/9575/andreas-helmersen"
+          ]
+        },
+        {
+          "name": "Jens Petter Hauge",
+          "team": "Bodo/Glimt",
+          "role": "Фланговый нападающий",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 26 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "text": "Забил Dortmund на 75-й минуте при 2:2 в декабре 2025. Историческая очная встреча, не текущий сезон.",
+              "source": "https://www.bvb.de/de/en/news/news-overview/news.html/2026/10/12/Why-the-match-in-Bod-could-be-a-high-scoring-one.html"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Минуты",
+              "value": 26,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Удары",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 89,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+            },
+            {
+              "label": "Матчи",
+              "value": 19,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Frankfurt игнорируется.",
+              "source": "https://theanalyst.com/players/202/jens-petter-hauge"
+            },
+            {
+              "label": "Минуты",
+              "value": 1258,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Frankfurt игнорируется.",
+              "source": "https://theanalyst.com/players/202/jens-petter-hauge"
+            },
+            {
+              "label": "Голы",
+              "value": 5,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Frankfurt игнорируется.",
+              "source": "https://theanalyst.com/players/202/jens-petter-hauge"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 4,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Frankfurt игнорируется.",
+              "source": "https://theanalyst.com/players/202/jens-petter-hauge"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Средний потенциальный вклад с фланга; забивал Dortmund в очной встрече декабря 2025."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Главная неопределённость — минуты: в первом туре сыграл 26 минут и не пробил."
+          },
+          "reason": "Средний потенциальный вклад с фланга; забивал Dortmund в очной встрече декабря 2025.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250104487--jens-petter-hauge/",
+            "https://theanalyst.com/players/202/jens-petter-hauge"
+          ]
+        },
+        {
+          "name": "Patrick Berg",
+          "team": "Bodo/Glimt",
+          "role": "Центральный полузащитник",
+          "facts": [
+            {
+              "text": "В первом матче общего этапа ЛЧ: 90 мин., 0 голов, 0 ассистов, 0 ЖК.",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Красные карточки",
+              "value": 0,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Точность передач, %",
+              "value": 73,
+              "scope": "ЛЧ 2026/27, общий этап до 14.10.2026; без квалификации",
+              "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+            },
+            {
+              "label": "Матчи",
+              "value": 20,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Lens игнорируется.",
+              "source": "https://theanalyst.com/players/9593/patrick-berg"
+            },
+            {
+              "label": "Минуты",
+              "value": 1700,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Lens игнорируется.",
+              "source": "https://theanalyst.com/players/9593/patrick-berg"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Lens игнорируется.",
+              "source": "https://theanalyst.com/players/9593/patrick-berg"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Eliteserien 2026 · Календарный сезон 2026 целиком, включая игры до июня; дата последнего учтённого матча не указана. Старое био Lens игнорируется.",
+              "source": "https://theanalyst.com/players/9593/patrick-berg"
+            }
+          ],
+          "availability": {
+            "status": "registered_unconfirmed",
+            "text": "В заявке UEFA; участие и стартовый состав на этот матч ещё не подтверждены.",
+            "source": "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Потенциал влиять через темп и продвижение мяча: полный первый матч и 12,34 км работы."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Сценарий слабого влияния — давление на розыгрыш: 73% точности передач в первом туре; без контекста это не оценка мастерства."
+          },
+          "reason": "Потенциал влиять через темп и продвижение мяча: полный первый матч и 12,34 км работы.",
+          "fan": {
+            "status": "unavailable",
+            "text": "Проверяемый актуальный комментарий фанатов об этом игроке не найден.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.uefa.com/uefachampionsleague/clubs/players/250065292--patrick-berg/",
+            "https://theanalyst.com/players/9593/patrick-berg"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915407",
+      "title": "Manchester City — Paris Saint-Germain",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Erling Haaland",
+          "team": "Manchester City",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "6 голов в 6 матчах АПЛ; забивал в пяти турах подряд.",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "text": "Забил Liverpool 11 октября.",
+              "source": "https://www.mancity.com/news/mens/paris-saint-germain-champions-league-october-2026-match-preview-63927328"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Premier League · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Минуты",
+              "value": 530,
+              "scope": "Premier League · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Голы",
+              "value": 6,
+              "scope": "Premier League · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Premier League · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "Лига чемпионов, общий этап · 2026/27 до 14.10",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "Лига чемпионов, общий этап · 2026/27 до 14.10",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Лига чемпионов, общий этап · 2026/27 до 14.10",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Лига чемпионов, общий этап · 2026/27 до 14.10",
+              "source": "https://theanalyst.com/players/4137/erling-haaland"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.mancity.com/news/mens/paris-saint-germain-champions-league-october-2026-match-preview-63927328"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Завершение атак: голы в пяти последних турах АПЛ подряд."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск сценария: при перекрытых передачах в штрафную результативность зависит от снабжения мячом; это тактический вывод, не доказанная персональная слабость."
+          },
+          "reason": "Шесть голов в шести турах и регулярное место в старте делают его главным кандидатом City на завершение.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4137/erling-haaland"
+          ]
+        },
+        {
+          "name": "Rayan Cherki",
+          "team": "Manchester City",
+          "role": "Атакующий полузащитник",
+          "facts": [
+            {
+              "text": "Premier League: 4 гола, 2 передачи; 6 матчей, 396 минут.",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Premier League · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Минуты",
+              "value": 396,
+              "scope": "Premier League · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Голы",
+              "value": 4,
+              "scope": "Premier League · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "Premier League · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Premier League · 2026/27, до 14.10.2026",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Минуты",
+              "value": 62,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3467/rayan-cherki"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.mancity.com/news/mens/paris-saint-germain-champions-league-october-2026-match-preview-63927328"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Совмещает создание и завершение: 4 гола и 2 передачи."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Риск: продуктивность на небольшой выборке; в первом матче ЛЧ — 62 минуты без гола и ассиста."
+          },
+          "reason": "Шесть результативных действий за 396 минут АПЛ; способен повлиять пасом и ударом.",
+          "fan": {
+            "matchId": "401915407",
+            "name": "Rayan Cherki",
+            "text": "В предматчевой теме r/MCFC один участник считает Cherki центральной фигурой нынешней игры и предполагает, что Foden начнёт на скамейке либо справа. Это мнение пользователя, не решение Maresca.",
+            "source": "https://www.reddit.com/r/MCFC/comments/1x55gw7/pre_match_thread_man_city_vs_paris_saintgermain/",
+            "kind": "Обсуждение болельщиков",
+            "date": "2026-10-13"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3467/rayan-cherki"
+          ]
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "team": "Paris Saint-Germain",
+          "role": "Нападающий",
+          "facts": [
+            {
+              "text": "В ЛЧ 2026/27: 1 матч, 64 минуты, 2 гола, 2 передачи.",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "text": "Перед City подтвердил отдых и управление нагрузкой.",
+              "source": "https://www.psg.fr/en/content/ousmane-dembele-its-going-to-be-a-huge-match-press-conference-manchester-city-fc-paris-saint-germain-uefa-champions-league-20262027"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "Ligue 1 · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Минуты",
+              "value": 212,
+              "scope": "Ligue 1 · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Ligue 1 · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Ligue 1 · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Минуты",
+              "value": 64,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/3545/ousmane-dembele"
+            }
+          ],
+          "availability": {
+            "text": "Дал официальную пресс-конференцию перед City и подтвердил, что отдохнул. Старт не объявлен.",
+            "source": "https://www.psg.fr/en/content/ousmane-dembele-its-going-to-be-a-huge-match-press-conference-manchester-city-fc-paris-saint-germain-uefa-champions-league-20262027"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "В первом матче ЛЧ: 2 гола и 2 передачи за 64 минуты."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В чемпионате пока 0 голов за 212 минут; один удачный матч ЛЧ не даёт устойчивой частоты."
+          },
+          "reason": "После отдыха может стать ключевым исполнителем PSG; участие зависит от решения тренера.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/3545/ousmane-dembele"
+          ]
+        },
+        {
+          "name": "Khvicha Kvaratskhelia",
+          "team": "Paris Saint-Germain",
+          "role": "Левый нападающий",
+          "facts": [
+            {
+              "text": "Ligue 1: 6 матчей, 314 минут, 1 гол, 1 ассист.",
+              "source": "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+            },
+            {
+              "text": "Ожидается возвращение в старт вместе с Dembélé и Doué — журналистский прогноз.",
+              "source": "https://www.getfootballnewsfrance.com/2026/psg-predicted-xi-v-manchester-city-ousmane-dembele-and-khvicha-kvaratskhelia-to-start/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 6,
+              "scope": "Ligue 1 · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+            },
+            {
+              "label": "Минуты",
+              "value": 314,
+              "scope": "Ligue 1 · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Ligue 1 · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Ligue 1 · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+            }
+          ],
+          "availability": {
+            "text": "В предматчевом прогнозе Get French Football News ожидается в старте; официального состава нет.",
+            "source": "https://www.getfootballnewsfrance.com/2026/psg-predicted-xi-v-manchester-city-ousmane-dembele-and-khvicha-kvaratskhelia-to-start/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Фланговая угроза; забил Le Mans 10 октября."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Только 314 минут в шести турах; четыре старта, возможны замена и ограниченное время."
+          },
+          "reason": "Влияние на фланге вероятнее оценивать по участию в атаках, чем обещать гол.",
+          "fan": {
+            "matchId": "401915407",
+            "name": "Khvicha Kvaratskhelia",
+            "text": "Автор темы r/psg о составе на City рассматривает Kvaratskhelia, Ferran Torres и Doué для правого края и прямо признаёт неопределённость. Это обсуждение расстановки, а не уверенный прогноз старта.",
+            "source": "https://www.reddit.com/r/psg/comments/1x31zdj/what_is_the_possible_starting_xi_for_psg_vs_city/",
+            "kind": "Обсуждение болельщиков",
+            "date": null,
+            "dateNote": "Обсуждение перед матчем 14.10.2026; точная дата публикации не подтверждена."
+          },
+          "sources": [
+            "https://theanalyst.com/players/4846/khvicha-kvaratskhelia"
+          ]
+        },
+        {
+          "name": "Jérémy Doku",
+          "team": "Manchester City",
+          "role": "Фланговый нападающий",
+          "facts": [
+            {
+              "text": "Premier League: 1 гол, 0 передачи; 2 матча, 49 минут.",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 2,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            },
+            {
+              "label": "Минуты",
+              "value": 49,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            },
+            {
+              "label": "Удары",
+              "value": 3,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            },
+            {
+              "label": "xG",
+              "value": 0.27,
+              "scope": "Premier League · 2026/27",
+              "source": "https://theanalyst.com/players/4133/jeremy-doku"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.mancity.com/news/mens/paris-saint-germain-champions-league-october-2026-match-preview-63927328"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Способен изменить игру после выхода со скамейки: забил Liverpool."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Лишь 49 минут АПЛ; нельзя переносить темп голов на полный матч."
+          },
+          "reason": "Сильный кандидат на роль игрока, меняющего темп; оценка зависит от времени на поле.",
+          "fan": {
+            "text": "В обсуждении r/MCFC после Liverpool отдельный болельщик считает поздний выход Doku удачным решением. Это частное мнение, не консенсус.",
+            "source": "https://www.reddit.com/r/MCFC/comments/1x3dhbn/marescas_reaction_to_dokus_goal/",
+            "date": "2026-10-12",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/4133/jeremy-doku"
+          ]
+        }
+      ],
+      "fanDiscussion": [
+        {
+          "matchId": "401915407",
+          "text": "В предматчевой теме r/MCFC одни участники верят в City благодаря успешному старту, другие отмечают дополнительный отдых стартового состава PSG и ожидают тяжёлую игру. Эти реплики показывают разные ожидания, а не измеренную долю мнений.",
+          "source": "https://www.reddit.com/r/MCFC/comments/1x55gw7/pre_match_thread_man_city_vs_paris_saintgermain/",
+          "kind": "forum",
+          "date": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "matchId": "401915408",
+      "title": "Real Betis — FC Porto",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Isco",
+          "team": "Real Betis",
+          "role": "Атакующий полузащитник",
+          "facts": [
+            {
+              "text": "LaLiga: 8 матчей, 401 минута, 2 гола; ЛЧ: 61 минута и 1 ассист.",
+              "source": "https://theanalyst.com/players/1527/isco"
+            },
+            {
+              "text": "Pellegrini продолжит дозировать нагрузку после восстановления.",
+              "source": "https://elpais.com/deportes/futbol/2026-10-14/el-betis-vuelve-a-girar-alrededor-de-isco-claves-de-un-plan-de-regreso-a-la-champions-que-asumia-demasiados-riesgos.html"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 8,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1527/isco"
+            },
+            {
+              "label": "Минуты",
+              "value": 401,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1527/isco"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1527/isco"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1527/isco"
+            }
+          ],
+          "availability": {
+            "text": "Возможное участие с дозированной нагрузкой после травмы; старт не объявлен. По сообщению El País, тренер продолжает регулировать его игровое время.",
+            "source": "https://elpais.com/deportes/futbol/2026-10-14/el-betis-vuelve-a-girar-alrededor-de-isco-claves-de-un-plan-de-regreso-a-la-champions-que-asumia-demasiados-riesgos.html"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Создание моментов между линиями; дубль в последнем матче с Osasuna."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Нагрузку после травмы дозируют; средняя длительность участия около 50 минут."
+          },
+          "reason": "Способен организовать атакующую игру, но риск ранней замены существенен.",
+          "fan": {
+            "text": "Фанатское издание Betisweb ожидает связку Isco—Abde за Parrott. Это редакционный прогноз сообщества, не комментарии или официальный состав.",
+            "source": "https://www.betisweb.com/web/previa-la-champions-pone-a-prueba-el-factor-cartuja-real-betis-vs-fc-oporto/",
+            "date": "2026-10-13",
+            "kind": "Авторский материал фан-сайта"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1527/isco"
+          ]
+        },
+        {
+          "name": "Abde Ezzalzouli",
+          "team": "Real Betis",
+          "role": "Фланговый нападающий",
+          "facts": [
+            {
+              "text": "LaLiga: 2 гола, 0 передачи; 5 матчей, 334 минут.",
+              "source": "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+            },
+            {
+              "label": "Минуты",
+              "value": 334,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "LaLiga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.realbetisbalompie.es/primer-equipo/portada/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Два гола в пяти матчах; кандидат на продвижение мяча по флангу."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В текущей выборке нет голевых передач; угроза не равна гарантированному результативному действию."
+          },
+          "reason": "Может создавать преимущество в ширине и выходить на удар.",
+          "fan": {
+            "text": "Betisweb включает Abde в предполагаемую атакующую связку с Isco. Это редакционный прогноз фанатского сайта.",
+            "source": "https://www.betisweb.com/web/previa-la-champions-pone-a-prueba-el-factor-cartuja-real-betis-vs-fc-oporto/",
+            "date": "2026-10-13",
+            "kind": "Авторский материал фан-сайта"
+          },
+          "sources": [
+            "https://theanalyst.com/players/1537/abde-ezzalzouli/stats"
+          ]
+        },
+        {
+          "name": "Troy Parrott",
+          "team": "Real Betis",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "LaLiga: 1 гол, 1 передачи; 5 матчей, 179 минут.",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "LaLiga · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Минуты",
+              "value": 179,
+              "scope": "LaLiga · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "LaLiga · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "LaLiga · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "UEFA Champions League · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27, Betis",
+              "source": "https://theanalyst.com/players/16300/troy-parrott"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.realbetisbalompie.es/primer-equipo/portada/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Гол за 90 минут в дебютной игре ЛЧ и гол Real Madrid в лиге."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В LaLiga стартовал только дважды; против Osasuna получил лишь 9 минут."
+          },
+          "reason": "Кандидат на завершение при ротации; его влияние особенно зависит от стартового состава.",
+          "fan": {
+            "text": "Betisweb прогнозирует Parrott на острие, учитывая ротацию перед Barcelona; это не объявленная тренером заявка.",
+            "source": "https://www.betisweb.com/web/previa-la-champions-pone-a-prueba-el-factor-cartuja-real-betis-vs-fc-oporto/",
+            "date": "2026-10-13",
+            "kind": "Авторский материал фан-сайта"
+          },
+          "sources": [
+            "https://theanalyst.com/players/16300/troy-parrott"
+          ]
+        },
+        {
+          "name": "Victor Froholdt",
+          "team": "FC Porto",
+          "role": "Центральный полузащитник",
+          "facts": [
+            {
+              "text": "Primeira Liga: 7 матчей, 630 минут, 2 гола, 0 ассистов.",
+              "source": "https://theanalyst.com/players/10862/victor-froholdt/career"
+            },
+            {
+              "text": "В составе выездной группы; забил Marítimo 10 октября.",
+              "source": "https://superportistas.pt/noticias/futebol/lista-de-convocados-do-fc-porto-para-jogo-contra-betis/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 7,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10862/victor-froholdt/career"
+            },
+            {
+              "label": "Минуты",
+              "value": 630,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10862/victor-froholdt/career"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10862/victor-froholdt/career"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10862/victor-froholdt/career"
+            }
+          ],
+          "availability": {
+            "text": "Включён в опубликованный 13 октября список поехавших в Севилью. Старт не подтверждён. Список опубликован SuperPortistas со ссылкой на O Jogo.",
+            "source": "https://superportistas.pt/noticias/futebol/lista-de-convocados-do-fc-porto-para-jogo-contra-betis/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Большой объём игрового времени и подключения: 2 гола в 7 матчах."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Голевых передач в лиге пока нет; перенос статистики внутреннего первенства на ЛЧ ограничен."
+          },
+          "reason": "Вероятное влияние через движение и контроль центра; гол возможен как дополнительный сценарий.",
+          "fan": {
+            "text": "Участник VictorFroholdt в теме Portal dos Dragões предлагает поставить его в старт и считает победу достижимой. Это мнение одного пользователя.",
+            "source": "https://www.fcporto.ws/forum/threads/champions-league-26-27-league-phase-2%C2%AAj-real-betis-balompie-vs-fc-porto.27884/",
+            "date": "2026-10-13",
+            "kind": "Обсуждение болельщиков"
+          },
+          "sources": [
+            "https://theanalyst.com/players/10862/victor-froholdt/career"
+          ]
+        },
+        {
+          "name": "Oskar Pietuszewski",
+          "team": "FC Porto",
+          "role": "Фланговый нападающий",
+          "facts": [
+            {
+              "text": "Primeira Liga: 1 гол, 0 передачи; 2 матча, 16 минут.",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            },
+            {
+              "text": "Opta указывает 16 минут; FBref — 18. Сохранено значение выбранного источника, расхождение не скрыто.",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 2,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            },
+            {
+              "label": "Минуты",
+              "value": 16,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Primeira Liga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+            }
+          ],
+          "availability": {
+            "text": "В выездной группе на Betis; место в старте не подтверждено. Список опубликован SuperPortistas со ссылкой на O Jogo.",
+            "source": "https://superportistas.pt/noticias/futebol/lista-de-convocados-do-fc-porto-para-jogo-contra-betis/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Забил Marítimo после выхода на замену."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Крайне малая выборка — 16 минут по Opta; минутные итоги других провайдеров отличаются. Частоту голов оценивать нельзя."
+          },
+          "reason": "Возможен заметный эпизод или выход со скамейки; устойчивость пока неизвестна.",
+          "fan": {
+            "text": "В теме Portal dos Dragões один пользователь включает Oskar в желаемую стартовую тройку. Это частное ожидание.",
+            "source": "https://www.fcporto.ws/forum/threads/champions-league-26-27-league-phase-2%C2%AAj-real-betis-balompie-vs-fc-porto.27884/",
+            "date": "2026-10-13",
+            "kind": "Обсуждение болельщиков"
+          },
+          "sources": [
+            "https://theanalyst.com/players/10872/oskar-pietuszewski/career"
+          ]
+        }
+      ],
+      "fanDiscussion": []
+    },
+    {
+      "matchId": "401915405",
+      "title": "Slovan Bratislava — VfB Stuttgart",
+      "checkedAt": "2026-10-14T13:11:02.040879+00:00",
+      "players": [
+        {
+          "name": "Ermedin Demirović",
+          "team": "VfB Stuttgart",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "В первом туре ЛЧ 3 гола за 62 минуты.",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "text": "10 рывков в глубину в первом туре ЛЧ.",
+              "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Минуты",
+              "value": 279,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Минуты",
+              "value": 62,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Голы",
+              "value": 3,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/514/ermedin-demirovic"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Хет-трик в первой игре ЛЧ; активные рывки за спины защитников."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В Bundesliga только 1 гол за 279 минут; хет-трик в одной игре не задаёт устойчивый темп."
+          },
+          "reason": "Главный кандидат на завершение атак Stuttgart при выходе в старте.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/514/ermedin-demirovic"
+          ]
+        },
+        {
+          "name": "Deniz Undav",
+          "team": "VfB Stuttgart",
+          "role": "Оттянутый нападающий",
+          "facts": [
+            {
+              "text": "2 ассиста за 90 минут в первом матче ЛЧ.",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "text": "10 рывков в глубину в первом туре ЛЧ.",
+              "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Минуты",
+              "value": 318,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Bundesliga · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Матчи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Минуты",
+              "value": 90,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 2,
+              "scope": "UEFA Champions League · 2026/27",
+              "source": "https://theanalyst.com/players/503/deniz-undav"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Создание моментов: 2 ассиста в первом матче ЛЧ."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Пять матчей Bundesliga без гола и ассиста; завершение пока не подкреплено результатами."
+          },
+          "reason": "Вероятнее важен связками и последним пасом; ожидания гола следует снижать.",
+          "fan": {
+            "matchId": "401915405",
+            "name": "Deniz Undav",
+            "text": "Участник euphoriebremse на Segglforum ждёт голов Stuttgart и отдельно надеется увидеть Deniz среди забивших. Это эмоциональное ожидание одного болельщика; оно не отменяет нулевой голевой статистики Undav в Bundesliga.",
+            "source": "https://segglforum.de/viewtopic.php?f=1&sid=d3c9e481d300912db276c5299b70a130&t=1478",
+            "kind": "Обсуждение болельщиков",
+            "date": "2026-10-13"
+          },
+          "sources": [
+            "https://theanalyst.com/players/503/deniz-undav"
+          ]
+        },
+        {
+          "name": "Chris Führich",
+          "team": "VfB Stuttgart",
+          "role": "Левый полузащитник",
+          "facts": [
+            {
+              "text": "Bundesliga: 4 матча, 284 минуты, 1 гол.",
+              "source": "https://theanalyst.com/players/496/chris-fuhrich/career"
+            },
+            {
+              "text": "14 рывков в глубину в первом туре ЛЧ.",
+              "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "Bundesliga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/496/chris-fuhrich/career"
+            },
+            {
+              "label": "Минуты",
+              "value": 284,
+              "scope": "Bundesliga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/496/chris-fuhrich/career"
+            },
+            {
+              "label": "Голы",
+              "value": 1,
+              "scope": "Bundesliga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/496/chris-fuhrich/career"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Bundesliga · 2026/27, до матча 14.10.2026",
+              "source": "https://theanalyst.com/players/496/chris-fuhrich/career"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "14 рывков в глубину в первом матче ЛЧ — больше, чем у Undav и Demirović."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В Bundesliga пока 1 результативное действие; активность без мяча не гарантирует гол."
+          },
+          "reason": "Сценарий сильного влияния через ширину и рывки подтверждается клубными матчевыми данными.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://theanalyst.com/players/496/chris-fuhrich/career"
+          ]
+        },
+        {
+          "name": "Andraž Šporar",
+          "team": "Slovan Bratislava",
+          "role": "Центральный нападающий",
+          "facts": [
+            {
+              "text": "Клубная таблица: 4 гола за 385 минут в Niké liga, 5 матчей.",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "text": "Последняя игра 10 октября: 90 минут против Skalica, 0 голов.",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 5,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Минуты",
+              "value": 385,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Голы",
+              "value": 4,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 0,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Минуты",
+              "value": 232,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: высокий",
+            "text": "Четыре гола в пяти матчах лиги; два дубля в сентябре."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "Против PSG — 80 минут без гола. Домашнюю результативность нельзя напрямую переносить на ЛЧ."
+          },
+          "reason": "Главная подтверждённая текущей статистикой угроза Slovan в завершении.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.skslovan.com/hraci/A-Andraz_Sporar"
+          ]
+        },
+        {
+          "name": "Tigran Barseghyan",
+          "team": "Slovan Bratislava",
+          "role": "Правый нападающий",
+          "facts": [
+            {
+              "text": "Niké liga: 2 гола, 1 передачи; 7 матчей, 390 минут.",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            }
+          ],
+          "metrics": [
+            {
+              "label": "Матчи",
+              "value": 7,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Минуты",
+              "value": 390,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Голы",
+              "value": 2,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Жёлтые карточки",
+              "value": 1,
+              "scope": "Niké liga · 2026/27",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Матчи",
+              "value": 4,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Минуты",
+              "value": 262,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Голы",
+              "value": 0,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            },
+            {
+              "label": "Голевые передачи",
+              "value": 1,
+              "scope": "UEFA Champions League · 2026/27, включая квалификацию",
+              "source": "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+            }
+          ],
+          "availability": {
+            "text": "Кандидат на участие; официальный стартовый состав ещё не подтверждён.",
+            "source": "https://www.vfb.de/de/vfb/aktuell/neues/profis/2627/matchfacts-vor-slovan-bratislava-gegen-vfb-stuttgart/"
+          },
+          "strength": {
+            "likelihood": "Потенциал: умеренный",
+            "text": "Гол в последнем туре; ассист в игре ЛЧ с PSG."
+          },
+          "weakness": {
+            "likelihood": "Условный риск · вероятность не оценена",
+            "text": "В ЛЧ с квалификацией 0 голов за 262 минуты; влияние может ограничиться созданием моментов."
+          },
+          "reason": "Альтернативный путь к опасным атакам Slovan через правый край.",
+          "fan": {
+            "text": "Проверяемое актуальное обсуждение этого игрока не найдено. Ожидания не выдумываются.",
+            "source": "",
+            "kind": "Открыть источник мнения"
+          },
+          "sources": [
+            "https://www.skslovan.com/hraci/A-Tigran_Barseghyan"
+          ]
+        }
+      ],
+      "fanDiscussion": [
+        {
+          "matchId": "401915405",
+          "text": "В предматчевой теме Segglforum пользователь Nice Weather ожидает более быстрого развития атак, чем против Paderborn; RedBlues считает три очка необходимыми. Это мнения отдельных участников, не общий прогноз болельщиков.",
+          "source": "https://segglforum.de/viewtopic.php?f=1&sid=d3c9e481d300912db276c5299b70a130&t=1478",
+          "kind": "forum",
+          "date": "2026-10-13"
+        }
+      ]
+    }
+  ]
+}

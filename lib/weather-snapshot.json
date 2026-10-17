@@ -1,0 +1,19 @@
+{
+  "epl:401878771": {
+    "status": "available",
+    "forecastAt": "2026-10-17T11:00:00.000Z",
+    "temperature": 11.1,
+    "wind": 3.1,
+    "precipitationProbability": 0,
+    "precipitation": 0,
+    "code": 0,
+    "city": "Liverpool",
+    "country": "England",
+    "timezone": "Europe/London",
+    "scope": "city",
+    "kickoff": "2026-10-17T11:30Z",
+    "checkedAt": "2026-10-16T21:42:57.379Z",
+    "source": "https://open-meteo.com/",
+    "stale": false
+  }
+}

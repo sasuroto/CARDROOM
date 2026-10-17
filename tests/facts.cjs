@@ -1,0 +1,17 @@
+require('./qa.cjs');
+const assert=require('node:assert/strict'),React=require('react'),{renderToStaticMarkup:render}=require('react-dom/server');
+const {default:Facts,metricEvidence}=require('../app/match-facts.tsx');
+const match={id:'401883158',league:'segunda',date:'2026-10-16T18:30Z',home:'Leganés',away:'Córdoba'};
+const html=render(React.createElement(Facts,{match,analysis:null,loading:false}));
+assert.ok(!html.includes('Нет подтверждённых данных')&&!html.includes('Загружаю'));
+assert.equal((html.match(/class="factTeam"/g)||[]).length,20);
+assert.equal(metricEvidence(match,null,'home','saves').value,4.2);
+assert.equal(metricEvidence(match,null,'away','saves').value,1.4);
+assert.equal(metricEvidence(match,null,'home','fouls').value,142/9);
+assert.equal(metricEvidence(match,null,'away','red').value,0);
+assert.equal(metricEvidence({...match,id:'other'},null,'home','goals'),null);
+assert.equal(metricEvidence(match,{state:'in',teams:[]},'home','goals'),null);
+assert.equal(metricEvidence(match,{state:'in',teams:[{side:'home',stats:{goals:0}}]},'home','goals').value,0);
+const analysis={state:'pre',leagueName:'Test',teams:[{id:'a',side:'home'}],history:[{id:'a',events:[{date:'2026-10-10',own:{shots:10}},{date:'2026-10-11',own:{shots:null}},{date:'2026-10-18',own:{shots:50}}]}]};
+const partial=metricEvidence({...match,id:'other'},analysis,'home','shots');assert.equal(partial.value,10);assert.equal(partial.n,1);
+console.log('PASS 20 pre-match fields; verified averages; zero retained; future/missing values excluded; no stale snapshot in live facts or another fixture.');

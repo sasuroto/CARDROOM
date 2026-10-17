@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-16",
+  "checkedAt": "2026-10-16T11:44:43Z",
+  "timezone": "Asia/Tbilisi",
+  "matches": [
+    {
+      "id": "401883158",
+      "league": "segunda",
+      "date": "2026-10-16T18:30Z",
+      "home": "Leganés",
+      "away": "Córdoba",
+      "checkedAt": "2026-10-16T11:44:43Z",
+      "officials": {
+        "referee": "Eder Mallo",
+        "assistants": [
+          "Ricardo Landrove",
+          "Sergio Doval"
+        ],
+        "fourthOfficial": "Carlos Castell",
+        "var": "José Antonio López",
+        "avar": "Javier Iglesias"
+      },
+      "appointmentType": "RFEF · официальное назначение",
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_viernes.pdf?cb=7375aee4",
+      "announcementSource": "https://rfef.es/es/noticias/designaciones-estos-son-los-arbitros-para-el-partido-del-viernes-16-de-octubre-en-segunda",
+      "publishedDate": "2026-10-15",
+      "documentDate": "2026-10-14",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "availabilityNote": "Подтверждённые сведения о травмах и заявках обеих команд в этом ограниченном исследовании не получены.",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401884770",
+      "league": "bundesliga",
+      "date": "2026-10-16T18:30Z",
+      "home": "Eintracht Frankfurt",
+      "away": "FC Cologne",
+      "checkedAt": "2026-10-16T11:44:43Z",
+      "officials": {
+        "referee": "Benjamin Brand",
+        "assistants": [
+          "Thomas Stein",
+          "Christian Gittelmann"
+        ],
+        "fourthOfficial": "Tobias Reichel",
+        "var": "Pascal Müller",
+        "avar": "Mike Pickel"
+      },
+      "appointmentType": "DFB · официальное назначение",
+      "source": "https://datencenter.dfb.de/datencenter/bundesliga/2026-2027/6-spieltag/eintracht-frankfurt-1-fc-koeln-2419342",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "availabilityNote": "Подтверждённые сведения о травмах и заявках обеих команд в этом ограниченном исследовании не получены.",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401876437",
+      "league": "ligue1",
+      "date": "2026-10-16T18:45Z",
+      "home": "Le Mans",
+      "away": "Toulouse",
+      "checkedAt": "2026-10-16T16:06:24.155248Z",
+      "officials": {
+        "referee": "Aurélien Petit",
+        "assistants": [
+          "Vianney Rozand",
+          "Julien Aube"
+        ],
+        "fourthOfficial": "Jérémy Stinat",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Julien Schmitt",
+          "Mathieu Vernice"
+        ]
+      },
+      "appointmentStatus": "confirmed",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentNote": "Назначение опубликовано Ligue 1 13.10.2026 и сверено с SAFE. Видеобригада указана без разделения ролей VAR/AVAR, как в официальном источнике.",
+      "availability": [
+        {
+          "team": "Toulouse",
+          "kind": "match-squad",
+          "status": "published",
+          "text": "Toulouse опубликовал заявку из 24 игроков на выезд к Le Mans. Включение в заявку не гарантирует старт или игровое время.",
+          "players": [
+            "Guillaume Restes",
+            "Mathys Niflore",
+            "Théo Collin",
+            "Rasmus Nicolaisen",
+            "Mark McKenzie",
+            "Seny Koumbassa",
+            "Christ Tapé",
+            "Niko Sigur",
+            "David Odogu",
+            "Rafik Messali",
+            "Ismaïl Diallo",
+            "Alexis Vossah",
+            "Thomas Jørgensen",
+            "Abu Francis",
+            "Mathis Amougou",
+            "Cristian Cásseres Jr",
+            "Niklas Schmidt",
+            "Julian Vignolo",
+            "Santiago Hidalgo",
+            "Sion Oppong",
+            "Jacen Russell-Rowe",
+            "Aron Dønnum",
+            "Casper Tengstedt",
+            "Ilyas Azizi"
+          ],
+          "source": "https://www.toulousefc.com/play/blog/2026/10/le-groupe-retenu-pour-le-mans-fc-tefece-7eme-journee-de-ligue-1-mcdonald-s",
+          "imageSource": "https://www.toulousefc.com/media/site/a7a2063113-1792079554/groupe-lmfc-tfc-pour-les-faibles-1024x-q80.png",
+          "publishedDate": "2026-10-15",
+          "publishedTimeLabel": "18:03 — время публикации на сайте клуба",
+          "checkedAt": "2026-10-16T11:44:43Z",
+          "startingLineup": false
+        }
+      ],
+      "availabilityStatus": "partial",
+      "availabilityNote": "Проверена опубликованная клубом заявка Toulouse; старт и сообщения о травмах обеих команд отдельно не подтверждены.",
+      "startingLineupsStatus": "not-verified",
+      "publishedDate": "2026-10-13"
+    },
+    {
+      "id": "401874959",
+      "league": "seriea",
+      "date": "2026-10-16T18:45Z",
+      "home": "Frosinone",
+      "away": "Sassuolo",
+      "checkedAt": "2026-10-16T11:44:43Z",
+      "officials": {
+        "referee": "Matteo Marchetti",
+        "assistants": [
+          "Marco Trinchieri",
+          "Paolo Laudato"
+        ],
+        "fourthOfficial": "Maurizio Mariani",
+        "var": "Aleandro Di Paolo",
+        "avar": "Manuel Volpi"
+      },
+      "appointmentType": "Frosinone Calcio · официальное сообщение о назначении",
+      "source": "https://www.frosinonecalcio.com/frosinone-sassuolo-arbitra-il-signor-matteo-marchetti/",
+      "publishedDate": "2026-10-14",
+      "appointmentStatus": "confirmed",
+      "availability": [
+        {
+          "team": "Frosinone",
+          "kind": "match-squad",
+          "status": "published",
+          "text": "Frosinone опубликовал заявку из 26 игроков на матч с Sassuolo. Birligea включён в список; заявка не подтверждает старт или выход на поле.",
+          "players": [
+            "Desplanches",
+            "Palmisani",
+            "Pisseri",
+            "Akpoguma",
+            "Amey",
+            "Bracaglia",
+            "Calvani",
+            "Cittadini",
+            "Fayed",
+            "Monterisi",
+            "Oyono",
+            "Tchato",
+            "Terzic",
+            "Caló",
+            "Cichella",
+            "El Azzouzi",
+            "Hasa",
+            "Masini",
+            "Schmid",
+            "Bobcek",
+            "Fini",
+            "Ghedjemis",
+            "Kvernadze",
+            "Raimondo",
+            "Zerbin",
+            "Birligea"
+          ],
+          "source": "https://www.frosinonecalcio.com/frosinone-sassuolo-i-convocati-3/",
+          "publishedDate": "2026-10-15",
+          "checkedAt": "2026-10-16T11:44:43Z",
+          "startingLineup": false
+        }
+      ],
+      "availabilityStatus": "partial",
+      "availabilityNote": "Проверена официальная заявка Frosinone; старт и сообщения о травмах обеих команд отдельно не подтверждены.",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401882844",
+      "league": "laliga",
+      "date": "2026-10-16T19:00Z",
+      "home": "Deportivo",
+      "away": "Levante",
+      "checkedAt": "2026-10-16T11:44:43Z",
+      "officials": {
+        "referee": "Manuel Jesús Orellana",
+        "assistants": [
+          "Roberto Tejero",
+          "Rubén Becerril"
+        ],
+        "fourthOfficial": "José Antonio Palomares",
+        "var": "Valentín Pizarro",
+        "avar": "Jorge Figueroa"
+      },
+      "appointmentType": "RFEF · официальное назначение",
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_viernes.pdf?cb=257a48d7",
+      "announcementSource": "https://rfef.es/es/noticias/designaciones-estos-son-los-arbitros-para-el-partido-del-viernes-16-de-octubre-de-primera",
+      "publishedDate": "2026-10-15",
+      "documentDate": "2026-10-14",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "availabilityNote": "Подтверждённые сведения о травмах и заявках обеих команд в этом ограниченном исследовании не получены.",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401888377",
+      "league": "superlig",
+      "date": "2026-10-16T17:00Z",
+      "home": "Çorum FK",
+      "away": "Caykur Rizespor",
+      "checkedAt": "2026-10-16T18:06:00Z",
+      "officials": {
+        "referee": "Davut Dakul Çelik",
+        "assistants": [
+          "Murat Temel",
+          "Ogün Kamacı"
+        ],
+        "fourthOfficial": "Berkay Erdemir"
+      },
+      "appointmentType": "TFF · официальная карточка матча",
+      "source": "https://www.tff.org/Default.aspx?macId=317852&pageId=29",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "availabilityNote": "VAR/AVAR и актуальные травмы в проверенной карточке TFF не опубликованы. Подтверждённый состав и игровая статистика запрашиваются отдельно из ESPN.",
+      "startingLineupsStatus": "live-source"
+    }
+  ],
+  "researchScope": {
+    "targetSourceCount": 12,
+    "sources": [
+      "https://rfef.es/es/noticias/arbitros/designaciones",
+      "https://rfef.es/es/noticias/designaciones-estos-son-los-arbitros-para-el-partido-del-viernes-16-de-octubre-en-segunda",
+      "https://rfef.es/es/noticias/designaciones-estos-son-los-arbitros-para-el-partido-del-viernes-16-de-octubre-de-primera",
+      "https://datencenter.dfb.de/datencenter/bundesliga/2026-2027/6-spieltag/eintracht-frankfurt-1-fc-koeln-2419342",
+      "https://www.frosinonecalcio.com/",
+      "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_viernes.pdf?cb=7375aee4",
+      "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_viernes.pdf?cb=257a48d7",
+      "https://www.frosinonecalcio.com/frosinone-sassuolo-arbitra-il-signor-matteo-marchetti/",
+      "https://www.frosinonecalcio.com/frosinone-sassuolo-i-convocati-3/",
+      "https://www.toulousefc.com/",
+      "https://www.toulousefc.com/match-center/equipe-professionnelle-20262027-9tnkmwtrqc12i4hglhe4cdedw",
+      "https://www.toulousefc.com/play/blog/2026/10/le-groupe-retenu-pour-le-mans-fc-tefece-7eme-journee-de-ligue-1-mcdonald-s",
+      "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1"
+    ],
+    "attachmentNote": "Изображение заявки Toulouse прочитано как вложение уже учтённой статьи.",
+    "limitations": [
+      "Заявки подтверждены только у Frosinone и Toulouse; это не стартовые составы.",
+      "Неполное покрытие травм: отсутствие новости не означает, что травм нет.",
+      "Имена судей сохранены в написании официальных публикаций; отсутствующие части фамилии не дополнены догадками.",
+      "Снимок ручной проверки не подтверждает последующие изменения назначений."
+    ]
+  }
+}

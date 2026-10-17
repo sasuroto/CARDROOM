@@ -1,0 +1,938 @@
+{
+  "checkedAt": "2026-10-16T16:27:13.228844+00:00",
+  "date": "2026-10-16",
+  "blocks": 31,
+  "sourceRequests": 32,
+  "historyRequests": 82,
+  "calendarRequests": 19,
+  "calendarFixtures": 72,
+  "leagues": [
+    {
+      "id": "epl",
+      "name": "Premier League",
+      "season": "2026/27",
+      "teams": 20,
+      "corners": 20,
+      "referees": 19,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/england/premier-league/card-stats",
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-premier-league/",
+      "refSource": "https://www.soccerbase.com/referees/home.sd"
+    },
+    {
+      "id": "ucl",
+      "name": "Лига чемпионов",
+      "season": "2026/27",
+      "teams": 3,
+      "corners": 0,
+      "referees": 18,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/europe/uefa-champions-league/card-stats",
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time-europe-champions-league/",
+      "refSource": "https://valuestats.com/en/league/champions-league/referees/"
+    },
+    {
+      "id": "laliga",
+      "name": "La Liga",
+      "season": "2026/27",
+      "teams": 20,
+      "corners": 20,
+      "referees": 18,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/spain/la-liga/card-stats",
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-la-liga/",
+      "refSource": "https://valuestats.com/en/league/la-liga/referees/"
+    },
+    {
+      "id": "segunda",
+      "name": "Segunda",
+      "season": "2026/27",
+      "teams": 0,
+      "corners": 0,
+      "referees": 18,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/spain/segunda-division/card-stats",
+      "teamSource": "https://footiqo.com/statistics/leagues/cards/full-time/",
+      "refSource": "https://valuestats.com/en/league/la-liga-2/referees/"
+    },
+    {
+      "id": "seriea",
+      "name": "Serie A",
+      "season": "2026/27",
+      "teams": 20,
+      "corners": 0,
+      "referees": 18,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/italy/serie-a/card-stats",
+      "teamSource": "https://www.betaminic.com/es/estadisticas/estadisticas-tarjetas-amarillas-serie-a/",
+      "refSource": "https://valuestats.com/en/league/serie-a-italy/referees/"
+    },
+    {
+      "id": "bundesliga",
+      "name": "Bundesliga",
+      "season": "2026/27",
+      "teams": 10,
+      "corners": 0,
+      "referees": 18,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/germany/bundesliga/card-stats",
+      "teamSource": "https://footiqo.com/statistics/teams/cards/full-time-germany-bundesliga/",
+      "refSource": "https://balonario.com/en/referees/bundesliga/"
+    },
+    {
+      "id": "ligue1",
+      "name": "Ligue 1",
+      "season": "2026/27",
+      "teams": 18,
+      "corners": 18,
+      "referees": 17,
+      "checkedAt": "2026-10-16T16:20:31.751Z",
+      "source": "https://footystats.org/france/ligue-1/card-stats",
+      "teamSource": "https://www.betaminic.com/statistics/yellow-card-stats-ligue-1/",
+      "refSource": "https://valuestats.com/en/league/ligue-1/referees/"
+    }
+  ],
+  "matches": [
+    {
+      "id": "401883158",
+      "title": "Leganés — Córdoba",
+      "date": "2026-10-16T18:30Z",
+      "referee": "Eder Mallo",
+      "appointmentSource": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_viernes.pdf?cb=7375aee4",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401883158",
+      "checkedAt": "2026-10-16T16:22:19.676Z",
+      "teams": [
+        {
+          "id": "17534",
+          "name": "Leganés",
+          "n": 9
+        },
+        {
+          "id": "8447",
+          "name": "Córdoba",
+          "n": 9
+        }
+      ],
+      "players": 6,
+      "metrics": 10,
+      "errors": 0
+    },
+    {
+      "id": "401884770",
+      "title": "Eintracht Frankfurt — FC Cologne",
+      "date": "2026-10-16T18:30Z",
+      "referee": "Benjamin Brand",
+      "appointmentSource": "https://datencenter.dfb.de/datencenter/bundesliga/2026-2027/6-spieltag/eintracht-frankfurt-1-fc-koeln-2419342",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401884770",
+      "checkedAt": "2026-10-16T16:22:20.415Z",
+      "teams": [
+        {
+          "id": "125",
+          "name": "Eintracht Frankfurt",
+          "n": 5
+        },
+        {
+          "id": "122",
+          "name": "FC Cologne",
+          "n": 5
+        }
+      ],
+      "players": 6,
+      "metrics": 10,
+      "errors": 0
+    },
+    {
+      "id": "401876437",
+      "title": "Le Mans — Toulouse",
+      "date": "2026-10-16T18:45Z",
+      "referee": "Aurélien Petit",
+      "appointmentSource": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401876437",
+      "checkedAt": "2026-10-16T16:22:21.213Z",
+      "teams": [
+        {
+          "id": "2697",
+          "name": "Le Mans",
+          "n": 6
+        },
+        {
+          "id": "179",
+          "name": "Toulouse",
+          "n": 6
+        }
+      ],
+      "players": 6,
+      "metrics": 10,
+      "errors": 0
+    },
+    {
+      "id": "401874959",
+      "title": "Frosinone — Sassuolo",
+      "date": "2026-10-16T18:45Z",
+      "referee": "Matteo Marchetti",
+      "appointmentSource": "https://www.frosinonecalcio.com/frosinone-sassuolo-arbitra-il-signor-matteo-marchetti/",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401874959",
+      "checkedAt": "2026-10-16T16:22:22.027Z",
+      "teams": [
+        {
+          "id": "4057",
+          "name": "Frosinone",
+          "n": 6
+        },
+        {
+          "id": "3997",
+          "name": "Sassuolo",
+          "n": 6
+        }
+      ],
+      "players": 6,
+      "metrics": 10,
+      "errors": 0
+    },
+    {
+      "id": "401882844",
+      "title": "Deportivo — Levante",
+      "date": "2026-10-16T19:00Z",
+      "referee": "Manuel Jesús Orellana",
+      "appointmentSource": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_viernes.pdf?cb=257a48d7",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401882844",
+      "checkedAt": "2026-10-16T16:22:22.939Z",
+      "teams": [
+        {
+          "id": "90",
+          "name": "Deportivo",
+          "n": 8
+        },
+        {
+          "id": "1538",
+          "name": "Levante",
+          "n": 7
+        }
+      ],
+      "players": 6,
+      "metrics": 10,
+      "errors": 0
+    }
+  ],
+  "findings": [
+    "История команд больше не обрезается до пяти игр: используются доступные завершённые матчи текущего сезона и турнира, максимум 60 на команду.",
+    "Для Deportivo — Levante выборка увеличилась с 5+5 до 8+7 игр. По той же формуле шанс 3 и более голов изменился примерно с 73% до 64%. Это эффект смены выборки, а не доказанная точность прогноза.",
+    "Обнаружено расхождение поставщиков для Leganés — Córdoba: за 9 игр LaLiga DISPAROS 76/103, ESPN totalShots 96/137; фолы Córdoba 151 против 150. Определения и причины расхождения полностью не установлены. В карточке используется единая поматчевая серия ESPN; официальный срез сохранён отдельно.",
+    "Профиль Marco Guida обновлён после матча 13 октября: 6 матчей, 22 ЖК, 0 КК, 136 фолов. Турниры показаны раздельно.",
+    "Проверены даты и арифметика 9 архивных профилей арбитров: 63 основных матча, 231 ЖК, 9 КК; ещё 7 строк идут отдельно. Независимо перепроверены не все 63 матча.",
+    "Архив 45 игроков в 9 матчах и отдельная подборка из 6 игроков сохранены с исходными датами. Выборочно повторно сверены Ferri, Hadj Moussa, Wirtz, Malen, Haaland, Osimhen; это не полная повторная верификация 51 записи."
+  ],
+  "limitations": [
+    "Все 10 показателей найдены у обеих команд пяти сегодняшних матчей. Это подтверждение наличия и расчёта данных поставщика, не независимая проверка каждого события по видео.",
+    "В полученных данных 30 выбранных игроков отсутствует minutesPlayed: минуты не восстановлены догадками. Голы и выходы подтверждены поматчевыми строками ESPN.",
+    "Стартовые составы, травмы и дисквалификации требуют новой проверки перед игрой. Клубная заявка не равна стартовому составу.",
+    "Общие таблицы команд и угловых в нескольких турнирах неполные; отсутствие строки не означает нулевой показатель.",
+    "Модель Пуассона не откалибрована и не проверена на отложенной выборке. Проценты, особенно для карточек, ударов и фолов, являются сценарными оценками.",
+    "Проверка интерфейса в браузере недоступна из-за существующего ограничения доступа; выполнены проверки кода, данных и сборки."
+  ],
+  "sources": [
+    {
+      "url": "https://footystats.org/england/premier-league/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:31.752Z"
+    },
+    {
+      "url": "https://footystats.org/england/premier-league",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:36.185Z"
+    },
+    {
+      "url": "https://footystats.org/europe/uefa-champions-league/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:36.303Z"
+    },
+    {
+      "url": "https://footystats.org/europe/uefa-champions-league",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:36.436Z"
+    },
+    {
+      "url": "https://footystats.org/spain/la-liga/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:36.790Z"
+    },
+    {
+      "url": "https://footystats.org/spain/la-liga",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:36.893Z"
+    },
+    {
+      "url": "https://footystats.org/spain/segunda-division/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:37.182Z"
+    },
+    {
+      "url": "https://footystats.org/spain/segunda-division",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:37.519Z"
+    },
+    {
+      "url": "https://footystats.org/italy/serie-a/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:37.656Z"
+    },
+    {
+      "url": "https://footystats.org/italy/serie-a",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:37.759Z"
+    },
+    {
+      "url": "https://footystats.org/germany/bundesliga/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:37.952Z"
+    },
+    {
+      "url": "https://footystats.org/germany/bundesliga",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:38.086Z"
+    },
+    {
+      "url": "https://footystats.org/france/ligue-1/card-stats",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:38.191Z"
+    },
+    {
+      "url": "https://footystats.org/france/ligue-1",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:39.432Z"
+    },
+    {
+      "url": "https://footiqo.com/statistics/teams/cards/full-time-europe-champions-league/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:31.762Z"
+    },
+    {
+      "url": "https://footiqo.com/statistics/teams/cards/full-time-germany-bundesliga/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:40.067Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/yellow-card-stats-premier-league/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:31.761Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/corner-stats-premier-league/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:42.055Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/yellow-card-stats-la-liga/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:45.450Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/corner-stats-la-liga/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:48.888Z"
+    },
+    {
+      "url": "https://www.betaminic.com/es/estadisticas/estadisticas-tarjetas-amarillas-serie-a/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:52.190Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/yellow-card-stats-ligue-1/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:55.622Z"
+    },
+    {
+      "url": "https://www.betaminic.com/statistics/corner-stats-ligue-1/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:20:59.734Z"
+    },
+    {
+      "url": "https://footiqo.com/statistics/leagues/cards/full-time/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:04.329Z"
+    },
+    {
+      "url": "https://footiqo.com/statistics/referees/cards/full-time/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:11.359Z"
+    },
+    {
+      "url": "https://valuestats.com/en/league/la-liga/referees/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:11.621Z"
+    },
+    {
+      "url": "https://valuestats.com/en/league/la-liga-2/referees/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:16.889Z"
+    },
+    {
+      "url": "https://balonario.com/en/referees/bundesliga/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:11.621Z"
+    },
+    {
+      "url": "https://valuestats.com/en/league/champions-league/referees/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:17.251Z"
+    },
+    {
+      "url": "https://valuestats.com/en/league/ligue-1/referees/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:17.586Z"
+    },
+    {
+      "url": "https://valuestats.com/en/league/serie-a-italy/referees/",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:17.839Z"
+    },
+    {
+      "url": "https://www.soccerbase.com/referees/home.sd",
+      "status": 200,
+      "checkedAt": "2026-10-16T16:21:11.620Z"
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883158",
+      "checkedAt": "2026-10-16T16:21:53.682Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/17534/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:04.830Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/8447/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:05.032Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883189",
+      "checkedAt": "2026-10-16T16:22:05.147Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883199",
+      "checkedAt": "2026-10-16T16:22:05.148Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883194",
+      "checkedAt": "2026-10-16T16:22:05.147Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883204",
+      "checkedAt": "2026-10-16T16:22:05.149Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883176",
+      "checkedAt": "2026-10-16T16:22:11.763Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883245",
+      "checkedAt": "2026-10-16T16:22:11.764Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883209",
+      "checkedAt": "2026-10-16T16:22:11.761Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883251",
+      "checkedAt": "2026-10-16T16:22:11.764Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883184",
+      "checkedAt": "2026-10-16T16:22:19.172Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883259",
+      "checkedAt": "2026-10-16T16:22:19.171Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883197",
+      "checkedAt": "2026-10-16T16:22:19.172Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883161",
+      "checkedAt": "2026-10-16T16:22:19.172Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883213",
+      "checkedAt": "2026-10-16T16:22:19.301Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883221",
+      "checkedAt": "2026-10-16T16:22:19.301Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883216",
+      "checkedAt": "2026-10-16T16:22:19.301Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883171",
+      "checkedAt": "2026-10-16T16:22:19.300Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883230",
+      "checkedAt": "2026-10-16T16:22:19.529Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883224",
+      "checkedAt": "2026-10-16T16:22:19.529Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884770",
+      "checkedAt": "2026-10-16T16:22:19.677Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/teams/125/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:19.785Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/teams/122/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:19.882Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884787",
+      "checkedAt": "2026-10-16T16:22:19.990Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884805",
+      "checkedAt": "2026-10-16T16:22:19.990Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884794",
+      "checkedAt": "2026-10-16T16:22:19.990Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884780",
+      "checkedAt": "2026-10-16T16:22:19.990Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884792",
+      "checkedAt": "2026-10-16T16:22:20.111Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884774",
+      "checkedAt": "2026-10-16T16:22:20.111Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884785",
+      "checkedAt": "2026-10-16T16:22:20.111Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884811",
+      "checkedAt": "2026-10-16T16:22:20.111Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884808",
+      "checkedAt": "2026-10-16T16:22:20.241Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884810",
+      "checkedAt": "2026-10-16T16:22:20.241Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876437",
+      "checkedAt": "2026-10-16T16:22:20.416Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/2697/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:20.504Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/179/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:20.611Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876455",
+      "checkedAt": "2026-10-16T16:22:20.714Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876470",
+      "checkedAt": "2026-10-16T16:22:20.714Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876442",
+      "checkedAt": "2026-10-16T16:22:20.714Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876463",
+      "checkedAt": "2026-10-16T16:22:20.714Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876450",
+      "checkedAt": "2026-10-16T16:22:20.853Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876491",
+      "checkedAt": "2026-10-16T16:22:20.853Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876478",
+      "checkedAt": "2026-10-16T16:22:20.853Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876444",
+      "checkedAt": "2026-10-16T16:22:20.853Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876486",
+      "checkedAt": "2026-10-16T16:22:21.031Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876468",
+      "checkedAt": "2026-10-16T16:22:21.031Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876461",
+      "checkedAt": "2026-10-16T16:22:21.030Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876483",
+      "checkedAt": "2026-10-16T16:22:21.031Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874959",
+      "checkedAt": "2026-10-16T16:22:21.213Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/4057/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:21.347Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/3997/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:21.450Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874752",
+      "checkedAt": "2026-10-16T16:22:21.579Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874768",
+      "checkedAt": "2026-10-16T16:22:21.579Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874991",
+      "checkedAt": "2026-10-16T16:22:21.579Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874754",
+      "checkedAt": "2026-10-16T16:22:21.578Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874930",
+      "checkedAt": "2026-10-16T16:22:21.780Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874756",
+      "checkedAt": "2026-10-16T16:22:21.780Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874789",
+      "checkedAt": "2026-10-16T16:22:21.780Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874942",
+      "checkedAt": "2026-10-16T16:22:21.779Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874751",
+      "checkedAt": "2026-10-16T16:22:21.894Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874750",
+      "checkedAt": "2026-10-16T16:22:21.894Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874748",
+      "checkedAt": "2026-10-16T16:22:21.895Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874743",
+      "checkedAt": "2026-10-16T16:22:21.895Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882844",
+      "checkedAt": "2026-10-16T16:22:22.028Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/90/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:22.151Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/1538/schedule?season=2026",
+      "checkedAt": "2026-10-16T16:22:22.261Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882863",
+      "checkedAt": "2026-10-16T16:22:22.407Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882873",
+      "checkedAt": "2026-10-16T16:22:22.407Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882884",
+      "checkedAt": "2026-10-16T16:22:22.407Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882847",
+      "checkedAt": "2026-10-16T16:22:22.406Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882910",
+      "checkedAt": "2026-10-16T16:22:22.532Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882904",
+      "checkedAt": "2026-10-16T16:22:22.532Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882887",
+      "checkedAt": "2026-10-16T16:22:22.531Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882923",
+      "checkedAt": "2026-10-16T16:22:22.532Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882883",
+      "checkedAt": "2026-10-16T16:22:22.649Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882890",
+      "checkedAt": "2026-10-16T16:22:22.650Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882852",
+      "checkedAt": "2026-10-16T16:22:22.649Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882857",
+      "checkedAt": "2026-10-16T16:22:22.649Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882909",
+      "checkedAt": "2026-10-16T16:22:22.810Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882922",
+      "checkedAt": "2026-10-16T16:22:22.810Z",
+      "status": 200
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882902",
+      "checkedAt": "2026-10-16T16:22:22.809Z",
+      "status": 200
+    },
+    {
+      "league": "epl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:02.449Z",
+      "events": 5,
+      "status": 200
+    },
+    {
+      "league": "epl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:02.587Z",
+      "events": 4,
+      "status": 200
+    },
+    {
+      "league": "ucl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261013",
+      "checkedAt": "2026-10-16T16:26:02.658Z",
+      "events": 9,
+      "status": 200
+    },
+    {
+      "league": "ucl",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261014",
+      "checkedAt": "2026-10-16T16:26:02.774Z",
+      "events": 9,
+      "status": 200
+    },
+    {
+      "league": "laliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261016",
+      "checkedAt": "2026-10-16T16:26:02.881Z",
+      "events": 1,
+      "status": 200
+    },
+    {
+      "league": "laliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:02.966Z",
+      "events": 4,
+      "status": 200
+    },
+    {
+      "league": "laliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:03.106Z",
+      "events": 4,
+      "status": 200
+    },
+    {
+      "league": "segunda",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20261016",
+      "checkedAt": "2026-10-16T16:26:03.213Z",
+      "events": 1,
+      "status": 200
+    },
+    {
+      "league": "segunda",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:03.310Z",
+      "events": 4,
+      "status": 200
+    },
+    {
+      "league": "segunda",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:03.446Z",
+      "events": 5,
+      "status": 200
+    },
+    {
+      "league": "seriea",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261016",
+      "checkedAt": "2026-10-16T16:26:03.517Z",
+      "events": 1,
+      "status": 200
+    },
+    {
+      "league": "seriea",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:03.657Z",
+      "events": 3,
+      "status": 200
+    },
+    {
+      "league": "seriea",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:03.753Z",
+      "events": 4,
+      "status": 200
+    },
+    {
+      "league": "bundesliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261016",
+      "checkedAt": "2026-10-16T16:26:03.849Z",
+      "events": 1,
+      "status": 200
+    },
+    {
+      "league": "bundesliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:03.958Z",
+      "events": 6,
+      "status": 200
+    },
+    {
+      "league": "bundesliga",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:04.061Z",
+      "events": 2,
+      "status": 200
+    },
+    {
+      "league": "ligue1",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261016",
+      "checkedAt": "2026-10-16T16:26:04.129Z",
+      "events": 1,
+      "status": 200
+    },
+    {
+      "league": "ligue1",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261017",
+      "checkedAt": "2026-10-16T16:26:04.269Z",
+      "events": 3,
+      "status": 200
+    },
+    {
+      "league": "ligue1",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261018",
+      "checkedAt": "2026-10-16T16:26:04.361Z",
+      "events": 5,
+      "status": 200
+    }
+  ]
+}

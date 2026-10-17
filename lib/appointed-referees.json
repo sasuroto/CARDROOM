@@ -1,0 +1,1020 @@
+{
+  "start": "2026-06-01",
+  "end": "2026-10-16",
+  "checkedAt": "2026-10-16T11:34:33.463925+00:00",
+  "profiles": [
+    {
+      "id": "2449",
+      "name": "Donatas Rumšas",
+      "country": "Литва",
+      "fixture": {
+        "id": "401915416",
+        "league": "ucl",
+        "date": "2026-10-14T16:45Z",
+        "home": "Feyenoord Rotterdam",
+        "away": "Como",
+        "venue": "Stadion Feijenoord ‘De Kuip’",
+        "city": "Роттердам",
+        "country": "Нидерланды",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049584--feyenoord-vs-como/matchinfo/",
+        "referee": "Donatas Rumšas",
+        "refereeCountry": "Литва",
+        "assistants": [
+          "Aleksandr Radiuš",
+          "Dovydas Sužiedėlis"
+        ],
+        "var": "Cesar Soto Grado",
+        "avar": "Carlos del Cerro Grande",
+        "fourthOfficial": "Robertas Valikonis",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/14476-donatas-rumsas",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Feyenoord",
+          "away": "Como",
+          "score": "3 - 2",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=159"
+        },
+        {
+          "date": "2026-10-04",
+          "competition": "Nations League",
+          "home": "Netherlands",
+          "away": "Serbia",
+          "score": "2 - 1",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=158"
+        },
+        {
+          "date": "2026-09-24",
+          "competition": "Nations League",
+          "home": "Portugal",
+          "away": "Wales",
+          "score": "1 - 0",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=158"
+        },
+        {
+          "date": "2026-08-27",
+          "competition": "Europa League",
+          "home": "Ararat-Armenia",
+          "away": "Uni Craiova",
+          "score": "1 - 0",
+          "yellow": 7,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=159",
+          "alternateYellow": 6
+        },
+        {
+          "date": "2026-08-04",
+          "competition": "Лига чемпионов",
+          "home": "Levski Sofia",
+          "away": "Kairat Almaty",
+          "score": "1 - 0",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2449&season_id=159",
+          "sourceCompetition": "European Cup"
+        }
+      ],
+      "supplemental": [
+        {
+          "date": "2026-09-13",
+          "home": "Sūduva",
+          "away": "Žalgiris",
+          "score": "0 - 0",
+          "yellow": 3,
+          "red": null,
+          "competition": "A Lyga",
+          "source": "https://valuestats.com/en/match/19711708-suduva-vs-zalgiris"
+        },
+        {
+          "date": "2026-08-17",
+          "home": "Džiugas Telšiai",
+          "away": "Sūduva",
+          "score": "0 - 2",
+          "yellow": 2,
+          "red": null,
+          "competition": "A Lyga",
+          "source": "https://valuestats.com/en/match/19711690-dziugas-telsiai-vs-suduva"
+        }
+      ]
+    },
+    {
+      "id": "1467",
+      "name": "Tobias Stieler",
+      "country": "Германия",
+      "fixture": {
+        "id": "401915415",
+        "league": "ucl",
+        "date": "2026-10-14T16:45Z",
+        "home": "LASK Linz",
+        "away": "Liverpool",
+        "venue": "Oberösterreich Arena",
+        "city": "Линц",
+        "country": "Австрия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049588--lask-vs-liverpool/matchinfo/",
+        "referee": "Tobias Stieler",
+        "refereeCountry": "Германия",
+        "assistants": [
+          "Lasse Koslowski",
+          "Jonas Weickenmeier"
+        ],
+        "var": "Tomasz Kwiatkowski",
+        "avar": "Lukas Fähndrich",
+        "fourthOfficial": "Matthias Jöllenbeck",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/17233-tobias-stieler",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "LASK Linz",
+          "away": "Liverpool",
+          "score": "3 - 6",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        },
+        {
+          "date": "2026-10-11",
+          "competition": "German Bundesliga 2",
+          "home": "Hertha Berlin",
+          "away": "Greuther Furth",
+          "score": "2 - 1",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        },
+        {
+          "date": "2026-09-24",
+          "competition": "Nations League",
+          "home": "Norway",
+          "away": "Denmark",
+          "score": "3 - 2",
+          "yellow": 4,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=158",
+          "alternateYellow": 5
+        },
+        {
+          "date": "2026-09-19",
+          "competition": "German Bundesliga",
+          "home": "Stuttgart",
+          "away": "B Dortmund",
+          "score": "0 - 1",
+          "yellow": 7,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        },
+        {
+          "date": "2026-09-05",
+          "competition": "German Bundesliga 2",
+          "home": "Holstein Kiel",
+          "away": "Nuremberg",
+          "score": "2 - 2",
+          "yellow": 7,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        },
+        {
+          "date": "2026-08-29",
+          "competition": "German Bundesliga",
+          "home": "Mainz",
+          "away": "SC Paderborn",
+          "score": "0 - 0",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        },
+        {
+          "date": "2026-08-20",
+          "competition": "Europa League",
+          "home": "Besiktas",
+          "away": "Kauno Zalgiris",
+          "score": "3 - 0",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1467&season_id=159"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "1940",
+      "name": "François Letexier",
+      "country": "Франция",
+      "fixture": {
+        "id": "401915414",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "AS Roma",
+        "away": "Real Madrid",
+        "venue": "Stadio Olimpico",
+        "city": "Рим",
+        "country": "Италия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049581--roma-vs-real-madrid/matchinfo/",
+        "referee": "François Letexier",
+        "refereeCountry": "Франция",
+        "assistants": [
+          "Cyril Mugnier",
+          "Mehdi Rahmouni"
+        ],
+        "var": "Dennis Higler",
+        "avar": "Pol van Boekel",
+        "fourthOfficial": "Bastien Dechepy",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/17918-francois-letexier",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Roma",
+          "away": "Real Madrid",
+          "score": "3 - 4",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159"
+        },
+        {
+          "date": "2026-10-03",
+          "competition": "Nations League",
+          "home": "N Macedonia",
+          "away": "Scotland",
+          "score": "0 - 2",
+          "yellow": 6,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=158"
+        },
+        {
+          "date": "2026-09-27",
+          "competition": "Nations League",
+          "home": "Norway",
+          "away": "Portugal",
+          "score": "1 - 2",
+          "yellow": 9,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=158"
+        },
+        {
+          "date": "2026-09-20",
+          "competition": "French Ligue 1",
+          "home": "Marseille",
+          "away": "PSG",
+          "score": "1 - 2",
+          "yellow": 4,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159",
+          "alternateYellow": 5
+        },
+        {
+          "date": "2026-09-12",
+          "competition": "French Ligue 1",
+          "home": "Auxerre",
+          "away": "Nice",
+          "score": "1 - 0",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159"
+        },
+        {
+          "date": "2026-08-29",
+          "competition": "French Ligue 1",
+          "home": "Lyon",
+          "away": "Le Havre",
+          "score": "1 - 1",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159"
+        },
+        {
+          "date": "2026-08-19",
+          "competition": "Лига чемпионов",
+          "home": "NEC Nijmegen",
+          "away": "Bodo Glimt",
+          "score": "1 - 3",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=159",
+          "sourceCompetition": "European Cup"
+        },
+        {
+          "date": "2026-07-07",
+          "competition": "World Cup",
+          "home": "Argentina",
+          "away": "Egypt",
+          "score": "3 - 2",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=158"
+        },
+        {
+          "date": "2026-06-27",
+          "competition": "World Cup",
+          "home": "Cape Verde Is.",
+          "away": "Saudi Arabia",
+          "score": "0 - 0",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=158"
+        },
+        {
+          "date": "2026-06-15",
+          "competition": "World Cup",
+          "home": "Ivory Coast",
+          "away": "Ecuador",
+          "score": "1 - 0",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1940&season_id=158"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "1613",
+      "name": "Ivan Kružliak",
+      "country": "Словакия",
+      "fixture": {
+        "id": "401915409",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Aston Villa",
+        "away": "Fenerbahce",
+        "venue": "Villa Park",
+        "city": "Бирмингем",
+        "country": "Англия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049582--aston-villa-vs-fenerbahce/matchinfo/",
+        "referee": "Ivan Kružliak",
+        "refereeCountry": "Словакия",
+        "assistants": [
+          "Branislav Hancko",
+          "Jan Pozor"
+        ],
+        "var": "Tiago Martins",
+        "avar": "Robert Schröder",
+        "fourthOfficial": "Peter Kralović",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1613&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/16674-ivan-kruzliak",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Aston Villa",
+          "away": "Fenerbahce",
+          "score": "6 - 0",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1613&season_id=159"
+        },
+        {
+          "date": "2026-10-03",
+          "competition": "Nations League",
+          "home": "Switzerland",
+          "away": "Slovenia",
+          "score": "2 - 1",
+          "yellow": 6,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1613&season_id=158"
+        },
+        {
+          "date": "2026-08-27",
+          "competition": "Europa League",
+          "home": "CSKA Sofia",
+          "away": "OFI Crete",
+          "score": "0 - 2",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1613&season_id=159"
+        },
+        {
+          "date": "2026-08-04",
+          "competition": "Лига чемпионов",
+          "home": "Ararat-Armenia",
+          "away": "NK Celje",
+          "score": "2 - 1",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1613&season_id=159",
+          "sourceCompetition": "European Cup"
+        }
+      ],
+      "supplemental": [
+        {
+          "date": "2026-10-10",
+          "home": "Trenčín",
+          "away": "Banská Bystrica",
+          "score": "0 - 1",
+          "yellow": 3,
+          "red": null,
+          "competition": "Niké Liga",
+          "source": "https://valuestats.com/en/match/19721340-trencin-vs-banska-bystrica"
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Dunajská Streda",
+          "away": "Spartak Trnava",
+          "score": "2 - 2",
+          "yellow": 7,
+          "red": null,
+          "competition": "Niké Liga",
+          "source": "https://valuestats.com/en/match/19721345-dunajska-streda-vs-spartak-trnava"
+        },
+        {
+          "date": "2026-09-05",
+          "home": "Žilina",
+          "away": "Podbrezová",
+          "score": "3 - 1",
+          "yellow": 6,
+          "red": null,
+          "competition": "Niké Liga",
+          "source": "https://valuestats.com/en/match/19721355-zilina-vs-podbrezova"
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Ružomberok",
+          "away": "Banská Bystrica",
+          "score": "0 - 1",
+          "yellow": 6,
+          "red": null,
+          "competition": "Niké Liga",
+          "source": "https://valuestats.com/en/match/19721367-ruzomberok-vs-banska-bystrica"
+        },
+        {
+          "date": "2026-08-16",
+          "home": "Bani Yas",
+          "away": "Al Ain",
+          "score": "2 - 4",
+          "yellow": 3,
+          "red": null,
+          "competition": "UAE Pro League",
+          "source": "https://valuestats.com/en/match/19740287-bani-yas-vs-al-ain"
+        }
+      ]
+    },
+    {
+      "id": "1315",
+      "name": "Chris Kavanagh",
+      "country": "Англия",
+      "fixture": {
+        "id": "401915406",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Shakhtar Donetsk",
+        "away": "AEK Athens",
+        "venue": "Stamford Bridge",
+        "city": "Лондон",
+        "country": "Англия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049586--shakhtar-vs-aek-athens/matchinfo/",
+        "referee": "Chris Kavanagh",
+        "refereeCountry": "Англия",
+        "assistants": [
+          "Dan Cook",
+          "Ian Hussin"
+        ],
+        "var": "Stuart Attwell",
+        "avar": "Andrew Dallas",
+        "fourthOfficial": "Sam Barrott",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/14808-chris-kavanagh",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Shakhtar",
+          "away": "AEK Athens",
+          "score": "3 - 1",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159"
+        },
+        {
+          "date": "2026-10-11",
+          "competition": "Premier League",
+          "home": "Liverpool",
+          "away": "Man City",
+          "score": "0 - 3",
+          "yellow": 5,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159",
+          "alternateYellow": 6
+        },
+        {
+          "date": "2026-09-27",
+          "competition": "Nations League",
+          "home": "Germany",
+          "away": "Greece",
+          "score": "0 - 1",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=158"
+        },
+        {
+          "date": "2026-09-12",
+          "competition": "Premier League",
+          "home": "C Palace",
+          "away": "Ipswich",
+          "score": "2 - 3",
+          "yellow": 5,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159",
+          "alternateYellow": 4
+        },
+        {
+          "date": "2026-09-06",
+          "competition": "Premier League",
+          "home": "Arsenal",
+          "away": "Chelsea",
+          "score": "2 - 1",
+          "yellow": 6,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159"
+        },
+        {
+          "date": "2026-08-29",
+          "competition": "Premier League",
+          "home": "Bournemouth",
+          "away": "Everton",
+          "score": "1 - 1",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159"
+        },
+        {
+          "date": "2026-08-20",
+          "competition": "Europa League",
+          "home": "Kairat Almaty",
+          "away": "Anderlecht",
+          "score": "0 - 3",
+          "yellow": 5,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159"
+        },
+        {
+          "date": "2026-08-05",
+          "competition": "Лига чемпионов",
+          "home": "Fenerbahce",
+          "away": "Sturm Graz",
+          "score": "2 - 0",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1315&season_id=159",
+          "sourceCompetition": "European Cup"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "1799",
+      "name": "Urs Schnyder",
+      "country": "Швейцария",
+      "fixture": {
+        "id": "401915393",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Bodo/Glimt",
+        "away": "Borussia Dortmund",
+        "venue": "Aspmyra",
+        "city": "Будё",
+        "country": "Норвегия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049585--bodo-glimt-vs-b-dortmund/matchinfo/",
+        "referee": "Urs Schnyder",
+        "refereeCountry": "Швейцария",
+        "assistants": [
+          "Marco Zürcher",
+          "Benjamin Zürcher"
+        ],
+        "var": "Fedayi San",
+        "avar": "Bram Van Driessche",
+        "fourthOfficial": "Sven Wolfensberger",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/15806-urs-schnyder",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Bodo Glimt",
+          "away": "B Dortmund",
+          "score": "1 - 0",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-10-02",
+          "competition": "Nations League",
+          "home": "Poland",
+          "away": "Romania",
+          "score": "6 - 0",
+          "yellow": 5,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=158"
+        },
+        {
+          "date": "2026-09-20",
+          "competition": "Swiss Super League",
+          "home": "Lausanne",
+          "away": "Lugano",
+          "score": "0 - 4",
+          "yellow": 6,
+          "red": 1,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-09-13",
+          "competition": "Swiss Super League",
+          "home": "Lucerne",
+          "away": "Basel",
+          "score": "2 - 4",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-09-06",
+          "competition": "Swiss Super League",
+          "home": "Servette",
+          "away": "St Gallen",
+          "score": "0 - 2",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-08-27",
+          "competition": "Europa Conference League",
+          "home": "Partizan",
+          "away": "Getafe",
+          "score": "2 - 1",
+          "yellow": 6,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-08-13",
+          "competition": "Europa League",
+          "home": "Besiktas",
+          "away": "Hradec Kralove",
+          "score": "1 - 0",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-08-01",
+          "competition": "Swiss Super League",
+          "home": "Thun",
+          "away": "Young Boys",
+          "score": "0 - 6",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        },
+        {
+          "date": "2026-07-25",
+          "competition": "Swiss Super League",
+          "home": "Servette",
+          "away": "Basel",
+          "score": "0 - 1",
+          "yellow": 0,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1799&season_id=159"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "1873",
+      "name": "Sven Jablonski",
+      "country": "Германия",
+      "fixture": {
+        "id": "401915407",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Manchester City",
+        "away": "Paris Saint-Germain",
+        "venue": "City of Manchester Stadium",
+        "city": "Манчестер",
+        "country": "Англия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049580--man-city-vs-paris/matchinfo/",
+        "referee": "Sven Jablonski",
+        "refereeCountry": "Германия",
+        "assistants": [
+          "Eduard Beitinger",
+          "Christian Dietz"
+        ],
+        "var": "Bastian Dankert",
+        "avar": "Sören Storks",
+        "fourthOfficial": "Tobias Reichel",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/1158851-sven-jablonski",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Man City",
+          "away": "PSG",
+          "score": "2 - 4",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159"
+        },
+        {
+          "date": "2026-10-10",
+          "competition": "German Bundesliga",
+          "home": "Augsburg",
+          "away": "B Munich",
+          "score": "2 - 2",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159"
+        },
+        {
+          "date": "2026-10-03",
+          "competition": "Nations League",
+          "home": "Croatia",
+          "away": "England",
+          "score": "0 - 7",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=158"
+        },
+        {
+          "date": "2026-09-12",
+          "competition": "German Bundesliga",
+          "home": "Hoffenheim",
+          "away": "Stuttgart",
+          "score": "2 - 1",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159"
+        },
+        {
+          "date": "2026-09-09",
+          "competition": "Лига чемпионов",
+          "home": "Barcelona",
+          "away": "Feyenoord",
+          "score": "5 - 1",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159",
+          "sourceCompetition": "European Cup"
+        },
+        {
+          "date": "2026-08-29",
+          "competition": "German Bundesliga",
+          "home": "RB Leipzig",
+          "away": "B M'gladbach",
+          "score": "3 - 0",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159"
+        },
+        {
+          "date": "2026-08-18",
+          "competition": "Лига чемпионов",
+          "home": "Fenerbahce",
+          "away": "Lyon",
+          "score": "1 - 1",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1873&season_id=159",
+          "sourceCompetition": "European Cup"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "1376",
+      "name": "Clément Turpin",
+      "country": "Франция",
+      "fixture": {
+        "id": "401915408",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Real Betis",
+        "away": "FC Porto",
+        "venue": "La Cartuja de Sevilla",
+        "city": "Севилья",
+        "country": "Испания",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049583--real-betis-vs-porto/matchinfo/",
+        "referee": "Clément Turpin",
+        "refereeCountry": "Франция",
+        "assistants": [
+          "Nicolas Danos",
+          "Benjamin Pages"
+        ],
+        "var": "Willy Delajod",
+        "avar": "Mathieu Vernice",
+        "fourthOfficial": "Jérémie Pignard",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/16685-clement-turpin",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "Real Betis",
+          "away": "Porto",
+          "score": "3 - 2",
+          "yellow": 7,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=159"
+        },
+        {
+          "date": "2026-10-04",
+          "competition": "Nations League",
+          "home": "Greece",
+          "away": "Germany",
+          "score": "0 - 0",
+          "yellow": 6,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=158"
+        },
+        {
+          "date": "2026-09-18",
+          "competition": "French Ligue 1",
+          "home": "Monaco",
+          "away": "Lens",
+          "score": "2 - 1",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=159"
+        },
+        {
+          "date": "2026-09-06",
+          "competition": "French Ligue 1",
+          "home": "Marseille",
+          "away": "Paris FC",
+          "score": "2 - 3",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=159"
+        },
+        {
+          "date": "2026-08-26",
+          "competition": "Лига чемпионов",
+          "home": "AEK Athens",
+          "away": "Levski Sofia",
+          "score": "4 - 0",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=159",
+          "sourceCompetition": "European Cup"
+        },
+        {
+          "date": "2026-07-11",
+          "competition": "World Cup",
+          "home": "Norway",
+          "away": "England",
+          "score": "1 - 2",
+          "yellow": 1,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=158"
+        },
+        {
+          "date": "2026-07-04",
+          "competition": "World Cup",
+          "home": "Colombia",
+          "away": "Ghana",
+          "score": "1 - 0",
+          "yellow": 5,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=158"
+        },
+        {
+          "date": "2026-06-26",
+          "competition": "World Cup",
+          "home": "Paraguay",
+          "away": "Australia",
+          "score": "0 - 0",
+          "yellow": 2,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=158"
+        },
+        {
+          "date": "2026-06-17",
+          "competition": "World Cup",
+          "home": "England",
+          "away": "Croatia",
+          "score": "4 - 2",
+          "yellow": 0,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=1376&season_id=158"
+        }
+      ],
+      "supplemental": []
+    },
+    {
+      "id": "2370",
+      "name": "Irfan Peljto",
+      "country": "Босния и Герцеговина",
+      "fixture": {
+        "id": "401915405",
+        "league": "ucl",
+        "date": "2026-10-14T19:00Z",
+        "home": "Slovan Bratislava",
+        "away": "VfB Stuttgart",
+        "venue": "Národný futbalový štadión",
+        "city": "Братислава",
+        "country": "Словакия",
+        "source": "https://www.uefa.com/uefachampionsleague/match/2049587--s-bratislava-vs-stuttgart/matchinfo/",
+        "referee": "Irfan Peljto",
+        "refereeCountry": "Босния и Герцеговина",
+        "assistants": [
+          "Senad Ibrišimbegović",
+          "Davor Beljo"
+        ],
+        "var": "Daniele Chiffi",
+        "avar": "Michael Fabbri",
+        "fourthOfficial": "Miloš Gigovic",
+        "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+        "appointmentType": "UEFA · проверенное назначение"
+      },
+      "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2370&season_id=159",
+      "crossSource": "https://valuestats.com/en/referee/31927-irfan-peljto",
+      "matches": [
+        {
+          "date": "2026-10-14",
+          "competition": "Лига чемпионов",
+          "sourceCompetition": "European Cup",
+          "home": "S. Bratislava",
+          "away": "Stuttgart",
+          "score": "0 - 3",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2370&season_id=159"
+        },
+        {
+          "date": "2026-10-04",
+          "competition": "Nations League",
+          "home": "Wales",
+          "away": "Denmark",
+          "score": "0 - 1",
+          "yellow": 4,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2370&season_id=159"
+        },
+        {
+          "date": "2026-08-27",
+          "competition": "Europa League",
+          "home": "RB Salzburg",
+          "away": "Mjallby",
+          "score": "3 - 0",
+          "yellow": 3,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2370&season_id=159"
+        },
+        {
+          "date": "2026-08-04",
+          "competition": "Лига чемпионов",
+          "home": "Union St Gilloise",
+          "away": "Bodo Glimt",
+          "score": "3 - 3",
+          "yellow": 7,
+          "red": 0,
+          "source": "https://www.soccerbase.com/referees/referee.sd?referee_id=2370&season_id=159",
+          "sourceCompetition": "European Cup"
+        }
+      ],
+      "supplemental": []
+    }
+  ],
+  "supplementalCheckedAt": "2026-10-14T12:51:59.259354+00:00"
+}

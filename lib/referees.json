@@ -1,0 +1,2017 @@
+{
+  "epl": {
+    "rows": [
+      {
+        "name": "Stuart Attwell",
+        "n": 4,
+        "yellowTotal": 25,
+        "yellow": 6.25,
+        "yellowN": 4,
+        "red": 0.5,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Peter Bankes",
+        "n": 4,
+        "yellowTotal": 14,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Sam Barrott",
+        "n": 4,
+        "yellowTotal": 13,
+        "yellow": 3.25,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Thomas Bramall",
+        "n": 4,
+        "yellowTotal": 9,
+        "yellow": 2.25,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "John Brooks",
+        "n": 4,
+        "yellowTotal": 20,
+        "yellow": 5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Darren England",
+        "n": 4,
+        "yellowTotal": 14,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Jarred Gillett",
+        "n": 4,
+        "yellowTotal": 15,
+        "yellow": 3.75,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Farai Hallam",
+        "n": 2,
+        "yellowTotal": 9,
+        "yellow": 4.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Tony Harrington",
+        "n": 3,
+        "yellowTotal": 10,
+        "yellow": 3.3333333333333335,
+        "yellowN": 3,
+        "red": 0.3333333333333333,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Adam Herczeg",
+        "n": 1,
+        "yellowTotal": 5,
+        "yellow": 5,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Robert Jones",
+        "n": 3,
+        "yellowTotal": 9,
+        "yellow": 3,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Chris Kavanagh",
+        "n": 4,
+        "yellowTotal": 21,
+        "yellow": 5.25,
+        "yellowN": 4,
+        "red": 0.5,
+        "redN": 4,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Andy Madley",
+        "n": 3,
+        "yellowTotal": 12,
+        "yellow": 4,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Michael Oliver",
+        "n": 5,
+        "yellowTotal": 14,
+        "yellow": 2.8,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Craig Pawson",
+        "n": 3,
+        "yellowTotal": 15,
+        "yellow": 5,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Michael Salisbury",
+        "n": 3,
+        "yellowTotal": 7,
+        "yellow": 2.3333333333333335,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Josh Smith",
+        "n": 1,
+        "yellowTotal": 5,
+        "yellow": 5,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Lewis Smith",
+        "n": 1,
+        "yellowTotal": 6,
+        "yellow": 6,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Paul Tierney",
+        "n": 3,
+        "yellowTotal": 9,
+        "yellow": 3,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": null,
+        "foulsN": null
+      }
+    ],
+    "source": "https://www.soccerbase.com/referees/home.sd",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": false,
+    "secondary": {
+      "rows": [
+        {
+          "name": "M. Oliver",
+          "n": 4,
+          "yellow": 2.75,
+          "yellowN": 4,
+          "red": 0.25,
+          "redN": 4,
+          "fouls": 22.75,
+          "foulsN": 4
+        },
+        {
+          "name": "A. Madley",
+          "n": 3,
+          "yellow": 4,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 21,
+          "foulsN": 3
+        },
+        {
+          "name": "Chris Kavanagh",
+          "n": 3,
+          "yellow": 5,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 25.33,
+          "foulsN": 3
+        },
+        {
+          "name": "D. England",
+          "n": 3,
+          "yellow": 3,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 20,
+          "foulsN": 3
+        },
+        {
+          "name": "J. Brooks",
+          "n": 3,
+          "yellow": 6.33,
+          "yellowN": 3,
+          "red": 0.33,
+          "redN": 3,
+          "fouls": 22,
+          "foulsN": 3
+        },
+        {
+          "name": "J. Gillett",
+          "n": 3,
+          "yellow": 4.33,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 22.67,
+          "foulsN": 3
+        },
+        {
+          "name": "T. Bramall",
+          "n": 3,
+          "yellow": 2.67,
+          "yellowN": 3,
+          "red": 0,
+          "redN": 3,
+          "fouls": 23.33,
+          "foulsN": 3
+        },
+        {
+          "name": "C. Pawson",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 27.5,
+          "foulsN": 2
+        },
+        {
+          "name": "F. Hallam",
+          "n": 2,
+          "yellow": 4.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 22.5,
+          "foulsN": 2
+        },
+        {
+          "name": "M. Salisbury",
+          "n": 2,
+          "yellow": 2.5,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 23,
+          "foulsN": 2
+        },
+        {
+          "name": "Paul Tierney",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 22,
+          "foulsN": 2
+        },
+        {
+          "name": "P. Bankes",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 23.5,
+          "foulsN": 2
+        },
+        {
+          "name": "R. Jones",
+          "n": 2,
+          "yellow": 4,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 32.5,
+          "foulsN": 2
+        },
+        {
+          "name": "S. Attwell",
+          "n": 2,
+          "yellow": 7,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 30,
+          "foulsN": 2
+        },
+        {
+          "name": "S. Barrott",
+          "n": 2,
+          "yellow": 3,
+          "yellowN": 2,
+          "red": 0,
+          "redN": 2,
+          "fouls": 18,
+          "foulsN": 2
+        },
+        {
+          "name": "T. Harrington",
+          "n": 2,
+          "yellow": 2,
+          "yellowN": 2,
+          "red": 0.5,
+          "redN": 2,
+          "fouls": 21,
+          "foulsN": 2
+        },
+        {
+          "name": "J. Smith",
+          "n": 1,
+          "yellow": 5,
+          "yellowN": 1,
+          "red": 0,
+          "redN": 1,
+          "fouls": 19,
+          "foulsN": 1
+        }
+      ],
+      "source": "https://valuestats.com/en/league/premier-league/referees/",
+      "checkedAt": "2026-10-13T17:40:00Z"
+    },
+    "refreshError": null
+  },
+  "laliga": {
+    "rows": [
+      {
+        "name": "F. Hernández Maeso",
+        "n": 5,
+        "yellow": 3.6,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 20.6,
+        "foulsN": 5
+      },
+      {
+        "name": "I. Díaz de Mera Escuderos",
+        "n": 5,
+        "yellow": 5.4,
+        "yellowN": 5,
+        "red": 0.4,
+        "redN": 5,
+        "fouls": 20.6,
+        "foulsN": 5
+      },
+      {
+        "name": "J. Alberola Rojas",
+        "n": 5,
+        "yellow": 4.8,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 33,
+        "foulsN": 5
+      },
+      {
+        "name": "M. Ortiz Arias",
+        "n": 5,
+        "yellow": 4.2,
+        "yellowN": 5,
+        "red": 0.6,
+        "redN": 5,
+        "fouls": 21.4,
+        "foulsN": 5
+      },
+      {
+        "name": "M. Sesma Espinosa",
+        "n": 5,
+        "yellow": 4.2,
+        "yellowN": 5,
+        "red": 0.8,
+        "redN": 5,
+        "fouls": 25.8,
+        "foulsN": 5
+      },
+      {
+        "name": "Carlos Muñiz Muñoz",
+        "n": 4,
+        "yellow": 3.75,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 26,
+        "foulsN": 4
+      },
+      {
+        "name": "J. Gil Manzano",
+        "n": 4,
+        "yellow": 5.25,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 27.75,
+        "foulsN": 4
+      },
+      {
+        "name": "J. González Esteban",
+        "n": 4,
+        "yellow": 4.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 24.25,
+        "foulsN": 4
+      },
+      {
+        "name": "J. Martínez Munuera",
+        "n": 4,
+        "yellow": 2.5,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 22.25,
+        "foulsN": 4
+      },
+      {
+        "name": "J. Munuera Montero",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 21.25,
+        "foulsN": 4
+      },
+      {
+        "name": "Manuel Jesús Orellana Cid",
+        "n": 4,
+        "yellow": 6,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 29.75,
+        "foulsN": 4
+      },
+      {
+        "name": "M. Busquets Ferrer",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 20.5,
+        "foulsN": 4
+      },
+      {
+        "name": "R. De Burgos Bengoetxea",
+        "n": 4,
+        "yellow": 5.25,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 24.75,
+        "foulsN": 4
+      },
+      {
+        "name": "V. García Verdura",
+        "n": 4,
+        "yellow": 2.75,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 24,
+        "foulsN": 4
+      },
+      {
+        "name": "A. Hernández Hernández",
+        "n": 3,
+        "yellow": 5.67,
+        "yellowN": 3,
+        "red": 0.67,
+        "redN": 3,
+        "fouls": 26.67,
+        "foulsN": 3
+      },
+      {
+        "name": "A. Quintero González",
+        "n": 3,
+        "yellow": 3.33,
+        "yellowN": 3,
+        "red": 1,
+        "redN": 3,
+        "fouls": 25.67,
+        "foulsN": 3
+      },
+      {
+        "name": "C. Soto Grado",
+        "n": 3,
+        "yellow": 4.67,
+        "yellowN": 3,
+        "red": 0.67,
+        "redN": 3,
+        "fouls": 19.67,
+        "foulsN": 3
+      },
+      {
+        "name": "J. Sánchez Martínez",
+        "n": 3,
+        "yellow": 5,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 30,
+        "foulsN": 3
+      }
+    ],
+    "source": "https://valuestats.com/en/league/la-liga/referees/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "segunda": {
+    "rows": [
+      {
+        "name": "A. Domínguez Cervantes",
+        "n": 5,
+        "yellow": 5.2,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 26.8,
+        "foulsN": 5
+      },
+      {
+        "name": "A. Fuentes Molina",
+        "n": 5,
+        "yellow": 6.6,
+        "yellowN": 5,
+        "red": 0.6,
+        "redN": 5,
+        "fouls": 27.2,
+        "foulsN": 5
+      },
+      {
+        "name": "D. Miranda Bolaño",
+        "n": 5,
+        "yellow": 5.4,
+        "yellowN": 5,
+        "red": 0.4,
+        "redN": 5,
+        "fouls": 27.8,
+        "foulsN": 5
+      },
+      {
+        "name": "D. Palencia Caballero",
+        "n": 5,
+        "yellow": 6.2,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 34.2,
+        "foulsN": 5
+      },
+      {
+        "name": "E. Mallo Fernández",
+        "n": 5,
+        "yellow": 5.4,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 28.8,
+        "foulsN": 5
+      },
+      {
+        "name": "Gorka Etayo Herrera",
+        "n": 5,
+        "yellow": 4.4,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 27.6,
+        "foulsN": 5
+      },
+      {
+        "name": "G. Romero Freixas",
+        "n": 5,
+        "yellow": 5.2,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 30.8,
+        "foulsN": 5
+      },
+      {
+        "name": "I. Galech Apezteguía",
+        "n": 5,
+        "yellow": 4.8,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 27.4,
+        "foulsN": 5
+      },
+      {
+        "name": "J. Guzmán Mansilla",
+        "n": 5,
+        "yellow": 4,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 28.2,
+        "foulsN": 5
+      },
+      {
+        "name": "M. Pérez Hernández",
+        "n": 5,
+        "yellow": 7,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 27.8,
+        "foulsN": 5
+      },
+      {
+        "name": "O. Rivera Olmedo",
+        "n": 5,
+        "yellow": 4.4,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 24.2,
+        "foulsN": 5
+      },
+      {
+        "name": "P. Morales Moreno",
+        "n": 5,
+        "yellow": 4.2,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 30,
+        "foulsN": 5
+      },
+      {
+        "name": "R. Sánchez López",
+        "n": 5,
+        "yellow": 4.8,
+        "yellowN": 5,
+        "red": 0,
+        "redN": 5,
+        "fouls": 28,
+        "foulsN": 5
+      },
+      {
+        "name": "S. Lax Franco",
+        "n": 5,
+        "yellow": 4.6,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 19.8,
+        "foulsN": 5
+      },
+      {
+        "name": "Alejandro Morilla Turrión",
+        "n": 4,
+        "yellow": 4.25,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 27.5,
+        "foulsN": 4
+      },
+      {
+        "name": "A. Ojaos Valera",
+        "n": 4,
+        "yellow": 5.75,
+        "yellowN": 4,
+        "red": 0.75,
+        "redN": 4,
+        "fouls": 23.75,
+        "foulsN": 4
+      },
+      {
+        "name": "G. Cid Camacho",
+        "n": 4,
+        "yellow": 6,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 25,
+        "foulsN": 4
+      },
+      {
+        "name": "J. Gordillo Escamilla",
+        "n": 4,
+        "yellow": 7,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 26,
+        "foulsN": 4
+      }
+    ],
+    "source": "https://valuestats.com/en/league/la-liga-2/referees/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "ucl": {
+    "rows": [
+      {
+        "name": "G. Nyberg",
+        "n": 4,
+        "yellow": 1.75,
+        "yellowN": 4,
+        "red": 0.5,
+        "redN": 4,
+        "fouls": 21.75,
+        "foulsN": 4
+      },
+      {
+        "name": "D. Massa",
+        "n": 3,
+        "yellow": 2.67,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 20.33,
+        "foulsN": 3
+      },
+      {
+        "name": "M. Oliver",
+        "n": 3,
+        "yellow": 3.67,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 21,
+        "foulsN": 3
+      },
+      {
+        "name": "Serdar Gozubuyuk",
+        "n": 3,
+        "yellow": 3,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 19.67,
+        "foulsN": 3
+      },
+      {
+        "name": "S. Marciniak",
+        "n": 3,
+        "yellow": 3,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 31.67,
+        "foulsN": 3
+      },
+      {
+        "name": "Sven Jablonski",
+        "n": 3,
+        "yellow": 2.33,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 23,
+        "foulsN": 3
+      },
+      {
+        "name": "A. Hernández Hernández",
+        "n": 2,
+        "yellow": 5.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 26,
+        "foulsN": 2
+      },
+      {
+        "name": "Chris Kavanagh",
+        "n": 2,
+        "yellow": 4,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 31,
+        "foulsN": 2
+      },
+      {
+        "name": "C. Turpin",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 27,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Rumšas",
+        "n": 2,
+        "yellow": 3,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 26.5,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Siebert",
+        "n": 2,
+        "yellow": 6,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23.5,
+        "foulsN": 2
+      },
+      {
+        "name": "F. Letexier",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 22,
+        "foulsN": 2
+      },
+      {
+        "name": "F. Zwayer",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23.5,
+        "foulsN": 2
+      },
+      {
+        "name": "G. Kabakov",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 1,
+        "redN": 2,
+        "fouls": 22,
+        "foulsN": 2
+      },
+      {
+        "name": "I. Kovacs",
+        "n": 2,
+        "yellow": 6.5,
+        "yellowN": 2,
+        "red": 2.5,
+        "redN": 2,
+        "fouls": 27.5,
+        "foulsN": 2
+      },
+      {
+        "name": "I. Kružliak",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 18.5,
+        "foulsN": 2
+      },
+      {
+        "name": "I. Peljto",
+        "n": 2,
+        "yellow": 5.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 25.5,
+        "foulsN": 2
+      },
+      {
+        "name": "J. Gil Manzano",
+        "n": 2,
+        "yellow": 7.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 28.5,
+        "foulsN": 2
+      }
+    ],
+    "source": "https://valuestats.com/en/league/champions-league/referees/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "ligue1": {
+    "rows": [
+      {
+        "name": "J. Stinat",
+        "n": 5,
+        "yellow": 3.4,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 24,
+        "foulsN": 5
+      },
+      {
+        "name": "E. Wattellier",
+        "n": 4,
+        "yellow": 3,
+        "yellowN": 4,
+        "red": 0.5,
+        "redN": 4,
+        "fouls": 19.25,
+        "foulsN": 4
+      },
+      {
+        "name": "G. Paradis",
+        "n": 4,
+        "yellow": 3,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 28.25,
+        "foulsN": 4
+      },
+      {
+        "name": "J. Brisard",
+        "n": 4,
+        "yellow": 4,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 27.75,
+        "foulsN": 4
+      },
+      {
+        "name": "Mathieu Vernice",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 24.75,
+        "foulsN": 4
+      },
+      {
+        "name": "R. Buquet",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 22.75,
+        "foulsN": 4
+      },
+      {
+        "name": "Willy Delajod",
+        "n": 4,
+        "yellow": 3.75,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 21.75,
+        "foulsN": 4
+      },
+      {
+        "name": "B. Dechepy",
+        "n": 3,
+        "yellow": 4,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 21,
+        "foulsN": 3
+      },
+      {
+        "name": "F. Letexier",
+        "n": 3,
+        "yellow": 3,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 16.67,
+        "foulsN": 3
+      },
+      {
+        "name": "H. Ben El Hadj",
+        "n": 3,
+        "yellow": 4.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 27.33,
+        "foulsN": 3
+      },
+      {
+        "name": "J. Pignard",
+        "n": 3,
+        "yellow": 3.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 17,
+        "foulsN": 3
+      },
+      {
+        "name": "Romain Lissorgue",
+        "n": 3,
+        "yellow": 2.33,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 28,
+        "foulsN": 3
+      },
+      {
+        "name": "A. Petit",
+        "n": 2,
+        "yellow": 1.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 26,
+        "foulsN": 2
+      },
+      {
+        "name": "A. Souifi",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 24.5,
+        "foulsN": 2
+      },
+      {
+        "name": "C. Turpin",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23,
+        "foulsN": 2
+      },
+      {
+        "name": "Geoffrey Kubler",
+        "n": 2,
+        "yellow": 4,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 27.5,
+        "foulsN": 2
+      },
+      {
+        "name": "M. Bollengier",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 27.5,
+        "foulsN": 2
+      }
+    ],
+    "source": "https://valuestats.com/en/league/ligue-1/referees/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "seriea": {
+    "rows": [
+      {
+        "name": "F. Fourneau",
+        "n": 3,
+        "yellow": 4.33,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 25.33,
+        "foulsN": 3
+      },
+      {
+        "name": "F. Maresca",
+        "n": 3,
+        "yellow": 6,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 28.33,
+        "foulsN": 3
+      },
+      {
+        "name": "L. Pairetto",
+        "n": 3,
+        "yellow": 2.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 19,
+        "foulsN": 3
+      },
+      {
+        "name": "M. Marcenaro",
+        "n": 3,
+        "yellow": 4,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 23.67,
+        "foulsN": 3
+      },
+      {
+        "name": "Valerio Crezzini",
+        "n": 3,
+        "yellow": 1,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 20,
+        "foulsN": 3
+      },
+      {
+        "name": "A. Arena",
+        "n": 2,
+        "yellow": 1.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 20.5,
+        "foulsN": 2
+      },
+      {
+        "name": "A. Rapuano",
+        "n": 2,
+        "yellow": 4.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 22,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Chiffi",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Doveri",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21.5,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Massa",
+        "n": 2,
+        "yellow": 3,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21,
+        "foulsN": 2
+      },
+      {
+        "name": "D. Perenzoni",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 22.5,
+        "foulsN": 2
+      },
+      {
+        "name": "E. Feliciani",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 22,
+        "foulsN": 2
+      },
+      {
+        "name": "Federico La Penna",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 28,
+        "foulsN": 2
+      },
+      {
+        "name": "G. Collu",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 27,
+        "foulsN": 2
+      },
+      {
+        "name": "Gianluca Manganiello",
+        "n": 2,
+        "yellow": 3,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 18.5,
+        "foulsN": 2
+      },
+      {
+        "name": "Juan Luca Sacchi",
+        "n": 2,
+        "yellow": 4,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21.5,
+        "foulsN": 2
+      },
+      {
+        "name": "K. Bonacina",
+        "n": 2,
+        "yellow": 0.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23.5,
+        "foulsN": 2
+      },
+      {
+        "name": "L. Zufferli",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 19.5,
+        "foulsN": 2
+      }
+    ],
+    "source": "https://valuestats.com/en/league/serie-a-italy/referees/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "bundesliga": {
+    "rows": [
+      {
+        "name": "Daniel Siebert",
+        "n": 3,
+        "yellow": 2.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 25.3,
+        "foulsN": 3,
+        "penalties": 0,
+        "results": "2-1-0"
+      },
+      {
+        "name": "Felix Zwayer",
+        "n": 3,
+        "yellow": 2,
+        "yellowN": 3,
+        "red": 0.3333333333333333,
+        "redN": 3,
+        "fouls": 24.3,
+        "foulsN": 3,
+        "penalties": 0,
+        "results": "1-0-2"
+      },
+      {
+        "name": "Florian Badstübner",
+        "n": 3,
+        "yellow": 1.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 24.5,
+        "foulsN": 3,
+        "penalties": 0,
+        "results": "3-0-0"
+      },
+      {
+        "name": "Sven Jablonski",
+        "n": 3,
+        "yellow": 0.67,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 23,
+        "foulsN": 3,
+        "penalties": 0,
+        "results": "2-1-0"
+      },
+      {
+        "name": "Robert Hartmann",
+        "n": 2,
+        "yellow": 8,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 29.5,
+        "foulsN": 2,
+        "penalties": 1,
+        "results": "1-0-1"
+      },
+      {
+        "name": "Tobias Stieler",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 20.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "0-1-1"
+      },
+      {
+        "name": "Bastian Dankert",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-1-0"
+      },
+      {
+        "name": "Matthias Jöllenbeck",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-0-1"
+      },
+      {
+        "name": "Max Burda",
+        "n": 2,
+        "yellow": 5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 23.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "0-0-2"
+      },
+      {
+        "name": "Robert Schröder",
+        "n": 2,
+        "yellow": 4.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 19.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-1-0"
+      },
+      {
+        "name": "Sören Storks",
+        "n": 2,
+        "yellow": 4,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 25,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-1-0"
+      },
+      {
+        "name": "Martin Petersen",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 25.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-0-1"
+      },
+      {
+        "name": "Robin Braun",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-1-0"
+      },
+      {
+        "name": "Christian Dingert",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 15.5,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-1-0"
+      },
+      {
+        "name": "Tobias Reichel",
+        "n": 2,
+        "yellow": 3.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 28,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-0-1"
+      },
+      {
+        "name": "Benjamin Brand",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 21,
+        "foulsN": 2,
+        "penalties": 1,
+        "results": "2-0-0"
+      },
+      {
+        "name": "Harm Osmers",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 22,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-0-1"
+      },
+      {
+        "name": "Sascha Stegemann",
+        "n": 2,
+        "yellow": 1.5,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 14,
+        "foulsN": 2,
+        "penalties": 0,
+        "results": "1-0-1"
+      }
+    ],
+    "source": "https://balonario.com/en/referees/bundesliga/",
+    "checkedAt": "2026-10-16T08:05:18.839Z",
+    "partial": true,
+    "refreshError": null
+  },
+  "superlig": {
+    "source": "https://valuestats.com/en/league/super-lig/referees/",
+    "checkedAt": "2026-10-16T18:07:10Z",
+    "partial": true,
+    "refreshError": null,
+    "periodLabel": "Süper Lig · 2026/27",
+    "seasonConfirmed": true,
+    "refreshMode": "snapshot",
+    "dataNote": "Срез сезонной таблицы ValueStats 2026/27: 21 арбитр с сыгранными матчами; ещё у двух нет выборки. Учитываются завершённые игры с данными обеих команд. Это не полный журнал с июня. У Davut Dakul Çelik 16 ЖК в 3 играх по Soccerbase; другие профили источников дают 17, поэтому используется согласованный с таблицей лиги срез. Срез обновлён вручную.",
+    "rows": [
+      {
+        "name": "A. Karaoğlan",
+        "n": 5,
+        "yellow": 4.4,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 23.4,
+        "foulsN": 5
+      },
+      {
+        "name": "B. Kolak",
+        "n": 5,
+        "yellow": 2.4,
+        "yellowN": 5,
+        "red": 0.4,
+        "redN": 5,
+        "fouls": 24.6,
+        "foulsN": 5
+      },
+      {
+        "name": "H. Meler",
+        "n": 5,
+        "yellow": 4.2,
+        "yellowN": 5,
+        "red": 0.2,
+        "redN": 5,
+        "fouls": 28,
+        "foulsN": 5
+      },
+      {
+        "name": "G. Hasova",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 23,
+        "foulsN": 4
+      },
+      {
+        "name": "O. Çakır",
+        "n": 4,
+        "yellow": 5,
+        "yellowN": 4,
+        "red": 0.5,
+        "redN": 4,
+        "fouls": 27.75,
+        "foulsN": 4
+      },
+      {
+        "name": "Ümit Öztürk",
+        "n": 4,
+        "yellow": 5,
+        "yellowN": 4,
+        "red": 0.25,
+        "redN": 4,
+        "fouls": 26,
+        "foulsN": 4,
+        "sourceName": "?. Öztürk",
+        "identitySource": "https://valuestats.com/en/referee/15775-umit-ozturk"
+      },
+      {
+        "name": "Y. Kol",
+        "n": 4,
+        "yellow": 4.5,
+        "yellowN": 4,
+        "red": 0,
+        "redN": 4,
+        "fouls": 30.5,
+        "foulsN": 4
+      },
+      {
+        "name": "Cagdas Altay",
+        "n": 3,
+        "yellow": 3.33,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 22.33,
+        "foulsN": 3,
+        "sourceName": "?. Altay",
+        "identitySource": "https://valuestats.com/en/referee/14763-cagdas-altay"
+      },
+      {
+        "name": "A. Şansalan",
+        "n": 3,
+        "yellow": 8,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 31,
+        "foulsN": 3
+      },
+      {
+        "name": "A. Taşkınsoy",
+        "n": 3,
+        "yellow": 3.33,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 24,
+        "foulsN": 3
+      },
+      {
+        "name": "C. Aydın",
+        "n": 3,
+        "yellow": 4,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 26.33,
+        "foulsN": 3
+      },
+      {
+        "name": "Davut Dakul Çelik",
+        "n": 3,
+        "yellow": 5.33,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 26,
+        "foulsN": 3
+      },
+      {
+        "name": "K. Sağlam",
+        "n": 3,
+        "yellow": 4,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 23.67,
+        "foulsN": 3
+      },
+      {
+        "name": "Mehmet Türkmen",
+        "n": 3,
+        "yellow": 5,
+        "yellowN": 3,
+        "red": 0,
+        "redN": 3,
+        "fouls": 23,
+        "foulsN": 3
+      },
+      {
+        "name": "R. Coşkunses",
+        "n": 3,
+        "yellow": 2.67,
+        "yellowN": 3,
+        "red": 0.33,
+        "redN": 3,
+        "fouls": 28.33,
+        "foulsN": 3
+      },
+      {
+        "name": "O. Aksu",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0.5,
+        "redN": 2,
+        "fouls": 20,
+        "foulsN": 2
+      },
+      {
+        "name": "O. Ergün",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": 0,
+        "redN": 2,
+        "fouls": 14,
+        "foulsN": 2
+      },
+      {
+        "name": "A. Akarsu",
+        "n": 1,
+        "yellow": 5,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": 30,
+        "foulsN": 1
+      },
+      {
+        "name": "A. Kayatepe",
+        "n": 1,
+        "yellow": 0,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": 28,
+        "foulsN": 1
+      },
+      {
+        "name": "Fatih Tokail",
+        "n": 1,
+        "yellow": 4,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": 25,
+        "foulsN": 1
+      },
+      {
+        "name": "Ömer Faruk Turtay",
+        "n": 1,
+        "yellow": 2,
+        "yellowN": 1,
+        "red": 0,
+        "redN": 1,
+        "fouls": 24,
+        "foulsN": 1
+      }
+    ]
+  },
+  "primeira": {
+    "rows": [
+      {
+        "name": "David Rafael Oliveira da Silva",
+        "n": 5,
+        "yellow": 6.6,
+        "yellowN": 5,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Gustavo Correia",
+        "n": 5,
+        "yellow": 4,
+        "yellowN": 5,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Luís Godinho",
+        "n": 5,
+        "yellow": 5.2,
+        "yellowN": 5,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Miguel Nogueira",
+        "n": 5,
+        "yellow": 4.6,
+        "yellowN": 5,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Carlos Macedo",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Fabio Jose Costa Verissimo",
+        "n": 4,
+        "yellow": 5.5,
+        "yellowN": 4,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Joao Antonio Ferreira Goncalves",
+        "n": 4,
+        "yellow": 4,
+        "yellowN": 4,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Jonathan Benkenstein Pinheiro",
+        "n": 4,
+        "yellow": 2.25,
+        "yellowN": 4,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Sergio Guelho",
+        "n": 4,
+        "yellow": 3.5,
+        "yellowN": 4,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Andre Filipe Domingues Narciso",
+        "n": 3,
+        "yellow": 5.67,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Bruno Jose Ribeiro Pires Costa",
+        "n": 3,
+        "yellow": 3.33,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Jose Bessa",
+        "n": 3,
+        "yellow": 5.67,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Luis Carlos Mateus Filipe",
+        "n": 3,
+        "yellow": 6.33,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Miguel Andre Monteiro Fonseca",
+        "n": 3,
+        "yellow": 2,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Pedro Ramalho",
+        "n": 3,
+        "yellow": 3.33,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Vasilica Iancu",
+        "n": 3,
+        "yellow": 5,
+        "yellowN": 3,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Anzhony Rodrigues",
+        "n": 2,
+        "yellow": 2,
+        "yellowN": 2,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Helder Filipe Claudio Carvalho",
+        "n": 2,
+        "yellow": 2.5,
+        "yellowN": 2,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Vitor Ferreira",
+        "n": 2,
+        "yellow": 6.5,
+        "yellowN": 2,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Antonio Nobre",
+        "n": 1,
+        "yellow": 3,
+        "yellowN": 1,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Cleisson Veloso Pereira",
+        "n": 1,
+        "yellow": 4,
+        "yellowN": 1,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Diogo Rosa",
+        "n": 1,
+        "yellow": 3,
+        "yellowN": 1,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      },
+      {
+        "name": "Fabio Melo",
+        "n": 1,
+        "yellow": 4,
+        "yellowN": 1,
+        "red": null,
+        "redN": null,
+        "fouls": null,
+        "foulsN": null
+      }
+    ],
+    "source": "https://footiqo.com/statistics/referees/cards/full-time/",
+    "checkedAt": "2026-10-16T17:22:09.753349+00:00",
+    "partial": true,
+    "refreshError": null,
+    "periodLabel": "Текущий сезон Footiqo",
+    "dataNote": "Сохранённый срез Footiqo: только жёлтые карточки. Период назван «текущий сезон» без номера года; объём выборки сопоставлен со сводкой 2026/27. Полнота с июня не подтверждена, автообновление этой таблицы не подключено. Красные и фолы неизвестны.",
+    "refreshMode": "snapshot",
+    "seasonConfirmed": false
+  }
+}

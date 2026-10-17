@@ -1,0 +1,316 @@
+{
+  "fixtures": [
+    {
+      "id": "401915435",
+      "league": "ucl",
+      "date": "2026-10-13T19:00:00Z",
+      "home": "Галатасарай",
+      "away": "Барселона",
+      "venue": "RAMS Park, Стамбул",
+      "referee": "Marco Guida",
+      "var": "Marco Di Bello",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049576--galatasaray-vs-barcelona/matchinfo/",
+      "checkedAt": "2026-10-13T18:05:00Z"
+    },
+    {
+      "id": "401915416",
+      "league": "ucl",
+      "date": "2026-10-14T16:45Z",
+      "home": "Feyenoord Rotterdam",
+      "away": "Como",
+      "venue": "Stadion Feijenoord ‘De Kuip’",
+      "city": "Роттердам",
+      "country": "Нидерланды",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049584--feyenoord-vs-como/matchinfo/",
+      "referee": "Donatas Rumšas",
+      "refereeCountry": "Литва",
+      "assistants": [
+        "Aleksandr Radiuš",
+        "Dovydas Sužiedėlis"
+      ],
+      "var": "Cesar Soto Grado",
+      "avar": "Carlos del Cerro Grande",
+      "fourthOfficial": "Robertas Valikonis",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915415",
+      "league": "ucl",
+      "date": "2026-10-14T16:45Z",
+      "home": "LASK Linz",
+      "away": "Liverpool",
+      "venue": "Oberösterreich Arena",
+      "city": "Линц",
+      "country": "Австрия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049588--lask-vs-liverpool/matchinfo/",
+      "referee": "Tobias Stieler",
+      "refereeCountry": "Германия",
+      "assistants": [
+        "Lasse Koslowski",
+        "Jonas Weickenmeier"
+      ],
+      "var": "Tomasz Kwiatkowski",
+      "avar": "Lukas Fähndrich",
+      "fourthOfficial": "Matthias Jöllenbeck",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915414",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "AS Roma",
+      "away": "Real Madrid",
+      "venue": "Stadio Olimpico",
+      "city": "Рим",
+      "country": "Италия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049581--roma-vs-real-madrid/matchinfo/",
+      "referee": "François Letexier",
+      "refereeCountry": "Франция",
+      "assistants": [
+        "Cyril Mugnier",
+        "Mehdi Rahmouni"
+      ],
+      "var": "Dennis Higler",
+      "avar": "Pol van Boekel",
+      "fourthOfficial": "Bastien Dechepy",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915409",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Aston Villa",
+      "away": "Fenerbahce",
+      "venue": "Villa Park",
+      "city": "Бирмингем",
+      "country": "Англия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049582--aston-villa-vs-fenerbahce/matchinfo/",
+      "referee": "Ivan Kružliak",
+      "refereeCountry": "Словакия",
+      "assistants": [
+        "Branislav Hancko",
+        "Jan Pozor"
+      ],
+      "var": "Tiago Martins",
+      "avar": "Robert Schröder",
+      "fourthOfficial": "Peter Kralović",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915406",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Shakhtar Donetsk",
+      "away": "AEK Athens",
+      "venue": "Stamford Bridge",
+      "city": "Лондон",
+      "country": "Англия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049586--shakhtar-vs-aek-athens/matchinfo/",
+      "referee": "Chris Kavanagh",
+      "refereeCountry": "Англия",
+      "assistants": [
+        "Dan Cook",
+        "Ian Hussin"
+      ],
+      "var": "Stuart Attwell",
+      "avar": "Andrew Dallas",
+      "fourthOfficial": "Sam Barrott",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915393",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Bodo/Glimt",
+      "away": "Borussia Dortmund",
+      "venue": "Aspmyra",
+      "city": "Будё",
+      "country": "Норвегия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049585--bodo-glimt-vs-b-dortmund/matchinfo/",
+      "referee": "Urs Schnyder",
+      "refereeCountry": "Швейцария",
+      "assistants": [
+        "Marco Zürcher",
+        "Benjamin Zürcher"
+      ],
+      "var": "Fedayi San",
+      "avar": "Bram Van Driessche",
+      "fourthOfficial": "Sven Wolfensberger",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915407",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Manchester City",
+      "away": "Paris Saint-Germain",
+      "venue": "City of Manchester Stadium",
+      "city": "Манчестер",
+      "country": "Англия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049580--man-city-vs-paris/matchinfo/",
+      "referee": "Sven Jablonski",
+      "refereeCountry": "Германия",
+      "assistants": [
+        "Eduard Beitinger",
+        "Christian Dietz"
+      ],
+      "var": "Bastian Dankert",
+      "avar": "Sören Storks",
+      "fourthOfficial": "Tobias Reichel",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915408",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Real Betis",
+      "away": "FC Porto",
+      "venue": "La Cartuja de Sevilla",
+      "city": "Севилья",
+      "country": "Испания",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049583--real-betis-vs-porto/matchinfo/",
+      "referee": "Clément Turpin",
+      "refereeCountry": "Франция",
+      "assistants": [
+        "Nicolas Danos",
+        "Benjamin Pages"
+      ],
+      "var": "Willy Delajod",
+      "avar": "Mathieu Vernice",
+      "fourthOfficial": "Jérémie Pignard",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    },
+    {
+      "id": "401915405",
+      "league": "ucl",
+      "date": "2026-10-14T19:00Z",
+      "home": "Slovan Bratislava",
+      "away": "VfB Stuttgart",
+      "venue": "Národný futbalový štadión",
+      "city": "Братислава",
+      "country": "Словакия",
+      "source": "https://www.uefa.com/uefachampionsleague/match/2049587--s-bratislava-vs-stuttgart/matchinfo/",
+      "referee": "Irfan Peljto",
+      "refereeCountry": "Босния и Герцеговина",
+      "assistants": [
+        "Senad Ibrišimbegović",
+        "Davor Beljo"
+      ],
+      "var": "Daniele Chiffi",
+      "avar": "Michael Fabbri",
+      "fourthOfficial": "Miloš Gigovic",
+      "checkedAt": "2026-10-14T12:36:02.900726+00:00",
+      "appointmentType": "UEFA · проверенное назначение"
+    }
+  ],
+  "profiles": {
+    "marco-guida": {
+      "name": "Marco Guida",
+      "displayName": "Марко Гуида",
+      "country": "Италия",
+      "birthDate": "1981-06-07",
+      "bio": "Итальянский арбитр из Помпеи. В списке FIFA с 2014 года.",
+      "checkedAt": "2026-10-16T16:23:57.306153+00:00",
+      "source": "https://valuestats.com/en/referee/14343-marco-guida",
+      "crossSource": "https://playerstats.football/referee/331",
+      "season": "2026/27",
+      "stats": [
+        {
+          "label": "Сезон · все турниры источника",
+          "n": 6,
+          "yellowTotal": 22,
+          "redTotal": 0,
+          "foulsTotal": 136
+        },
+        {
+          "label": "Лига чемпионов · с квалификацией",
+          "n": 2,
+          "yellowTotal": 10,
+          "redTotal": 0,
+          "foulsTotal": 51
+        },
+        {
+          "label": "Серия А",
+          "n": 2,
+          "yellowTotal": 6,
+          "redTotal": 0,
+          "foulsTotal": 45
+        },
+        {
+          "label": "Лига Европы",
+          "n": 1,
+          "yellowTotal": 3,
+          "redTotal": 0,
+          "foulsTotal": 27
+        },
+        {
+          "label": "Лига наций",
+          "n": 1,
+          "yellowTotal": 3,
+          "redTotal": 0,
+          "foulsTotal": 13
+        }
+      ],
+      "history": {
+        "label": "ЛЧ · 2025/26",
+        "n": 7,
+        "yellowTotal": 23,
+        "redTotal": 0,
+        "foulsTotal": 155
+      },
+      "recent": [
+        {
+          "date": "2026-10-13",
+          "match": "Галатасарай — Барселона",
+          "league": "Лига чемпионов",
+          "yellow": 2,
+          "source": "https://valuestats.com/en/match/19872596-galatasaray-vs-fc-barcelona"
+        },
+        {
+          "date": "2026-10-01",
+          "match": "Греция — Нидерланды",
+          "league": "Лига наций",
+          "yellow": 3
+        },
+        {
+          "date": "2026-09-19",
+          "match": "Болонья — Торино",
+          "league": "Серия А",
+          "yellow": 3
+        },
+        {
+          "date": "2026-09-04",
+          "match": "Дженоа — Комо",
+          "league": "Серия А",
+          "yellow": 3
+        },
+        {
+          "date": "2026-08-20",
+          "match": "Бенфика — AGF",
+          "league": "Лига Европы",
+          "yellow": 3
+        },
+        {
+          "date": "2026-08-11",
+          "match": "Целе — Арарат-Армения",
+          "league": "ЛЧ · квалификация",
+          "yellow": 8
+        }
+      ],
+      "analysis": [
+        "22 жёлтые карточки за 6 матчей сезона в турнирах источника: 3,67 за игру. Это смешанная выборка; разбивка по турнирам показана отдельно.",
+        "В 1 из 6 матчей было 5 и более ЖК (16,7%). Это наблюдаемая частота, не вероятность следующего матча.",
+        "Лига чемпионов, включая квалификацию: 10 ЖК и 51 фол за 2 матча. Двух игр недостаточно для устойчивого вывода о строгости.",
+        "Красных карточек в 6 матчах нет. Это не означает нулевой риск удаления. Данные пенальти и предпочтения хозяев не подтверждены."
+      ]
+    }
+  }
+}

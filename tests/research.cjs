@@ -1,0 +1,10 @@
+require('./qa.cjs');
+const assert=require('node:assert/strict'),{historyCandidates,buildHistory}=require('../lib/match-analysis.ts'),{savedAnalysis}=require('../lib/analysis-fallback.ts'),{metricEvidence}=require('../app/match-facts.tsx');
+const snapshots=require('../lib/analysis-snapshot.json').matches,fixtures=require('../lib/current-match-updates.json').matches;
+let cells=0;
+for(const m of snapshots){const f=fixtures.find(f=>f.id===m.matchId);assert.equal(m.league,f.league);assert.equal(m.date,f.date);assert.equal(m.players.length,6);assert.equal(new Set(m.players.map(p=>p.id)).size,6);for(const side of ['home','away']){const team=m.teams.find(t=>t.side===side),history=m.history.find(t=>t.id===team.id);assert.equal(m.players.filter(p=>p.teamId===team.id).length,3);for(const key of ['goals','yellow','red','corners','shots','target','fouls','offsides','saves','possession']){const v=metricEvidence(f,m,side,key),rows=history.events.filter(e=>typeof e.own[key]==='number');assert.equal(v.n,rows.length);assert.equal(v.value,rows.reduce((s,e)=>s+e.own[key],0)/rows.length);cells++}for(const e of history.events)assert.ok(Date.parse(e.date)<Date.parse(m.date));}assert.ok(savedAnalysis(f.id,f.league).stale);assert.equal(savedAnalysis(f.id,'wrong'),null)}
+const d={header:{league:{name:'League'},season:{year:2026},competitions:[{date:'2026-10-16',competitors:[{team:{id:'a',displayName:'A'}}]}]}};
+const schedules={a:{events:Array.from({length:12},(_,i)=>({id:String(i+1),date:`2026-09-${String(i+1).padStart(2,'0')}`,league:{name:'League'},season:{year:2026,displayName:'2026-27 League'},competitions:[{status:{type:{state:'post'}},competitors:[{team:{id:'a'}},{team:{id:'b'}}]}]}))}};
+assert.equal(historyCandidates(d,schedules)[0].events.length,12);
+const docs={'12':{header:{id:'999',league:{name:'League'},season:{year:2026},competitions:[{status:{type:{state:'post'}},competitors:[{team:{id:'a'}},{team:{id:'b'}}]}]}}};assert.equal(buildHistory(d,docs,schedules)[0].events.length,0);
+console.log(`PASS ${cells} researched team metrics, 30 unique match-player records, full-season selection, match identity and dated fallback.`);
