@@ -1,6 +1,7 @@
 import handler from "vinext/server/fetch-handler";
 import { runWithConnectorBinding } from "../lib/connector-context";
 import type { ConnectorBinding } from "../lib/connector-contract.mjs";
+import { runScheduledJournal } from "../lib/referee-journal-refresh";
 
 export default {
   fetch(request: Request, env: Cloudflare.Env, ctx: ExecutionContext<{ CONNECTORS?: ConnectorBinding }>) {
@@ -24,5 +25,9 @@ export default {
       };
     }
     return runWithConnectorBinding(binding, () => handler.fetch(request, env, ctx));
+  },
+  // Optional Cron Trigger: same rotation step as GET /api/referee-journal?next=1.
+  scheduled(_controller: ScheduledController, env: Cloudflare.Env & { BUCKET?: R2Bucket }, ctx: ExecutionContext) {
+    ctx.waitUntil(runScheduledJournal(env.BUCKET).catch((error) => console.warn("Referee journal schedule:", String(error))));
   },
 };
