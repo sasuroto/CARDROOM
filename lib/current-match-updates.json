@@ -241,6 +241,34 @@
       "availabilityStatus": "not-verified",
       "availabilityNote": "VAR/AVAR и актуальные травмы в проверенной карточке TFF не опубликованы. Подтверждённый состав и игровая статистика запрашиваются отдельно из ESPN.",
       "startingLineupsStatus": "live-source"
+    },
+    {
+      "id": "401882843",
+      "league": "laliga",
+      "date": "2026-10-17T12:00Z",
+      "home": "Espanyol",
+      "away": "Atlético Madrid",
+      "checkedAt": "2026-10-17T08:05:19Z",
+      "officials": {
+        "referee": "Alejandro José Hernández Hernández",
+        "assistants": [
+          "José Enrique Naranjo",
+          "Marcos Cerdán"
+        ],
+        "var": "Jorge Figueroa",
+        "avar": "José María Sánchez",
+        "fourthOfficial": "Víctor Manuel Broncano"
+      },
+      "appointmentType": "RFEF · официальное назначение",
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_sabado.pdf?cb=ee63ddfa",
+      "announcementSource": "https://rfef.es/es/noticias/designaciones-estos-son-los-arbitros-para-los-partidos-del-sabado-17-de-octubre-de-primera",
+      "crossSource": "https://en.as.com/resultados/futbol/primera/2026_2027/directo/regular_a_9_6a4496c62a78733/",
+      "publishedDate": "2026-10-16",
+      "documentDate": "2026-10-14",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
     }
   ],
   "researchScope": {

@@ -104,7 +104,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .dashboardCounter i{top:20px;right:26px}
 .liveStrip{background:var(--accent)}
 .liveStrip b{background:transparent;padding:0}
-.favoriteButton,.favoriteButton[aria-pressed=true]{background:transparent;border-color:transparent;box-shadow:none}
+/* Favorite controls keep their yellow icon in every interaction state. */
+button.favoriteButton,
+button.favoriteButton:is([aria-pressed],:hover,:active,:focus-visible),
+.calendarCenter button.calendarFavorite,
+.calendarCenter button.calendarFavorite:is([aria-pressed],:hover,:active,:focus-visible){background:transparent;border-color:transparent;box-shadow:none;color:var(--highlight);-webkit-text-stroke:0}
+.calendarFavorite .favoriteStar{margin:auto}
 .favoriteStar{display:block;width:1.12em;height:1.12em;fill:none;stroke:var(--muted);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 .favoriteStar.isActive{fill:var(--highlight);stroke:var(--ink);stroke-width:1.1}
 .favoriteButton:hover .favoriteStar{transform:scale(1.1)}
@@ -201,3 +206,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .matchOverview .matchWeatherCompact .weatherDetails a{margin-top:0;font-size:10px}
 .matchOverview .matchWeatherCompact .sourceWarning{font-size:10px;margin-bottom:0}
 @media(max-width:650px){.overviewDetails{grid-template-columns:1fr}.matchOverview .matchWeatherCompact{padding:14px}.overviewDateWeather{width:100%}}
+
+.overviewOfficials details{background:transparent;padding:0;border:0;margin-top:12px}
+.overviewOfficials summary{font-size:11px;color:#d1d4ca;cursor:pointer}
+.matchOverview .overviewOfficials p{font-size:12px;margin:8px 0 0}

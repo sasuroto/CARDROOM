@@ -1,3 +1,4 @@
+import {applyCurrentAppointment} from '../../../lib/current-context';
 import {venueFields} from '../../../lib/match-location';
 import {espnOfficials} from '../../../lib/match-officials';
 import {env} from 'cloudflare:workers';
@@ -11,7 +12,7 @@ export async function GET(req:Request){
  const candidate=curated(id),known=candidate?.league===league?candidate:null;
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET,key=`match/v6/${league}/${id}.json`,cached=await readCache(bucket,key);
  const official=plMatch({id,league})?await getPLOfficials(bucket):null;
- const enrich=(match:any)=>official?applyPLOfficials({...match,id,league},official):match;
+ const enrich=(match:any)=>applyCurrentAppointment(official?applyPLOfficials({...match,id,league},official):{...match,id,league});
  const ttl=cached?.referee?15*60000:60000;
  if(cached&&Date.now()-Date.parse(cached.fetchedAt)<ttl)return Response.json(enrich(cached),{headers:{'Cache-Control':'no-store'}});
  try{

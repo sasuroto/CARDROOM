@@ -1,0 +1,1116 @@
+{
+  "version": 55,
+  "sourceCommit": "a7cb36be8ac47f512505ac4d9d1eb5d3e62984ba",
+  "files": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "sha": "ba822225e812ca6b41e61c87d5c5d9485d1c47ac"
+    },
+    {
+      "path": ".npmrc",
+      "mode": "100644",
+      "sha": "9f274d6425b9792ae0a70cb0b96a29fd98ec6ed6"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "mode": "100644",
+      "sha": "011602341b2d25397027498612c2bd651705a4e2"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "342e11691b570f37f86a17b4314924f73c904b03"
+    },
+    {
+      "path": "RESEARCH-AUDIT-2026-10-16.md",
+      "mode": "100644",
+      "sha": "f4760ab50afc425caef31c2dfe4a628b08d0a0ec"
+    },
+    {
+      "path": "app/api/analysis/route.ts",
+      "mode": "100644",
+      "sha": "f7c91ad13a5932b2b6a8152824b5a27696def7ed"
+    },
+    {
+      "path": "app/api/data/route.ts",
+      "mode": "100644",
+      "sha": "6dd7b8021760e588c13dc81d1c789f2844cefb25"
+    },
+    {
+      "path": "app/api/match/route.ts",
+      "mode": "100644",
+      "sha": "19f32bb3222e2ba1a24a463d87f676056befb088"
+    },
+    {
+      "path": "app/api/matches/route.ts",
+      "mode": "100644",
+      "sha": "df29ee3d48718c46742d569a2b90c99a67b13307"
+    },
+    {
+      "path": "app/api/referees/route.ts",
+      "mode": "100644",
+      "sha": "9e670eb1094752bf6ac4412a09ed0ff60dc71726"
+    },
+    {
+      "path": "app/api/standings/route.ts",
+      "mode": "100644",
+      "sha": "523c203dd7514f64693716abdaa7f9718fee606a"
+    },
+    {
+      "path": "app/api/team/route.ts",
+      "mode": "100644",
+      "sha": "8fd39f25b5bb0b4054ce684a1af6fe6520cae1a6"
+    },
+    {
+      "path": "app/api/weather/route.ts",
+      "mode": "100644",
+      "sha": "c2c21f2358b3cc9c30a559794ea2f478a2bba4b6"
+    },
+    {
+      "path": "app/bet-shortlist.tsx",
+      "mode": "100644",
+      "sha": "622f23e078dd13fd6b66646ecedc2d51fbe089a6"
+    },
+    {
+      "path": "app/calendar-controls.css",
+      "mode": "100644",
+      "sha": "c94ea28944246042e91e956863acc29d175437b4"
+    },
+    {
+      "path": "app/chatgpt-auth.ts",
+      "mode": "100644",
+      "sha": "a0ae2ed9a9771b5fc36a06af554a05c18b2a13b3"
+    },
+    {
+      "path": "app/country-flag.tsx",
+      "mode": "100644",
+      "sha": "7b72c8c1aaff5454cffba4b56aaa291b7f482cde"
+    },
+    {
+      "path": "app/data-freshness.tsx",
+      "mode": "100644",
+      "sha": "1608b6deba065a5f529da4e4dc3b2d3a9da9d5c9"
+    },
+    {
+      "path": "app/draw-watch.tsx",
+      "mode": "100644",
+      "sha": "889317aca82744cbd7240b32d7529d2b288b975a"
+    },
+    {
+      "path": "app/favorites.tsx",
+      "mode": "100644",
+      "sha": "a24bf848605a9e5f984a30a038e00e98edeb1ce1"
+    },
+    {
+      "path": "app/global-search.tsx",
+      "mode": "100644",
+      "sha": "432c2dc6c3be7ae604682a7d1c91ef5fbd1af235"
+    },
+    {
+      "path": "app/globals.css",
+      "mode": "100644",
+      "sha": "3011fb4ac45f0b40638815881afdd30202614db7"
+    },
+    {
+      "path": "app/layout.tsx",
+      "mode": "100644",
+      "sha": "b45b047f5fd5f10234cd0c094f651a804f0b3ed0"
+    },
+    {
+      "path": "app/league-explorer.tsx",
+      "mode": "100644",
+      "sha": "8fb7a1b9222cb2bcaee603eaac9193f32c1edfef"
+    },
+    {
+      "path": "app/match-center.tsx",
+      "mode": "100644",
+      "sha": "1c01bce0b7d720e4b8865d9e2ef4107027533072"
+    },
+    {
+      "path": "app/match-facts.tsx",
+      "mode": "100644",
+      "sha": "d74bd5bdbe5ea5ea958444bd86416e5a708678c1"
+    },
+    {
+      "path": "app/match-overview.tsx",
+      "mode": "100644",
+      "sha": "bc911bcd9b0ba6c888d0407ee10f8ebe85c50db4"
+    },
+    {
+      "path": "app/match-report.tsx",
+      "mode": "100644",
+      "sha": "6a3eabd8739edb74fe42e9067fed83a65940b433"
+    },
+    {
+      "path": "app/match-samples.css",
+      "mode": "100644",
+      "sha": "bf9bf111cdba99d675da6639926918c3ea2ca24d"
+    },
+    {
+      "path": "app/match-samples.tsx",
+      "mode": "100644",
+      "sha": "82af69143ce68c0eef0c35f7a41ea99d52425d7f"
+    },
+    {
+      "path": "app/match-weather.tsx",
+      "mode": "100644",
+      "sha": "163d7b4678267a6a957874ed54c6286fd4d9fb62"
+    },
+    {
+      "path": "app/page.tsx",
+      "mode": "100644",
+      "sha": "9c23bd3f05a9b5a889fad8e18149c1380a12d77d"
+    },
+    {
+      "path": "app/player-intelligence.tsx",
+      "mode": "100644",
+      "sha": "c91702d042ff5dba9463248b0bb4f4cf9a6bd108"
+    },
+    {
+      "path": "app/product-upgrade.css",
+      "mode": "100644",
+      "sha": "2650e5148ce1cf972ea2618d98c2cd8d4e700919"
+    },
+    {
+      "path": "app/reading-guide.tsx",
+      "mode": "100644",
+      "sha": "6006d34a8826df81d464e01f8d9218856e617192"
+    },
+    {
+      "path": "app/referee-research.tsx",
+      "mode": "100644",
+      "sha": "539289ddd811de4eac739839164fd9d385636d25"
+    },
+    {
+      "path": "app/research-audit.tsx",
+      "mode": "100644",
+      "sha": "0b39241954de679e70a82f16c84b0f8799dfab20"
+    },
+    {
+      "path": "app/today-matches.tsx",
+      "mode": "100644",
+      "sha": "ec38c2f6300df8bfce5d621d41d0fb5d7d9fe518"
+    },
+    {
+      "path": "app/tournament-dashboard.tsx",
+      "mode": "100644",
+      "sha": "d1be5892d1f334c3ba7c3a1e26ad2601e2e1d5d4"
+    },
+    {
+      "path": "app/use-match-details.ts",
+      "mode": "100644",
+      "sha": "44c5cda7db8603282339f5e79105c0a3a4413b04"
+    },
+    {
+      "path": "build/connector-preview-plugin.mjs",
+      "mode": "100644",
+      "sha": "f29e9953bdac6f25be5f1b58e5a02ef0457bafbe"
+    },
+    {
+      "path": "build/connector-preview-worker.mjs",
+      "mode": "100644",
+      "sha": "f4d5f1974728c4b295d05a1422d7e2bce75635e5"
+    },
+    {
+      "path": "build/sites-vite-plugin.LICENSE",
+      "mode": "100644",
+      "sha": "4243cb4a9aaa50f954498e54c850773e9ba13eea"
+    },
+    {
+      "path": "build/sites-vite-plugin.ts",
+      "mode": "100644",
+      "sha": "2ece1b96530b40a7ea4981e6341b52771a07813e"
+    },
+    {
+      "path": "build/sites-worker.ts",
+      "mode": "100644",
+      "sha": "f5589039057a3f3f221b4a5418d6a4e595e63224"
+    },
+    {
+      "path": "cloudflare-env.d.ts",
+      "mode": "100644",
+      "sha": "856e090c902917b4e1cebee0e08ea1d398fd01c3"
+    },
+    {
+      "path": "components.json",
+      "mode": "100644",
+      "sha": "c8f5bb16f79ed774f67415a8dc2b4a38243e3e90"
+    },
+    {
+      "path": "components/connector-error.tsx",
+      "mode": "100644",
+      "sha": "3c994dc58811e4b02250092fec54b0b788edcc2c"
+    },
+    {
+      "path": "components/ui/accordion.tsx",
+      "mode": "100644",
+      "sha": "91e3a250ce6ee0797b0258454d774800650adcc8"
+    },
+    {
+      "path": "components/ui/alert-dialog.tsx",
+      "mode": "100644",
+      "sha": "dad327341382f200b84d5f833eb1b7a74b0e7469"
+    },
+    {
+      "path": "components/ui/alert.tsx",
+      "mode": "100644",
+      "sha": "f99164ed4b320790482f514342dab5e72f284aca"
+    },
+    {
+      "path": "components/ui/aspect-ratio.tsx",
+      "mode": "100644",
+      "sha": "57e38fa96f9c0cb767d7b8de0d6dbc171d1b921a"
+    },
+    {
+      "path": "components/ui/attachment.tsx",
+      "mode": "100644",
+      "sha": "5bdd1ce7db5800eb55198cd0291a1e47dc67fb0d"
+    },
+    {
+      "path": "components/ui/avatar.tsx",
+      "mode": "100644",
+      "sha": "ea658505703a577fe93341e5e1a0b478c27245f7"
+    },
+    {
+      "path": "components/ui/badge.tsx",
+      "mode": "100644",
+      "sha": "6eb2a057aae0e23a74368cc4daf9657210e9a740"
+    },
+    {
+      "path": "components/ui/breadcrumb.tsx",
+      "mode": "100644",
+      "sha": "004bb63a4c92229e612b6126d79fb7b078aa7565"
+    },
+    {
+      "path": "components/ui/bubble.tsx",
+      "mode": "100644",
+      "sha": "792146e61d80ef595d032d5d09a3d572d50f1374"
+    },
+    {
+      "path": "components/ui/button-group.tsx",
+      "mode": "100644",
+      "sha": "cd550d7afca6562548afe3f595b352406f7f3951"
+    },
+    {
+      "path": "components/ui/button.tsx",
+      "mode": "100644",
+      "sha": "4d38506cee5430d95a59ec6a2a0cef2b79217e7a"
+    },
+    {
+      "path": "components/ui/calendar.tsx",
+      "mode": "100644",
+      "sha": "5d31419b130a18c52320f5a21546a9236123b6bf"
+    },
+    {
+      "path": "components/ui/card.tsx",
+      "mode": "100644",
+      "sha": "acf57dc5a534792273b8fb86227e92e001f3dc53"
+    },
+    {
+      "path": "components/ui/carousel.tsx",
+      "mode": "100644",
+      "sha": "0e05a77ea155fde6af5d9a4848b1d3953df6ea5a"
+    },
+    {
+      "path": "components/ui/chart.tsx",
+      "mode": "100644",
+      "sha": "9813c584e125847d88e9e7e7f9edff7e9ba45a97"
+    },
+    {
+      "path": "components/ui/checkbox.tsx",
+      "mode": "100644",
+      "sha": "f5a7e433f3795b82a00c5c06a1fc6decf116a84a"
+    },
+    {
+      "path": "components/ui/collapsible.tsx",
+      "mode": "100644",
+      "sha": "2f7a4e7fc64a8874373c1584646a63f28cd63c47"
+    },
+    {
+      "path": "components/ui/combobox.tsx",
+      "mode": "100644",
+      "sha": "2415bd801031a16bbcee8343058825feecfaea69"
+    },
+    {
+      "path": "components/ui/command.tsx",
+      "mode": "100644",
+      "sha": "8fe3ccb406be52d28961b0c0220e87ecd19596ca"
+    },
+    {
+      "path": "components/ui/context-menu.tsx",
+      "mode": "100644",
+      "sha": "5aaca76552cf0468b1def03c9e2c42f1f0b60734"
+    },
+    {
+      "path": "components/ui/dialog.tsx",
+      "mode": "100644",
+      "sha": "84bdef4bb307087da1bfaf3cadf7be5dbda73f24"
+    },
+    {
+      "path": "components/ui/direction.tsx",
+      "mode": "100644",
+      "sha": "22e165774bd595fbf41d0c45efef1cf996897983"
+    },
+    {
+      "path": "components/ui/drawer.tsx",
+      "mode": "100644",
+      "sha": "ad08671442203fe345093f364696bdf43528e0b7"
+    },
+    {
+      "path": "components/ui/dropdown-menu.tsx",
+      "mode": "100644",
+      "sha": "ae1fcf62f1e3b648554789b8fe02943d92bf00fc"
+    },
+    {
+      "path": "components/ui/empty.tsx",
+      "mode": "100644",
+      "sha": "ce4b0095f6d19d2eae2e465060e9060b0c210856"
+    },
+    {
+      "path": "components/ui/field.tsx",
+      "mode": "100644",
+      "sha": "ec849dae4d3dd06a973ba22e4b2248a25cf18148"
+    },
+    {
+      "path": "components/ui/form.tsx",
+      "mode": "100644",
+      "sha": "f371fea1bc35380d28678c6cf53df8f65deb2776"
+    },
+    {
+      "path": "components/ui/hover-card.tsx",
+      "mode": "100644",
+      "sha": "91e869c0d3091cbeddf5cb0266e82ddf56f829a6"
+    },
+    {
+      "path": "components/ui/input-group.tsx",
+      "mode": "100644",
+      "sha": "a7652d936fffd9c5bca4b88e6b9715bf559e667d"
+    },
+    {
+      "path": "components/ui/input-otp.tsx",
+      "mode": "100644",
+      "sha": "6a556afacd71996bf0e385ff2b04869fb2ee4523"
+    },
+    {
+      "path": "components/ui/input.tsx",
+      "mode": "100644",
+      "sha": "f1124aea14eee062fc2f4c55dad5f0d9de0ccc1a"
+    },
+    {
+      "path": "components/ui/item.tsx",
+      "mode": "100644",
+      "sha": "d5dbb1a9c2e70456e45a39887a4b7cc56d484a45"
+    },
+    {
+      "path": "components/ui/kbd.tsx",
+      "mode": "100644",
+      "sha": "2459224fbc531f6306b73aaeb22e9022d9985332"
+    },
+    {
+      "path": "components/ui/label.tsx",
+      "mode": "100644",
+      "sha": "1ac80f701ebfe9dc02d632c08cafade732e46625"
+    },
+    {
+      "path": "components/ui/marker.tsx",
+      "mode": "100644",
+      "sha": "cfa76c6c014ab342befcbf7571eb932917406522"
+    },
+    {
+      "path": "components/ui/menubar.tsx",
+      "mode": "100644",
+      "sha": "4af16a428377f81cbb3f66adfe518308e0b690d8"
+    },
+    {
+      "path": "components/ui/message-scroller.tsx",
+      "mode": "100644",
+      "sha": "0b05011259c026a357380c3834bce0ead8565d22"
+    },
+    {
+      "path": "components/ui/message.tsx",
+      "mode": "100644",
+      "sha": "53437e8db2b0fad1da06a7499e54ddaf116295c2"
+    },
+    {
+      "path": "components/ui/native-select.tsx",
+      "mode": "100644",
+      "sha": "3058398399ad6c029ad527052475b360b114715b"
+    },
+    {
+      "path": "components/ui/navigation-menu.tsx",
+      "mode": "100644",
+      "sha": "0a673f513c97fbeaae0872403b7582ab2ba7e3c3"
+    },
+    {
+      "path": "components/ui/pagination.tsx",
+      "mode": "100644",
+      "sha": "1dcfb0cc050c5f2bdd930522d627313d03d3690c"
+    },
+    {
+      "path": "components/ui/popover.tsx",
+      "mode": "100644",
+      "sha": "30058c4ec284ca9cad1ed1162d084ce3cd94e2b0"
+    },
+    {
+      "path": "components/ui/progress.tsx",
+      "mode": "100644",
+      "sha": "b3ae25089ad549b7f13125e482f99b43dd895bd2"
+    },
+    {
+      "path": "components/ui/radio-group.tsx",
+      "mode": "100644",
+      "sha": "fe514536ed771f7adef0a6b9e4d1aeadc2c95481"
+    },
+    {
+      "path": "components/ui/resizable.tsx",
+      "mode": "100644",
+      "sha": "a76832a10b4c5c2a137e25c16478567ba86daf0d"
+    },
+    {
+      "path": "components/ui/scroll-area.tsx",
+      "mode": "100644",
+      "sha": "73c4eb1cdcd4a699b150a9ddc3e87bfb90b63d09"
+    },
+    {
+      "path": "components/ui/select.tsx",
+      "mode": "100644",
+      "sha": "c0dc7120b4f78008ae5efc6d1c8b7ec8205c35d5"
+    },
+    {
+      "path": "components/ui/separator.tsx",
+      "mode": "100644",
+      "sha": "cd873e3631b571060f166897b7b62e033e87c18f"
+    },
+    {
+      "path": "components/ui/sheet.tsx",
+      "mode": "100644",
+      "sha": "cb53bb28b6850745c9519e8e7462e05f85a50c93"
+    },
+    {
+      "path": "components/ui/sidebar.tsx",
+      "mode": "100644",
+      "sha": "f5f6c5aefc88ffa2e999e284b299472215c05161"
+    },
+    {
+      "path": "components/ui/skeleton.tsx",
+      "mode": "100644",
+      "sha": "3ec6be770b846170b8e7f8916e5f165e2d1730df"
+    },
+    {
+      "path": "components/ui/slider.tsx",
+      "mode": "100644",
+      "sha": "46ebc4b4df1e9baf1f3997a4b6c08ef80c84a9c9"
+    },
+    {
+      "path": "components/ui/sonner.tsx",
+      "mode": "100644",
+      "sha": "9b20afe2e10fd9b94d1abc1ae732054b2fb9821c"
+    },
+    {
+      "path": "components/ui/spinner.tsx",
+      "mode": "100644",
+      "sha": "a70e713c5b4ecb2af186efe3fadea51805f26ba5"
+    },
+    {
+      "path": "components/ui/switch.tsx",
+      "mode": "100644",
+      "sha": "8baa844fdb17d668b3ce07cfbd6a7ef52e2eb5eb"
+    },
+    {
+      "path": "components/ui/table.tsx",
+      "mode": "100644",
+      "sha": "7add5f1a22db954ac6cb3446f1bf8c8a9fc5c335"
+    },
+    {
+      "path": "components/ui/tabs.tsx",
+      "mode": "100644",
+      "sha": "b463afd170637df477e36184aa27d2ad1bd3c3e0"
+    },
+    {
+      "path": "components/ui/textarea.tsx",
+      "mode": "100644",
+      "sha": "e67d8fefe50c41dfa2deed9a5096d5be7691581a"
+    },
+    {
+      "path": "components/ui/toggle-group.tsx",
+      "mode": "100644",
+      "sha": "9894607b212ff7182bf2024f4262da03df0a8973"
+    },
+    {
+      "path": "components/ui/toggle.tsx",
+      "mode": "100644",
+      "sha": "5250c98ff7f11f531af38c227230a76b7d25bf19"
+    },
+    {
+      "path": "components/ui/tooltip.tsx",
+      "mode": "100644",
+      "sha": "ec65c1e4255f050d9555c6cdade90a5f8a6c0c29"
+    },
+    {
+      "path": "db/index.ts",
+      "mode": "100644",
+      "sha": "19b379900d94124b674f07ffe2dbba8f70bd8d6d"
+    },
+    {
+      "path": "db/schema.ts",
+      "mode": "100644",
+      "sha": "d2dd83cd250ecaa6ac022559fc9640271f2b2dd5"
+    },
+    {
+      "path": "drizzle.config.ts",
+      "mode": "100644",
+      "sha": "c2b2f34376984744343453838ce66658ad9d9b6a"
+    },
+    {
+      "path": "drizzle/meta/_journal.json",
+      "mode": "100644",
+      "sha": "4377507400414768c5915808bf080a1403cf6cb3"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "mode": "100644",
+      "sha": "1c56c0144ce558825265a2d79d06b1ce6150d24f"
+    },
+    {
+      "path": "examples/d1/app/api/notes/route.ts",
+      "mode": "100644",
+      "sha": "07f8318c3c290d68163e95aa3e170ad92a235f27"
+    },
+    {
+      "path": "examples/d1/db/schema.ts",
+      "mode": "100644",
+      "sha": "7bb0c157110799b9b53c767517e0d192b7201f2e"
+    },
+    {
+      "path": "hooks/use-mobile.ts",
+      "mode": "100644",
+      "sha": "2b0fe1dfef3b17850bbac040665f514a8ffd0f15"
+    },
+    {
+      "path": "lib/aemet-weather.ts",
+      "mode": "100644",
+      "sha": "f923d75782f8fbdb78ae407b0a6985dcb8588f67"
+    },
+    {
+      "path": "lib/analysis-fallback.ts",
+      "mode": "100644",
+      "sha": "66237f88f761e0a35766b1d2ca2efeca020c5dc6"
+    },
+    {
+      "path": "lib/analysis-snapshot.json",
+      "mode": "100644",
+      "sha": "3d44de1ebc8c513c2efea7bfe267c49229ecadf5"
+    },
+    {
+      "path": "lib/appointed-referees.json",
+      "mode": "100644",
+      "sha": "0e5482532b9ef95e9bb39b67ae5373f3ee62fe0b"
+    },
+    {
+      "path": "lib/cache.ts",
+      "mode": "100644",
+      "sha": "2c904899b48fc0b66099cf0fb45c14d445af96bb"
+    },
+    {
+      "path": "lib/calendar-scope.ts",
+      "mode": "100644",
+      "sha": "a4f4ea91b7337160f3c12480f9c3d9711deedd5d"
+    },
+    {
+      "path": "lib/client-leagues.ts",
+      "mode": "100644",
+      "sha": "45a0e239152ae59bc704400e172172045503462c"
+    },
+    {
+      "path": "lib/connector-context.ts",
+      "mode": "100644",
+      "sha": "6cdeac72bf2df63e0a73159af25e0b4564ed1d43"
+    },
+    {
+      "path": "lib/connector-contract.mts",
+      "mode": "100644",
+      "sha": "f146418508b4c272a4495ec5498b6f0554b1f966"
+    },
+    {
+      "path": "lib/connector-errors.mts",
+      "mode": "100644",
+      "sha": "c9d2fe845ec965062d3724fd28a0892b4fbf5a9b"
+    },
+    {
+      "path": "lib/connector-preview.d.ts",
+      "mode": "100644",
+      "sha": "bb3f498b67e3dfd93601626aa2675af07dfe711c"
+    },
+    {
+      "path": "lib/connectors.ts",
+      "mode": "100644",
+      "sha": "30b85c0dd699e7236ec1694e03466b03caa2a7dc"
+    },
+    {
+      "path": "lib/current-context.ts",
+      "mode": "100644",
+      "sha": "21069c294711d3c9263686d4b0cb1b8e7a68e720"
+    },
+    {
+      "path": "lib/current-match-updates.json",
+      "mode": "100644",
+      "sha": "94dd57c9c725a9eb88628123002a0b743245b83e"
+    },
+    {
+      "path": "lib/data-snapshot.ts",
+      "mode": "100644",
+      "sha": "fd630eb84ed35fa76066cb464acaa22a06860eef"
+    },
+    {
+      "path": "lib/data.ts",
+      "mode": "100644",
+      "sha": "c2ee178a2b7d2711b2c316ea0ff363f5c967eed1"
+    },
+    {
+      "path": "lib/draw-scenarios.ts",
+      "mode": "100644",
+      "sha": "cebbc77135c12749cd33ff577ac687520fc2e2db"
+    },
+    {
+      "path": "lib/fixture-display.ts",
+      "mode": "100644",
+      "sha": "e6ea7784a8a741224259c77ecc5558cddf60d862"
+    },
+    {
+      "path": "lib/fixture-snapshot.json",
+      "mode": "100644",
+      "sha": "548939299f4aabb5feda989c57fe5364c4a64cf5"
+    },
+    {
+      "path": "lib/fixtures.ts",
+      "mode": "100644",
+      "sha": "ae6a550a574a594ebd58fb8cb509fb08ddbd4496"
+    },
+    {
+      "path": "lib/league-data-cache.ts",
+      "mode": "100644",
+      "sha": "de4c77bf12c0d0caee68f788eb89d542ce02365f"
+    },
+    {
+      "path": "lib/league-table.ts",
+      "mode": "100644",
+      "sha": "6fe1adc4ef5d80a218e478e1bdd0ce4f9fd671fb"
+    },
+    {
+      "path": "lib/market-model.ts",
+      "mode": "100644",
+      "sha": "cdf07accec07032ea557a19727d290196c9a5598"
+    },
+    {
+      "path": "lib/match-analysis.ts",
+      "mode": "100644",
+      "sha": "402e47fc583bf7b9c12bcac389f068ad27a0da85"
+    },
+    {
+      "path": "lib/match-location.ts",
+      "mode": "100644",
+      "sha": "8c2184a8a5ddc677cbef9b75a43896b04775c486"
+    },
+    {
+      "path": "lib/match-officials.ts",
+      "mode": "100644",
+      "sha": "f51ec7de727c0d9a9c09b3f20bd8b2185edcb999"
+    },
+    {
+      "path": "lib/match-research.json",
+      "mode": "100644",
+      "sha": "ccb24d8bba52ddcb23a761d751be01f5bb81d1d1"
+    },
+    {
+      "path": "lib/match-weather.ts",
+      "mode": "100644",
+      "sha": "dd967a4527c1fd334670a1ff313803c3b4c0ee43"
+    },
+    {
+      "path": "lib/pl-officials-snapshot.json",
+      "mode": "100644",
+      "sha": "f3e7fe1c0e7a2ee5cd44918d0df0944781ef63c6"
+    },
+    {
+      "path": "lib/pl-officials.ts",
+      "mode": "100644",
+      "sha": "f92bcc0c85988e071e09b1c1c448009464ad5a55"
+    },
+    {
+      "path": "lib/player-intelligence-model.ts",
+      "mode": "100644",
+      "sha": "bc1e6bfe7c8f073e5539f23c00993c7f8b505d5d"
+    },
+    {
+      "path": "lib/player-intelligence.json",
+      "mode": "100644",
+      "sha": "440677c7c22a0a133fb118678d3981ccd7aad34a"
+    },
+    {
+      "path": "lib/player-research.json",
+      "mode": "100644",
+      "sha": "9dd01d70e7ea4b54afad43fb17fed6d600461fc7"
+    },
+    {
+      "path": "lib/prematch-history.json",
+      "mode": "100644",
+      "sha": "07e2575f4aae2e199ac2607de1220a94d9075b78"
+    },
+    {
+      "path": "lib/prematch-official.ts",
+      "mode": "100644",
+      "sha": "98e807e9fee9edda9fd83edf93d7809b2a8ce791"
+    },
+    {
+      "path": "lib/readable-markets.ts",
+      "mode": "100644",
+      "sha": "d013e789fc247b172332130dc3a28a1bb30091fb"
+    },
+    {
+      "path": "lib/referee-hourly.ts",
+      "mode": "100644",
+      "sha": "92db29ba10535590b57765f89cccf12e3b7141b3"
+    },
+    {
+      "path": "lib/referee-match.ts",
+      "mode": "100644",
+      "sha": "75bc126451c4fbfd6f7edc3481bb3aeb7facbad6"
+    },
+    {
+      "path": "lib/referee-parser.ts",
+      "mode": "100644",
+      "sha": "0ebbafd15c58b6f9b3a9a09a12ca3405ab7a6463"
+    },
+    {
+      "path": "lib/referee-updates.ts",
+      "mode": "100644",
+      "sha": "3bcaaebc8c99d46f41c76398220751fb1797184c"
+    },
+    {
+      "path": "lib/referees.json",
+      "mode": "100644",
+      "sha": "0819a9f4cf041cd49bf59bf3777ec60ce075e5cd"
+    },
+    {
+      "path": "lib/research-audit.json",
+      "mode": "100644",
+      "sha": "f21487359c1b2c8254e6a5d6d53523fe9f9fa224"
+    },
+    {
+      "path": "lib/sample-stats.ts",
+      "mode": "100644",
+      "sha": "dc155e3ae6663f23b3ca0255e56920b4bfcb7ee6"
+    },
+    {
+      "path": "lib/seed.json",
+      "mode": "100644",
+      "sha": "08d5ab651d75bf1afa134621d71d318f242b9d9c"
+    },
+    {
+      "path": "lib/source-fetch.ts",
+      "mode": "100644",
+      "sha": "f91a3253a694d94fbf1570c681d6ee1969b535b2"
+    },
+    {
+      "path": "lib/team-history.ts",
+      "mode": "100644",
+      "sha": "c975bd062c856f35fdd337c1b513c811628087e5"
+    },
+    {
+      "path": "lib/utils.ts",
+      "mode": "100644",
+      "sha": "b500fb167fdaa78785feb0ff03b51f8a182a44ae"
+    },
+    {
+      "path": "lib/weather-snapshot.json",
+      "mode": "100644",
+      "sha": "ee5de58f54bd91ce51af5871b4ae9dcc18c20e73"
+    },
+    {
+      "path": "next.config.ts",
+      "mode": "100644",
+      "sha": "e9ffa3083ad279ecf95fd8eae59cb253e9a539c4"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "sha": "6fb12137c45f39b5f2702f5c31669e86bcd4184c"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "mode": "100644",
+      "sha": "765789b81f68671d50f9d20779812d0550663eda"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "mode": "100644",
+      "sha": "454dde77be0f122931de27f35b440c75b35bfbca"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "mode": "100644",
+      "sha": "61e36849cf7cfa9f1f71b4a3964a4953e3e243d3"
+    },
+    {
+      "path": "public/favicon.ico",
+      "mode": "100644",
+      "sha": "fd5224d861d4891e3f9f3ff555f281cc01b98528"
+    },
+    {
+      "path": "public/favicon.svg",
+      "mode": "100644",
+      "sha": "8fee1eaa2abc5ccc884b672e1884c76304108ad8"
+    },
+    {
+      "path": "public/file.svg",
+      "mode": "100644",
+      "sha": "16fe3d3a3ab9bd42e1616ec00066faba7e4aabe0"
+    },
+    {
+      "path": "public/flags/LICENSE.txt",
+      "mode": "100644",
+      "sha": "432f2ff623cbe0255972ea4cfc6c17ec8a81e27e"
+    },
+    {
+      "path": "public/flags/de.svg",
+      "mode": "100644",
+      "sha": "efde34193af25745dc2e7ac2cc36ad2bc307a53b"
+    },
+    {
+      "path": "public/flags/es.svg",
+      "mode": "100644",
+      "sha": "55d3ab504a3254b580836ab429377e2c615e8ac1"
+    },
+    {
+      "path": "public/flags/european_union.svg",
+      "mode": "100644",
+      "sha": "6f584056a122202788915ba97e069621dda715da"
+    },
+    {
+      "path": "public/flags/fr.svg",
+      "mode": "100644",
+      "sha": "0fe5619a7285260db2fae269de37353af870f59e"
+    },
+    {
+      "path": "public/flags/gb-eng.svg",
+      "mode": "100644",
+      "sha": "3fdf8c514d911ee51b3920e41ed7116a6bc61411"
+    },
+    {
+      "path": "public/flags/it.svg",
+      "mode": "100644",
+      "sha": "56b4fb30089148b21ec47bd9e2a171c7b292667c"
+    },
+    {
+      "path": "public/flags/pt.svg",
+      "mode": "100644",
+      "sha": "32ce13f2ff782cebd00957928094484263bcf1e0"
+    },
+    {
+      "path": "public/flags/tr.svg",
+      "mode": "100644",
+      "sha": "6d22c9b3cf185d4b489409f8c39da5f5b906b48e"
+    },
+    {
+      "path": "public/globe.svg",
+      "mode": "100644",
+      "sha": "c7215fe0f2634ae9f51d15dacc09184f5343941a"
+    },
+    {
+      "path": "public/window.svg",
+      "mode": "100644",
+      "sha": "d05e7a1bc066341298657dcc304dbadc4ddcab9d"
+    },
+    {
+      "path": "scripts/build-verified.sh",
+      "mode": "100755",
+      "sha": "6c69cf3ad6855c25c312b67f02fd1afffb97b63d"
+    },
+    {
+      "path": "scripts/connector-preview/connector-preview-session.mjs",
+      "mode": "100644",
+      "sha": "aa2d2d92f663e547e4af956e3f0475a6198b1bf2"
+    },
+    {
+      "path": "scripts/connector-preview/host-binding.mjs",
+      "mode": "100644",
+      "sha": "88e6efb56e6ceb044dd3c9127d26960b5bb9c5e9"
+    },
+    {
+      "path": "scripts/connector-preview/protocol.mjs",
+      "mode": "100644",
+      "sha": "6476ba302de4ee408ba549fc0d790861185dd919"
+    },
+    {
+      "path": "scripts/execution-profile.mjs",
+      "mode": "100644",
+      "sha": "f27aec211320d9a5fd0dbbb07f5c508222b2b8d4"
+    },
+    {
+      "path": "scripts/install-ci.mjs",
+      "mode": "100644",
+      "sha": "22bd7d555c8f2a996d5bfe5be0ba9a5a43a1bf7f"
+    },
+    {
+      "path": "scripts/install-ci.sh",
+      "mode": "100755",
+      "sha": "7b4a810e1663afb4572d167eb78e09b3db07be10"
+    },
+    {
+      "path": "scripts/install-pnpm-portable.mjs",
+      "mode": "100644",
+      "sha": "02956d2c87a15eebf8533760b5dac3b0c709a83b"
+    },
+    {
+      "path": "scripts/install-pnpm.sh",
+      "mode": "100755",
+      "sha": "a30ed16a7a2b5244a4ef8779f8fc07ad64c56898"
+    },
+    {
+      "path": "scripts/npm-install.mjs",
+      "mode": "100644",
+      "sha": "64ade63f6092ed209b1a76718145d80de38b34f2"
+    },
+    {
+      "path": "scripts/pnpm-install.mjs",
+      "mode": "100644",
+      "sha": "ae92c9fe150ee780e46f590947ceacd03b7226ad"
+    },
+    {
+      "path": "scripts/research-current.cjs",
+      "mode": "100644",
+      "sha": "a8bdc86fd9c3be3260d2274d69ff9727535831fd"
+    },
+    {
+      "path": "scripts/run-framework.mjs",
+      "mode": "100644",
+      "sha": "166b0c2487819135ddfb30c9267e790ebb8c498f"
+    },
+    {
+      "path": "scripts/sites-env.mjs",
+      "mode": "100644",
+      "sha": "1eeedb5e13e4b9af70d89446d981dfd4cd92a3fd"
+    },
+    {
+      "path": "scripts/sites-env.sh",
+      "mode": "100755",
+      "sha": "728416424d5d2f4c9a746d53621668225645356c"
+    },
+    {
+      "path": "tests/aemet-weather.cjs",
+      "mode": "100644",
+      "sha": "5b9630b524e046bde3211188ce421755fc6ff3ce"
+    },
+    {
+      "path": "tests/calendar-controls.cjs",
+      "mode": "100644",
+      "sha": "366f8b3758d8b329c3dc38edf6fde4c9aa8f421c"
+    },
+    {
+      "path": "tests/cards-navigation.cjs",
+      "mode": "100644",
+      "sha": "e1d7abcc50677b6efba569551e0772d9e45fe89b"
+    },
+    {
+      "path": "tests/data-refresh.cjs",
+      "mode": "100644",
+      "sha": "b69fd6537e4dd9d06e7e3d37fec877b776b2d8dd"
+    },
+    {
+      "path": "tests/facts.cjs",
+      "mode": "100644",
+      "sha": "833403e2afae74dae8b536746a58dfd5e3321cf0"
+    },
+    {
+      "path": "tests/fixtures/pl-officials-mw7.html",
+      "mode": "100644",
+      "sha": "5fbf736e08508df1521b8d30249f8225d2f5705b"
+    },
+    {
+      "path": "tests/league-team.cjs",
+      "mode": "100644",
+      "sha": "92cbbf0713528e30dc32e1642e5fc36938f876d0"
+    },
+    {
+      "path": "tests/leagues.cjs",
+      "mode": "100644",
+      "sha": "e7816429c6a31571f7528e956f238e9fcd50b9f2"
+    },
+    {
+      "path": "tests/match-refresh.cjs",
+      "mode": "100644",
+      "sha": "0dbcf3af08355509de855c9acd12825f7bb58bf5"
+    },
+    {
+      "path": "tests/pl-officials.cjs",
+      "mode": "100644",
+      "sha": "f671c282f0a9746260f66b667dd3181a8b14d957"
+    },
+    {
+      "path": "tests/players.cjs",
+      "mode": "100644",
+      "sha": "88133d1728bdd9590775a634393a8ce67a342eae"
+    },
+    {
+      "path": "tests/qa.cjs",
+      "mode": "100644",
+      "sha": "aace454ffcf8fda01395618a2ee487a126b4908c"
+    },
+    {
+      "path": "tests/reading.cjs",
+      "mode": "100644",
+      "sha": "2a22d8b7870c6f5ffb7a35717397666665445b56"
+    },
+    {
+      "path": "tests/referee-hourly.cjs",
+      "mode": "100644",
+      "sha": "9fd31b35b67a84f89f141ca636ffc7860541f98f"
+    },
+    {
+      "path": "tests/referee-match.cjs",
+      "mode": "100644",
+      "sha": "fff32c62a069ebfa5fc57354c10c026ad50789a2"
+    },
+    {
+      "path": "tests/research.cjs",
+      "mode": "100644",
+      "sha": "d95affcde31006c8aed5647addddcb971a53028f"
+    },
+    {
+      "path": "tests/sample-stats.cjs",
+      "mode": "100644",
+      "sha": "25d001743e607d3477ae8af6cffd182c7040d4fc"
+    },
+    {
+      "path": "tests/weather.cjs",
+      "mode": "100644",
+      "sha": "17b6178908e19afd34dfe18ccc403ea89f2f98c3"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "sha": "be170f57ec372cc118f2d343092a53b85fc189a4"
+    },
+    {
+      "path": "tsconfig.tsbuildinfo",
+      "mode": "100644",
+      "sha": "a50ba90bcf17556d78eb9766cffc19c7151685d9"
+    },
+    {
+      "path": "vendor/shadcn-tailwind-4.13.0.LICENSE.md",
+      "mode": "100644",
+      "sha": "fad4d887a681dd49233e5ed01ee2c7a1513089a0"
+    },
+    {
+      "path": "vendor/shadcn-tailwind-4.13.0.css",
+      "mode": "100644",
+      "sha": "7807c58eb94de8b764b9b6b7b5d8cde6d012b17f"
+    },
+    {
+      "path": "vite.config.ts",
+      "mode": "100644",
+      "sha": "62c760210840bf230b9738c8d20a51f48b7dd5f0"
+    }
+  ]
+}

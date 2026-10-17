@@ -9,7 +9,7 @@ import MatchReport from './match-report';
 import MatchOverview from './match-overview';
 import {useMatchDetails} from './use-match-details';
 import {withAppointment} from '../lib/fixture-display';
-import {useFavorites} from './favorites';
+import {FavoriteStar,useFavorites} from './favorites';
 import {RefereeResearchProfile,findRefereeResearch} from './referee-research';
 const day=(d=new Date())=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
 const time=(d:string)=>new Date(d).toLocaleTimeString('ru-RU',{timeZone:'Asia/Tbilisi',hour:'2-digit',minute:'2-digit'});
@@ -87,7 +87,7 @@ export default function MatchCenter({data,league='all',onLeagueChange,date=day()
      <span className="calendarKickoff"><b>{time(m.date)}</b><span className="calendarStatus">{statusLabel}</span></span>
      <span className="calendarTeams"><span><CalendarCrest src={m.homeLogo} name={m.home}/><b>{m.home}</b><strong>{played?m.homeScore??'—':''}</strong></span><span><CalendarCrest src={m.awayLogo} name={m.away}/><b>{m.away}</b><strong>{played?m.awayScore??'—':''}</strong></span></span>
      <span className="calendarMatchContext"><span>{leagueName}</span><span className="calendarVenue">{matchLocation(m)}</span><span className="calendarReferee">{m.referee?'Арбитр: '+m.referee:'Назначение — внутри матча'}</span>{saved&&<span className="calendarSaved">Сохранённый срез</span>}</span><span className="calendarOpenArrow" aria-hidden="true">↗</span>
-    </button><button className="calendarFavorite" disabled={!favorites.ready} aria-pressed={isFavorite(m)} aria-label={`${isFavorite(m)?'Убрать из избранного':'В избранное'}: ${m.home} — ${m.away}`} onClick={()=>favorites.toggle('match',m.league+':'+m.id,m.home+' — '+m.away,m.league)}>{isFavorite(m)?'★':'☆'}</button>
+    </button><button className="calendarFavorite" disabled={!favorites.ready} aria-pressed={isFavorite(m)} aria-label={`${isFavorite(m)?'Убрать из избранного':'В избранное'}: ${m.home} — ${m.away}`} onClick={()=>favorites.toggle('match',m.league+':'+m.id,m.home+' — '+m.away,m.league)}><FavoriteStar active={isFavorite(m)}/></button>
    </article>})}
   </div>
   {!loading&&!visible.length&&<div className="empty">{events.length?<><h3>Нет матчей по выбранным фильтрам</h3><p>{onlyFavorites?'На эту дату нет подходящих избранных игр. Звезда рядом с матчем сохраняет его на этом устройстве.':'Измените статус или название команды. Данные календаря доступны.'}</p><button className="outline" onClick={clearFilters}>Сбросить фильтры</button></>:<><h3>{error?'Данные на эту дату не получены':'В источнике нет матчей на эту дату'}</h3><p>Выберите другой день или турнир. Пустой ответ источника не подтверждает полноту календаря.</p></>}</div>}

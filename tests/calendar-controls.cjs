@@ -3,7 +3,7 @@ for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.tra
 const React=require('react'),saved={useState:React.useState,useEffect:React.useEffect,useRef:React.useRef},original=Module._load;
 let state=[],cursor=0,refs=[],refIndex=0,effects=[],favorites=new Set(),favoriteActions=[];
 const favoriteApi={has:(kind,id)=>favorites.has(kind+'|'+id),toggle:(kind,id,label,league)=>{favoriteActions.push({kind,id,label,league});const key=kind+'|'+id;favorites.has(key)?favorites.delete(key):favorites.add(key)},items:[],ready:true,storageError:false};
-Module._load=function(id,...args){return id==='cloudflare:workers'?{env:{}}:id==='./favorites'?{useFavorites:()=>favoriteApi}:original.call(this,id,...args)};
+Module._load=function(id,...args){return id==='cloudflare:workers'?{env:{}}:id==='./favorites'?{...original.call(this,id,...args),useFavorites:()=>favoriteApi}:original.call(this,id,...args)};
 React.useState=initial=>{const i=cursor++;if(!(i in state))state[i]=typeof initial==='function'?initial():initial;return[state[i],v=>state[i]=typeof v==='function'?v(state[i]):v]};React.useEffect=f=>effects.push(f);React.useRef=initial=>{const i=refIndex++;return refs[i]||(refs[i]={current:initial})};
 const {default:Center,shiftCalendarDay,calendarMatchStatus,filterCalendarEvents}=require('../app/match-center.tsx');
 const nodes=x=>!x||typeof x!=='object'?[]:[x,...React.Children.toArray(x.props?.children).flatMap(nodes)];
