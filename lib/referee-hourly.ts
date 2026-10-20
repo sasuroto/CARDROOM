@@ -14,10 +14,10 @@ export async function hourlySource(bucket:R2Bucket,url:string){
  const host=new URL(url).hostname,key=`referee-updates/source-backoff/${host}.json`,backoff=await readCache(bucket,key);
  if(backoff?.until>Date.now())throw Error(`Источник ограничил запросы; повтор после ${new Date(backoff.until).toISOString()}`);
  const response=await fetch(url,{signal:AbortSignal.timeout(16000),headers:{Accept:url.includes('site.api.espn.com')?'application/json':'text/html'}});
- if(response.status===429){
+ if(response.status===429||response.status===403){
   const retry=response.headers.get('Retry-After'),seconds=Number(retry);
   const until=retry?(Number.isFinite(seconds)?Date.now()+seconds*1000:Date.parse(retry)):0;
-  await writeCache(bucket,key,{until:Math.max(Date.now()+REFEREE_INTERVAL,until||0)});
+  await writeCache(bucket,key,{until:Math.max(Date.now()+(response.status===403?6*REFEREE_INTERVAL:REFEREE_INTERVAL),until||0)});
  }
  if(!response.ok)throw Error('HTTP '+response.status);
  return response;
@@ -80,7 +80,7 @@ async function refresh(league:string,bucket:R2Bucket){
   if(result.rateLimited){await writeCache(bucket,'referee-updates/source-backoff/site.api.espn.com.json',{until:result.retryAfter||Date.now()+REFEREE_INTERVAL});break}
  }
  const matches=events.map(e=>results.get(e.id)||{...e,...old.get(e.id),id:e.id,league});
- const report={league,runId:crypto.randomUUID(),startedAt,completedAt:new Date(Date.now()).toISOString(),nextCheckAt:new Date(Date.parse(startedAt)+REFEREE_INTERVAL).toISOString(),window:{from:window.from,until:window.until,timezone:'Asia/Tbilisi'},stats,statsStatus,statsSource:config.source,matches,coverage:{found:events.length,checked:results.size,confirmed:matches.filter(m=>m.referee&&!m.stale).length,missing:matches.filter(m=>!m.referee).length,deferred:Math.max(0,events.length-results.size)},errors};
+ const report={league,runId:crypto.randomUUID(),startedAt,completedAt:new Date(Date.now()).toISOString(),nextCheckAt:new Date(Date.parse(startedAt)+REFEREE_INTERVAL).toISOString(),window:{from:window.from,until:window.until,timezone:'Asia/Tbilisi'},stats,statsStatus,statsSource:config.source,matches,coverage:{found:events.length,checked:results.size,confirmed:matches.filter(m=>m.referee&&m.currentVerified&&!m.appointmentStale).length,missing:matches.filter(m=>!m.referee).length,deferred:Math.max(0,events.length-results.size)},errors};
  await writeCache(bucket,key,report);
  const saved=await readCache(bucket,key);if(saved?.runId!==report.runId)throw Error('Результат проверки не подтверждён в постоянном хранилище');
  return {...report,cached:false,persisted:true};
