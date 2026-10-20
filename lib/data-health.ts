@@ -16,6 +16,6 @@ export function dataHealth(data:any,now=Date.now()){
  });
  const counts:Record<string,number>={fresh:0,partial:0,stale:0,unavailable:0,snapshot:0,missing:0};for(const b of blocks)counts[b.state]++;
  const updates=Object.values<any>(data.refereeUpdates||{}),times=updates.map(u=>Date.parse(u.completedAt)).filter(Number.isFinite);
- return {checkedAt:new Date(now).toISOString(),blocks,counts,total:blocks.length,status:blocks.length&&counts.fresh===blocks.length?'updated':counts.fresh||counts.partial?'partial':'sources-unavailable',refereeChecksOverdue:times.length<(data.leagues?.length||0)||times.some(t=>now-t>2*60*60*1000),lastRefereeCheck:times.length?new Date(Math.max(...times)).toISOString():null};
+ return {checkedAt:new Date(now).toISOString(),blocks,counts,total:blocks.length,status:blocks.length&&counts.fresh===blocks.length?'updated':counts.fresh||counts.partial?'partial':'sources-unavailable',pending:data.pendingBlocks||0,inProgress:!!data.refreshInProgress,persisted:data.persisted||null,refereeChecksOverdue:times.length<(data.leagues?.length||0)||times.some(t=>now-t>2*60*60*1000),lastRefereeCheck:times.length?new Date(Math.max(...times)).toISOString():null};
 }
 export function withDataHealth(data:any){const health=dataHealth(data);return {...data,refreshStatus:health.status,health}}
