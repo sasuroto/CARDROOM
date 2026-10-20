@@ -269,6 +269,587 @@
       "availability": [],
       "availabilityStatus": "not-verified",
       "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401882840",
+      "league": "laliga",
+      "date": "2026-10-18T12:00Z",
+      "home": "Osasuna",
+      "away": "Racing Santander",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Juan Martínez",
+        "assistants": [
+          "Diego Barbero",
+          "Miguel Martínez"
+        ],
+        "fourthOfficial": "Ekaitz Ikiñi García",
+        "var": "Daniel Jesús Trujillo",
+        "avar": "José María Sánchez"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_domingo.pdf?cb=dcd83f12",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401882845",
+      "league": "laliga",
+      "date": "2026-10-18T14:15Z",
+      "home": "Celta Vigo",
+      "away": "Alavés",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "José Luis Munuera",
+        "assistants": [
+          "Adrián Díaz",
+          "Antonio Ramón Martínez"
+        ],
+        "fourthOfficial": "Pedro Oreiro",
+        "var": "Rubén Ávalos",
+        "avar": "Juan Luis Pulido"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_domingo.pdf?cb=dcd83f12",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401882841",
+      "league": "laliga",
+      "date": "2026-10-18T16:30Z",
+      "home": "Málaga",
+      "away": "Real Sociedad",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Luis Bestard",
+        "assistants": [
+          "Álvaro Granel",
+          "Carlos Martínez"
+        ],
+        "fourthOfficial": "Jorge Tárraga",
+        "var": "Iván Caparrós",
+        "avar": "Daniel Jesús Trujillo"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_domingo.pdf?cb=dcd83f12",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401882839",
+      "league": "laliga",
+      "date": "2026-10-18T19:00Z",
+      "home": "Real Madrid",
+      "away": "Sevilla",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Mateo Busquets",
+        "assistants": [
+          "Íñigo Prieto",
+          "Gonzalo García"
+        ],
+        "fourthOfficial": "Néstor Holgueras",
+        "var": "Guillermo Cuadra",
+        "avar": "Rubén Ávalos"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_1a_division_masculina_-_temp_2026-27_-_jornada_9_domingo.pdf?cb=dcd83f12",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401883179",
+      "league": "segunda",
+      "date": "2026-10-18T12:00Z",
+      "home": "Ceuta",
+      "away": "Real Oviedo",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "José Luis Guzmán",
+        "assistants": [
+          "Víctor Jiménez",
+          "Vicente Javier Almarche"
+        ],
+        "fourthOfficial": "Manuel Camacho",
+        "var": "Javier Iglesias",
+        "avar": "Luis Mario Milla"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_domingo.pdf?cb=1562a3c5",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401883156",
+      "league": "segunda",
+      "date": "2026-10-18T14:15Z",
+      "home": "Granada",
+      "away": "Cádiz",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Rafael Sánchez",
+        "assistants": [
+          "Jesús Mira",
+          "José Hernández"
+        ],
+        "fourthOfficial": "David López",
+        "var": "Jorge Figueroa",
+        "avar": "Guillermo Cuadra"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_domingo.pdf?cb=1562a3c5",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401883177",
+      "league": "segunda",
+      "date": "2026-10-18T16:30Z",
+      "home": "Girona",
+      "away": "FC Andorra",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Dámaso Arcediano",
+        "assistants": [
+          "Christian Valverde",
+          "Samuel Sanz"
+        ],
+        "fourthOfficial": "Gerard Rius",
+        "var": "José Antonio López",
+        "avar": "Saúl Ais"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_domingo.pdf?cb=1562a3c5",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401883154",
+      "league": "segunda",
+      "date": "2026-10-18T16:30Z",
+      "home": "Real Valladolid",
+      "away": "Eldense",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "José Antonio Villalobos",
+        "assistants": [
+          "Ángel Munuera",
+          "Ángel Ramos"
+        ],
+        "fourthOfficial": "Fernando Román",
+        "var": "Luis Mario Milla",
+        "avar": "David Gálvez"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_domingo.pdf?cb=1562a3c5",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401883180",
+      "league": "segunda",
+      "date": "2026-10-18T19:00Z",
+      "home": "Burgos",
+      "away": "CD Sabadell",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Manuel Ángel Pérez",
+        "assistants": [
+          "Gonzalo López",
+          "Sergio Rebollo"
+        ],
+        "fourthOfficial": "María Eugenia Gil",
+        "var": "Juan Luis Pulido",
+        "avar": "Alejandro Muñiz"
+      },
+      "source": "https://rfef.es/sites/default/files/designaciones_2a_division_masculina_-_temp_2026-27_-_jornada_10_domingo.pdf?cb=1562a3c5",
+      "appointmentType": "RFEF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401874771",
+      "league": "seriea",
+      "date": "2026-10-18T10:30Z",
+      "home": "Udinese",
+      "away": "Lecce",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Guida",
+        "assistants": [
+          "Dei Giudici",
+          "Mokhtar"
+        ],
+        "fourthOfficial": "Bonacina",
+        "var": "Di Paolo",
+        "avar": "Baroni"
+      },
+      "source": "https://www.aia-figc.it/news/serie-a-enilive-designazioni-7a-giornata-28778/",
+      "appointmentType": "AIA/FIGC · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Имена показаны в форме официальной публикации AIA/FIGC (фамилии)."
+    },
+    {
+      "id": "401874774",
+      "league": "seriea",
+      "date": "2026-10-18T13:00Z",
+      "home": "Fiorentina",
+      "away": "Como",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Di Bello",
+        "assistants": [
+          "Bindoni",
+          "Monaco"
+        ],
+        "fourthOfficial": "Marcenaro",
+        "var": "Paterna",
+        "avar": "Pezzuto"
+      },
+      "source": "https://www.aia-figc.it/news/serie-a-enilive-designazioni-7a-giornata-28778/",
+      "appointmentType": "AIA/FIGC · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Имена показаны в форме официальной публикации AIA/FIGC (фамилии)."
+    },
+    {
+      "id": "401874978",
+      "league": "seriea",
+      "date": "2026-10-18T16:00Z",
+      "home": "AC Milan",
+      "away": "Atalanta",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Chiffi",
+        "assistants": [
+          "Mondin",
+          "Yoshikawa"
+        ],
+        "fourthOfficial": "Sozza",
+        "var": "Camplone",
+        "avar": "Prontera"
+      },
+      "source": "https://www.aia-figc.it/news/serie-a-enilive-designazioni-7a-giornata-28778/",
+      "appointmentType": "AIA/FIGC · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Имена показаны в форме официальной публикации AIA/FIGC (фамилии)."
+    },
+    {
+      "id": "401874765",
+      "league": "seriea",
+      "date": "2026-10-18T18:45Z",
+      "home": "Juventus",
+      "away": "Lazio",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Massa",
+        "assistants": [
+          "Alassio",
+          "Berti"
+        ],
+        "fourthOfficial": "Maresca",
+        "var": "Meraviglia",
+        "avar": "Aureliano"
+      },
+      "source": "https://www.aia-figc.it/news/serie-a-enilive-designazioni-7a-giornata-28778/",
+      "appointmentType": "AIA/FIGC · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Имена показаны в форме официальной публикации AIA/FIGC (фамилии)."
+    },
+    {
+      "id": "401884771",
+      "league": "bundesliga",
+      "date": "2026-10-18T13:30Z",
+      "home": "Bayer Leverkusen",
+      "away": "SC Freiburg",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Florian Badstübner",
+        "assistants": [
+          "Christof Günsch",
+          "Fabian Maibaum"
+        ],
+        "fourthOfficial": "Dr. Max Burda",
+        "var": "Katrin Rafalski",
+        "avar": "Felix-Benjamin Schwermer"
+      },
+      "source": "https://datencenter.dfb.de/global_referee_schedule",
+      "appointmentType": "DFB · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401884768",
+      "league": "bundesliga",
+      "date": "2026-10-18T15:30Z",
+      "home": "Borussia Mönchengladbach",
+      "away": "TSG Hoffenheim",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Sören Storks",
+        "assistants": [
+          "Thorben Siewer",
+          "Christian Bandurski"
+        ],
+        "fourthOfficial": "Timo Gansloweit",
+        "var": "Johann Pfeifer",
+        "avar": "Frederick Assmuth"
+      },
+      "source": "https://datencenter.dfb.de/global_referee_schedule",
+      "appointmentType": "DFB · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401888276",
+      "league": "superlig",
+      "date": "2026-10-18T10:30Z",
+      "home": "Kasimpasa",
+      "away": "Samsunspor",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Fatih Tokail",
+        "assistants": [
+          "Samet Çavuş",
+          "Kerem İlitangil"
+        ],
+        "fourthOfficial": "Oğuzhan Aksu",
+        "var": "Steven Campbell McLean",
+        "avar": "Özer Özden"
+      },
+      "source": "https://www.tff.org/default.aspx?pageID=600",
+      "appointmentType": "TFF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401888272",
+      "league": "superlig",
+      "date": "2026-10-18T13:00Z",
+      "home": "Kocaelispor",
+      "away": "Goztepe",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Alper Akarsu",
+        "assistants": [
+          "Murat Tuğberk Curbay",
+          "Süleyman Özay"
+        ],
+        "fourthOfficial": "Hakan Ülker",
+        "var": "Harald Lechner",
+        "avar": "Anıl Usta"
+      },
+      "source": "https://www.tff.org/default.aspx?pageID=600",
+      "appointmentType": "TFF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401888275",
+      "league": "superlig",
+      "date": "2026-10-18T16:00Z",
+      "home": "Istanbul Basaksehir",
+      "away": "Gaziantep FK",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Alpaslan Şen",
+        "assistants": [
+          "Mert Bulut",
+          "Mücahid Adem Çelebi"
+        ],
+        "fourthOfficial": "Melih Aldemir",
+        "var": "Halil Umut Meler",
+        "avar": "Abdullah Bora Özkara"
+      },
+      "source": "https://www.tff.org/default.aspx?pageID=600",
+      "appointmentType": "TFF · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified"
+    },
+    {
+      "id": "401876439",
+      "league": "ligue1",
+      "date": "2026-10-18T13:00Z",
+      "home": "Angers",
+      "away": "Marseille",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Jérémie Pignard",
+        "assistants": [
+          "Aurélien Drouet",
+          "Hicham Zakrani"
+        ],
+        "fourthOfficial": "Rémi Landry",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Jérôme Brisard",
+          "Cyril Gringore"
+        ]
+      },
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Видеобригада опубликована без разделения VAR/AVAR; роли не предполагались."
+    },
+    {
+      "id": "401876433",
+      "league": "ligue1",
+      "date": "2026-10-18T15:15Z",
+      "home": "Paris FC",
+      "away": "Stade Rennais",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Bastien Dechepy",
+        "assistants": [
+          "Cyril Mugnier",
+          "Bastien Courbet"
+        ],
+        "fourthOfficial": "Thierry Bouille",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Pierre Gaillouste",
+          "Bruno Coué"
+        ]
+      },
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Видеобригада опубликована без разделения VAR/AVAR; роли не предполагались."
+    },
+    {
+      "id": "401876435",
+      "league": "ligue1",
+      "date": "2026-10-18T15:15Z",
+      "home": "Lorient",
+      "away": "AS Monaco",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Marc Bollengier",
+        "assistants": [
+          "Thomas Luczynski",
+          "Mikaël Berchebru"
+        ],
+        "fourthOfficial": "Gabriel Henry",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Yohann Rouinsard",
+          "Ludovic Rémy"
+        ]
+      },
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Видеобригада опубликована без разделения VAR/AVAR; роли не предполагались."
+    },
+    {
+      "id": "401876438",
+      "league": "ligue1",
+      "date": "2026-10-18T15:15Z",
+      "home": "Le Havre AC",
+      "away": "AJ Auxerre",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "Éric Wattellier",
+        "assistants": [
+          "Florian Goncalves de Araujo",
+          "Florent Marmion"
+        ],
+        "fourthOfficial": "Mickaël Leleu",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Mathieu Vernice",
+          "William Lavis"
+        ]
+      },
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Видеобригада опубликована без разделения VAR/AVAR; роли не предполагались."
+    },
+    {
+      "id": "401876434",
+      "league": "ligue1",
+      "date": "2026-10-18T18:45Z",
+      "home": "Lyon",
+      "away": "Nice",
+      "checkedAt": "2026-10-18T13:21:31.653274Z",
+      "officials": {
+        "referee": "François Letexier",
+        "assistants": [
+          "Mehdi Rahmouni",
+          "Aurélien Berthomieu"
+        ],
+        "fourthOfficial": "Ruddy Buquet",
+        "var": null,
+        "avar": null,
+        "videoOfficials": [
+          "Hamid Guenaoui",
+          "Nicolas Rainville"
+        ]
+      },
+      "source": "https://ligue1.com/fr/articles/l1_article_5927-les-arbitres-de-la-7e-journee-de-ligue-1-mc-donald-s-1",
+      "appointmentType": "Ligue 1 · официальное назначение",
+      "appointmentStatus": "confirmed",
+      "availability": [],
+      "availabilityStatus": "not-verified",
+      "startingLineupsStatus": "not-verified",
+      "appointmentNote": "Видеобригада опубликована без разделения VAR/AVAR; роли не предполагались."
     }
   ],
   "researchScope": {
