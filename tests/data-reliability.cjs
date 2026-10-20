@@ -49,6 +49,31 @@ const keep=setInterval(()=>{},1000);
  const merged=mergeBlockStatus({a:{attemptedAt:iso(now)},b:{attemptedAt:iso(now-1000)}},{a:{attemptedAt:iso(now-5000)},b:{attemptedAt:iso(now)}});
  check(merged.a.attemptedAt===iso(now)&&merged.b.attemptedAt===iso(now),'block status merge keeps the newer attempt');
 
+ // Coverage honesty: partial tables, missing fields, wrong season and source errors never become full or zero data.
+ const {refreshTasks}=require('../lib/data-refresh.ts');
+ const table=(rows,head=['Team','TG','CF','CA','O9.5'])=>`<p>Season 2026/27</p><table><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table>`;
+ const league=()=>({leagues:[{id:'epl',season:'2026/27',cards:{source:'https://cards.example/epl',checkedAt:iso(now),n:1},overview:{source:'https://cards.example/ov',checkedAt:iso(now)},teams:[],corners:[],cornerSource:'https://corners.example/epl'}],refereesByLeague:{},referees:[]});
+ const cornersOnly=d=>refreshTasks(d,{}).filter(t=>t.id==='epl:corners');
+ const health=d=>dataHealth({...d,refereeUpdates:{}},now).blocks.find(b=>b.key==='corners');
+ const pass=async(d,html,status=200)=>{global.fetch=async()=>new Response(html,{status});return runRefresh(d,cornersOnly(d),createSourceReader(store(),{deadline:Date.now()+5000}),now)};
+ let cov=league();check(health(cov).state==='missing'&&cov.leagues[0].corners.length===0,'a block without rows is "missing", not zero rows');
+ await pass(cov,table([['Arsenal',8,6.1,3.2,55],['Chelsea',8,5.2,4.1,40],['Spurs',8,4.9,4.4,38]]));
+ check(cov.leagues[0].corners.length===3&&health(cov).state==='partial'&&health(cov).partial,'3 of 20 teams is reported as partial coverage, not fresh');
+ cov=league();await pass(cov,table([['Arsenal',8,6.1,3.2,55],['Chelsea',8,'',4.1,40],['Spurs',8,'-',4.4,38]]));
+ check(cov.leagues[0].corners.map(r=>r.name).join()==='Arsenal'&&!cov.leagues[0].corners.some(r=>r.for===0),'rows with a missing value are dropped, never zero-filled');
+ check(health(cov).state==='partial','dropped rows leave the block partial');
+ const kept=[{name:'Arsenal',n:7,for:6,against:3,over95:50}];
+ for(const [label,html,status,error] of [['missing column',table([['Arsenal',8,6.1,55]],['Team','TG','CF','O9.5']),200,'Неполная выдача'],['no corners table','<p>Season 2026/27</p><table><tr><th>Team</th><th>GF</th></tr></table>',200,'Таблица не найдена'],['other season',table([['Arsenal',8,6.1,3.2,55]]).replace('2026/27','2025/26'),200,'Сезон не подтверждён'],['source error','',500,'HTTP 500']]){
+  cov=league();cov.leagues[0].corners=structuredClone(kept);cov.leagues[0].cornerCheckedAt=iso(now-BLOCK_INTERVAL);
+  await pass(cov,html,status);
+  check(cov.blockStatus['epl:corners'].error===error&&cov.leagues[0].corners[0].n===7&&cov.leagues[0].cornerCheckedAt===iso(now-BLOCK_INTERVAL),label+': previous rows and their time are kept');
+  check(health(cov).state==='unavailable',label+': block is reported as unavailable');
+ }
+ cov=league();cov.leagues[0].corners=structuredClone(kept);await pass(cov,table([['Arsenal',6,6.1,3.2,55]]));
+ check(cov.blockStatus['epl:corners'].error==='Устаревшая выборка угловых','a smaller sample from the source is rejected');
+ check(cov.leagues[0].corners[0].n===7,'rejected sample does not replace saved rows');
+ cov=league();delete cov.leagues[0].cornerSource;check(!refreshTasks(cov,{}).some(t=>t.id==='epl:corners')&&health(cov).state==='missing','no source configured: no request, block stays "missing"');
+
  // Saving is verified by reading back.
  check((await writeVerified(store(),'k',{revision:'1'})).ok,'verified write');
  const lossy={get:async()=>null,put:async()=>{}};
@@ -74,5 +99,5 @@ const keep=setInterval(()=>{},1000);
  const {renderToStaticMarkup}=require('react-dom/server'),React=require('react'),Status=require('../app/update-status.tsx').default;
  const html=renderToStaticMarkup(React.createElement(Status,{data:{leagues:[],health:{...dataHealth({leagues:[]}),pending:3,persisted:{ok:false,error:'Запись не подтверждена при повторном чтении'}}}}));
  check(html.includes('В очереди на проверку: 3')&&html.includes('Сохранение не подтверждено'),'status shows queued blocks and an unconfirmed save');
- console.log('PASS '+n+' data reliability checks: per-block schedule, timeouts, Retry-After and back-off, per-origin limits, pass budget, verified save, single pass.');
+ console.log('PASS '+n+' data reliability checks: per-block schedule, timeouts, Retry-After and back-off, per-origin limits, pass budget, verified save, single pass, partial coverage, missing fields, wrong season, source errors.');
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>clearInterval(keep));

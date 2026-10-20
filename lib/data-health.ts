@@ -1,11 +1,13 @@
 export const SUMMARY_INTERVAL=6*60*60*1000;
+// Teams per league this season; a team table with fewer rows is partial coverage.
+export const leagueSize=(id:string)=>['bundesliga','ligue1','superlig','primeira'].includes(id)?18:id==='ucl'?36:id==='segunda'?22:20;
 export function dataHealth(data:any,now=Date.now()){
  const blocks=(data.leagues||[]).flatMap((l:any)=>{
   const ref=data.refereesByLeague?.[l.id];
   return [
    ['cards',l.cards?.checkedAt,false,false],['overview',l.overview?.checkedAt,false,false],
    ['yellow',l.teams?.length?l.teamCheckedAt:null,l.teamRefreshMode==='snapshot',!!l.partial],
-   ['corners',l.corners?.length?l.cornerCheckedAt:null,!l.cornerSource,false],
+   ['corners',l.corners?.length?l.cornerCheckedAt:null,!l.cornerSource,l.corners?.length<leagueSize(l.id)],
    ['referees',ref?.checkedAt,ref?.refreshMode==='snapshot',!!ref?.partial]
   ].map(([key,checkedAt,manual,partial])=>{
    const error=key==='referees'?ref?.refreshError||(Date.parse(data.refereeUpdates?.[l.id]?.startedAt||'')>=Date.parse(ref?.checkedAt||'')?(data.refereeUpdates?.[l.id]?.errors||[]).find((e:string)=>e.startsWith('Статистика')):null):(data.refreshErrors||[]).find((e:string)=>e.startsWith(l.id+': '+key+':'));

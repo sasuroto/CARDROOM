@@ -1,6 +1,7 @@
 import {clean,parseCards,parseOverview,parseTeams,tableRows} from './data';
 import {parseReferees,parseSoccerbase} from './referee-parser';
 import {SourceError} from './source-fetch';
+import {leagueSize} from './data-health';
 
 // Every block (league × summary) has its own schedule. A pass refreshes only the
 // blocks that are due, inside a time budget; a slow, blocked or broken source
@@ -24,7 +25,7 @@ export function refreshTasks(data:any,refSeed:Record<string,any>):Task[]{
   tasks.push({id:l.id+':overview',url:l.overview.source,checkedAt:l.overview.checkedAt,apply:(html,now)=>{ensure(html);l.overview={...l.overview,...parseOverview(html),checkedAt:now}}});
   if(l.id!=='segunda'&&l.teamSource&&l.teamRefreshMode!=='snapshot')tasks.push({id:l.id+':yellow',url:l.teamSource,checkedAt:l.teamCheckedAt,apply:(html,now)=>{
    ensure(html);const teams=parseTeams(html);if(teams.length<l.teams.length)throw new Error('Неполная выдача');for(const t of teams){const old=l.teams.find((x:any)=>x.name===t.name);if(old&&t.n<old.n)throw new Error('Устаревшая выборка')}
-   l.teams=teams;l.teamCheckedAt=now;const size=['bundesliga','ligue1','superlig','primeira'].includes(l.id)?18:l.id==='ucl'?36:20;l.partial=teams.length<size;
+   l.teams=teams;l.teamCheckedAt=now;l.partial=teams.length<leagueSize(l.id);
    if(!l.partial&&l.id!=='ucl'){const games=teams.reduce((s,t)=>s+t.n,0)/2;const own=teams.reduce((s,t)=>s+t.n*t.yellow,0);const opp=teams.reduce((s,t)=>s+t.n*t.opp,0);if(Math.abs(own-opp)/Math.max(own,1)<.02)l.yellowSummary={n:games,avg:+(own/games).toFixed(2),derived:true,source:l.teamSource,checkedAt:now};l.teamNote='Полная таблица источника; сезон '+l.season;}
   }});
   if(l.cornerSource)tasks.push({id:l.id+':corners',url:l.cornerSource,checkedAt:l.cornerCheckedAt,apply:(html,now)=>{
