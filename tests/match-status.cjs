@@ -1,0 +1,41 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const S=require('../lib/match-status.ts');
+let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
+const st=(statusName,extra={})=>S.panelStatus({state:'in',statusName,...extra});
+check(S.panelStatus({state:'pre',statusName:'STATUS_SCHEDULED',clock:"0'"}).kind==='scheduled'&&!S.panelStatus({state:'pre',statusName:'STATUS_SCHEDULED'}).showScore,'scheduled hides score');
+const live=st('STATUS_SECOND_HALF',{clock:"63'"});check(live.kind==='live'&&live.minute==="63'"&&live.polls,'live shows minute and polls');
+check(st('STATUS_FIRST_HALF',{clock:"45'+2'"}).minute==="45'+2'",'stoppage time minute kept as provided');
+check(st('STATUS_HALFTIME').kind==='halftime'&&st('STATUS_HALFTIME').label==='Перерыв','half-time');
+check(S.panelStatus({state:'post',statusName:'STATUS_FULL_TIME'}).kind==='finished'&&!S.panelStatus({state:'post',statusName:'STATUS_FULL_TIME'}).polls,'finished stops polling');
+check(S.panelStatus({state:'post',statusName:'STATUS_FINAL_AET'}).label.includes('доп. время'),'extra time labelled');
+check(S.panelStatus({state:'post',statusName:'STATUS_FINAL_PEN'}).label.includes('пенальти'),'penalties labelled');
+check(S.panelStatus({state:'in',statusName:'STATUS_SUSPENDED'}).kind==='suspended','suspended');
+check(S.panelStatus({state:'post',statusName:'STATUS_ABANDONED'}).label==='Прерван','abandoned');
+check(S.panelStatus({state:'post',statusName:'STATUS_POSTPONED'}).kind==='postponed'&&!S.panelStatus({state:'post',statusName:'STATUS_POSTPONED'}).showScore,'postponed hides 0:0 placeholder');
+check(S.panelStatus({state:'post',statusName:'STATUS_CANCELED'}).kind==='cancelled','cancelled');
+check(S.panelStatus({state:'pre',statusName:'STATUS_DELAYED'}).kind==='delayed','delayed');
+check(S.panelStatus(null).kind==='unavailable'&&S.panelStatus({}).kind==='unavailable','missing data unavailable');
+check(S.panelStatus({state:'in'}).kind==='live','coarse state fallback');
+check(S.panelStatus({state:'weird',statusName:'STATUS_NEW_THING'}).kind==='unknown','unknown code not guessed');
+
+const now=1e12;
+check(S.nextDelay({anyLive:true,anySoon:false,failures:0,now})===30000,'live: 30 s');
+check(S.nextDelay({anyLive:false,anySoon:true,failures:0,now})===60000,'kickoff soon: 60 s');
+check(S.nextDelay({anyLive:false,anySoon:false,failures:0,now})===600000,'idle: 10 min');
+const b1=S.nextDelay({anyLive:true,anySoon:false,failures:1,now,jitter:.5}),b3=S.nextDelay({anyLive:true,anySoon:false,failures:3,now,jitter:.5});
+check(b1===60000&&b3===240000,'exponential backoff doubles per failure');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:20,now,jitter:1})===900000,'backoff capped at 15 min');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:0,retryAt:now+7200000,now})===7200000,'Retry-After respected');
+
+const status=S.panelStatus({state:'in',statusName:'STATUS_SECOND_HALF'});
+check(S.freshness({receivedAt:now-10000,data:{}},status,now)==='current','fresh live response is current');
+check(S.freshness({receivedAt:now-200000,data:{}},status,now)==='stale','old live response is stale');
+check(S.freshness({receivedAt:now-1000,data:{stale:true}},status,now)==='stale','server fallback is stale');
+check(S.freshness({receivedAt:now-1000,data:{},failed:true},status,now)==='stale','failed refresh marks last score as last known');
+check(S.freshness(undefined,status,now)==='unavailable','never loaded is unavailable');
+
+const k=S.localKickoff('2026-10-31T17:30Z','Asia/Tbilisi');check(k.time==='21:30'&&k.tz==='Asia/Tbilisi','kickoff in local zone');
+check(S.localKickoff('2026-10-31T17:30Z','Europe/London').time==='17:30','other zone');
+check(S.localKickoff(undefined)===null,'no date');
+console.log(`PASS ${n} match-status assertions: all match states, polling cadence, backoff, Retry-After, freshness and local kickoff.`);

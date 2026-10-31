@@ -82,3 +82,52 @@
 .myEdit{grid-column:1/-1;font-size:11px;color:var(--muted)}
 .myEdit summary{cursor:pointer;min-height:28px;display:flex;align-items:center}
 .myEdit>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+
+/* Persistent My Matches panel. Fixed inside the page only (not an OS overlay).
+   Body gets bottom padding equal to the panel so content is never covered at the end. */
+body{padding-bottom:var(--mm-panel-h,0px)}
+.mmPanel{position:fixed;z-index:30;left:0;right:0;bottom:0;padding:0 max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));pointer-events:none}
+.mmInner{pointer-events:auto;max-width:1200px;margin:0 auto;background:var(--charcoal-deep,#232621);color:#fff;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.28);border:1px solid #3a3e37}
+.mmBar{display:flex;align-items:center;gap:10px;padding:6px 8px 6px 14px;min-height:48px}
+.mmTitle{display:flex;align-items:center;gap:6px;font-size:14px;white-space:nowrap}
+.mmTitle b{font-size:12px;background:#3a3e37;border-radius:10px;padding:2px 7px}
+.mmTitle .favoriteStar{width:16px;height:16px}
+.mmLiveBadge{font-size:10px;letter-spacing:.8px;background:#c4001d;color:#fff;border-radius:4px;padding:3px 6px}
+.mmUpdated{flex:1;min-width:0;font-size:11px;color:#c9ccc4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mmToggle{min-height:44px;min-width:44px;border:1px solid #5b6057;background:transparent;color:#fff;border-radius:8px;padding:0 12px;font-size:12px;display:flex;align-items:center;gap:6px}
+.mmToggle:focus-visible,.mmStar:focus-visible,.mmOpen:focus-visible,.mmList:focus-visible{outline:2px solid var(--highlight);outline-offset:2px}
+.mmList{list-style:none;margin:0;padding:0 8px 8px;display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin}
+.mmItem{flex:0 0 auto;scroll-snap-align:start;background:var(--white);color:var(--ink);border-radius:8px;padding:8px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;align-items:center}
+.isCompact .mmItem{width:190px}
+.isExpanded .mmItem{width:250px}
+.mmItem.isStale{background:#efece4}
+.mmMeta{grid-column:1/-1;display:flex;justify-content:space-between;gap:6px;font-size:10px;color:var(--muted)}
+.mmMeta b{white-space:nowrap}
+.mmLive{color:#b00020}
+.mmTeams{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;font-size:13px;min-width:0}
+.mmTeams span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mmTeams strong{text-align:right;min-width:12px}
+.mmNote{grid-column:1/-1;margin:0;font-size:10.5px;line-height:1.4;color:var(--muted)}
+.mmActions{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.mmStar{width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:transparent;display:grid;place-items:center;font-size:18px;color:var(--ink)}
+.isCompact .mmStar{width:36px;height:36px}
+.mmOpen{min-height:32px;border:0;background:none;color:var(--ink);text-decoration:underline;font-size:12px;padding:0 4px}
+.mmFoot{margin:0;padding:0 14px 10px;font-size:10.5px;line-height:1.45;color:#c9ccc4}
+.dailyMatchWrap{position:relative;flex:0 0 227px;width:227px;scroll-snap-align:start}
+.dailyMatchWrap .dailyMatch{width:100%}
+.dailyMatchWrap .dailyMatchMeta{padding-right:30px}
+.dailyStar{position:absolute;top:4px;right:4px}
+.dailyStar .favoriteButton{width:32px;height:32px;min-height:32px;padding:0;display:grid;place-items:center;border:0;background:transparent}
+.overviewFollow .favoriteButton,.myFollow .favoriteButton{width:36px;height:36px;padding:0;display:inline-grid;place-items:center;vertical-align:middle;border:1px solid var(--line);border-radius:6px;background:transparent}
+.myFollow{margin-right:6px}
+@media(min-width:1000px){
+ .mmPanel{left:auto;right:max(20px,env(safe-area-inset-right));bottom:20px;width:400px;padding:0}
+ .isExpanded .mmList{flex-direction:column;overflow-x:hidden;overflow-y:auto;max-height:min(60vh,520px)}
+ .isExpanded .mmItem{width:auto}
+ body{padding-bottom:min(var(--mm-panel-h,0px),96px)}
+}
+@media(max-width:420px){.mmUpdated{display:none}.isExpanded .mmItem{width:82vw}}
+@media(prefers-reduced-motion:no-preference){.mmInner{transition:box-shadow .2s}}
+.mmPanel button.mmStar[aria-pressed="true"],.dailyStar button.favoriteButton[aria-pressed="true"]{background:transparent;color:var(--ink)}
+.isExpanded .mmActions{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}
+.isCompact .mmActions{grid-row:2;grid-column:2}

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {MapPin,Clock,Flag} from 'lucide-react';
 import {matchLocation} from '../lib/match-location';
 import MatchWeather from './match-weather';
+import {FavoriteButton} from './favorites';
 import {appointmentState,STATE_LABEL} from '../lib/referee-authority';
 
 function Crest({src,name}:{src?:string,name:string}){
@@ -17,7 +18,7 @@ export default function MatchOverview({match,leagueName,loading=false,titleId}:{
  const id=titleId||'match-overview-'+match.id,checked=stamp(match.checkedAt||match.fetchedAt),refChecked=stamp(match.appointmentCheckedAt);
  const kickoff=Number.isFinite(Date.parse(match.date))?new Date(match.date).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}):'Время уточняется';
  return <section className="matchOverview" aria-labelledby={id}>
-  <div className="overviewTopline"><span className="overviewEyebrow">01 / МАТЧ</span><span>{leagueName||'Турнир уточняется'}</span><span className="overviewStatus">{status}{match.state==='in'&&match.clock?' · '+match.clock:''}</span></div>
+  <div className="overviewTopline"><span className="overviewEyebrow">01 / МАТЧ</span><span>{leagueName||'Турнир уточняется'}</span>{match.id&&match.league&&<span className="overviewFollow"><FavoriteButton kind="match" id={match.league+':'+match.id} label={match.home+' — '+match.away} league={match.league}/></span>}<span className="overviewStatus">{status}{match.state==='in'&&match.clock?' · '+match.clock:''}</span></div>
   <h2 id={id} className="overviewAccessibleTitle">{match.home} против {match.away}</h2>
   <div className="overviewTeams">
    <div className="overviewTeam"><Crest key={match.homeLogo||match.home} src={match.homeLogo} name={match.home}/><strong>{match.home}</strong><small>Хозяева</small></div>

@@ -5,6 +5,7 @@ import {appointmentState,STATE_LABEL} from '../lib/referee-authority';
 import {calendarDay as day} from '../lib/calendar-scope';
 import {TrackerState,TrackedFixture,Selection,Market,SelectionStatus,initialTracker,sanitizeState,marketLabel,settleSelection,settleAccumulator,slipReturn,addFixture,addSelection,removeFixture,resolveFixture,findMatch} from '../lib/selection-tracker';
 import MatchReport from './match-report';
+import {FavoriteButton} from './favorites';
 import {refereeProfile} from './match-center';
 
 const KEY='cardroom:my-matches:v1';
@@ -91,8 +92,8 @@ export default function MyMatches({data}:{data:any}){
   setState(res.state);setMessage(added.duplicate?'Матч уже в списке — выбор добавлен к нему.':'Матч добавлен.');e.currentTarget.reset();setShowForm(false)}
 
  const totalStake=state.selections.reduce((s,x)=>s+(x.stake||0),0);
- return <section className="myMatches" id="my-matches" aria-labelledby="myMatchesTitle">
-  <div className="myMatchesHead"><div><span className="eyebrow">MY MATCHES / МОИ МАТЧИ</span><h2 id="myMatchesTitle">Мои матчи</h2><p>{plural(state.fixtures.length,['матч','матча','матчей'])} · время по Тбилиси (UTC+4) · {account==='account'?'сохраняется в аккаунте':'сохраняется на этом устройстве'}{checkedAt?' · обновлено '+new Date(checkedAt).toLocaleTimeString('ru-RU',{timeZone:TZ,hour:'2-digit',minute:'2-digit'}):''}</p></div>
+ return <section className="myMatches" id="my-selections" aria-labelledby="myMatchesTitle">
+  <div className="myMatchesHead"><div><span className="eyebrow">MY SELECTIONS / МОИ ВЫБОРЫ</span><h2 id="myMatchesTitle">Мои выборы</h2><p>{plural(state.fixtures.length,['матч','матча','матчей'])} · время по Тбилиси (UTC+4) · {account==='account'?'сохраняется в аккаунте':'сохраняется на этом устройстве'}{checkedAt?' · обновлено '+new Date(checkedAt).toLocaleTimeString('ru-RU',{timeZone:TZ,hour:'2-digit',minute:'2-digit'}):''}</p></div>
    <div className="myMatchesActions"><button type="button" className="myBtn primary" onClick={()=>setShowForm(v=>!v)} aria-expanded={showForm}>{showForm?'Закрыть форму':'+ Добавить матч'}</button>{picked.length>1&&<button type="button" className="myBtn" onClick={createAcca}>Экспресс из {picked.length}</button>}</div></div>
   {showForm&&<form className="myForm" onSubmit={submit} aria-label="Добавить матч и выбор">
    <label>Турнир<select name="league" defaultValue="epl">{LEAGUE_IDS.map(id=><option key={id} value={id}>{leagueName(id)}</option>)}</select></label>
@@ -109,7 +110,7 @@ export default function MyMatches({data}:{data:any}){
   {feedError&&<p className="myNote warn" role="status">{feedError}</p>}
   <div className="myGrid">{state.fixtures.map(f=>{const m=matches[f.key],sels=state.selections.filter(s=>s.fixtureKey===f.key),played=m&&(m.state==='in'||m.state==='post'),rs=m?appointmentState(m):'unavailable';
    return <article key={f.key} className="myCard" aria-label={`${f.home} — ${f.away}`}>
-    <div className="myCardTop"><span>{leagueName(f.league)} · {time(m?.date||f.date)}</span><b className={m?.state==='in'?'myLive':''}>{statusText(m)}</b></div>
+    <div className="myCardTop"><span>{m&&<span className="myFollow"><FavoriteButton kind="match" id={m.league+':'+m.id} label={m.home+' — '+m.away} league={m.league}/></span>}{leagueName(f.league)} · {time(m?.date||f.date)}</span><b className={m?.state==='in'?'myLive':''}>{statusText(m)}</b></div>
     <div className="myTeams"><span>{m?.homeLogo&&<img src={m.homeLogo} alt=""/>}<b>{m?.home||f.home}</b></span><strong>{played?m.homeScore??'—':''}</strong><span>{m?.awayLogo&&<img src={m.awayLogo} alt=""/>}<b>{m?.away||f.away}</b></span><strong>{played?m.awayScore??'—':''}</strong></div>
     <p className="myMeta">Арбитр: {m?.referee||'нет данных'}{m?.referee?' · '+STATE_LABEL[rs].label:''}{m?.appointmentConflict?' · есть расхождение источников':''}{m?.stale?' · данные из сохранённого среза':''}</p>
     {sels.map(s=>{const r=settle(s);return <div key={s.id} className="mySel"><label style={{display:'flex',gap:6,alignItems:'center'}}><input type="checkbox" checked={picked.includes(s.id)} onChange={e=>setPicked(p=>e.target.checked?[...p,s.id]:p.filter(x=>x!==s.id))} aria-label={'Добавить в экспресс: '+marketLabel(s.market)}/><b>{marketLabel(s.market)}</b></label><span>@ {dec(s.odds)}</span><span className={'myStatus '+r.status}>{STATUS_RU[r.status]}</span>
