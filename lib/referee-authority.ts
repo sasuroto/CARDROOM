@@ -17,7 +17,7 @@ export const AUTHORITIES:Record<string,Authority>={
  seriea:{league:'seriea',authority:'Lega Serie A / AIA',url:'https://www.aia-figc.it/designazioni/',integration:'manual-verified',note:'Designazioni AIA вносятся после ручной проверки.'},
  laliga:{league:'laliga',authority:'RFEF (CTA)',url:'https://rfef.es/es/noticias',integration:'manual-verified',note:'Designaciones RFEF вносятся после ручной проверки.'},
  segunda:{league:'segunda',authority:'RFEF (CTA)',url:'https://rfef.es/es/noticias',integration:'manual-verified',note:'Designaciones RFEF вносятся после ручной проверки.'},
- ucl:{league:'ucl',authority:'UEFA',url:'https://www.uefa.com/uefachampionsleague/',integration:'manual-verified',note:'Назначения UEFA вносятся после ручной проверки.'},
+ ucl:{league:'ucl',authority:'UEFA',url:'https://www.uefa.com/uefachampionsleague/',integration:'automatic',note:'Страница судей UEFA разбирается автоматически (lib/uefa-officials.ts), кэш 1 час.'},
 };
 export const FALLBACK_SOURCE={authority:'ESPN',url:'https://www.espn.com/soccer/',note:'Резервный источник: имя из календаря или протокола ESPN. Не считается официальным подтверждением.'};
 
