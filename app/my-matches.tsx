@@ -18,7 +18,7 @@ const LEAGUE_IDS=['epl','ucl','laliga','segunda','seriea','bundesliga','ligue1',
 
 function load():TrackerState{try{return sanitizeState(JSON.parse(localStorage.getItem(KEY)||'null'))||initialTracker()}catch{return initialTracker()}}
 function statusText(m:any){
- if(!m)return 'Матч не найден в календаре';
+ if(!m)return 'Нет данных календаря';
  if(/POSTPONED/.test(m.statusName||''))return 'Перенесён';
  if(/SUSPENDED|ABANDONED/.test(m.statusName||''))return 'Прерван';
  if(/CANCEL/.test(m.statusName||''))return 'Отменён';
