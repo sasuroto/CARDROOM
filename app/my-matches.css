@@ -1,0 +1,84 @@
+/* Referee intelligence (match detail) */
+.refIntel{border:1px solid var(--line);background:var(--white);border-radius:9px;padding:18px 20px;margin:16px 0}
+.refIntelHead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.refIntelHead h3{margin:6px 0 4px;font-size:22px;letter-spacing:-.4px}
+.refIntelHead p{margin:0;font-size:12px;color:var(--muted)}
+.refState{flex:0 0 auto;font-size:11px;letter-spacing:.6px;text-transform:uppercase;padding:6px 9px;border-radius:4px;border:1px solid var(--line-strong);color:var(--ink);background:var(--surface)}
+.refState-confirmed{background:var(--accent);border-color:var(--accent);color:#fff}
+.refState-unconfirmed{background:var(--highlight);border-color:#c9d400;color:var(--ink)}
+.refState-stale{background:#f0ecd9;border-color:#c8b77a;color:#5c4e1f}
+.refIntelHint{font-size:12px;line-height:1.55;color:var(--muted);margin:10px 0 12px}
+.refIntelMetrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.refIntelMetrics div{background:var(--charcoal);color:#fff;border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.refIntelMetrics span{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#c9ccc4}
+.refIntelMetrics strong{font-size:22px}
+.refIntelMeta{font-size:11px;line-height:1.55;color:var(--muted);margin:8px 0}
+.refIntelCrew{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px;margin:12px 0}
+.refIntelCrew div{border-top:1px solid var(--line);padding-top:6px}
+.refIntelCrew dt{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.refIntelCrew dd{margin:3px 0 0;font-size:13px}
+.refIntelJournal h4{margin:12px 0 6px;font-size:13px}
+.refIntelJournal ol{list-style:none;margin:0;padding:0}
+.refIntelJournal li{display:grid;grid-template-columns:84px minmax(0,1fr);gap:2px 10px;padding:6px 0;border-top:1px solid var(--line);font-size:13px}
+.refIntelJournal li span{color:var(--muted);font-size:12px}
+.refIntelJournal li small{grid-column:2;color:var(--muted);font-size:11px}
+.refIntelJournal p{font-size:12px;color:var(--muted)}
+.refIntelSource{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;color:var(--muted);margin:12px 0 0}
+.refIntelSource a{color:var(--link);text-decoration:underline}
+
+/* My Matches (homepage) */
+.myMatches{margin:18px 40px 8px;border-radius:12px;background:var(--charcoal);color:#fff;padding:20px 22px}
+.myMatchesHead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.myMatchesHead h2{margin:4px 0 0;font-size:26px;letter-spacing:-.6px}
+.myMatchesHead .eyebrow{color:var(--highlight)}
+.myMatchesHead p{margin:4px 0 0;font-size:12px;color:#c9ccc4;font-weight:700}
+.myMatchesActions{display:flex;gap:8px;flex-wrap:wrap}
+.myBtn{min-height:36px;border:1px solid #5b6057;background:transparent;color:#fff;border-radius:6px;padding:7px 12px;font-size:12px}
+.myBtn.primary{background:var(--accent);border-color:var(--accent)}
+.myBtn:focus-visible{outline:2px solid var(--highlight);outline-offset:2px}
+.myGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-top:16px}
+.myCard{background:var(--white);color:var(--ink);border-radius:9px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.myCardTop{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted)}
+.myLive{color:#b00020}
+.myTeams{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center}
+.myTeams span{display:flex;align-items:center;gap:8px;font-size:15px;min-width:0}
+.myTeams span b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.myTeams img{width:20px;height:20px;object-fit:contain;flex:0 0 auto}
+.myTeams strong{font-size:20px;text-align:right}
+.myMeta{font-size:11px;line-height:1.5;color:var(--muted)}
+.mySel{border-top:1px solid var(--line);padding-top:8px;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px 10px;align-items:center;font-size:13px}
+.mySel small{grid-column:1/-1;color:var(--muted);font-size:11px;font-weight:700}
+.mySel select,.mySel input{min-height:32px;border:1px solid var(--line-strong);border-radius:5px;background:#fff;padding:4px 6px;font-size:12px}
+.myStatus{font-size:10px;letter-spacing:.8px;text-transform:uppercase;padding:4px 7px;border-radius:4px;background:var(--surface)}
+.myStatus.won{background:var(--accent);color:#fff}
+.myStatus.lost{background:#2d302c;color:#fff}
+.myStatus.void{background:#e2dfd6}
+.myStatus.unknown{background:#f0ecd9;color:#5c4e1f}
+.myStatus.pending{background:var(--highlight);color:var(--ink)}
+.myCardLinks{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.myCardLinks button{background:none;border:0;padding:6px 0;min-height:32px;color:var(--link);text-decoration:underline;font-size:12px}
+.myCardLinks button.remove{color:var(--muted)}
+.myAcc{margin-top:14px;border-top:1px solid #4a4f47;padding-top:12px}
+.myAcc h3{margin:0 0 8px;font-size:15px}
+.myAccRow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:12px;color:#e3e5df;padding:8px 0;border-top:1px solid #3a3e37}
+.myAccRow input{width:90px;min-height:32px;border-radius:5px;border:1px solid #5b6057;background:#1e211d;color:#fff;padding:4px 6px}
+.myForm{margin-top:14px;background:#262924;border-radius:9px;padding:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;align-items:end}
+.myForm label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:#c9ccc4}
+.myForm input,.myForm select{min-height:36px;border-radius:5px;border:1px solid #5b6057;background:#1e211d;color:#fff;padding:6px 8px}
+.myNote{font-size:11px;line-height:1.55;color:#c9ccc4;margin:12px 0 0}
+.myNote.warn{color:var(--highlight)}
+.myHealth{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11px;color:#c9ccc4;margin-top:10px}
+.myHealth i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;background:#8a8f85}
+.myHealth i.ok{background:#3fbf3f}.myHealth i.limited,.myHealth i.degraded{background:#e0b400}.myHealth i.manual{background:#9aa0ff}
+@media(max-width:650px){
+ .myMatches{margin:12px 16px 6px;padding:16px}
+ .myMatchesHead h2{font-size:22px}
+ .myGrid{grid-template-columns:1fr}
+ .refIntel{padding:14px}
+ .refIntelHead{flex-direction:column}
+ .refIntelMetrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .refIntelCrew{grid-template-columns:1fr}
+}
+.myEdit{grid-column:1/-1;font-size:11px;color:var(--muted)}
+.myEdit summary{cursor:pointer;min-height:28px;display:flex;align-items:center}
+.myEdit>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}

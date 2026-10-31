@@ -5,7 +5,9 @@ const KEY='official-appointments/pl/4731949/v1.json',BACKOFF='referee-updates/so
 let pending:Promise<any>|null=null;
 const text=(s:string)=>s.replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
 export function parsePLOfficials(html:string){
- if(!/2026\s*\/\s*27/.test(html)||!html.includes('Match officials for Matchweek 7'))throw Error('Турнир и сезон публикации не подтверждены');
+ // The publication must name the matchweek recorded with the fixture map; any week works once its map is saved.
+ const week=Number((seed as any).matchweek)||7;
+ if(!/2026\s*\/\s*27/.test(html)||!new RegExp('Match officials for Matchweek '+week+'(?!\\d)').test(html))throw Error('Турнир и сезон публикации не подтверждены');
  const rows=html.split(/data-match-reference=["']/).slice(1).flatMap(chunk=>{
   const reference=chunk.match(/^(\d+)["']/)?.[1],paragraph=chunk.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1];
   const role=paragraph&&text(paragraph).match(/^Referee:\s*(.*?)\.\s*Assistants:\s*(.*?)\.\s*Fourth official:\s*(.*?)\.\s*VAR:\s*(.*?)\.\s*Assistant VAR:\s*(.*?)\.?$/);
@@ -38,7 +40,7 @@ async function refreshPLOfficials(bucket:R2Bucket|undefined,cached:any){
   const response=await fetch(seed.source,{signal:AbortSignal.timeout(14000),headers:{Accept:'text/html'}});
   if(response.status===429){const retry=response.headers.get('Retry-After'),seconds=Number(retry),until=Math.max(now+HOUR,retry?(Number.isFinite(seconds)?now+seconds*1000:Date.parse(retry))||0:0);await writeCache(bucket,BACKOFF,{until});throw Object.assign(Error('Premier League: HTTP 429'),{retryAt:until})}
   if(!response.ok)throw Error('Premier League: HTTP '+response.status);
-  const matches=parsePLOfficials(await response.text()),result={source:seed.source,matches,checkedAt,lastAttemptAt:checkedAt,nextCheckAt:new Date(now+HOUR).toISOString(),stale:false};
+  const matches=parsePLOfficials(await response.text()),result={source:seed.source,matchweek:(seed as any).matchweek||7,authority:'Premier League / PGMOL',matches,checkedAt,lastAttemptAt:checkedAt,nextCheckAt:new Date(now+HOUR).toISOString(),stale:false};
   await writeCache(bucket,KEY,result);return result;
  }catch(error){
   console.warn('Premier League appointment refresh:',String(error));
