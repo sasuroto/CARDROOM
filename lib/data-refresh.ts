@@ -1,5 +1,5 @@
 import {clean,parseCards,parseOverview,parseTeams,tableRows} from './data';
-import {parseReferees,parseSoccerbase} from './referee-parser';
+import {parseSeasonalReferees,normalizeRefereeSeason} from './referee-season';
 import {SourceError} from './source-fetch';
 import {leagueSize} from './data-health';
 
@@ -48,12 +48,11 @@ export function refreshTasks(data:any,refSeed:Record<string,any>):Task[]{
  }});
  for(const [id,config] of Object.entries(refSeed)){
   if(config.refreshMode==='snapshot'||!config.source)continue;
-  const item=data.refereesByLeague[id];
+  const item=data.refereesByLeague[id]=normalizeRefereeSeason(data.refereesByLeague[id]);
   tasks.push({id:id+':referees',url:config.source,checkedAt:item?.checkedAt,apply:(html,now)=>{
-   if(!/2026\s*\/\s*(?:20)?27/.test(clean(html)))throw Error('Сезон 2026/27 не подтверждён');
-   const rows=id==='epl'?parseSoccerbase(html):parseReferees(html,id==='bundesliga');if(rows.length<item.rows.length)throw Error('Уменьшилось покрытие судей');
+   const parsed=parseSeasonalReferees(html,id,config.source,now),rows=parsed.rows;if(rows.length<item.rows.length)throw Error('Уменьшилось покрытие судей');
    for(const row of rows){const old=item.rows.find((r:any)=>r.name===row.name);if(old&&row.n<old.n)throw Error('Уменьшилась выборка судьи')}
-   data.refereesByLeague[id]={...item,rows,source:config.source,checkedAt:now,partial:id!=='epl',refreshError:null};
+   data.refereesByLeague[id]={...item,...parsed,source:config.source,checkedAt:now,partial:id!=='epl',refreshError:null};
   }});
  }
  return tasks;

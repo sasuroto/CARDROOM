@@ -1,3 +1,4 @@
+import {normalizeRefereeSeason} from './referee-season';
 import {getUEFAOfficials,applyUEFAOfficials} from './uefa-officials';
 import {getDFBOfficials,applyDFBOfficials} from './dfb-officials';
 import {getAdvanceOfficials,applyAdvanceOfficials} from './advance-officials';
@@ -12,10 +13,11 @@ const newer=(a?:string,b?:string)=>Date.parse(a||'')> (Date.parse(b||'')||0);
 
 export async function mergeRefereeUpdates(data:any,bucket:R2Bucket|undefined){
  data.refereeUpdates={};
+ data.refereesByLeague=Object.fromEntries(Object.entries(data.refereesByLeague||{}).map(([id,group])=>[id,normalizeRefereeSeason(group)]));
  await Promise.all(data.leagues.map(async(l:any)=>{
   const update=await readCache(bucket,refereeUpdateKey(l.id));if(!update)return;
   const {matches,stats,...status}=update;data.refereeUpdates[l.id]={...status,persisted:true};
-  if(stats&&(newer(stats.checkedAt,data.refereesByLeague?.[l.id]?.checkedAt)||stats.checkedAt&&stats.checkedAt===data.refereesByLeague?.[l.id]?.checkedAt))data.refereesByLeague[l.id]=stats;
+  if(stats&&(newer(stats.checkedAt,data.refereesByLeague?.[l.id]?.checkedAt)||stats.checkedAt&&stats.checkedAt===data.refereesByLeague?.[l.id]?.checkedAt))data.refereesByLeague[l.id]=normalizeRefereeSeason(stats);
  }));
  return data;
 }

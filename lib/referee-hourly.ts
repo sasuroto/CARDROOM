@@ -1,8 +1,7 @@
 import {appointmentCoverage} from './referee-monitor';
 import {readCache,writeCache} from './cache';
 import {LEAGUES,fixture,localDay} from './fixtures';
-import {parseReferees,parseSoccerbase} from './referee-parser';
-import {clean} from './data';
+import {parseSeasonalReferees,normalizeRefereeSeason} from './referee-season';
 import seeds from './referees.json';
 import {REFEREE_INTERVAL,refereeUpdateKey} from './referee-updates';
 import {GET as getMatch} from '../app/api/match/route';
@@ -42,19 +41,18 @@ export async function refreshLeagueReferees(league:string,bucket:R2Bucket|undefi
 
 async function refresh(league:string,bucket:R2Bucket){
  const key=refereeUpdateKey(league),cached=await readCache(bucket,key);
- if(cached&&Date.now()-Date.parse(cached.startedAt)<REFEREE_INTERVAL)return {...cached,cached:true,persisted:true};
+ if(cached&&Date.now()-Date.parse(cached.startedAt)<REFEREE_INTERVAL)return {...cached,stats:normalizeRefereeSeason(cached.stats),cached:true,persisted:true};
  const startedAt=new Date(Date.now()).toISOString(),deadline=Date.now()+45000,window=refereeWindow(),errors:string[]=[],config=(seeds as any)[league];
  const legacy=await readCache(bucket,'cardroom/data-v1.json');
  const options=[config,cached?.stats,legacy?.refereesByLeague?.[league]].filter(Boolean).sort((a,b)=>Date.parse(b.checkedAt||'')-Date.parse(a.checkedAt||''));
- let stats=structuredClone(options[0]),statsStatus='unavailable',events:any[]=[];
+ let stats=normalizeRefereeSeason(structuredClone(options[0])),statsStatus='unavailable',events:any[]=[];
  // Footiqo's shared table does not provide a verified tournament/season parser yet.
  if(league==='primeira'){statsStatus='snapshot';errors.push('Статистика Primeira Liga: сохранённый срез; автоматическая проверка турнира и сезона не подключена.')}
  else try{
   const html=await(await hourlySource(bucket,config.source)).text();
-  if(!/2026\s*\/\s*(?:20)?27/.test(clean(html)))throw Error('Сезон 2026/27 не подтверждён');
-  const rows=league==='epl'?parseSoccerbase(html):parseReferees(html,league==='bundesliga',200);
+  const checkedAt=new Date(Date.now()).toISOString(),parsed=parseSeasonalReferees(html,league,config.source,checkedAt,200),rows=parsed.rows;
   if(rows.length<(stats.rows?.length||0)||rows.some(r=>{const old=stats.rows?.find((v:any)=>v.name===r.name);return old&&r.n<old.n}))throw Error('Уменьшилась выборка судей');
-  stats={...stats,rows,source:config.source,checkedAt:new Date(Date.now()).toISOString(),refreshError:null,periodLabel:(config.periodLabel||'Сезон 2026/27'),seasonConfirmed:true};statsStatus='updated';
+  stats={...stats,...parsed,source:config.source,checkedAt,refreshError:null};statsStatus='updated';
  }catch(error){errors.push('Статистика: '+String(error));stats.refreshError=String(error)}
  for(const query of window.queries){
   try{

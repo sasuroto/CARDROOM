@@ -60,5 +60,11 @@ check(markup.includes('5 из 12 загруженных игр')&&markup.include
 nodes(tree).find(x=>x.type==='select').props.onChange({target:{value:'away'}});tree=draw();markup=render(tree);
 check(markup.includes('0 из 4 загруженных игр')&&markup.includes('N=0'),'Venue switch updates both sides and preserves honest empty cells');
 check(markup.includes('Эти фильтры относятся только к сравнению выше')&&!/NaN|Infinity|Invalid Date/.test(markup),'Scope is explicit; no invalid values render');
+const frequencyNodes=nodes(tree).filter(x=>x.props?.className==='sampleFrequencyPercent');
+check(frequencyNodes.length>0&&frequencyNodes.every(x=>/^\d+%$/.test(React.Children.toArray(x.props.children).join(''))),'Dedicated large-color class applies only to numeric historical percentages');
+check(frequencyNodes.every(x=>x.type==='span'),'Historical percentage is not constrained by small-print styles');
+const frequencyCss=fs.readFileSync(root+'/app/match-samples.css','utf8');
+check(frequencyCss.includes('.matchSamples .sampleFrequencyRow .sampleFrequencyPercent{')&&frequencyCss.includes('font-size:44px;font-weight:750')&&frequencyCss.includes('color:#6544a6'),'Historical percentages have scoped large colored typography');
+check(frequencyCss.includes('@media(max-width:650px){.matchSamples .sampleFrequencyRow .sampleFrequencyPercent{font-size:40px'),'Mobile percentage typography remains large');
 React.useState=original;
 console.log(`PASS ${checks} sample-comparison assertions: scope, date order, venue, nulls, per-metric N, actual frequencies, verified H2H and UI filter changes.`);
