@@ -21,6 +21,14 @@ const realNow=Date.now;Date.now=()=>Date.parse('2026-10-31T20:00:00Z');let check
  check(applyAdvanceOfficials(match,{...report,rows:[...report.rows,{...report.rows[0],referee:'Different official',source:'https://rfef.es/other'}]}).referee==='ESPN Name','conflicting publications do not arbitrarily replace a name');
  check(applyAdvanceOfficials(match,{...report,stale:true,error:'offline'}).appointmentStale,'retained official remains explicitly stale');
  for(const [a,b,l] of [['Erzurum BB','Erzurumspor FK','superlig'],['Amed SFK','Amed Sportif Faaliyetler','superlig'],['Estrela','Estrela Amadora','primeira'],['Académico de Viseu','Académico','primeira'],['Real Sociedad II','Real Sociedad de Fútbol SAD','segunda'],['CD Sabadell','CE Sabadell FC','segunda']])check(advanceTeam(a,l)===advanceTeam(b,l),'official and ESPN team aliases: '+a);
+ // Observed official Liga Portugal round 10 response, checked 2026-11-01.
+ const victoriaSource='https://www.ligaportugal.pt/api/v1/competition/round/10/nominations?competition=ligaportugalbetclic&season=20262027';
+ const victoriaReport={rows:[{league:'primeira',day:'2026-11-02',home:'Gil Vicente FC',away:'Vitória SC',referee:'Hélder Carvalho',source:victoriaSource,checkedAt:'2026-11-01T11:17:00Z'}],lastAttemptAt:'2026-11-01T11:17:00Z'};
+ const victoriaMatch={id:'401885407',league:'primeira',home:'Gil Vicente',away:'Vitória de Guimaraes',date:'2026-11-03T00:15:00+04:00',referee:null};
+ check(advanceTeam('Vitória de Guimaraes','primeira')===advanceTeam('Vitória SC','primeira'),'observed ESPN and Liga Portugal Vitoria aliases agree');
+ const victoriaApplied=applyAdvanceOfficials(victoriaMatch,victoriaReport);
+ check(victoriaApplied.referee==='Hélder Carvalho'&&victoriaApplied.currentVerified&&victoriaApplied.appointmentSource===victoriaSource,'observed Nov 2 UTC / Nov 3 Tbilisi fixture receives exact official assignment');
+ for(const change of [{date:'2026-11-04T00:15:00+04:00'},{league:'segunda'},{home:'FC Porto'},{away:'Vitória Setúbal'}])check(!applyAdvanceOfficials({...victoriaMatch,...change},victoriaReport).referee,'Vitoria alias never crosses fixture date, league or club identity');
  const french=parseLigue1('<meta property="article:published_time" content="2026-10-29"><p>journée de Ligue 1</p><p><a href="/fr/match-sheet/l1_championship_match_1">LOSC – RC Lens</a> Arbitre principal : Ref A Arbitres assistants : B et C 4e arbitre : D Arbitres assistants vidéo : E et F</p>','https://ligue1.com/fr/articles/arbitres');
  check(french[0].videoOfficials.length===2&&!french[0].var&&!french[0].avar,'unlabelled French video crew never gets invented VAR/AVAR roles');
  const italian=parseSerieA('<meta property="article:published_time" content="2026-10-29">Serie A<p>MILAN – ROMA 01/11 20:00</p><p>REF (A – B) IV: C, VAR: D, AVAR: E</p>','https://www.legaseriea.it/serie-a/news/designazioni');

@@ -27,3 +27,23 @@ work. That branch is not altered or merged by this PR. Compare and integrate it
 separately: blindly replacing either tree would discard functionality.
 
 No merge or production publication is authorized by this review PR.
+
+## Selective Claude integration (review only)
+
+Additional local review selectively adapts reliability and UX ideas from
+`feat/my-matches-panel-v60`, without a wholesale branch merge:
+- Per-block refresh scheduling, pass/request limits and timeout/503 backoff;
+  v72 source/season/sample guards and existing 403/429 backoff remain.
+- Verified cache writes, honest partial coverage, queued work and offline state.
+- Existing panel retained; Escape collapse, last-attempt label and favorites in
+  match detail. Provider timestamps remain the freshness authority.
+- Exact Vitória SC / Vitória de Guimaraes alias, guarded by league/date/opponent.
+
+Personal seeded selections, odds, tracker state and server betting-account
+features are deliberately NOT imported. Competing panel, weaker referee season
+checks and misleading source-health endpoint are not imported either. This is a
+selective integration, not a statement that the whole Claude branch is merged.
+
+R2 coordination remains best-effort (read/write lease, no atomic compare-and-swap);
+no claim of globally race-free refreshes. Public error messages omit storage and
+network exception details. No runtime files or R2 data are part of the transfer.

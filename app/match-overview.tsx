@@ -3,6 +3,8 @@ import {useState} from 'react';
 import {MapPin,Clock,Flag} from 'lucide-react';
 import {matchLocation} from '../lib/match-location';
 import MatchWeather from './match-weather';
+import {FavoriteButton} from './favorites';
+import {panelStatus} from '../lib/match-status';
 import {appointmentState,STATE_LABEL} from '../lib/referee-authority';
 
 function Crest({src,name}:{src?:string,name:string}){
@@ -11,13 +13,13 @@ function Crest({src,name}:{src?:string,name:string}){
 }
 const stamp=(value?:string)=>value&&Number.isFinite(Date.parse(value))?new Date(value).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):null;
 export default function MatchOverview({match,leagueName,loading=false,titleId}:{match:any,leagueName?:string,loading?:boolean,titleId?:string}){
- const played=match.state==='in'||match.state==='post';
+ const providerStatus=panelStatus(match),played=providerStatus.showScore;
  const score=(v:any)=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v))&&Number(v)>=0?String(v):'—';
- const status=match.state==='in'?'В игре':match.state==='post'?'Завершён':match.state==='pre'&&Date.parse(match.date)>Date.now()?'Предстоит':'Статус уточняется';
+ const status=providerStatus.label;
  const id=titleId||'match-overview-'+match.id,checked=stamp(match.checkedAt||match.fetchedAt),refChecked=stamp(match.appointmentCheckedAt),refState=STATE_LABEL[appointmentState(match)];
  const kickoff=Number.isFinite(Date.parse(match.date))?new Date(match.date).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}):'Время уточняется';
  return <section className="matchOverview" aria-labelledby={id}>
-  <div className="overviewTopline"><span className="overviewEyebrow">01 / МАТЧ</span><span>{leagueName||'Турнир уточняется'}</span><span className="overviewStatus">{status}{match.clock?' · '+match.clock:''}</span></div>
+  <div className="overviewTopline"><span className="overviewEyebrow">01 / МАТЧ</span><span>{leagueName||'Турнир уточняется'}</span>{match.id&&match.league&&<span className="overviewFollow"><FavoriteButton kind="match" id={match.league+':'+match.id} label={match.home+' — '+match.away} league={match.league}/></span>}<span className="overviewStatus">{status}{providerStatus.minute?' · '+providerStatus.minute:''}</span></div>
   <h2 id={id} className="overviewAccessibleTitle">{match.home} против {match.away}</h2>
   <div className="overviewTeams">
    <div className="overviewTeam"><Crest key={match.homeLogo||match.home} src={match.homeLogo} name={match.home}/><strong>{match.home}</strong><small>Хозяева</small></div>
