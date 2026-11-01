@@ -35,45 +35,47 @@ function Crest({src,name}:{src?:string;name:string}){const [failed,setFailed]=us
 export default function SelectedMatches({data,onOpen}:{data:any;onOpen:(match:any)=>void}){
  const favorites=useFavorites(),chosen=favorites.items.filter(item=>item.kind==='match'&&item.league);
  const [matches,setMatches]=useState<Record<string,any>>({}),[refreshing,setRefreshing]=useState(false),[checkedAt,setCheckedAt]=useState(''),[failed,setFailed]=useState(0);
- const [expanded,setExpanded]=useState(false),[now,setNow]=useState(Date.now()),[online,setOnline]=useState(true);
+ const [expanded,setExpanded]=useState(false),[now,setNow]=useState(()=>Date.now()),[online,setOnline]=useState(true);
  useEffect(()=>{const sync=()=>setOnline(navigator.onLine!==false);sync();window.addEventListener('online',sync);window.addEventListener('offline',sync);const escape=(event:KeyboardEvent)=>{if(event.key==='Escape'){setExpanded(false);try{localStorage.setItem('cardroom:selected-panel:expanded','false')}catch{}}};window.addEventListener('keydown',escape);return()=>{window.removeEventListener('online',sync);window.removeEventListener('offline',sync);window.removeEventListener('keydown',escape)}},[]);
- const abort=useRef<AbortController|null>(null),timer=useRef<ReturnType<typeof setTimeout>|null>(null),running=useRef(false),failures=useRef(0),matchesRef=useRef<Record<string,any>>({}),ids=chosen.map(item=>item.id).join('|');
+ const matchesRef=useRef<Record<string,any>>({}),selectionKey=JSON.stringify(chosen.map(({id,league,label})=>({id,league,label})));
  useEffect(()=>{try{setExpanded(localStorage.getItem('cardroom:selected-panel:expanded')==='true')}catch{}const timer=setInterval(()=>setNow(Date.now()),15000);return()=>clearInterval(timer)},[]);
  const toggleExpanded=()=>setExpanded(old=>{try{localStorage.setItem('cardroom:selected-panel:expanded',String(!old))}catch{}return !old});
  useEffect(()=>{
+  const chosen: Array<{id:string;league?:string;label:string}>=JSON.parse(selectionKey);
   const selected=new Set(chosen.map(item=>item.id));setMatches(old=>{const next=Object.fromEntries(Object.entries(old).filter(([id])=>selected.has(id)));matchesRef.current=next;return next});
   if(!chosen.length)return;
-  const controller=new AbortController();abort.current=controller;
-  const update=(id:string,value:any)=>setMatches(old=>{const next={...old,[id]:value};matchesRef.current=next;return next});
+  const controller=new AbortController();
+  let timer:ReturnType<typeof setTimeout>|null=null,running=false,failures=0;
+  const update=(id:string,value:any)=>setMatches(old=>{if(controller.signal.aborted)return old;const next={...old,[id]:value};matchesRef.current=next;return next});
   const schedule=()=>{
    if(controller.signal.aborted)return;
    const values=chosen.map(item=>matchesRef.current[item.id]).filter(Boolean),stamp=Date.now();
    const anyLive=values.some(match=>panelStatus(match).polls),anySoon=values.some(match=>panelStatus(match).kind==='scheduled'&&Number.isFinite(Date.parse(match.date||''))&&Date.parse(match.date)-stamp<=15*60000);
    const retryAt=values.reduce((max,match)=>Math.max(max,Number(match.retryAfter)||0),0)||null;
-   timer.current=setTimeout(refresh,nextDelay({anyLive,anySoon,failures:failures.current,retryAt}));
+   timer=setTimeout(refresh,nextDelay({anyLive,anySoon,failures:failures,retryAt}));
   };
   async function refresh(){
-   if(timer.current)clearTimeout(timer.current);
-   if(running.current||document.visibilityState==='hidden'||navigator.onLine===false)return;
-   running.current=true;setRefreshing(true);let errors=0;
+   if(timer)clearTimeout(timer);
+   if(controller.signal.aborted||running||document.visibilityState==='hidden'||navigator.onLine===false)return;
+   running=true;setRefreshing(true);let errors=0;
    for(const item of chosen){
     if(controller.signal.aborted)break;
     const parts=item.id.split(':'),id=parts.at(-1)||'',league=item.league||parts[0];
     try{const signal=AbortSignal.any([controller.signal,AbortSignal.timeout(15000)]),response=await fetch(`/api/match?id=${encodeURIComponent(id)}&league=${encodeURIComponent(league)}`,{signal,cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const next:any=await response.json();if(!next||typeof next!=='object'||String(next.id)!==String(id)||next.league!==league)throw Error('Некорректный ответ матча');if(controller.signal.aborted)break;const merged=mergeSelectedMatch(matchesRef.current[item.id]||{id,league,label:item.label},next);update(item.id,merged);if(next.error||next.stale)errors++}catch(error:any){if(error.name!=='AbortError'&&!controller.signal.aborted){errors++;update(item.id,{...(matchesRef.current[item.id]||{id,league,label:item.label}),stale:true,error:'Не удалось обновить счёт'})}}
    }
-   if(!controller.signal.aborted){failures.current=errors?failures.current+1:0;setFailed(errors);setCheckedAt(new Date().toISOString());setRefreshing(false)}running.current=false;schedule();
+   if(!controller.signal.aborted){failures=errors?failures+1:0;setFailed(errors);setCheckedAt(new Date().toISOString());setRefreshing(false)}running=false;schedule();
   }
-  const resume=()=>{if(document.visibilityState==='visible'&&navigator.onLine!==false)refresh()},offline=()=>{if(timer.current)clearTimeout(timer.current)};refresh();window.addEventListener('focus',resume);window.addEventListener('online',resume);window.addEventListener('offline',offline);document.addEventListener('visibilitychange',resume);
-  return()=>{controller.abort();if(timer.current)clearTimeout(timer.current);window.removeEventListener('focus',resume);window.removeEventListener('online',resume);window.removeEventListener('offline',offline);document.removeEventListener('visibilitychange',resume);running.current=false};
- },[ids]);
- useEffect(()=>()=>abort.current?.abort(),[]);
+  const resume=()=>{if(document.visibilityState==='visible'&&navigator.onLine!==false)refresh()},offline=()=>{if(timer)clearTimeout(timer)};refresh();window.addEventListener('focus',resume);window.addEventListener('online',resume);window.addEventListener('offline',offline);document.addEventListener('visibilitychange',resume);
+  return()=>{controller.abort();if(timer)clearTimeout(timer);window.removeEventListener('focus',resume);window.removeEventListener('online',resume);window.removeEventListener('offline',offline);document.removeEventListener('visibilitychange',resume);running=false};
+ },[selectionKey]);
+
  if(!favorites.ready||!chosen.length)return null;
  return <section className={'selectedMatches selectedMatchesPinned'+(expanded?' isExpanded':' isCompact')} aria-labelledby="selected-matches-title" aria-busy={refreshing}>
   <div className="selectedMatchesHead"><div><span className="eyebrow">МОИ МАТЧИ</span><h2 id="selected-matches-title">Мои матчи <span>· {chosen.length}</span></h2><p>Сохраняются на этом устройстве · live-счёт каждые 30 с, при ошибках — реже</p></div><div className="selectedPanelActions"><button type="button" onClick={toggleExpanded} aria-expanded={expanded} aria-controls="selected-matches-grid">{expanded?'Свернуть ↑':'Подробнее ↓'}</button><small>{refreshing?'Проверяю…':checkedAt?'Последняя попытка '+dateTime(checkedAt):'Ожидает проверки'}</small></div></div>
   {!online&&<p className="selectedMatchesNotice" role="status">Нет соединения. Показаны последние сохранённые данные; после восстановления сети проверка продолжится.</p>}
   {favorites.storageError&&<p className="selectedMatchesNotice" role="status">Браузер не позволяет сохранить выбор. После закрытия он может потеряться.</p>}
   {failed>0&&<p className="selectedMatchesNotice" role="status">Не удалось подтвердить {failed} {failed===1?'матч':'матча/матчей'}. Сохранённые значения и прочерки не заменены нулями.</p>}
-  <div id="selected-matches-grid" className="selectedMatchesGrid" aria-label="Выбранные матчи, прокрутка в сторону">{chosen.map(item=>{const parts=item.id.split(':'),match=matches[item.id]||{id:parts.at(-1),league:item.league||parts[0],label:item.label},state=panelStatus(match),played=state.showScore,status=selectedMatchStatus(match),freshness=selectedMatchFreshness(match,now),names=String(item.label).split(' — '),home=match.home||names[0]||'Матч',away=match.away||names[1]||'';return <article key={item.id} className={'selectedMatchCard '+(state.polls&&freshness.fresh?'isLive':'')}>
+  <div id="selected-matches-grid" className="selectedMatchesGrid" aria-label="Выбранные матчи, прокрутка в сторону">{chosen.map(item=>{const parts=item.id.split(':'),match=matches[item.id]||{id:parts.at(-1),league:item.league||parts[0],label:item.label},state=panelStatus(match),played=state.showScore,status=selectedMatchStatus(match,now),freshness=selectedMatchFreshness(match,now),names=String(item.label).split(' — '),home=match.home||names[0]||'Матч',away=match.away||names[1]||'';return <article key={item.id} className={'selectedMatchCard '+(state.polls&&freshness.fresh?'isLive':'')}>
    <button className="selectedMatchOpen" onClick={()=>match.home&&match.away&&onOpen(match)} disabled={!match.home||!match.away} aria-label={`${home} — ${away}. ${status}. ${match.referee?'Арбитр: '+match.referee:'Назначение арбитра уточняется'}. Открыть матч`}><span className="selectedMatchMeta"><span>{data.leagues.find((league:any)=>league.id===match.league)?.name||match.league}</span><b>{status}</b></span><span className={'selectedFreshness '+(!freshness.fresh?'isStale':'')}>{freshness.label}</span><span className="selectedTeam"><Crest src={match.homeLogo} name={home}/><span>{home}</span><strong>{played?match.homeScore??'—':''}</strong></span><span className="selectedTeam"><Crest src={match.awayLogo} name={away}/><span>{away}</span><strong>{played?match.awayScore??'—':''}</strong></span><span className={'selectedReferee '+(match.referee?'hasReferee':'')}><span>Арбитр</span><b>{match.referee||(match.lastAttemptAt?'Назначение уточняется':'Проверяю…')}</b></span></button>
    <button className="selectedMatchRemove" aria-label={'Убрать с главного экрана: '+item.label} onClick={()=>favorites.toggle('match',item.id,item.label,item.league)}><FavoriteStar active/></button>
   </article>})}</div>
