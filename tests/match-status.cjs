@@ -1,0 +1,18 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const S=require('../lib/match-status.ts');
+let n=0;const check=(v,s)=>{assert.ok(v,s);n++},st=(statusName,extra={})=>S.panelStatus({state:'in',statusName,...extra});
+check(S.panelStatus({state:'pre',statusName:'STATUS_SCHEDULED'}).kind==='scheduled','scheduled');
+check(st('STATUS_SECOND_HALF',{clock:"63'"}).minute==="63'"&&st('STATUS_SECOND_HALF').polls,'live minute and polling');
+check(st('STATUS_HALFTIME').label==='Перерыв','halftime');
+check(S.panelStatus({state:'post',statusName:'STATUS_FINAL_AET'}).label.includes('доп. время'),'extra time');
+check(S.panelStatus({state:'in',statusName:'STATUS_SUSPENDED'}).label==='Приостановлен','suspended');
+check(S.panelStatus({state:'post',statusName:'STATUS_POSTPONED'}).label==='Перенесён','postponed');
+check(S.panelStatus({state:'post',statusName:'STATUS_CANCELED'}).label==='Отменён','cancelled');
+const now=1e12;
+check(S.nextDelay({anyLive:true,anySoon:false,failures:0,now})===30000,'live every 30 seconds');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:1,now,jitter:.5})===60000,'first failure doubles delay');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:3,now,jitter:.5})===240000,'backoff grows exponentially');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:20,now,jitter:1})===900000,'backoff capped');
+check(S.nextDelay({anyLive:true,anySoon:false,failures:0,retryAt:now+7200000,now})===7200000,'Retry-After respected');
+console.log(`PASS ${n} match-status assertions: required states, 30 s polling and exponential backoff.`);

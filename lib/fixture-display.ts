@@ -1,3 +1,6 @@
+import {logoUrl} from './team-logo';
+import {protectsAppointment,outranks,conflictNote,appointmentTier} from './referee-authority';
+
 export function latestMatchView(match:any,analysis:any){
  const analysisTime=Date.parse(analysis?.checkedAt||''),calendarTime=Date.parse(match?.checkedAt||'');
  const useAnalysis=!!analysis?.state&&Number.isFinite(analysisTime)&&(!Number.isFinite(calendarTime)||analysisTime>=calendarTime);
@@ -8,13 +11,14 @@ export function latestMatchView(match:any,analysis:any){
 export function withAppointment(match:any,details:any){
  if(!details||(details.id&&String(details.id)!==String(match.id))||(details.league&&details.league!==match.league))return match;
  const out={...match};
+ for(const field of ['homeLogo','awayLogo']){const logo=logoUrl(details[field]);if(logo)out[field]=logo;}
  for(const field of ['venue','city','country'])if(details[field])out[field]=details[field];
- const official=(value:any)=>/официальное назначение|official appointment/i.test(String(value?.appointmentType||''));
- // A verified league appointment takes precedence over ESPN or cached research,
- // regardless of which source was polled most recently.
- const protectedOfficial=!!match.referee&&!!match.currentVerified&&!match.appointmentStale&&official(match)&&!official(details);
- const older=protectedOfficial||(match.referee&&Date.parse(details.appointmentCheckedAt||details.checkedAt||'')<Date.parse(match.appointmentCheckedAt||''));
+ const protectedOfficial=protectsAppointment(match,details),higher=outranks(details,match);
+ const older=protectedOfficial||(!higher&&match.referee&&Date.parse(details.appointmentCheckedAt||details.checkedAt||'')<Date.parse(match.appointmentCheckedAt||''));
+ if(protectedOfficial)out.appointmentConflict=conflictNote(match,details)||null;
  if(details.referee&&!older){
+  if(higher||details.referee!==match.referee)for(const field of ['assistants','videoOfficials','var','avar','fourthOfficial'])out[field]=null;
+  out.appointmentConflict=details.appointmentConflict||(higher?conflictNote(details,match):match.appointmentConflict)||null;
   for(const field of ['referee','assistants','videoOfficials','var','avar','fourthOfficial'])if(details[field]&&(!Array.isArray(details[field])||details[field].length))out[field]=details[field];
   out.appointmentSource=details.appointmentSource||details.source||match.appointmentSource;
   out.appointmentCheckedAt=details.appointmentCheckedAt||details.checkedAt||match.appointmentCheckedAt;
@@ -22,7 +26,7 @@ export function withAppointment(match:any,details:any){
   out.appointmentStale=!!(details.appointmentStale??details.stale);
   out.currentVerified=!out.appointmentStale&&(details.currentVerified??true);
   out.appointmentError=details.appointmentError||null;
- }else if(!details.referee&&match.referee&&details.lastAttemptAt){
+ }else if(!details.referee&&match.referee&&details.lastAttemptAt&&!(appointmentTier(match)===2&&appointmentTier(details)<2)){
   out.appointmentStale=true;out.currentVerified=false;out.appointmentError=details.error||'Свежий ответ не подтвердил сохранённое назначение.';
  }
  if(!older)out.appointmentLastAttempt=details.appointmentLastAttempt||details.lastAttemptAt||details.fetchedAt||match.appointmentLastAttempt;

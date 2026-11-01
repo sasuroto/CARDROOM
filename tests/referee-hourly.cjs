@@ -20,6 +20,8 @@ function online(){global.fetch=async url=>{calls.push(String(url));if(String(url
  let status=await(await Referees.GET(new Request('https://site/api/referees?league=epl&read=1'))).json();check(status.updates[0].runId===r.runId&&status.updates[0].persisted,'independent readback confirms the same persisted run');
  const total=calls.length,again=await refreshLeagueReferees('epl',bucket);check(again.cached&&again.runId===r.runId&&calls.length===total,'one-hour gate prevents repeat upstream reads');
  const merged=await mergeRefereeUpdates({leagues:[{id:'epl'}],refereesByLeague:{epl:seed.epl}},bucket);check(merged.refereesByLeague.epl.checkedAt===r.stats.checkedAt,'site data exposes new statistics');
+ const same=await mergeRefereeUpdates({leagues:[{id:'epl'}],refereesByLeague:{epl:{...seed.epl,checkedAt:r.stats.checkedAt}}},bucket);check(same.refereesByLeague.epl.seasonConfirmed===true&&same.refereeUpdates.epl.persisted===true,'equal timestamps preserve verified season metadata and persisted report');
+ check(r.appointmentCoverage.official===0&&r.appointmentCoverage.fallback===24,'ESPN names never counted as official confirmations');
  const enriched=await attachRefereeUpdates([{id:events[0].id,league:'epl',homeScore:'2',checkedAt:'original'}],bucket);check(enriched[0].referee==='Verified Referee'&&enriched[0].homeScore==='2'&&enriched[0].checkedAt==='original','calendar gains appointment without overwriting score or calendar timestamp');
  now+=3600001;r=await refreshLeagueReferees('epl',bucket);check(r.matches[24].referee&&r.matches[25].referee,'deferred matches have priority in the next run');
  const old=values.get(`match/v6/epl/${events[0].id}.json`),oldStamp=old.appointmentCheckedAt;missing=true;now+=3600001;
