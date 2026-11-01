@@ -1,6 +1,8 @@
 const fs=require('node:fs'),Module=require('node:module'),assert=require('node:assert/strict'),ts=require('typescript');
 for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
 const env={},load=Module._load;Module._load=function(id,...args){return id==='cloudflare:workers'?{env}:load.call(this,id,...args)};
+// Weather request counts exclude appointment adapters, which have their own suite.
+require('../lib/advance-officials.ts').getAdvanceOfficials=async()=>null;
 const {weatherAtKickoff,weatherWindow,weatherCityQuery,selectWeatherCity,weatherDescription,verifiedWeatherSnapshot,weatherVenue}=require('../lib/match-weather.ts'),Weather=require('../app/api/weather/route.ts');
 let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
 const realNow=Date.now;let now=realNow();Date.now=()=>now;const kickoff=new Date(now+8*3600000);kickoff.setUTCMinutes(30,0,0);const date=kickoff.toISOString(),floor=Math.floor(kickoff.getTime()/3600000)*3600;

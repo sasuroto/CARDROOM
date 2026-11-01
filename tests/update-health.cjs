@@ -1,0 +1,33 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const {dataHealth,withDataHealth}=require('../lib/data-health.ts'),{parseUEFAOfficials,applyUEFAOfficials,getUEFAOfficials}=require('../lib/uefa-officials.ts'),{createSourceReader}=require('../lib/source-fetch.ts');
+const html=fs.readFileSync(__dirname+'/fixtures/uefa-officials-oct20.html','utf8');
+const rows=parseUEFAOfficials(html),now=Date.parse('2026-10-20T07:00:00Z'),stamp=new Date(now).toISOString();
+assert.equal(rows.length,18);
+const report={rows,checkedAt:stamp,stale:false};
+const events=JSON.parse(fs.readFileSync(__dirname+'/fixtures/ucl-oct20-events.json','utf8'));
+for(const event of events){const m=applyUEFAOfficials(event,report);assert.ok(m.referee&&m.currentVerified,event.home);assert.equal(m.date,event.date);assert.equal(m.checkedAt,event.checkedAt)}
+const event=events.find(e=>e.home==='Liverpool');
+assert.equal(applyUEFAOfficials(event,report).referee,'Szymon Marciniak');
+for(const altered of [{...event,league:'epl'},{...event,date:'2026-10-21T19:00Z'},{...event,away:'Arsenal'}])assert.equal(applyUEFAOfficials(altered,report).referee,altered.referee);
+assert.equal(applyUEFAOfficials(event,{...report,stale:true}).currentVerified,false);
+assert.throws(()=>parseUEFAOfficials(html.replaceAll('2026','2025')));
+const data={leagues:[{id:'epl',cards:{checkedAt:stamp},overview:{checkedAt:stamp},teams:[1],teamCheckedAt:stamp,corners:[1],cornerCheckedAt:stamp,cornerSource:'source'}],refereesByLeague:{epl:{checkedAt:stamp}},refereeUpdates:{epl:{completedAt:stamp}},refreshErrors:[]};
+assert.equal(dataHealth(data,now).status,'updated');
+assert.equal(dataHealth({...data,refreshErrors:['epl: cards: HTTP 429']},now).status,'partial');
+assert.equal(dataHealth(data,now+7*3600000).counts.stale,5);
+assert.equal(dataHealth({...data,refereesByLeague:{epl:{checkedAt:stamp,refreshMode:'snapshot'}}},now).counts.snapshot,1);
+const values=new Map(),bucket={get:async k=>values.has(k)?{json:async()=>values.get(k)}:null,put:async(k,v)=>values.set(k,JSON.parse(v))};
+(async()=>{
+ let calls=0;global.fetch=async()=>{calls++;return new Response(html)};
+ let r=await getUEFAOfficials(bucket);assert.equal(r.rows.length,18);assert.equal(r.stale,false);await getUEFAOfficials(bucket);assert.equal(calls,1);
+ for(const [k,v] of values)values.set(k,{...v,nextCheckAt:'2020-01-01'});
+ global.fetch=async()=>{calls++;return new Response('',{status:429,headers:{'Retry-After':'7200'}})};
+ const oldStamp=r.checkedAt;r=await getUEFAOfficials(bucket);assert.equal(r.checkedAt,oldStamp);assert.equal(r.stale,true);assert.ok(Date.parse(r.nextCheckAt)>Date.now()+7100000);
+ await getUEFAOfficials(bucket);assert.equal(calls,2);
+ let blocked=0;global.fetch=async()=>{blocked++;return new Response('',{status:403})};
+ await assert.rejects(createSourceReader(bucket)('https://source.example/a'));
+ await assert.rejects(createSourceReader(bucket)('https://source.example/b'));
+ assert.equal(blocked,1);
+ console.log('PASS: all eighteen UEFA fixture mappings, identity guards, stale fallback, health classification, shared cache and persistent source backoff.');
+})().catch(e=>{console.error(e);process.exitCode=1});
