@@ -1,3 +1,4 @@
+import {teamLogo,logoUrl} from '../../../lib/team-logo';
 import {getUEFAOfficials,applyUEFAOfficials} from '../../../lib/uefa-officials';
 import {getDFBOfficials,applyDFBOfficials} from '../../../lib/dfb-officials';
 import {getAdvanceOfficials,applyAdvanceOfficials} from '../../../lib/advance-officials';
@@ -29,7 +30,7 @@ export async function GET(req:Request){
   const d=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${id}`);
   if(String(d.header?.id)!==id&&!d.header?.competitions?.some((c:any)=>String(c.id)===id))throw Error('Некорректный матч');
   if(d.header?.league?.slug!==LEAGUES[league])throw Error('Другой турнир');
-  const c=d.header?.competitions?.[0],h=c?.competitors?.find((t:any)=>t.homeAway==='home'),a=c?.competitors?.find((t:any)=>t.homeAway==='away'),base={home:h?.team?.displayName,away:a?.team?.displayName,date:c?.date,state:c?.status?.type?.state,clock:c?.status?.displayClock,statusName:c?.status?.type?.name,statusDetail:c?.status?.type?.shortDetail,homeScore:h?.score,awayScore:a?.score,homeLogo:h?.team?.logo,awayLogo:a?.team?.logo};
+  const c=d.header?.competitions?.[0],h=c?.competitors?.find((t:any)=>t.homeAway==='home'),a=c?.competitors?.find((t:any)=>t.homeAway==='away'),base={home:h?.team?.displayName,away:a?.team?.displayName,date:c?.date,state:c?.status?.type?.state,clock:c?.status?.displayClock,statusName:c?.status?.type?.name,statusDetail:c?.status?.type?.shortDetail,homeScore:h?.score,awayScore:a?.score,homeLogo:teamLogo(h?.team)||logoUrl(cached?.homeLogo)||logoUrl(known?.homeLogo),awayLogo:teamLogo(a?.team)||logoUrl(cached?.awayLogo)||logoUrl(known?.awayLogo)};
   const officials=espnOfficials(d.gameInfo?.officials||d.header?.competitions?.[0]?.officials||[]),now=new Date(Date.now()).toISOString();
   const previous=[cached,known].filter(m=>m?.referee).sort((a,b)=>appointmentTier(b)-appointmentTier(a)||Date.parse(b.appointmentCheckedAt||b.checkedAt)-Date.parse(a.appointmentCheckedAt||a.checkedAt))[0];
   const officialPrevious=!!previous?.referee&&appointmentTier(previous)===2&&(!previous.date||!c?.date||Date.parse(previous.date)===Date.parse(c.date));

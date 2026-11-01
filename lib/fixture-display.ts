@@ -1,3 +1,4 @@
+import {logoUrl} from './team-logo';
 import {protectsAppointment,outranks,conflictNote,appointmentTier} from './referee-authority';
 
 export function latestMatchView(match:any,analysis:any){
@@ -10,6 +11,7 @@ export function latestMatchView(match:any,analysis:any){
 export function withAppointment(match:any,details:any){
  if(!details||(details.id&&String(details.id)!==String(match.id))||(details.league&&details.league!==match.league))return match;
  const out={...match};
+ for(const field of ['homeLogo','awayLogo']){const logo=logoUrl(details[field]);if(logo)out[field]=logo;}
  for(const field of ['venue','city','country'])if(details[field])out[field]=details[field];
  const protectedOfficial=protectsAppointment(match,details),higher=outranks(details,match);
  const older=protectedOfficial||(!higher&&match.referee&&Date.parse(details.appointmentCheckedAt||details.checkedAt||'')<Date.parse(match.appointmentCheckedAt||''));
