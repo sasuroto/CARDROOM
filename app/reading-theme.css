@@ -1,0 +1,132 @@
+/* Warm grey / parchment reading theme. Status colours and probability semantics stay separate. */
+:root {
+  color-scheme: light;
+  --bg: #e9e6df;
+  --white: #f8f6f1;
+  --surface: #dfdcd4;
+  --ink: #292d29;
+  --muted: #5b6058;
+  --line: #c9c6bc;
+  --line-strong: #8e9387;
+  --green: #7eaa78;
+  --accent: #7eaa78;
+  --accent-hover: #6f9a69;
+  --accent-soft: #dfe7d9;
+  --accent-ink: #293b29;
+  --control-active: #d4dfcd;
+  --control-active-hover: #c5d4bd;
+  --control-active-border: #7b8972;
+  --control-active-ink: #293b29;
+  --link: #365c43;
+  --focus: #365c43;
+  --highlight: #365c43;
+}
+body { background: var(--bg); font-weight: 500; }
+header, .dailyBar { background: var(--white); }
+aside { background: var(--bg); }
+button, input, select { color: var(--ink); }
+.categoryLabel { display: inline-flex; align-items: center; gap: 9px; line-height: 1.45; }
+.categoryIcon { display: inline-block; flex: 0 0 auto; width: 20px; height: 20px; vertical-align: middle; color: currentColor; }
+.categoryIcon--yellow { color: #856117; fill: #f0dea6; }
+.categoryIcon--red { color: #a4443e; fill: #f3d9d4; }
+/* Text labels are always visible: icons complement, never replace, an accessible name. */
+.primaryTabs button, .secondaryTabs button, .marketTabs button,
+.matchCenterTabs button, .reportJumps a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.primaryTabs .categoryIcon, .secondaryTabs .categoryIcon,
+.marketTabs .categoryIcon, .matchCenterTabs .categoryIcon, .reportJumps .categoryIcon { width: 17px; height: 17px; }
+.matchCenterTabs button[aria-selected=true] { background: var(--control-active); color: var(--ink); border-color: var(--control-active-border); }
+.matchCenterTabs button, .marketTabs button, .secondaryTabs button { min-height: 44px; }
+.factGrid { gap: 12px; }
+.factGrid > div { padding: 16px; border-radius: 12px; box-shadow: 0 2px 4px #373a3005; }
+.factGrid .factCategory { min-height: 42px; color: var(--ink); align-items: center; }
+.factCategory > .categoryIcon { width: 30px; height: 30px; padding: 5px; border-radius: 9px; background: var(--surface); }
+.factCategory > .categoryIcon--yellow { background: #efe3bf; }
+.factCategory > .categoryIcon--red { background: #efdad6; }
+.factGrid .factCategory > span { font-size: 13px; font-weight: 700; color: var(--ink); }
+.factGrid .factTeam > span { font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.factGrid .factTeam > b { font-size: 28px; letter-spacing: -.5px; }
+.factTeam small, .factTeam details { line-height: 1.6; font-weight: 500; }
+.factTeam summary { min-height: 30px; padding-block: 5px; cursor: pointer; }
+.factTeam a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.factTeam .factUnavailable { color: var(--muted); }
+.predictionTop .categoryLabel { font-size: 12px; font-weight: 700; letter-spacing: 0; color: var(--ink); }
+.predictionTop .categoryIcon { width: 23px; height: 23px; }
+.heroStatGrid .categoryLabel { display: flex; min-height: 32px; line-height: 1.4; }
+.sampleComparison tbody th .categoryLabel { display: flex; }
+.frequencyGrid .categoryLabel, .sampleFrequencyGrid .categoryLabel { color: var(--ink); }
+.matchCoverageGrid .categoryLabel { display: flex; gap: 10px; color: var(--ink); }
+.matchCoverageGrid .categoryIcon { width: 22px; height: 22px; }
+/* Remove near-black reading surfaces without changing data states or layout. */
+.dashboardHero, .matchOverview, .refHeroTop, .insight, .selectedMatches {
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+}
+.dashboardHero p, .dashboardCounter small, .insight p, .refHeroName p,
+.refCountry, .heroFixture small { color: var(--muted); }
+.dashboardHero .eyebrow, .dashboardHero h1 em, .dashboardCounter i, .insight > span,
+.refHeroTop .eyebrow, .appointmentLine a { color: var(--link); }
+.dashboardHero h1 { color: var(--ink); }
+.matchOverview .overviewEyebrow, .matchOverview .overviewTopline,
+.matchOverview .overviewTeam > small, .matchOverview .overviewVersus > span,
+.matchOverview .overviewVersus > small, .matchOverview .overviewDetails dt,
+.matchOverview .overviewDetails dd small, .matchOverview .overviewDetails a,
+.matchOverview .overviewSource, .matchOverview .overviewAppointmentCheck,
+.matchOverview .overviewOfficials summary { color: var(--muted); }
+.matchOverview .overviewVersus > strong, .matchOverview .overviewStatus,
+.matchOverview .overviewContext > summary > span { color: var(--ink); }
+.matchOverview .overviewStatus { background: var(--white); border-color: var(--line-strong); }
+.matchOverview .overviewDetails, .matchOverview .overviewSource,
+.matchOverview .overviewContext { border-color: var(--line); }
+.matchOverview .overviewCrest { background: var(--white); border-color: var(--line); }
+.matchOverview .matchWeather { color: var(--ink); border-color: var(--line); }
+.matchOverview .matchWeatherCompact { background: var(--white); border-color: var(--line); }
+.matchOverview .matchWeather .weatherHeading, .matchOverview .matchWeather .weatherMetrics span,
+.matchOverview .matchWeather .weatherNote, .matchOverview .matchWeather .weatherSource,
+.matchOverview .matchWeatherCompact .weatherFeels, .matchOverview .matchWeatherCompact .weatherMain span,
+.matchOverview .matchWeatherCompact .weatherDetails summary { color: var(--muted); }
+.matchOverview .matchWeatherCompact .weatherDetails { border-color: var(--line); }
+.matchOverview .matchWeather .sourceWarning { color: #815526; }
+.selectedMatchCard { background: var(--white); border-color: var(--line); }
+.selectedMatchOpen { color: var(--ink); }
+.selectedMatchesHead p, .selectedMatchesHead small, .selectedMatchMeta,
+.selectedMatchesPinned .selectedMatchesHead h2 span, .selectedFreshness, .selectedReferee,
+.selectedReferee b { color: var(--muted); }
+.selectedReferee { border-color: var(--line); }
+.selectedCrestFallback { background: var(--surface); color: var(--ink); }
+.selectedPanelActions button { background: var(--white); color: var(--ink); border-color: var(--line-strong); }
+.selectedMatchesNotice, .selectedFreshness.isStale { color: #815526; }
+.refDialog { background: var(--bg); box-shadow: 0 18px 70px #36393030; }
+.refDialog::backdrop, .searchDialog::backdrop { background: #3f413c80; backdrop-filter: blur(4px); }
+.heroClose { color: var(--ink); background: var(--white); }
+.calendarFreshness:not(.isStale), .notice, .sampleScopeCards > div { background: var(--surface); }
+.refDialog .dialogToolbar, .matchCenterTabs { background: var(--bg); }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--focus); outline-offset: 3px;
+}
+@media (max-width: 650px) {
+  .factGrid { gap: 10px; }
+  .factGrid > div { padding: 13px; }
+  .factGrid .factCategory { align-items: flex-start; gap: 7px; }
+  .factGrid .factCategory > span { font-size: 12px; padding-top: 3px; }
+  .factCategory > .categoryIcon { width: 27px; height: 27px; padding: 4px; }
+  .matchCenterTabs { padding-inline: 12px; }
+  .matchCenterTabs button { padding-inline: 11px; }
+  .factTeam summary { font-size: 11px; }
+}
+@media (max-width: 360px) {
+  .factGrid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+/* The original masthead used light text on charcoal. Keep its labels legible on parchment. */
+header .brand, header .headerRight, header .public { color: var(--ink); }
+header .brandSmall { color: var(--muted); }
+.dashboardHero .dashboardCounter { background: var(--accent-soft); color: var(--ink); }
+/* Earlier badge styling uses sage; dark text is required on that filled background. */
+.dashboardHero .eyebrow, .dashboardCounter i, .insight > span,
+.refHeroTop .eyebrow, .appointmentLine a { color: var(--ink); }
+header { color: var(--ink); }
+.refCurrentFixture { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.refCurrentFixture p { color: var(--muted); }
+.refResearchMetrics .categoryLabel, .tournamentCardStats .categoryLabel { display: flex; gap: 7px; }
+.tournamentCardStats .categoryIcon { width: 15px; height: 15px; }

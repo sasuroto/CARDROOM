@@ -1,0 +1,26 @@
+require('./qa.cjs');
+const assert=require('node:assert/strict'),fs=require('node:fs'),React=require('react'),{renderToStaticMarkup:render}=require('react-dom/server');
+const {default:Icon,categoryIconKey,CATEGORY_ICON_KEYS}=require('../app/category-icon.tsx');
+const {SAMPLE_METRICS,SAMPLE_FREQUENCIES}=require('../lib/sample-stats.ts');
+const Facts=require('../app/match-facts.tsx').default;
+for(const [key] of SAMPLE_METRICS){assert.ok(CATEGORY_ICON_KEYS.includes(key));const html=render(React.createElement(Icon,{category:key}));assert.ok(html.includes('data-category="'+key+'"'));assert.ok(html.includes('aria-hidden="true"')&&html.includes('focusable="false"'));}
+for(const [key] of SAMPLE_FREQUENCIES)assert.ok(CATEGORY_ICON_KEYS.includes(categoryIconKey(key)));
+const categories=['all','goals','corners','yellow','shots','other','referee','matches','standings','clubs','players','referees','overview','appointed','draws','research','calculator','lineups','events','analysis','sources','result','double','home','away','btts'];
+const expected={all:'all',goals:'goals',corners:'corners',yellow:'yellow',shots:'shots',other:'all',referee:'referee',matches:'calendar',standings:'table',clubs:'teams',players:'teams',referees:'referee',overview:'analysis',appointed:'calendar',draws:'result',research:'sources',calculator:'calculator',lineups:'teams',events:'events',analysis:'analysis',sources:'sources',result:'result',double:'result',home:'goals',away:'goals',btts:'goals'};
+for(const key of categories)assert.equal(categoryIconKey(key),expected[key],key+' uses the intended category, not fallback');
+for(const [key] of SAMPLE_FREQUENCIES)assert.equal(categoryIconKey(key),{goals25:'goals',btts:'goals',corners95:'corners',yellow45:'yellow'}[key]);
+const missing=render(React.createElement(Facts,{match:{id:'unknown',league:'unknown',home:'A',away:'B',date:'2027-01-01'},analysis:null,loading:false}));
+assert.equal((missing.match(/class="categoryIcon /g)||[]).length,10);
+assert.equal((missing.match(/Нет подтверждённых данных/g)||[]).length,20);
+assert.ok(!missing.includes('<b>0</b>'),'Icons never fill missing data with zero');
+for(const [,label] of SAMPLE_METRICS.filter(([key])=>key!=='fouls'))assert.ok(missing.includes(label));
+const css=fs.readFileSync('app/reading-theme.css','utf8');
+const colors=Object.fromEntries([...css.matchAll(/--([\w-]+):\s*(#[a-f0-9]{6});/g)].map(x=>[x[1],x[2]]));
+const lum=h=>h.slice(1).match(/../g).map(x=>parseInt(x,16)/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((s,x,i)=>s+x*[.2126,.7152,.0722][i],0);
+const ratio=(a,b)=>{const aa=lum(a),bb=lum(b);return(Math.max(aa,bb)+.05)/(Math.min(aa,bb)+.05)};
+for(const bg of ['bg','white','surface','accent-soft'])for(const fg of ['ink','muted','link'])assert.ok(ratio(colors[fg],colors[bg])>=4.5,`${fg}/${bg} needs AA contrast`);
+assert.ok(ratio(colors['control-active-ink'],colors['control-active'])>=4.5);
+assert.ok(ratio(colors.focus,colors.bg)>=3);
+assert.ok(ratio(colors.ink,colors.green)>=4.5, 'Dark labels stay readable on retained sage badges');
+assert.ok(css.includes('max-width: 360px')&&css.includes('prefers-reduced-motion'));
+console.log('PASS category icons: 10 facts, historical frequencies, navigation aliases, accessible labels, no invented zeros, AA palette and narrow viewport rules.');
