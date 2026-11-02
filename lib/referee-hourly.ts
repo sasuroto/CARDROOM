@@ -1,6 +1,6 @@
 import {appointmentCoverage} from './referee-monitor';
 import {readCache,writeCache} from './cache';
-import {LEAGUES,fixture,localDay} from './fixtures';
+import {LEAGUES,fixture,localDay,espn} from './fixtures';
 import {parseSeasonalReferees,normalizeRefereeSeason} from './referee-season';
 import seeds from './referees.json';
 import {REFEREE_INTERVAL,refereeUpdateKey} from './referee-updates';
@@ -11,6 +11,7 @@ import {GET as getMatch} from '../app/api/match/route';
 const MAX_MATCHES=24;
 const running=new Map<string,Promise<any>>();
 export async function hourlySource(bucket:R2Bucket,url:string){
+ if(['site.api.espn.com','site.web.api.espn.com'].includes(new URL(url).hostname))return Response.json(await espn(url,bucket));
  const host=new URL(url).hostname,key=`referee-updates/source-backoff/${host}.json`,backoff=await readCache(bucket,key);
  if(backoff?.until>Date.now())throw Error(`Источник ограничил запросы; повтор после ${new Date(backoff.until).toISOString()}`);
  const response=await fetch(url,{signal:AbortSignal.timeout(16000),headers:{Accept:url.includes('site.api.espn.com')?'application/json':'text/html'}});
@@ -76,7 +77,7 @@ async function refresh(league:string,bucket:R2Bucket){
   const result:any=await(await getMatch(new Request(`https://cardroom.invalid/api/match?league=${league}&id=${event.id}`))).json();
   const match={...event,...result,id:event.id,league,lastAttemptAt:result.lastAttemptAt||new Date(Date.now()).toISOString()};results.set(event.id,match);
   if(result.error)errors.push(`${event.id}: ${result.error}`);
-  if(result.rateLimited){await writeCache(bucket,'referee-updates/source-backoff/site.api.espn.com.json',{until:result.retryAfter||Date.now()+REFEREE_INTERVAL});break}
+  if(result.rateLimited)break;
  }
  const matches=events.map(e=>results.get(e.id)||{...e,...old.get(e.id),id:e.id,league});
  const statsBackoff=await readCache(bucket,`referee-updates/source-backoff/${new URL(config.source).hostname}.json`);

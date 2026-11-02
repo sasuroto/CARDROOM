@@ -2,8 +2,8 @@ const fs=require('node:fs'),ts=require('typescript'),assert=require('node:assert
 for(const ext of ['.ts','.tsx'])require.extensions[ext]=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,file);
 const {mergeSelectedMatch,selectedMatchStatus}=require('../app/selected-matches.tsx');
 let checks=0;const check=(value,message)=>{assert.ok(value,message);checks++};
-const saved={id:'12345',league:'epl',home:'Home',away:'Away',state:'in',homeScore:'1',awayScore:'0',clock:'61′',referee:'Saved Referee',appointmentCheckedAt:'2026-10-31T12:00:00.000Z',stale:false};
-let next=mergeSelectedMatch(saved,{id:'12345',league:'epl',state:'in',homeScore:'2',awayScore:'0',clock:'72′',referee:'Current Referee',appointmentCheckedAt:'2026-10-31T13:00:00.000Z'});
+const saved={id:'12345',league:'epl',home:'Home',away:'Away',state:'in',homeScore:'1',awayScore:'0',clock:'61′',fetchedAt:'2026-10-31T12:00:00.000Z',referee:'Saved Referee',appointmentCheckedAt:'2026-10-31T12:00:00.000Z',stale:false};
+let next=mergeSelectedMatch(saved,{id:'12345',league:'epl',state:'in',homeScore:'2',awayScore:'0',clock:'72′',fetchedAt:'2026-10-31T13:00:00.000Z',referee:'Current Referee',appointmentCheckedAt:'2026-10-31T13:00:00.000Z'});
 check(next.homeScore==='2'&&next.awayScore==='0'&&next.clock==='72′','live score and clock advance');
 check(next.referee==='Current Referee'&&next.appointmentCheckedAt==='2026-10-31T13:00:00.000Z','confirmed referee and appointment date advance');
 next=mergeSelectedMatch(next,{id:'12345',league:'epl',state:'post',homeScore:null,awayScore:undefined,referee:null,stale:true,error:'offline'});

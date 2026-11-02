@@ -5,7 +5,7 @@ const React=require('react'),favorites=require('../app/favorites.tsx');
 const hooks={useState:React.useState,useRef:React.useRef,useEffect:React.useEffect},originalFavorites=favorites.useFavorites;
 const names=['window','document','navigator','localStorage','fetch','setTimeout','clearTimeout','setInterval','clearInterval'];
 const descriptors=Object.fromEntries(names.map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)]));
-const stored={'cardroom:selected-panel:expanded':'true'},timeouts=new Map(),intervals=new Map();let timerId=0,calls=0,fail=false,checks=0;
+const stored={'cardroom:selected-panel:expanded':'true'},timeouts=new Map(),intervals=new Map();let timerId=0,calls=0,fail=false,checks=0,limitedUntil=0;
 const check=(value,label)=>{assert.ok(value,label);checks++};
 function target(extra={}){const listeners=new Map();return {...extra,listeners,addEventListener:(type,fn)=>{if(!listeners.has(type))listeners.set(type,new Set());listeners.get(type).add(fn)},removeEventListener:(type,fn)=>listeners.get(type)?.delete(fn),emit:(type,event={})=>{for(const fn of [...(listeners.get(type)||[])])fn(event)},count:()=>[...listeners.values()].reduce((n,s)=>n+s.size,0)}}
 const windowMock=target(),documentMock=target({visibilityState:'visible'}),navigatorMock={onLine:false};
@@ -15,7 +15,7 @@ set('localStorage',{getItem:k=>stored[k]??null,setItem:(k,v)=>stored[k]=String(v
 set('setTimeout',(fn,ms)=>{const id=++timerId;timeouts.set(id,{fn,ms});return id});set('clearTimeout',id=>timeouts.delete(id));
 set('setInterval',(fn,ms)=>{const id=++timerId;intervals.set(id,{fn,ms});return id});set('clearInterval',id=>intervals.delete(id));
 const providerStamp=new Date(Date.now()).toISOString();
-set('fetch',async()=>{calls++;if(fail)throw Error('mock offline');return {ok:true,json:async()=>({id:'888900111',league:'epl',home:'Home',away:'Away',state:'in',homeScore:'1',awayScore:'0',fetchedAt:providerStamp})}});
+set('fetch',async()=>{calls++;if(fail)throw Error('mock offline');if(limitedUntil)return {ok:true,json:async()=>({id:'888900111',league:'epl',statusStale:true,statusError:'HTTP 429',lastAttemptAt:new Date(Date.now()).toISOString(),retryAfter:limitedUntil})};return {ok:true,json:async()=>({id:'888900111',league:'epl',home:'Home',away:'Away',state:'in',homeScore:'1',awayScore:'0',fetchedAt:providerStamp})}});
 favorites.useFavorites=()=>({items:[{kind:'match',id:'epl:888900111',league:'epl',label:'Home — Away'}],ready:true,storageError:false,toggle:()=>{}});
 let cells=[],cursor=0,queue=[];
 React.useState=initial=>{const i=cursor++;if(!cells[i])cells[i]={value:typeof initial==='function'?initial():initial};return [cells[i].value,v=>cells[i].value=typeof v==='function'?v(cells[i].value):v]};
@@ -60,5 +60,24 @@ const cleanup=()=>{for(const cell of cells)cell?.cleanup?.();cells=[];queue=[]};
  navigatorMock.onLine=false;render();tree=render();
  check(tree.props.className.includes('isCompact'),'remount honors Escape-saved preference');
  cleanup();check(windowMock.count()===0&&documentMock.count()===0,'repeated mount/unmount leaves no listeners');
+ // Regression for the real hosted first-load failure: no prior status must not
+ // choose the idle 15-minute backoff. No invented score while recovering.
+ navigatorMock.onLine=true;fail=true;render();await flush();tree=render();
+ check(text(tree).includes('Обновление недоступно'),'cold failed first response remains explicitly unavailable');
+ check(nodes(tree).filter(n=>n.type==='strong').every(n=>text(n)===''),'cold failure never invents zero scores');
+ const firstRetry=[...timeouts.values()][0];
+ check(firstRetry.ms>=48000&&firstRetry.ms<=72000,'unknown first response retries in about a minute, not fifteen');
+ check(!nodes(tree).find(n=>text(n)==='Обновить')?.props.disabled,'manual recovery is available after initial failure');
+ fail=false;firstRetry.fn();await flush();tree=render();
+ check(nodes(tree).filter(n=>n.type==='strong').map(text).join(',')==='1,0','scheduled recovery fills panel with real returned values');
+ const retry=()=>nodes(tree).find(n=>n.type==='button'&&text(n)==='Обновить');
+ const beforeManual=calls;retry().props.onClick();await flush();tree=render();
+ check(calls===beforeManual+1,'manual recovery triggers one request');
+ limitedUntil=Date.now()+3600000;retry().props.onClick();await flush();tree=render();
+ check(retry().props.disabled,'manual button is disabled throughout provider cooldown');
+ const limitedCalls=calls;windowMock.emit('focus');retry().props.onClick();await flush();
+ check(calls===limitedCalls,'neither focus nor direct retry handler bypasses Retry-After');
+ check([...timeouts.values()].every(t=>t.ms>3599000),'cooldown deadline takes precedence over short recovery cadence');
+ cleanup();
  console.log(`PASS ${checks} panel connectivity assertions: offline/online, honest freshness, Escape preference and lifecycle cleanup.`);
  }finally{cleanup();Object.assign(React,hooks);favorites.useFavorites=originalFavorites;for(const key of names){if(descriptors[key])Object.defineProperty(globalThis,key,descriptors[key]);else delete globalThis[key]}}})().catch(error=>{console.error(error);process.exitCode=1});

@@ -1,8 +1,9 @@
+import {mergeMatchStatus,statusCheckedAt} from './match-status-evidence';
 import {logoUrl} from './team-logo';
 import {protectsAppointment,outranks,conflictNote,appointmentTier} from './referee-authority';
 
 export function latestMatchView(match:any,analysis:any){
- const analysisTime=Date.parse(analysis?.checkedAt||''),calendarTime=Date.parse(match?.checkedAt||'');
+ const analysisTime=Date.parse(analysis?.checkedAt||''),calendarTime=Date.parse(statusCheckedAt(match)||'');
  const useAnalysis=!!analysis?.state&&Number.isFinite(analysisTime)&&(!Number.isFinite(calendarTime)||analysisTime>=calendarTime);
  const home=analysis?.teams?.find((t:any)=>t.side==='home'),away=analysis?.teams?.find((t:any)=>t.side==='away');
  return {state:useAnalysis?analysis.state:match.state,homeScore:useAnalysis?home?.score:match.homeScore,awayScore:useAnalysis?away?.score:match.awayScore,clock:useAnalysis?analysis.clock:null};
@@ -10,7 +11,12 @@ export function latestMatchView(match:any,analysis:any){
 
 export function withAppointment(match:any,details:any){
  if(!details||(details.id&&String(details.id)!==String(match.id))||(details.league&&details.league!==match.league))return match;
- const out={...match};
+ const out={...mergeMatchStatus(match,details)};
+ const candidate=details.dossier,prior=out.dossier;
+ const sameKickoff=(d:any)=>d&&d.id===String(match.id)&&d.league===match.league&&Number.isFinite(Date.parse(d.kickoff||''))&&Date.parse(d.kickoff)===Date.parse(out.date||match.date||'');
+ if(!sameKickoff(prior))out.dossier=null;
+ if(sameKickoff(candidate)&&Number.isFinite(Date.parse(candidate.fetchedAt||''))&&(!out.dossier||Date.parse(candidate.fetchedAt)>=Date.parse(typeof out.dossier==='object'&&'fetchedAt' in out.dossier?String(out.dossier.fetchedAt||''):''))){out.dossier=candidate;out.dossierError=details.dossierError||null;}
+ else if(details.dossierError)out.dossierError=details.dossierError;
  for(const field of ['homeLogo','awayLogo']){const logo=logoUrl(details[field]);if(logo)out[field]=logo;}
  for(const field of ['venue','city','country'])if(details[field])out[field]=details[field];
  const protectedOfficial=protectsAppointment(match,details),higher=outranks(details,match);

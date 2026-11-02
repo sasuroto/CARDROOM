@@ -1,3 +1,5 @@
+import {buildMatchDossier} from '../../../lib/match-dossier';
+import {normalizeStatusSnapshot} from '../../../lib/match-status-evidence';
 import {teamLogo,logoUrl} from '../../../lib/team-logo';
 import {getUEFAOfficials,applyUEFAOfficials} from '../../../lib/uefa-officials';
 import {getDFBOfficials,applyDFBOfficials} from '../../../lib/dfb-officials';
@@ -22,12 +24,12 @@ export async function GET(req:Request){
  const advance=await getAdvanceOfficials(league,bucket);
  const finish=(match:any)=>{const m=applyCurrentAppointment(uefa?applyUEFAOfficials(match,uefa):match);return applyAdvanceOfficials(dfb?applyDFBOfficials(m,dfb):m,advance)};
  const enrich=(match:any)=>finish(official?applyPLOfficials({...match,id,league},official):{...match,id,league});
- const ttl=matchTtl(cached);
- if(cached&&Date.now()-Date.parse(cached.fetchedAt)<ttl)return Response.json(enrich(cached),{headers:{'Cache-Control':'no-store'}});
+ const ttl=matchTtl(cached),needsEvidence=q.get('evidence')==='1';
+ if(cached&&(!needsEvidence||Object.prototype.hasOwnProperty.call(cached,'dossier')&&typeof cached.statusStale==='boolean')&&Date.now()-Date.parse(cached.fetchedAt)<ttl)return Response.json(enrich(cached),{headers:{'Cache-Control':'no-store'}});
  try{
   const backoff=await readCache(bucket,'referee-updates/source-backoff/site.api.espn.com.json');
   if(backoff?.until>Date.now())throw Object.assign(Error('HTTP 429'),{retryAfter:backoff.until});
-  const d=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${id}`);
+  const d=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${id}`,bucket);
   if(String(d.header?.id)!==id&&!d.header?.competitions?.some((c:any)=>String(c.id)===id))throw Error('Некорректный матч');
   if(d.header?.league?.slug!==LEAGUES[league])throw Error('Другой турнир');
   const c=d.header?.competitions?.[0],h=c?.competitors?.find((t:any)=>t.homeAway==='home'),a=c?.competitors?.find((t:any)=>t.homeAway==='away'),base={home:h?.team?.displayName,away:a?.team?.displayName,date:c?.date,state:c?.status?.type?.state,clock:c?.status?.displayClock,statusName:c?.status?.type?.name,statusDetail:c?.status?.type?.shortDetail,homeScore:h?.score,awayScore:a?.score,homeLogo:teamLogo(h?.team)||logoUrl(cached?.homeLogo)||logoUrl(known?.homeLogo),awayLogo:teamLogo(a?.team)||logoUrl(cached?.awayLogo)||logoUrl(known?.awayLogo)};
@@ -37,12 +39,16 @@ export async function GET(req:Request){
   const oldAppointment=(!officials.referee||officialPrevious)&&previous?.referee;
   const protectedOfficial=officialPrevious,officialStale=protectedOfficial&&(!!previous.appointmentStale||previous.currentVerified===false);
   const result={...(oldAppointment?previous:{}),...Object.fromEntries(Object.entries(base).filter(([,value])=>value!==undefined)),id,league,...(oldAppointment?{}:officials),source:oldAppointment?(previous.appointmentSource||previous.source):d.header?.links?.find((l:any)=>l.rel?.includes('summary'))?.href||`https://www.espn.com/soccer/match/_/gameId/${id}`,checkedAt:oldAppointment?(previous.appointmentCheckedAt||previous.checkedAt):now,appointmentCheckedAt:oldAppointment?(previous.appointmentCheckedAt||previous.checkedAt):now,appointmentSource:oldAppointment?(previous.appointmentSource||previous.source):d.header?.links?.find((l:any)=>l.rel?.includes('summary'))?.href||`https://www.espn.com/soccer/match/_/gameId/${id}`,fetchedAt:now,lastAttemptAt:now,currentVerified:protectedOfficial?!officialStale:!!officials.referee&&!oldAppointment,appointmentStale:protectedOfficial?officialStale:!!oldAppointment,appointmentConflict:protectedOfficial&&officials.referee?conflictNote(previous,{...officials,appointmentSource:'https://www.espn.com/soccer/'}):null,...venueFields(d.gameInfo?.venue||d.header?.competitions?.[0]?.venue),appointmentType:protectedOfficial?previous.appointmentType:oldAppointment?'Сохранённое назначение':'ESPN · данные матча',...(oldAppointment&&!protectedOfficial?{stale:true,error:'В свежем ответе нет имени арбитра. Сохранённое назначение повторно не подтверждено.'}:{})};
-  const enriched=enrich(result);await writeCache(bucket,key,enriched);return Response.json(enriched,{headers:{'Cache-Control':'no-store'}})
+  let dossier=cached?.dossier&&Date.parse(cached.dossier.kickoff||'')===Date.parse(result.date||'')?cached.dossier:null,dossierError:string|null=null;
+  try{dossier=buildMatchDossier(d,{id,league,fetchedAt:now},cached?.dossier)}catch{dossierError='Источник не передал согласованные данные состава и событий; сохранённое досье повторно не подтверждено.'}
+  const statusSource=`https://www.espn.com/soccer/match/_/gameId/${id}`;
+  const validStatus=['pre','in','post'].includes(base.state)&&h?.team?.displayName&&a?.team?.displayName&&h.team.displayName!==a.team.displayName&&(!h.team.id||!a.team.id||String(h.team.id)!==String(a.team.id));
+  const statusSnapshot=normalizeStatusSnapshot(validStatus?base:cached);
+  const enriched=enrich({...result,...statusSnapshot,dossier,dossierError,statusCheckedAt:validStatus?now:cached?.statusCheckedAt||cached?.fetchedAt,statusLastAttemptAt:now,statusStale:!validStatus,statusError:validStatus?null:'Источник не передал согласованный статус и команды матча.',statusSource:validStatus?statusSource:cached?.statusSource||null});await writeCache(bucket,key,enriched);return Response.json(enriched,{headers:{'Cache-Control':'no-store'}})
  }catch(error){
   const now=new Date(Date.now()).toISOString(),rateLimited=String(error).includes('HTTP 429');
   logSourceError('site.api.espn.com/summary',error,{id,league,rateLimited});
   const fallback=cached||known,retryAfter=(error as any)?.retryAfter||Date.now()+60*60*1000;
-  if(rateLimited)await writeCache(bucket,'referee-updates/source-backoff/site.api.espn.com.json',{until:retryAfter});
-  return Response.json(enrich({...(fallback?{...fallback,stale:true,currentVerified:false}:{}),lastAttemptAt:now,...(rateLimited?{rateLimited:true,retryAfter}:{}),...(!fallback?.referee?{referee:null}:{}),error:'Источник данных матча сейчас недоступен'+(rateLimited?' (HTTP 429)':'')}),{headers:{'Cache-Control':'no-store'}})
+  return Response.json(enrich({...(fallback?{...fallback,stale:true,currentVerified:false}:{}),lastAttemptAt:now,statusCheckedAt:fallback?.statusCheckedAt||fallback?.fetchedAt,statusLastAttemptAt:now,statusStale:true,statusError:'Не удалось обновить счёт и статус матча.',...(rateLimited?{rateLimited:true,retryAfter,...((error as {cooldownPersisted?:boolean})?.cooldownPersisted===false?{cooldownPersisted:false}:{})}:{}),...(!fallback?.referee?{referee:null}:{}),error:'Источник данных матча сейчас недоступен'+(rateLimited?' (HTTP 429)':'')}),{headers:{'Cache-Control':'no-store'}})
  }
 }

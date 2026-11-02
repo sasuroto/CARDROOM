@@ -1,0 +1,47 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true,resolveJsonModule:true}}).outputText,f);
+const {withAppointment}=require('../lib/fixture-display.ts'),{panelStatus}=require('../lib/match-status.ts'),{matchTtl}=require('../lib/referee-authority.ts');
+let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
+const row={id:'401000001',league:'segunda',home:'Real Valladolid',away:'Leganés',date:'2026-11-02T17:30:00Z',state:'pre',statusName:'STATUS_SCHEDULED',checkedAt:'2026-11-02T17:20:00Z'};
+const live={id:'401000001',league:'segunda',state:'in',statusName:'STATUS_FIRST_HALF',statusDetail:"4'",clock:"4'",homeScore:'0',awayScore:'1',fetchedAt:'2026-11-02T17:34:00Z'};
+const merged=withAppointment(row,live);
+check(merged.state==='in'&&merged.homeScore==='0'&&merged.awayScore==='1'&&merged.clock==="4'",'fresh detail status and score reach the card');
+check(panelStatus(merged,Date.parse('2026-11-02T17:34:00Z')).label==='LIVE','card shows LIVE');
+check(withAppointment(row,{...live,fetchedAt:'2026-11-02T17:10:00Z'}).state==='pre','older detail does not override newer calendar row');
+check(withAppointment(row,{...live,stale:true}).state==='pre','stale fallback does not override status');
+check(withAppointment(row,{...live,id:'999'}).state==='pre','other match ignored');
+check(matchTtl({state:'pre',date:'2026-11-02T17:30:00Z'},Date.parse('2026-11-02T17:33:00Z'))===60000,'server cache 60 s around kickoff');
+check(matchTtl({state:'pre',date:'2026-11-02T17:30:00Z'},Date.parse('2026-11-02T16:00:00Z'))===300000,'5 min earlier on match day');
+console.log(`PASS ${n} detail live-status assertions: fresh status/score merged, kickoff guard, 60 s cache near kickoff.`);
+// Successive merge cannot replay an older score, even with a referee/calendar
+// checkedAt which predates the newer football snapshot.
+const later={...live,fetchedAt:'2026-11-02T17:50:00Z',homeScore:'1',clock:"20'"};
+const first=withAppointment({...row,fetchedAt:row.checkedAt},later);
+const rollback=withAppointment(first,{...live,fetchedAt:'2026-11-02T17:40:00Z',homeScore:'0'});
+check(first.statusCheckedAt===later.fetchedAt&&first.checkedAt===row.checkedAt,'score timestamp advances independently of appointment/calendar timestamp');
+check(rollback.homeScore==='1'&&rollback.statusCheckedAt===later.fetchedAt,'older second response cannot roll back score');
+// Recovery must not inherit stale:true as the status freshness marker.
+const recovered=withAppointment({...row,stale:true,appointmentStale:true,fetchedAt:row.checkedAt},later);
+const visible=withAppointment(row,recovered);
+check(recovered.stale&&recovered.statusStale===false&&visible.state==='in','fresh status recovers through nested merge despite retained appointment/global stale');
+check(visible.homeScore==='1'&&visible.statusCheckedAt===later.fetchedAt,'outer merge preserves recovered score and its provenance');
+const explicit={...later,statusCheckedAt:later.fetchedAt,statusLastAttemptAt:later.fetchedAt,statusStale:false,statusSource:'https://www.espn.com/soccer/match/_/gameId/401000001',stale:true,appointmentStale:true,error:'Appointment unconfirmed'};
+const statusFresh=withAppointment(row,explicit);
+check(statusFresh.state==='in'&&statusFresh.statusStale===false,'appointment outage cannot hide an explicitly fresh score');
+const lost=withAppointment(statusFresh,{...explicit,statusLastAttemptAt:'2026-11-02T17:55:00Z',statusStale:true,statusError:'offline'});
+check(lost.homeScore==='1'&&lost.statusStale&&lost.statusCheckedAt===later.fetchedAt,'outage retains last confirmed score without advancing observation timestamp');
+check(withAppointment(row,lost).homeScore==='1'&&withAppointment(row,lost).statusStale,'outer render retains newer known score with visible stale metadata');
+const final=withAppointment(lost,{...explicit,statusCheckedAt:'2026-11-02T18:00:00Z',statusLastAttemptAt:'2026-11-02T18:00:00Z',state:'post',statusName:'STATUS_FINAL',homeScore:'2',statusStale:false,statusError:null});
+check(final.homeScore==='2'&&!final.statusStale&&final.statusError===null,'second recovery clears only status failure and accepts newer final');
+const partial=withAppointment(final,{...explicit,statusCheckedAt:'2026-11-02T18:01:00Z',statusLastAttemptAt:'2026-11-02T18:01:00Z',state:'post',statusName:'STATUS_FINAL',homeScore:undefined});
+check(partial.homeScore===null,'missing current score is unknown, not old value with new timestamp');
+check(withAppointment(row,{...explicit,league:'ucl'}).state==='pre','wrong tournament status cannot leak through');
+const {latestMatchView}=require('../lib/fixture-display.ts');
+check(latestMatchView(final,{state:'in',checkedAt:'2026-11-02T17:30:00Z',teams:[{side:'home',score:'0'}]}).state==='post','older analysis cannot override new status via old calendar timestamp');
+console.log(`PASS ${n} detail status and provenance assertions including both uploaded-patch regressions.`);
+const {normalizeScore,normalizeStatusSnapshot}=require('../lib/match-status-evidence.ts');
+for(const value of [{},[],false,-1,NaN,Infinity,'-2','x','1.5'])check(normalizeScore(value)===null,'corrupt scores are unknown, never a React object or invented zero');
+check(normalizeScore(0)===0&&normalizeScore('2')==='2','real zero and valid digit score preserved');
+const corrupt=normalizeStatusSnapshot({state:'in',homeScore:{unexpected:1},awayScore:'0',clock:{x:1},statusName:['STATUS_FINAL']});
+check(corrupt.homeScore===null&&corrupt.clock===null&&corrupt.statusName===null&&!!corrupt.statusWarning,'invalid provider types are safely normalized with partial-score warning');
+console.log(`PASS ${n} detail/provenance/normalization assertions.`);

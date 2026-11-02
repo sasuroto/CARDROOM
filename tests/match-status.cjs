@@ -9,6 +9,16 @@ check(S.panelStatus({state:'post',statusName:'STATUS_FINAL_AET'}).label.includes
 check(S.panelStatus({state:'in',statusName:'STATUS_SUSPENDED'}).label==='Приостановлен','suspended');
 check(S.panelStatus({state:'post',statusName:'STATUS_POSTPONED'}).label==='Перенесён','postponed');
 check(S.panelStatus({state:'post',statusName:'STATUS_CANCELED'}).label==='Отменён','cancelled');
+const kick=Date.parse('2026-11-02T17:30:00Z');
+check(S.panelStatus({state:'pre',statusName:'STATUS_SCHEDULED',date:'2026-11-02T17:30:00Z'},kick-60000).label==='Предстоит','before kickoff: upcoming');
+const overdue=S.panelStatus({state:'pre',statusName:'STATUS_SCHEDULED',date:'2026-11-02T17:30:00Z'},kick+3*60000);
+check(overdue.label!=='Предстоит'&&overdue.kind==='unknown'&&overdue.polls,'kickoff passed but provider still pre: not upcoming, keeps polling');
+const fixture={state:'pre',statusName:'STATUS_SCHEDULED',date:'2026-11-02T17:30:00Z'};
+check(S.panelStatus(fixture,kick+S.KICKOFF_ACTIVE_WINDOW).polls,'six-hour boundary still polls');
+const historic=S.panelStatus(fixture,kick+S.KICKOFF_ACTIVE_WINDOW+1);
+check(historic.kind==='unknown'&&!historic.polls&&!historic.showScore,'past recovery window: unknown, not invented final, slow polling');
+check(S.nextDelay({anyLive:historic.polls,anySoon:false,failures:0,now:kick+7*3600000})===S.POLL.idle,'old scheduled fixture uses ten-minute idle, not 30-second loop');
+check(!S.panelStatus({...fixture,date:'2020-01-01T00:00:00Z'},kick).polls,'historical stale schedule stays bounded');
 const now=1e12;
 check(S.nextDelay({anyLive:true,anySoon:false,failures:0,now})===30000,'live every 30 seconds');
 check(S.nextDelay({anyLive:true,anySoon:false,failures:1,now,jitter:.5})===60000,'first failure doubles delay');

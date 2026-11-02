@@ -1,0 +1,35 @@
+const fs=require('fs'),Module=require('module'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,f);
+const env={},load=Module._load;Module._load=function(id,...args){return id==='cloudflare:workers'?{env}:load.call(this,id,...args)};
+const values=new Map();env.BUCKET={get:async key=>values.has(key)?{json:async()=>structuredClone(values.get(key))}:null,put:async(key,value)=>values.set(key,JSON.parse(value))};
+let now=Date.parse('2026-11-02T17:34:00Z'),missingRef=false,invalid=false,offline=false,score='1';Date.now=()=>now;
+const fixture='888900112';
+global.fetch=async()=>{if(offline)throw Error('offline');return Response.json({header:{id:fixture,league:{slug:'por.1'},competitions:[{id:fixture,date:'2026-11-02T17:30:00Z',status:{type:{state:invalid?undefined:'in',name:'STATUS_FIRST_HALF'},displayClock:"4'"},competitors:[{homeAway:'home',team:{id:'1',displayName:'Home'},score},{homeAway:'away',team:{id:'2',displayName:'Away'},score:'0'}]}]},gameInfo:{officials:missingRef?[]:[{displayName:'Example Referee',position:'referee'}]}})};
+const Match=require('../app/api/match/route.ts'),{selectedMatchFreshness}=require('../app/selected-matches.tsx');
+const request=async()=>await(await Match.GET(new Request('https://site/api/match?id='+fixture+'&league=primeira'))).json();
+let n=0;const check=(x,message)=>{assert.ok(x,message);n++};
+(async()=>{
+ const first=await request();check(first.statusCheckedAt===new Date(now).toISOString()&&!first.statusStale,'successful status observation has its own timestamp');
+ now+=120000;missingRef=true;score='2';const second=await request();
+ check(second.stale&&second.appointmentStale&&second.statusStale===false&&second.homeScore==='2','fresh score independent of retained stale referee');
+ check(second.appointmentCheckedAt===first.appointmentCheckedAt&&second.statusCheckedAt!==first.statusCheckedAt,'status refresh cannot advance referee provenance');
+ check(selectedMatchFreshness(second,now).fresh,'panel uses status freshness instead of appointment stale');
+ check(second.statusSource.includes('espn.com'),'score source is ESPN rather than retained appointment source');
+ now+=120000;invalid=true;score='0';const malformed=await request();
+ check(malformed.statusStale&&malformed.statusCheckedAt===second.statusCheckedAt&&malformed.homeScore==='2','malformed status preserves prior values/time without relabelling as fresh');
+ now+=120000;offline=true;const lost=await request();
+ check(lost.statusStale&&lost.statusCheckedAt===second.statusCheckedAt&&lost.statusLastAttemptAt!==lost.statusCheckedAt,'outage changes last attempt, never original observation');
+ check(!selectedMatchFreshness(lost,now).fresh,'failed source is not marked fresh');
+ now+=120000;offline=false;invalid=false;score='3';const recovered=await request();
+ check(!recovered.statusStale&&recovered.statusError===null&&recovered.homeScore==='3','source recovery clears status failure and advances score');
+ check(recovered.statusCheckedAt===new Date(now).toISOString()&&recovered.appointmentCheckedAt===first.appointmentCheckedAt,'recovery retains separate evidence clocks');
+ now+=120000;score={unexpected:'object'};const corrupt=await request();
+ check(corrupt.homeScore===null&&!!corrupt.statusWarning,'corrupt provider score normalizes to unknown with warning, never an object React child');
+ // Calendar transport failure must not inherit an explicit false from its cache.
+ values.set('fixtures/v9/2026-11-02/primeira/day.json',{checkedAt:'2000-01-01T00:00:00Z',events:[recovered],errors:[],date:'2026-11-02'});
+ offline=true;const Calendar=require('../app/api/matches/route.ts');const calendar=await(await Calendar.GET(new Request('https://site/api/matches?date=2026-11-02&league=primeira'))).json();
+ const fallback=calendar.events.find(item=>item.id===fixture);
+ check(fallback?.statusStale&&fallback.statusCheckedAt===recovered.statusCheckedAt,'calendar outage marks explicit status stale and retains original observation time');
+ check(!selectedMatchFreshness(fallback,now).fresh,'calendar fallback never appears fresh despite prior explicit false');
+ console.log(`PASS ${n} status evidence API assertions: independent appointment freshness, malformed source, outage and recovery.`);
+})().catch(error=>{console.error(error);process.exitCode=1});

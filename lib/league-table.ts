@@ -36,4 +36,4 @@ export function parseLeagueTable(doc:any,league:string,season:number,checkedAt=n
  visit(doc);if(!result.groups.length&&!Array.isArray(doc.children))throw Error('Некорректная таблица');
  result.teams=[...teams.values()];result.checkedAt=checkedAt;return result;
 }
-export function loadLeagueTable(bucket:R2Bucket|undefined,league:string,season:number){return cachedLeagueData(bucket,`league-table/v1/${league}/${season}.json`,LEAGUE_DATA_TTL,async()=>parseLeagueTable(await espn(`https://site.web.api.espn.com/apis/v2/sports/soccer/${LEAGUES[league]}/standings?season=${season}`),league,season),()=>emptyLeagueTable(league,season))}
+export function loadLeagueTable(bucket:R2Bucket|undefined,league:string,season:number){return cachedLeagueData(bucket,`league-table/v1/${league}/${season}.json`,LEAGUE_DATA_TTL,async()=>parseLeagueTable(await espn(`https://site.web.api.espn.com/apis/v2/sports/soccer/${LEAGUES[league]}/standings?season=${season}`,bucket),league,season),()=>emptyLeagueTable(league,season))}

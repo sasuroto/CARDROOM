@@ -1,3 +1,4 @@
+import {KICKOFF_ACTIVE_WINDOW} from './match-status';
 export type AppointmentTier=0|1|2;
 export type AppointmentState='confirmed'|'unconfirmed'|'stale'|'unavailable'|'completed';
 
@@ -45,10 +46,14 @@ export function matchTtl(match:any,now=Date.now()){
  if(match.state==='in')return 30000;
  if(match.state==='post')return 10*60000;
  const kickoff=Date.parse(match.date||''),toKickoff=Number.isFinite(kickoff)?kickoff-now:Infinity;
+ // Historical 'pre' is unknown, not live. Retain slow refresh so a later
+ // provider correction is still discovered without an endless one-minute loop.
+ if(toKickoff < -KICKOFF_ACTIVE_WINDOW)return 30*60000;
+ if(toKickoff<15*60000)return 60000;
  if(toKickoff<3*3600000)return 5*60000;
  if(match.referee&&appointmentTier(match)===2&&!match.appointmentStale)return 60*60000;
  if(match.referee)return 15*60000;
- return toKickoff>48*3600000?30*60000:60000;
+ return toKickoff>48*3600000?30*60000:15*60000;
 }
 
 export function logSourceError(source:string,error:unknown,context:Record<string,unknown>={}){
