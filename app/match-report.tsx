@@ -9,6 +9,7 @@ import MatchOverview from './match-overview';
 import {useMatchDetails} from './use-match-details';
 import {withAppointment} from '../lib/fixture-display';
 import MatchSamples from './match-samples';
+import DotPredict from './dot-predict';
 import {currentMatch} from '../lib/current-context';
 import {findRefereeRow} from '../lib/referee-match';
 import playerResearch from '../lib/player-research.json';
@@ -62,6 +63,7 @@ export default function MatchReport({match:inputMatch,data,profile,showOverview=
  return <section className="matchReport">{showOverview&&<MatchOverview match={{...match,venue:match.venue||analysis?.venue,city:match.city||analysis?.city,country:match.country||analysis?.country}} leagueName={l?.name}/>}<div className="reportHeader"><span className="eyebrow">02 / РАЗБОР МАТЧА</span><div className="liveStrip"><b>{home?.score!=null&&away?.score!=null?home.score+' : '+away.score:pre?'До начала матча':'Счёт не подтверждён'}</b><span>{live?'В игре':analysis?.state==='post'?'Завершён':pre?'Предматчевый анализ':'Статус уточняется'}{analysis?.clock?' · '+analysis.clock:''}</span><span>{analysis?.checkedAt?'Проверено '+new Date(analysis.checkedAt).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+' · UTC+4':'Загрузка источника'}</span></div></div>
  {loading&&<p role="status">Собираю матчи команд, удары и составы…</p>}{error&&<div className="notice">{error} {analysis?'Показан предыдущий срез.':''}</div>}{analysis?.stale&&<div className="notice">Показан сохранённый срез на указанную дату; текущие изменения ещё не подтверждены.</div>}
  <MatchFacts match={match} analysis={analysis} loading={loading}/>
+ <DotPredict match={match} analysis={analysis} markets={markets} data={data} context={context} error={error} loading={loading}/>
  <nav className="reportJumps" aria-label="Разделы разбора"><a href={'#samples-'+match.id} onClick={e=>{e.preventDefault();jump('samples-'+match.id)}}><CategoryIcon category="clubs"/>Сравнить команды</a><a href={'#scenarios-'+match.id} onClick={e=>{e.preventDefault();jump('scenarios-'+match.id)}}><CategoryIcon category="scenarios"/>Сценарии</a><a href={'#players-'+match.id} onClick={e=>{e.preventDefault();jump('players-'+match.id)}}><CategoryIcon category="players"/>Игроки</a><a href={'#numbers-'+match.id} onClick={e=>{e.preventDefault();jump('numbers-'+match.id)}}><CategoryIcon category="all"/>Все цифры</a><a href={'#history-'+match.id} onClick={e=>{e.preventDefault();jump('history-'+match.id)}}><CategoryIcon category="history"/>Прошлые игры</a></nav>
  <MatchSamples key={match.id+'-'+match.league} match={match} analysis={analysis} loading={loading}/>
  <ReadingGuide/>
