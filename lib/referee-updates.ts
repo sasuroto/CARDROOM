@@ -1,4 +1,6 @@
+import {getUEFAOfficials,applyUEFAOfficials} from './uefa-officials';
 import {readCache} from './cache';
+import {applyCurrentAppointment} from './current-context';
 import {withAppointment} from './fixture-display';
 import {plMatch,getPLOfficials,applyPLOfficials} from './pl-officials';
 
@@ -17,6 +19,7 @@ export async function mergeRefereeUpdates(data:any,bucket:R2Bucket|undefined){
 }
 
 export async function attachRefereeUpdates(events:any[],bucket:R2Bucket|undefined){
+ const uefa=events.some(e=>e.league==='ucl')?await getUEFAOfficials(bucket):null;
  const official=events.some(plMatch)?await getPLOfficials(bucket):null;
  const updates=new Map<string,any>();
  await Promise.all([...new Set(events.map(e=>e.league))].map(async league=>{
@@ -30,5 +33,5 @@ export async function attachRefereeUpdates(events:any[],bucket:R2Bucket|undefine
   result.appointmentLastAttempt=update.lastAttemptAt||update.fetchedAt;
   return result;
  });
- return official?enriched.map(event=>applyPLOfficials(event,official)):enriched;
+ return (official?enriched.map(event=>applyPLOfficials(event,official)):enriched).map(e=>applyCurrentAppointment(uefa?applyUEFAOfficials(e,uefa):e));
 }

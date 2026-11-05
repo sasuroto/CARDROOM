@@ -1,3 +1,4 @@
+import {getUEFAOfficials,applyUEFAOfficials} from '../../../lib/uefa-officials';
 import {applyCurrentAppointment} from '../../../lib/current-context';
 import {venueFields} from '../../../lib/match-location';
 import {espnOfficials} from '../../../lib/match-officials';
@@ -12,7 +13,9 @@ export async function GET(req:Request){
  const candidate=curated(id),known=candidate?.league===league?candidate:null;
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET,key=`match/v6/${league}/${id}.json`,cached=await readCache(bucket,key);
  const official=plMatch({id,league})?await getPLOfficials(bucket):null;
- const enrich=(match:any)=>applyCurrentAppointment(official?applyPLOfficials({...match,id,league},official):{...match,id,league});
+ const uefa=league==='ucl'?await getUEFAOfficials(bucket):null;
+ const finish=(match:any)=>applyCurrentAppointment(uefa?applyUEFAOfficials(match,uefa):match);
+ const enrich=(match:any)=>finish(official?applyPLOfficials({...match,id,league},official):{...match,id,league});
  const ttl=cached?.referee?15*60000:60000;
  if(cached&&Date.now()-Date.parse(cached.fetchedAt)<ttl)return Response.json(enrich(cached),{headers:{'Cache-Control':'no-store'}});
  try{

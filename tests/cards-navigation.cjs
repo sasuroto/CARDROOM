@@ -17,7 +17,7 @@ let n=0;const check=(x,s)=>{assert.ok(x,s);n++};
  let d=await(await Matches.GET(new Request('https://local/api/matches?date=2026-10-16&league=ucl&upcoming=1'))).json();
  check(d.date==='2026-10-21'&&d.events.length===2&&d.upcoming,'opens every game on the nearest available date');
  check(d.events[0].id==='409900002'&&d.events.every(m=>m.league==='ucl'),'nearest tournament games ordered by kickoff');
- check(urls.length===2&&urls.every(u=>/uefa.champions\/scoreboard\?dates=2026(10|11)$/.test(u)),'bounded queries use provider supported month format');
+ {const espn=urls.filter(u=>u.includes('site.api.espn.com'));check(espn.length===2&&espn.every(u=>/uefa.champions\/scoreboard\?dates=2026(10|11)$/.test(u))&&urls.every(u=>u.includes('site.api.espn.com')||u.startsWith('https://www.uefa.com/')),'bounded queries use provider supported month format; only the UEFA officials page is fetched besides ESPN');}
  check(d.events.every(m=>m.referee==='Named Referee'&&m.currentVerified),'calendar extracts available official role');
  global.fetch=async()=>Response.json({events:[]});d=await(await Matches.GET(new Request('https://local/api/matches?date=2026-10-16&league=ucl&upcoming=1'))).json();
  check(d.events.length===0&&!d.errors.length,'confirmed empty upcoming calendar is not filled with unrelated snapshots');

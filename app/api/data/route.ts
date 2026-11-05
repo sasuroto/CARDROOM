@@ -1,3 +1,4 @@
+import {withDataHealth} from '../../../lib/data-health';
 import {mergeDataSnapshot} from '../../../lib/data-snapshot';
 import {mergeRefereeUpdates} from '../../../lib/referee-updates';
 import {readCache,writeCache} from '../../../lib/cache';
@@ -11,10 +12,10 @@ const KEY='cardroom/data-v1.json',TTL=6*60*60*1000;
 export async function GET(){
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET;
  let data:any=mergeDataSnapshot(initialData,await readCache(bucket,KEY));
- const source=createSourceReader();
+ const source=createSourceReader(bucket);
  data.refereesByLeague={...structuredClone(refSeed),...(data.refereesByLeague||{})};
  if(data.refereesByLeague.epl.source!==refSeed.epl.source)data.refereesByLeague.epl=structuredClone(refSeed.epl);
- if(data.lastAttempt&&Date.now()-Date.parse(data.lastAttempt)<TTL)return Response.json(await mergeRefereeUpdates(data,bucket),{headers:{'Cache-Control':'no-store'}});
+ if(data.lastAttempt&&Date.now()-Date.parse(data.lastAttempt)<TTL)return Response.json(withDataHealth(await mergeRefereeUpdates(data,bucket)),{headers:{'Cache-Control':'no-store'}});
  const now=new Date().toISOString();data.lastAttempt=now;data.parserVersion=6;let successes=0;const errors:string[]=[];
  await Promise.allSettled(data.leagues.map(async(l:any)=>{
   const ensure=(html:string)=>{const txt=clean(html);if(!txt.includes(l.season)&&!txt.includes(l.season.replace('/','/20')))throw new Error('Сезон не подтверждён')};
@@ -41,7 +42,7 @@ export async function GET(){
    data.refereesByLeague[id]={...item,rows,source:config.source,checkedAt:now,partial:id!=='epl',refreshError:null};successes++;
   }catch(e){item.refreshError=String(e);errors.push(id+': referees: '+String(e))}
  }));
- data.refreshStatus=successes?'updated':'sources-unavailable';data.updatedFields=successes;data.refreshErrors=errors;
+ data.refreshStatus=successes?(errors.length?'partial':'updated'):'sources-unavailable';data.updatedFields=successes;data.refreshErrors=errors;
  await writeCache(bucket,KEY,data);
- return Response.json(await mergeRefereeUpdates(data,bucket),{headers:{'Cache-Control':'no-store'}});
+ return Response.json(withDataHealth(await mergeRefereeUpdates(data,bucket)),{headers:{'Cache-Control':'no-store'}});
 }
