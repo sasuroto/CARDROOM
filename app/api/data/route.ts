@@ -7,6 +7,7 @@ import {blockDue,blockErrors,mergeBlockStatus,refreshTasks,runRefresh} from '../
 import refSeed from '../../../lib/referees.json';
 import {env} from 'cloudflare:workers';
 import {initialData} from '../../../lib/data';
+import {ensureDailyBackup} from '../../../lib/runtime-backup';
 export const dynamic='force-dynamic';
 const KEY='cardroom/data-v1.json',LOCK='cardroom/data-refresh-lock.json';
 // Single-flight per worker. The persisted lease is best-effort coordination, NOT an atomic distributed lock.
@@ -21,17 +22,19 @@ function load(saved:any){
  if(data.refereesByLeague.epl.source!==refSeed.epl.source)data.refereesByLeague.epl=structuredClone(refSeed.epl);
  return data;
 }
-const respond=async(data:any,bucket:R2Bucket|undefined)=>Response.json(withDataHealth(await mergeRefereeUpdates(data,bucket)),{headers:{'Cache-Control':'no-store'}});
+const respond=async(data:any,bucket:R2Bucket|undefined,backup:unknown)=>Response.json({...withDataHealth(await mergeRefereeUpdates(data,bucket)),backup},{headers:{'Cache-Control':'no-store'}});
 
 export async function GET(){
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET,now=Date.now();
+ // Capture stored state before an eligible update; this never calls providers or changes live keys.
+ const backup=await ensureDailyBackup(bucket,now);
  const data=load(await readCache(bucket,KEY)),tasks=refreshTasks(data,refSeed as Record<string,any>);
  data.pendingBlocks=tasks.filter(t=>blockDue(data.blockStatus?.[t.id],t.checkedAt,now)).length;
- if(!data.pendingBlocks)return respond(data,bucket);
+ if(!data.pendingBlocks)return respond(data,bucket,backup);
  const lock=await readCache(bucket,LOCK);
- if(running||lock?.until>now){data.refreshInProgress=true;return respond(data,bucket)}
+ if(running||lock?.until>now){data.refreshInProgress=true;return respond(data,bucket,backup)}
  running=pass(bucket,data,tasks,now);
- try{return respond(await running,bucket)}finally{running=null}
+ try{return respond(await running,bucket,backup)}finally{running=null}
 }
 
 async function pass(bucket:R2Bucket|undefined,data:any,tasks:ReturnType<typeof refreshTasks>,now:number){

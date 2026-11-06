@@ -95,6 +95,7 @@ These GET handlers may refresh and persist data; they are not all passive reads.
 | Endpoint | Purpose |
 | --- | --- |
 | `/api/health` | Read-only operational checks; no provider requests or storage writes |
+| `/api/recovery` | Read-only integrity/drill status for today's stored backup; no raw data export |
 | `/api/referees` | Connected leagues, refresh status and next eligible checks |
 | `/api/referees?league=<id>` | Refresh one eligible league |
 | `/api/referees?league=<id>&read=1` | Read the saved referee refresh result |
@@ -108,6 +109,8 @@ After the pass, read `/api/data` twice and compare `lastAttempt`, `refreshStatus
 ## Code is not live data
 
 GitHub stores source code, tests and committed seed/reference snapshots. Production refresh results live in the site's persistent storage. Device-local favourites are not stored in GitHub. A GitHub push does not refresh production data or automatically publish a Sites version.
+
+`/api/data` also attempts one daily checkpoint of the existing summary and all 11 referee reports, before refreshing. Up to seven daily slots are retained in the same R2 bucket. SHA-256 readback and an isolated restore-copy drill verify integrity without touching live keys. Missing/invalid records prevent a new checkpoint; source freshness is not implied by a valid backup. Calendars, individual match caches, weather and device favourites are outside this backup. See [recovery procedure](docs/recovery.md).
 
 ## Checks
 

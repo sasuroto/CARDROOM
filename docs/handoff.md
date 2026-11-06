@@ -24,6 +24,10 @@ This increment adds shared agent instructions, a PR checklist, an operational ru
 
 The existing hourly task was re-enabled on 6 November. Its next successful unattended execution must be confirmed from recorded run history, not inferred from this document or a manual pass.
 
-## Next bounded task
+## Daily recovery increment
 
-Independent review of this health/operations increment, followed by approved source coverage evaluation. No Claude review has yet been performed for this increment. Do not represent any old audit's paused-network state as current without rechecking.
+This increment adds daily summary/referee checkpoints, seven bounded slots, SHA-256 verification and an isolated-copy recovery drill. Baseline is Sites v104 (`e739c92e65892c15ee4468189c5a80044337a6de`). No live restore or raw-data export endpoint is added. See `docs/recovery.md` for exact limits. Release evidence is recorded in PR #7 after verification.
+
+Runtime backup suite: 35 checks passed; TypeScript passed. The v104 GitHub workflow completed successfully, including its responsive audit. This does not substitute for the current commit's CI. Next task: confirm an unattended scheduled run and assess an independent watchdog before expanding source coverage.
+
+Independent review and approved source coverage evaluation remain pending. No Claude review has yet been performed. Do not represent any old audit's paused-network state as current without rechecking.

@@ -38,7 +38,7 @@ Cache read/write failures emit redacted `[cardroom:storage]` warnings, with no r
 1. Read the Site and obtain supported temporary access. Send its token only in the same Site's authorization header; never save it or follow redirects carrying it.
 2. Read `/api/health` and `/api/referees`. If storage is unavailable, report the blocker and stop writes.
 3. Sequentially refresh only due leagues with 60-second timeouts. Read each result back with `read=1`; compare runId and `persisted=true`. On timeout, inspect saved state before deciding whether a later retry is needed.
-4. Read `/api/data` twice and compare attempt/status/updatedFields/errors/block dates. Keep the six-hour interval.
+4. Read `/api/data` twice and compare attempt/status/updatedFields/errors/block dates. Keep the six-hour interval. Then read `/api/recovery`: require today's `backup.status=verified`, `recordCount=12` and `restoreDrillVerified=true`. An integrity failure is separate from source degradation; never overwrite a corrupt backup to silence it.
 5. Refresh today's and yesterday's calendars by Asia/Tbilisi date. Respect provider backoff throughout.
 6. Read `/api/health` again. Report new/persisting operational failures with affected league, last successful date and retryAt. Do not turn a partial pass into a success message. Routine successful runs need no notification.
 7. Check the automation's recorded run separately. Enabled does not mean executed. This job cannot independently detect its own failure to start: a separate watchdog remains a pending deployment decision.
@@ -62,7 +62,7 @@ For every league/season require sample responses proving fixture IDs, team/date 
 - Replace blocked statistics sources; fill UEL/UECL appointments through an authorized source.
 - Independent watchdog and calendar/weather/live probes.
 - Durable distributed coordination for simultaneous writers (current leases are best-effort).
-- Versioned runtime backups with retention and a tested restore in isolated storage. GitHub is not a production-data backup.
+- Off-site disaster recovery and approved per-key production restore; bounded daily R2 checkpoints and an isolated-copy drill are described in [recovery.md](recovery.md).
 - Enforced branch protection, configured independent agent review and confirmed GitHub CI runs.
 
 No uptime SLA is promised until scheduled runs, outage recovery and restore are exercised over time.
