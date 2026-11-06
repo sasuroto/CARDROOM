@@ -1,0 +1,29 @@
+# CARDROOM handoff — 2026-11-06
+
+## Current maintenance scope
+
+Baseline: Sites v103, source `76a4dd2376f77be3a1ce0504afa4e1208a23a6da`.
+GitHub review branch: `sync/sites-v103-20261106`, PR #7; do not merge without approval.
+
+This increment adds shared agent instructions, a PR checklist, an operational runbook, a read-only `/api/health` endpoint and rate-limited redacted cache failure logging. No provider changes, data migration, access changes or new subscriptions.
+
+## Local verification
+
+- Existing test suites completed successfully; the added operational-health suite passes 30 checks.
+- TypeScript check passed with incremental output disabled.
+- No UI changes; no new browser visual QA is claimed.
+- Production build, exact published version and post-deploy probe are recorded in the release handoff/PR after completion. This source document does not claim a deployment before it occurs.
+
+## Confirmed baseline failures
+
+- Eight league statistics feeds share ValueStats, with recorded HTTP 403/backoff.
+- UEL and UECL had no successful statistics snapshot and 18 missing appointments combined in the 6–12 November checked window.
+- Bundesliga statistics rejected an unconfirmed season; last successful snapshot 1 November.
+- Primeira statistics use a manual 16 October snapshot.
+- A stored report with persisted=true is not proof that its upstream data is fresh.
+
+The existing hourly task was re-enabled on 6 November. Its next successful unattended execution must be confirmed from recorded run history, not inferred from this document or a manual pass.
+
+## Next bounded task
+
+Independent review of this health/operations increment, followed by approved source coverage evaluation. No Claude review has yet been performed for this increment. Do not represent any old audit's paused-network state as current without rechecking.

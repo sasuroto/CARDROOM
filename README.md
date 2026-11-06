@@ -94,6 +94,7 @@ These GET handlers may refresh and persist data; they are not all passive reads.
 
 | Endpoint | Purpose |
 | --- | --- |
+| `/api/health` | Read-only operational checks; no provider requests or storage writes |
 | `/api/referees` | Connected leagues, refresh status and next eligible checks |
 | `/api/referees?league=<id>` | Refresh one eligible league |
 | `/api/referees?league=<id>&read=1` | Read the saved referee refresh result |
@@ -109,6 +110,8 @@ After the pass, read `/api/data` twice and compare `lastAttempt`, `refreshStatus
 GitHub stores source code, tests and committed seed/reference snapshots. Production refresh results live in the site's persistent storage. Device-local favourites are not stored in GitHub. A GitHub push does not refresh production data or automatically publish a Sites version.
 
 ## Checks
+
+Shared Codex/Claude process: [AGENTS.md](AGENTS.md), [operations](docs/operations.md), [handoff](docs/handoff.md). Health HTTP 200 can still mean degraded data; inspect the JSON status and alerts.
 
 ```sh
 node tests/european-expansion.cjs
