@@ -1,5 +1,12 @@
 # CARDROOM handoff — 2026-11-06
 
+## Results journal increment
+
+Owner: Codex. Baseline Sites v105 / source `2df5a7836e9d4aa22c90342c33d3bd988f88ae50`.
+Adds D1 append-only pre-match snapshots and normalized observed match outcomes, shared scenario computation and `/results` UI. See `docs/results-journal.md` for eligibility, scoring and backup limitations. No retrospective model performance is fabricated. The new journal is not covered by the existing R2 recovery report.
+
+Local and live release evidence, exact version and GitHub source identity are recorded in PR #7 after verification. Independent Claude/human review is still pending; do not describe self-review as independent review.
+
 ## Current maintenance scope
 
 Baseline: Sites v103, source `76a4dd2376f77be3a1ce0504afa4e1208a23a6da`.

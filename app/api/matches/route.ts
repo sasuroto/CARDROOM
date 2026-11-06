@@ -1,3 +1,4 @@
+import {recordCalendar} from '../../../lib/results-journal';
 import {calendarCacheTtl} from '../../../lib/calendar-refresh';
 import {env} from 'cloudflare:workers';
 import {LEAGUES,espn,fixture,localDay} from '../../../lib/fixtures';
@@ -11,10 +12,12 @@ export async function GET(req:Request){
  const q=new URL(req.url).searchParams,date=q.get('date')||localDay(new Date().toISOString()),league=q.get('league')||'all',upcoming=q.get('upcoming')==='1';
  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date))||new Date(date).toISOString().slice(0,10)!==date||date<'2025-01-01'||date>'2028-12-31'||(league!=='all'&&!LEAGUES[league])||(q.has('upcoming')&&!['0','1'].includes(q.get('upcoming')!)))return Response.json({error:'Некорректная дата или турнир'},{status:400});
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET,key=`fixtures/v9/${date}/${league}/${upcoming?'next':'day'}.json`,cached=await readCache(bucket,key);
+ const db=(env as unknown as {DB?:D1Database}).DB;
+ const respond=async(value:any)=>Response.json({...value,journal:await recordCalendar(db,value.events||[]),events:await attachRefereeUpdates(value.events||[],bucket)},{headers:{'Cache-Control':'no-store'}});
  const ttl=calendarCacheTtl(cached?.events||[],date,upcoming);
  const competitionIds=league==='all'?Object.keys(LEAGUES):[league];
  const sameCoverage=league!=='all'||competitionIds.every(id=>cached?.competitionIds?.includes(id));
- if(cached&&sameCoverage&&Date.now()-Date.parse(cached.checkedAt)<ttl)return Response.json({...cached,events:await attachRefereeUpdates(cached.events||[],bucket)},{headers:{'Cache-Control':'no-store'}});
+ if(cached&&sameCoverage&&Date.now()-Date.parse(cached.checkedAt)<ttl)return respond(cached);
  const ids=league==='all'?Object.keys(LEAGUES):[league],events:any[]=[],errors:string[]=[],checkedAt=new Date().toISOString();
  let retryAfter=0,cooldownPersisted=true;
  const {until,queries}=calendarWindow(date,upcoming);
@@ -33,5 +36,5 @@ export async function GET(req:Request){
  events.sort((a,b)=>Date.parse(a.date)-Date.parse(b.date));
  const shownDate=upcoming&&events.length?localDay(events[0].date):date;
  const result={events:upcoming?events.filter(f=>localDay(f.date)===shownDate):events,competitionIds,errors,checkedAt,timezone:'Asia/Tbilisi',date:shownDate,upcoming,...(retryAfter?{retryAfter}: {}),...(!cooldownPersisted?{cooldownPersisted:false}:{})};
- await writeCache(bucket,key,result);return Response.json({...result,events:await attachRefereeUpdates(result.events,bucket)},{headers:{'Cache-Control':'no-store'}})
+ await writeCache(bucket,key,result);return respond(result)
 }

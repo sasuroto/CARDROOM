@@ -144,6 +144,8 @@ button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visibl
 header { background: var(--charcoal-deep); color: var(--white); border-color: var(--charcoal); }
 header .brand, header .headerRight, header .public { color: var(--white); }
 header .brandSmall { color: #cccccc; }
+header .resultsNav { color: var(--highlight); font-size:14px; font-weight:700; white-space:nowrap; }
+@media(max-width:800px){header .headerRight{gap:10px}header .headerRight .public{display:none}header .resultsNav{font-size:12px}}
 /* The black masthead continues through the entire daily fixture strip. */
 .dailyBar { background: var(--charcoal-deep); color: var(--white); border-color: var(--charcoal-deep); }
 .dailyBarHead h2 { color: var(--white); }

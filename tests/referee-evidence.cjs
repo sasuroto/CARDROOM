@@ -7,7 +7,7 @@ assert.equal(yellowSample({n:20}),0);assert.equal(yellowSample({yellowN:0}),0);
 for(const change of [{seasonConfirmed:false},{seasonConfirmed:undefined},{checkedAt:'bad'},{checkedAt:'2026-10-01'},{checkedAt:'2026-12-01'},{rows:[{name:'John Smith',n:20,yellowN:2,yellow:5}]}])assert.equal(E(m,{...g,...change},now).eligible,false);
 for(const change of [{appointmentStale:true},{stale:true},{appointmentType:'ESPN'},{appointmentConflict:{referee:'Other'}},{appointmentCheckedAt:null},{appointmentCheckedAt:'2026-10-01'},{date:'2026-10-30'}])assert.equal(E({...m,...change},g,now).eligible,false);
 assert.equal(E({...m,referee:null},g,now).eligible,false);assert.equal(E(m,null,now).baseline,null);
-assert.ok(fs.readFileSync('app/match-report.tsx','utf8').includes('if(e.eligible)'));
+assert.ok(fs.readFileSync('lib/scenario-model.ts','utf8').includes('if(e.eligible)'));
 console.log('PASS 22 referee evidence assertions: sample, weighting, season, freshness, appointment conflict and model gating');
 
 assert.equal(refereePeriod({periodLabel:'2026/27'}),'Период источника не подтверждён');
