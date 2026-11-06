@@ -424,6 +424,68 @@
       "teamNote": "Источник отдаёт лишь 3 команды с одним матчем. Это неполная выборка, не рейтинг всей ЛЧ. Сводка турнира включает квалификацию; основной этап отдельно не подтверждён."
     },
     {
+      "id": "uel",
+      "name": "Лига Европы",
+      "country": "Европа",
+      "code": "EU",
+      "season": "2026/27",
+      "expectedTeamCount": 36,
+      "cards": {
+        "n": null,
+        "avg": null,
+        "home": null,
+        "away": null,
+        "source": "https://footystats.org/europe/uefa-europa-league/card-stats",
+        "checkedAt": null
+      },
+      "teams": [],
+      "teamSource": null,
+      "teamCheckedAt": null,
+      "partial": true,
+      "yellowSummary": null,
+      "corners": [],
+      "overview": {
+        "goals": null,
+        "btts": null,
+        "shots": null,
+        "fouls": null,
+        "source": "https://footystats.org/europe/uefa-europa-league",
+        "checkedAt": null
+      },
+      "teamNote": "Таблица жёлтых карточек команд пока не подтверждена. Сводка источника может включать квалификацию; данные основного этапа отдельно не подтверждены."
+    },
+    {
+      "id": "uecl",
+      "name": "Лига конференций",
+      "country": "Европа",
+      "code": "EU",
+      "season": "2026/27",
+      "expectedTeamCount": 36,
+      "cards": {
+        "n": null,
+        "avg": null,
+        "home": null,
+        "away": null,
+        "source": "https://footystats.org/europe/uefa-europa-conference-league/card-stats",
+        "checkedAt": null
+      },
+      "teams": [],
+      "teamSource": null,
+      "teamCheckedAt": null,
+      "partial": true,
+      "yellowSummary": null,
+      "corners": [],
+      "overview": {
+        "goals": null,
+        "btts": null,
+        "shots": null,
+        "fouls": null,
+        "source": "https://footystats.org/europe/uefa-europa-conference-league",
+        "checkedAt": null
+      },
+      "teamNote": "Таблица жёлтых карточек команд пока не подтверждена. Сводка источника может включать квалификацию; данные основного этапа отдельно не подтверждены."
+    },
+    {
       "id": "laliga",
       "name": "La Liga",
       "country": "Испания · Примера",
@@ -2689,6 +2751,24 @@
       "checkedAt": "2026-10-16T16:20:31.751Z",
       "partial": true,
       "refreshError": null
+    },
+    "uel": {
+      "rows": [],
+      "source": "https://valuestats.com/en/league/europa-league/referees/",
+      "checkedAt": null,
+      "partial": true,
+      "refreshError": null,
+      "seasonConfirmed": false,
+      "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
+    },
+    "uecl": {
+      "rows": [],
+      "source": "https://valuestats.com/en/league/europa-conference-league/referees/",
+      "checkedAt": null,
+      "partial": true,
+      "refreshError": null,
+      "seasonConfirmed": false,
+      "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
     },
     "ucl": {
       "rows": [

@@ -3,8 +3,8 @@
 @media(max-width:850px){.calendarOpen{grid-template-columns:70px minmax(0,1fr) 16px}.calendarMatchContext{grid-column:2;grid-row:2}.calendarOpenArrow{grid-column:3;grid-row:1/3}.calendarKickoff{align-self:start}.calendarVenue{display:none}.calendarFavorite{align-self:flex-start;margin-top:16px}.calendarDays button,.calendarViewControls button{min-height:44px;padding:10px}.calendarCards .calendarVenue{display:block}.calendarDateControls,.calendarSearchControls{width:100%}}
 @media(max-width:520px){.calendarCenter .sectionHead{align-items:flex-start}.calendarCenter .sectionHead>button{font-size:12px;padding:10px;flex-shrink:0}.calendarDateControls>label{width:100%}.calendarDateControls input{width:100%}.calendarDays{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;width:100%;gap:4px}.calendarDays button{padding:8px 4px;font-size:11px}.calendarSearchControls{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.calendarSearchControls input,.calendarSearchControls select{width:100%}.calendarStatuses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.calendarStatuses button{justify-content:space-between}.calendarPreferences{width:100%;justify-content:space-between;gap:6px}.calendarViewSwitch{gap:4px}.calendarPreferences button{font-size:11px;padding:9px}.calendarOpen{grid-template-columns:55px minmax(0,1fr);gap:12px 9px;padding:13px 8px 13px 12px}.calendarKickoff>b{font-size:16px}.calendarStatus{font-size:10px}.calendarTeams>span{grid-template-columns:22px minmax(0,1fr) 20px;gap:6px}.calendarTeams img,.calendarCrestFallback{width:22px;height:22px}.calendarTeams b{font-size:12px}.calendarTeams strong{font-size:15px}.calendarOpenArrow{display:none}.calendarFavorite{width:32px;height:38px;margin:11px 6px 0 0;font-size:19px}.calendarMatchContext{font-size:10px;gap:4px}.calendarCards{grid-template-columns:minmax(0,1fr)}.calendarCards .calendarOpen{padding:18px}.calendarCards .calendarTeams b{font-size:14px}.calendarCards .calendarFavorite{width:34px;height:34px}.calendarCenter .sectionHead h3{font-size:23px}}
 .calendarToolbar,.calendarViewControls,.calendarResults{
- /* Traditional Green with 40% white; keep this tint local to the calendar. */
- --calendar-highlight:#66b366;
+ /* Calendar uses the same green as every other accent. */
+ --calendar-highlight:var(--green);
  --accent-soft:var(--calendar-highlight);
  --control-active:var(--calendar-highlight);
  --control-active-hover:var(--calendar-highlight);
@@ -18,6 +18,19 @@
 .calendarCenter .calendarDays button:hover,
 .calendarCenter .calendarViewControls button:hover{color:var(--ink)}
 .calendarStatuses button[aria-pressed=true] span{opacity:1}
+.calendarCenter .calendarStatusFilter{flex-direction:row;align-items:center;gap:10px}
+.calendarStatusFilter select{min-width:175px;min-height:44px}
+.calendarOptions{position:relative}
+.calendarOptions>summary{min-height:44px;display:flex;align-items:center;gap:12px;padding:9px 14px;border:1px solid var(--link);border-radius:6px;background:var(--green);color:var(--ink);font-size:12px;cursor:pointer;list-style:none}
+.calendarOptions>summary::-webkit-details-marker{display:none}
+.calendarOptions>summary::after{content:'+';font-size:18px}
+.calendarOptions[open]>summary::after{content:'−'}
+.calendarOptions>summary:hover{background:var(--menu-hover)}
+.calendarOptions>summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.calendarOptionsBody{position:absolute;right:0;top:calc(100% + 8px);z-index:20;display:flex;flex-direction:column;gap:12px;width:260px;max-width:calc(100vw - 48px);padding:14px;border:1px solid var(--line);border-radius:9px;background:var(--bg);box-shadow:0 8px 24px #0002}
+.calendarOptionsBody .calendarViewSwitch{display:flex;flex-wrap:nowrap}
+.calendarOptionsBody .calendarViewSwitch button{flex:1}
+@media(max-width:520px){.calendarCenter .calendarStatusFilter{width:100%}.calendarStatusFilter select{flex:1}.calendarOptions>summary{font-size:11px}.calendarOptionsBody{width:240px}}
 .calendarCenter .calendarFavorite,
 .calendarCenter .calendarFavorite[aria-pressed=true],
 .calendarCenter .calendarFavorite:hover{background:transparent;border-color:transparent;box-shadow:none}

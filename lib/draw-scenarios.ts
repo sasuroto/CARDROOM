@@ -1,4 +1,4 @@
-export const DRAW_LEAGUES:Record<string, string> = {epl:'АПЛ', ucl:'Лига чемпионов', laliga:'Ла Лига', segunda:'Сегунда', seriea:'Серия А', bundesliga:'Бундеслига', ligue1:'Лига 1', superlig:'Süper Lig', primeira:'Primeira Liga'};
+export const DRAW_LEAGUES:Record<string, string> = {epl:'АПЛ', ucl:'Лига чемпионов', uel:'Лига Европы', uecl:'Лига конференций', laliga:'Ла Лига', segunda:'Сегунда', seriea:'Серия А', bundesliga:'Бундеслига', ligue1:'Лига 1', superlig:'Süper Lig', primeira:'Primeira Liga'};
 export const DRAW_LIMIT = 6;
 export const DRAW_DAYS = 3;
 const DAY_MS = 86400000;

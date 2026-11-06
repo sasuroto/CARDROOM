@@ -768,6 +768,24 @@
     "partial": true,
     "refreshError": null
   },
+  "uel": {
+    "rows": [],
+    "source": "https://valuestats.com/en/league/europa-league/referees/",
+    "checkedAt": null,
+    "partial": true,
+    "refreshError": null,
+    "seasonConfirmed": false,
+    "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
+  },
+  "uecl": {
+    "rows": [],
+    "source": "https://valuestats.com/en/league/europa-conference-league/referees/",
+    "checkedAt": null,
+    "partial": true,
+    "refreshError": null,
+    "seasonConfirmed": false,
+    "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
+  },
   "ucl": {
     "rows": [
       {

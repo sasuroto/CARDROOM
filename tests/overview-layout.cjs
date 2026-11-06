@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const hero=fs.readFileSync('app/tournament-dashboard.tsx','utf8'),css=fs.readFileSync('app/reading-theme.css','utf8');
+assert.ok(!hero.includes('Выберите турнир. Откройте матчи'));
+assert.ok(!hero.includes('<span>ЛИГ И ТУРНИРОВ</span>'));
+assert.ok(hero.includes("String(data.leagues.length).padStart(2,'0')"));
+assert.match(css,/\.calendarMatch\.isLive \.calendarStatus \{ align-self: flex-start; width: fit-content;/);
+assert.match(css,/\.matchOverview\.isCompact \.overviewTeam > strong \{ font-size: 26.4px;/);
+assert.match(css,/\.matchOverview \.overviewDetails dd \{ font-size: 16.8px; font-weight: 700;/);
+assert.ok(css.includes('grid-row: 1 / 3; border-left:'));
+assert.ok(css.includes('grid-column: 1; grid-row: auto;'));
+console.log('PASS concise dashboard, fitted live badge, larger bold overview and responsive grouping');

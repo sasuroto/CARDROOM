@@ -1,0 +1,17 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,f);
+const React=require('react'),saved=React.useState;React.useState=v=>[v,()=>{}];
+const Overview=require('../app/match-overview.tsx').default;
+const nodes=x=>!x||typeof x!=='object'?[]:[x,...React.Children.toArray(x.props?.children).flatMap(nodes)];
+const text=x=>Array.isArray(x)?x.map(text).join(''):typeof x==='string'||typeof x==='number'?String(x):x&&typeof x==='object'?text(x.props?.children):'';
+const match={id:'401883147',league:'segunda',home:'Mallorca',away:'Cádiz',date:'2026-11-02T20:00Z',state:'in',clock:"5'",homeScore:'0',awayScore:'0',statusName:'STATUS_FIRST_HALF',venue:'Estadi Mallorca Son Moix',city:'Palma de Mallorca',country:'Spain',statusCheckedAt:'2026-11-02T20:08:02.159Z',statusStale:false};
+let tree=nodes(Overview({match,leagueName:'Segunda',compact:true}));
+let context=tree.find(n=>n.type==='details'&&n.props.className==='overviewContext');assert.equal(context.props.open,true,'existing context is visible on first open');
+assert.ok(text(context).includes('Estadi Mallorca Son Moix · Palma de Mallorca · Spain'));
+assert.ok(text(context).includes('Имя арбитра не получено'));assert.ok(!text(context).includes('Назначение уточняется'),'no claim that the official has not been assigned');
+assert.ok(tree.some(n=>n.props.className==='overviewContextToggle'&&n.props['aria-hidden']));
+assert.ok(text(tree).includes('0 : 0'));
+assert.ok(tree.some(n=>n.props.id===match.id&&n.props.league==='segunda'),'weather remains mounted and can state its actual availability');
+const assigned=nodes(Overview({match:{...match,referee:'Gonzalo Romero',appointmentType:'Официальное назначение · rfef.es',appointmentSource:'https://rfef.es/official.pdf'},compact:true}));assert.ok(text(assigned).includes('Gonzalo Romero'));
+const expanded=nodes(Overview({match,compact:false}));assert.ok(!expanded.some(n=>n.props.className==='overviewContext'));assert.ok(text(expanded).includes('Estadi Mallorca Son Moix'));
+React.useState=saved;console.log('PASS context visibility: expanded on first open, venue/weather preserved, explicit absent-referee message, score, full-card unchanged.');

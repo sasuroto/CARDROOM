@@ -1,0 +1,18 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,f);
+const React=require('react'),{renderToStaticMarkup:render}=require('react-dom/server'),Dot=require('../app/dot-predict.tsx').default;
+const now=Date.parse('2026-11-03T14:00Z'),match={id:'123456',league:'ucl',date:'2026-11-03T18:00Z',home:'Home',away:'Away'};
+const analysis={state:'pre',date:match.date,checkedAt:'2026-11-03T13:55Z',source:'https://www.espn.com/soccer/match/_/gameId/123456'};
+const market={id:'away',metric:'away',title:'ТБ 0,5',line:.5,p:1-Math.exp(-6),n:10,param:{mean:7,homeMean:1,awayMean:6,nH:10,nA:10,basis:'History',source:analysis.source,evidence:[{label:'Historical protocol',source:'https://www.espn.com/soccer/match/_/gameId/111111',checkedAt:'2026-11-02T15:00Z',maxAgeMs:86400000}]}};
+const props={match,analysis,markets:[market],data:{},context:null,error:'',loading:false,now};
+const html=render(React.createElement(Dot,props));
+assert.ok(html.includes('class="dotHeader"'));assert.ok(!html.includes('<header'),'DOT must not inherit global dark site header styles');
+assert.ok(html.includes('Экспериментальная модель'));
+const css=fs.readFileSync('app/reading-theme.css','utf8');
+assert.match(css,/\.dotPredict \.dotHeader\s*\{[^}]*color:var\(--ink\)/,'DOT heading stays readable on the v80 light surface');
+assert.ok(html.includes('dotGrid'));assert.ok(html.includes('02.11.2026'));assert.ok(html.includes('03.11.2026'));assert.ok(html.includes('Historical protocol'));
+assert.ok(html.includes('&gt;99%'));assert.ok(!html.includes('100%'));assert.ok(html.includes('Не доверительный интервал'));
+for(const patch of [{error:'offline'},{now:Date.parse(match.date)},{loading:true},{analysis:{...analysis,source:'wrong'}},{match:{...match,state:'in'}},{match:{...match,state:'post'}}])assert.ok(!render(React.createElement(Dot,{...props,...patch})).includes('dotGrid'));
+const stale={...market,param:{...market.param,evidence:[{...market.param.evidence[0],checkedAt:'2026-10-01'}]}};
+assert.ok(!render(React.createElement(Dot,{...props,markets:[stale]})).includes('dotGrid'));
+console.log('PASS DOT server render: actual dates, sensitivity labels, no 100%, sparse/stale/error/start suppression');

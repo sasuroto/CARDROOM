@@ -1,0 +1,11 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),Evidence=require('../app/referee-evidence.tsx').default;
+const match={referee:'John Smith',appointmentType:'official appointment',appointmentCheckedAt:new Date().toISOString()},stamp=new Date().toISOString(),base={source:'https://source.example/referees',checkedAt:stamp,seasonConfirmed:true,periodLabel:'2026/27',seasonEvidence:{version:1,method:'table-header',season:'2026/27',source:'https://source.example/referees',checkedAt:stamp,markers:['GAMES 2026/27']}};
+const render=rows=>renderToStaticMarkup(React.createElement(Evidence,{match,group:{...base,rows}}));
+const missing=render([]);assert.ok(missing.includes('Строка статистики этого арбитра'));assert.ok(missing.includes('Выборка ЖК недоступна'));assert.ok(!missing.includes('Выборка ЖК: <b>0</b>'));assert.ok(!missing.includes('Выборка ЖК: 0 матчей'));assert.ok(missing.includes('Последний успешный срез таблицы статистики'));assert.ok(missing.includes('она не подтверждает наличие статистики'));
+const unknown=render([{name:'John Smith',n:12,yellow:4}]);assert.ok(unknown.includes('Выборка ЖК недоступна'));assert.ok(!unknown.includes('Выборка ЖК: <b>0</b>'));
+const zero=render([{name:'John Smith',n:0,yellowN:0,yellow:0}]);assert.ok(zero.includes('Выборка ЖК: <b>0</b>'));assert.ok(!zero.includes('Выборка ЖК недоступна'));
+const known=render([{name:'John Smith',n:12,yellowN:11,yellow:4}]);assert.ok(known.includes('Выборка ЖК: <b>11</b>'));
+const tab=fs.readFileSync('app/match-report.tsx','utf8');assert.ok(tab.includes('Последняя попытка проверки назначения'));assert.ok(tab.includes('Последняя успешная проверка назначения'));assert.ok(tab.includes('Назначение и статистика проверяются отдельно'));
+console.log('PASS referee UI distinguishes absent/unknown/zero samples and appointment/statistics timestamps');

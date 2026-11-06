@@ -1,0 +1,33 @@
+'use client';
+import type {MatchDossier,DossierLineup,DossierPlayer} from '../lib/match-dossier';
+
+export interface EvidenceMatch {id:string|number;league:string;date?:string;state?:string;dossier?:MatchDossier|null;dossierError?:string|null;statusStale?:boolean;statusCheckedAt?:string;fetchedAt?:string;statusSource?:string|null;appointmentCheckedAt?:string;checkedAt?:string;appointmentSource?:string;source?:string}
+export type MatchEvidenceView='lineups'|'events'|'sources';
+const stamp=(value?:string|null)=>value&&Number.isFinite(Date.parse(value))?new Date(value).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'Не получено';
+const labels:Record<DossierLineup['status'],string>={'source-confirmed':'11 игроков по ESPN',partial:'Неполные данные',unavailable:'Состав не получен',stale:'Последний полный состав'};
+const safeLink=(value:unknown)=>{try{const u=new URL(String(value));return u.protocol==='https:'?u.href:undefined}catch{return undefined}};
+function Players({players}:{players:DossierPlayer[]}){return <ol className="dossierPlayers">{players.map(p=><li key={p.id}><span>{p.jersey||'·'}</span><b>{p.name}</b><small>{p.position||'—'}</small></li>)}</ol>}
+function Source({url,label}:{url:unknown;label:string}){const href=safeLink(url);return href?<a className="dossierSource" href={href} target="_blank" rel="noreferrer">{label} ↗</a>:<span>Ссылка источника не получена</span>}
+export default function MatchEvidence({match,view}:{match:EvidenceMatch;view:MatchEvidenceView}){
+ const d:MatchDossier|undefined=match.dossier?.schemaVersion===1&&match.dossier?.id===String(match.id)&&match.dossier?.league===match.league&&Date.parse(match.dossier.kickoff||'')===Date.parse(match.date||'')?match.dossier:undefined;
+ // Referee freshness must never mark an independently fresh lineup as stale.
+ const stale=!!match.dossierError||!!match.statusStale;
+ return <section className="matchEvidence" aria-label={view==='lineups'?'Составы матча':view==='events'?'События матча':'Источники и покрытие'}>
+  {stale&&<p className="notice" role="status">{d?'Повторная проверка состава и событий не подтверждена. Показан сохранённый срез с исходным временем.':'Не удалось получить состав и события. Данные не подставлены.'}</p>}
+  {view==='lineups'&&<>
+   <p className="dossierDisclosure">Показываем данные провайдера, не предполагаемый состав. Отсутствие игрока в списке не объясняет травму, дисквалификацию или решение тренера.</p>
+   {d?<div className="dossierTeams">{d.teams.map(team=><article className="dossierBlock" key={team.id}><div className="lineupTitle"><h3>{team.name}</h3><span className={'dossierFlag '+(team.lineup.status==='source-confirmed'&&!stale?'':'warning')}>{labels[team.lineup.status]}</span></div>{team.lineup.formation&&<p className="lineupFormation">Схема {team.lineup.formation}</p>}<p className="dossierSmall">{team.lineup.note}</p>{team.lineup.starters.length>0&&<Players players={team.lineup.starters}/>}<details className="dossierBench"><summary>Запасные · {team.lineup.bench.length||'нет данных'}</summary>{team.lineup.bench.length?<Players players={team.lineup.bench}/>:<p>Источник не передал список запасных. Это не означает пустую скамейку.</p>}</details><p className="dossierSmall">Последние данные: {stamp(team.lineup.checkedAt)}<br/>Попытка проверки: {stamp(team.lineup.lastAttemptAt)} · Тбилиси</p><Source url={d.source} label="ESPN · состав"/></article>)}</div>:<p className="notice">Состав пока не получен. Ожидаемый XI не придумываем; он появится только при подтверждённом ответе источника.</p>}
+   <details className="dossierChanges"><summary>Изменения стартового состава между проверками</summary>{d?.changes.length?<ol>{[...d.changes].reverse().map((c,i)=><li key={c.teamId+c.observedAt+i}><time>{stamp(c.observedAt)}</time><b>{d.teams.find(t=>t.id===c.teamId)?.name||'Команда'}</b><p>Добавлены: {c.added.map(p=>p.name).join(', ')||'—'}<br/>Убраны: {c.removed.map(p=>p.name).join(', ')||'—'}</p><small>{c.note}</small></li>)}</ol>:<p>Нет подтверждённых сравнением изменений. Нужны две успешные предматчевые проверки; это не означает, что состав не менялся.</p>}</details>
+  </>}
+  {view==='events'&&<>
+   <h3>Голы · карточки · замены</h3><p className="dossierSmall">Только структурированные события ESPN. Порядок и игровая минута — как передал источник; полнота ленты не гарантируется.</p>
+   {d?.events.items.length?<ol className="dossierEvents">{d.events.items.map(e=><li key={e.id}><time>{e.minute||'—'}</time><div><b>{e.label}</b><p>{d.teams.find(t=>t.id===e.teamId)?.name||'Команда не указана'}{e.participants.length?' · '+e.participants.map(p=>p.name).join(' · '):''}</p></div></li>)}</ol>:<p className="notice">{match.state==='pre'?'Источник пока указывает предматчевый статус.':'Лента событий пока не получена.'} Отсутствие записей не означает ноль событий.</p>}
+   {d&&<p className="dossierSmall">Получено: {stamp(d.events.checkedAt)} · Тбилиси. <Source url={d.source} label="ESPN · события"/></p>}{d?.attendance!=null&&<p>Посещаемость по ESPN: {d.attendance.toLocaleString('ru-RU')}</p>}
+  </>}
+  {view==='sources'&&<>
+   <h3>Происхождение и свежесть</h3><p className="dossierDisclosure">Дата последнего ответа не означает, что все поля актуальны. Назначение судьи, состав, счёт и погода проверяются независимо.</p>
+   <dl className="dossierOfficials"><div><dt>Счёт и статус</dt><dd>{stamp(match.statusCheckedAt||match.fetchedAt||match.checkedAt)} · {!(match.statusCheckedAt||match.fetchedAt)?(match.checkedAt?'время сохранённого календарного среза, новое подтверждение не получено':'подтверждение не получено'):match.statusStale?'сохранённый срез':'последний ответ источника'}<br/><Source url={match.statusSource} label="Источник статуса"/></dd></div><div><dt>Составы</dt><dd>{d?d.teams.map(t=><p key={t.id}>{t.name}: {labels[t.lineup.status]} · {stamp(t.lineup.checkedAt)}</p>):'Данные не получены'}{d&&<Source url={d.source} label="ESPN · составы"/>}</dd></div><div><dt>События</dt><dd>{d?.events.items.length?`${d.events.items.length} записей · ${stamp(d.events.checkedAt)}`:'Лента не получена; количество неизвестно'}{d&&<><br/><Source url={d.source} label="ESPN · события"/></>}</dd></div><div><dt>Назначение арбитра</dt><dd>{stamp(match.appointmentCheckedAt||match.checkedAt)}<br/><Source url={match.appointmentSource||match.source} label="Источник назначения"/></dd></div></dl>
+   <div className="notice"><b>Пока не подключено</b><p>{d?.availability.note||'Автоматическая лента травм, дисквалификаций и заявок клуба не подключена.'} Нет подтверждённых карт ударов, heatmaps, рейтингов игроков и xG для этого блока. Пустые поля не заменяем предположениями.</p></div>
+  </>}
+ </section>;
+}

@@ -1,126 +1,140 @@
-# vinext-starter
+# CARDROOM
 
-A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
+European football intelligence — matches, teams, players, referees and evidence-based match scenarios in one workspace.
 
-## Prerequisites
+[Live site](https://cardroom-europe.lush-flute-9375.chatgpt.site) · [GitHub](https://github.com/sasuroto/CARDROOM)
 
-- Node.js `>=22.13.0`
-- Portable: Windows, macOS, or Linux; no Bash required
-- Managed Linux: managed Linux runtime with Bash, `flock`, `curl`, `sha256sum`, and GNU `timeout`
-- Git is required only for publishing
+## What CARDROOM does
 
-## Sites Lifecycle
+- Match calendar with live, upcoming and completed games.
+- Favourites and a compact “My matches” panel, saved on the current device.
+- Tournament tables, team and player information.
+- Referee appointments, appointment provenance and available referee statistics.
+- Match details, venue and weather where verified data is available.
+- DOT Predict: calculated scenarios with supporting evidence and sample sizes.
 
-The Sites initializer copies the shared starter and selects managed-linux only when `SITES_MANAGED_LINUX_CONTAINER=1`; otherwise it selects portable. It saves the selection only in ignored `.sites-runtime/execution-profile.json`. Both profiles copy/configure first, then use the plugin's separate `install-dependencies.mjs` step to measure installation independently. Edit source under `app/` and follow the Sites skill for installation, preview, builds, and publishing.
+The interface is primarily Russian. Display dates and match times use **Asia/Tbilisi (UTC+4)**.
 
-Run `node <plugin-root>/scripts/configure-execution-profile.mjs` only when the profile is unknown for the current checkout and environment. Profile changes do not alter tracked source or require reinstalling otherwise-valid dependencies; restart an existing preview to use the new selection. Do not commit or upload `.sites-runtime/`.
+## Competitions
 
-This starter does not use `wrangler.jsonc`.
+| ID | Competition |
+| --- | --- |
+| `epl` | Premier League |
+| `ucl` | UEFA Champions League |
+| `uel` | UEFA Europa League |
+| `uecl` | UEFA Conference League |
+| `laliga` | La Liga |
+| `segunda` | Segunda División |
+| `seriea` | Serie A |
+| `bundesliga` | Bundesliga |
+| `ligue1` | Ligue 1 |
+| `superlig` | Süper Lig |
+| `primeira` | Primeira Liga |
 
-`install:ci` runs `npm ci` once against the shared lockfile, disables parent-workspace discovery, and includes required dev/optional dependencies despite production/omit settings. Sharp defaults to prebuilt binaries unless explicitly configured otherwise. Do not overlap installers.
+Support for a competition does **not** imply complete coverage of every data field.
 
-- **Portable:** Preserve host HOME, npm cache, registry, proxy, temporary paths, retry/concurrency settings, and lifecycle-script policy. Use `--prefer-offline --no-audit --no-fund`.
-- **Managed Linux:** Use the existing project-local HOME/cache/tmp setup and Linux install lock, tarball preflight, and timeout. Restore the image-seeded npm cache only when its lockfile hash matches; retain network fallback. Builds keep their existing timeout. These helpers are not invoked by the portable profile.
+## Stack
 
-`scripts/sites-env.mjs` preserves the caller's HOME, npm cache, proxy, XDG, and temporary-directory configuration while defaulting Wrangler and Miniflare state to the checkout. If npm reports an unwritable cache, select a writable path with `npm_config_cache` for that install. The `dev` and `start` scripts also keep Wrangler logs inside the checkout. Generated `.sites-runtime/` and `.wrangler/` directories are disposable and ignored by Git.
+React 19, TypeScript, Vinext/Vite, Tailwind CSS and Cloudflare Workers. The current Sites deployment uses an R2 `BUCKET` binding for persistent snapshots. Optional D1/Drizzle starter modules are present; D1 is not enabled in the current hosting manifest.
 
-On portable, `npm run dev` uses `vinext dev` with HMR, starting at port 5173. Vinext records the running server in ignored `.vinext/` state, rejects an ordinary duplicate launch, and recovers stale state after a stopped process; exactly simultaneous starts can race. Pass `--port <port>` or `--hostname <host>` after `npm run dev --` when needed; keep portable previews on loopback.
+This is a Worker-backed application, not a static export. Deploying it to another platform requires adapting its storage, runtime and authentication integrations.
 
-For browser QA on managed Linux, use `sites-preview start`. The project's dev script runs Vite and accepts the supervisor's `--host 0.0.0.0 --port 4173 --strictPort` arguments. The internal browser uses `http://terminal.local:4173/`; it is not a user-facing URL. The supervisor owns the preview lifecycle. The ignored local profile survives the supervisor's cleared process environment.
+## Local development
 
-The portable profile simulates ChatGPT sign-in only for loopback development requests. Visit `/signin-with-chatgpt?return_to=/` to sign in as `local_seedy` (`seedy@sites.test`, display name `Seedy`) and `/signout-with-chatgpt?return_to=/` to sign out. The development cookie preserves that identity across server restarts. Mock auth is disabled in the managed-linux profile and is not included in production builds; hosted authentication remains dispatch-owned.
-
-The Worker uses `vinext/server/fetch-handler`, including Vinext's config-aware image handling. After building, `npm start` runs that Worker locally through Wrangler on `127.0.0.1`, sharing `.wrangler/state` with dev preview and local D1 migrations; it does not deploy the site or simulate sign-in. Use the URL printed by the server. Pass `npm start -- --port <port>` to select a different built-preview port.
-
-Local previews use Miniflare's placeholder `Request.cf` metadata without a network lookup. Set `CLOUDFLARE_CF_FETCH_ENABLED=true` to opt into fetching preview metadata; this setting does not change hosted request metadata.
-
-Local tool usage metrics are disabled by default. Set `WRANGLER_SEND_METRICS=true` to opt in.
-
-## Included Shape
-
-- edit site code under `app/`
-- `app/chatgpt-auth.ts` provides optional dispatch-owned ChatGPT sign-in helpers
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/index.ts` reads the D1 binding from the Cloudflare Worker environment
-- `db/schema.ts` starts intentionally empty
-- `@cloudflare/workers-types` provides Worker types; `cloudflare-env.d.ts` declares optional `DB`/`BUCKET` bindings—update these declarations if binding names change
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
-
-The user ID is stable for the same user on the same Site and different across Sites. Use it as the durable user key; use email and name for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive `oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty `name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by `oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
-```
-
-## Optional Dispatch-Owned ChatGPT Sign-In
-
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs optional or required ChatGPT sign-in:
-
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use the returned `userId` as the stable user key for user-owned records; do not use email as a durable identifier.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send anonymous visitors through Sign in with ChatGPT.
-- In a Server Component, start sign-in with `<a href={chatGPTSignInPath(returnTo)} target="_top">`. The auth helper module is server-only; do not import it into a Client Component.
-- Do not use `fetch`, XHR, a client-side router, or a framework link that can prefetch the sign-in route. SIWC must start as a top-level navigation.
-- Never request the AuthAPI authorization endpoint directly. The dispatch-owned `/signin-with-chatgpt` route must start the SIWC flow.
-- Use `chatGPTSignOutPath(returnTo)` for browser sign-out links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because they depend on per-request identity headers.
-
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the OAuth cookies, and identity header injection. Do not implement app routes for those reserved paths. Routes that do not import and call the helper remain anonymous-compatible.
-
-SIWC establishes identity only; it does not prove workspace membership. Use the Sites hosting platform's access policy controls for workspace-wide restrictions, or enforce explicit server-side membership or allowlist checks.
-
-Use SIWC for account pages, user-specific dashboards, saved records, and write actions tied to the current ChatGPT user. Leave public content anonymous.
-
-## Local D1 migrations
-
-For a D1-backed local preview, generate SQL with `npm run db:generate`. Build once through the Sites skill's build entrypoint (or `npm run build` for standalone use) to generate `dist/server/wrangler.json`, rebuilding if bindings change. From the project root, apply each pending migration in order:
+Requirements: Node.js `>=22.13.0` and the package-manager version declared in `package.json` (`pnpm@11.25.0`).
 
 ```sh
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_example.sql
+git clone https://github.com/sasuroto/CARDROOM.git
+cd CARDROOM
+# Check out the desired release/sync branch before installing.
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-Replace the filename with the pending migration and `DB` with your D1 binding name if different. Use `.wrangler/state`, not `.wrangler/state/v3`; Wrangler adds the versioned directories. Do not replay migrations already applied locally. This updates only the preview database; publishing applies production migrations separately.
+Use the local URL printed by the development server. Local preview data and storage are separate from production.
 
-## Diagnostic Commands
+```sh
+pnpm build
+pnpm start
+```
 
-- `npm run install:ci`: perform the one locked dependency install
-- `npm run dev`: start the Vite/Vinext development server
-- `npm run build`: build the deployable Sites artifact
-- `npm run start`: preview the built Worker locally with D1/R2 support
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+`start` previews the built Worker locally; it does not publish the website. See [runtime documentation](docs/runtime-starter.md) for the retained starter's environment, authentication and storage details.
 
-When using the Sites plugin, follow its skill instructions for installation, builds, and publishing. These npm commands remain available for standalone use.
+## Repository structure
 
-The portable build runs Vinext directly without a host `timeout` command. The managed-linux build uses `scripts/build-verified.sh` and its existing `SITES_BUILD_TIMEOUT` setting.
+| Path | Purpose |
+| --- | --- |
+| `app/` | UI and server API routes |
+| `lib/` | Source adapters, validation, caching, models and seed snapshots |
+| `tests/` | Regression checks and source fixtures |
+| `public/` | Static assets and flags |
+| `build/`, `scripts/` | Worker integration, build and development helpers |
+| `.openai/hosting.json` | Sites project identity and storage bindings |
 
-## Learn More
+## Data sources and trust
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+Adapters use fixed sources for their supported fields: ESPN for calendars and match information; official competition/federation sources for supported referee appointments; Soccerbase, ValueStats, Balonario and saved Footiqo snapshots for supported referee statistics; and league-summary sources configured in the handlers.
+
+Coverage differs by league and field. Not every competition has a complete official crew adapter, and a referee name does not prove that assistants or VAR appointments are available.
+
+Rules enforced by the data pipeline:
+
+1. Prefer verified official appointments over secondary match feeds.
+2. Retain confirmed values and their dates when a source fails.
+3. Represent missing data explicitly, not as zero.
+4. Validate season and coverage before accepting a snapshot.
+5. Respect `nextCheckAt`, HTTP 403/429 and provider backoff.
+6. Keep partial updates visibly distinct from complete coverage.
+
+Scenario percentages are model estimates, not verified prediction accuracy or guarantees. Historical frequencies such as “2 out of 3” describe only the displayed sample. CARDROOM does not guarantee betting outcomes.
+
+## Refresh API
+
+These GET handlers may refresh and persist data; they are not all passive reads.
+
+| Endpoint | Purpose |
+| --- | --- |
+| `/api/referees` | Connected leagues, refresh status and next eligible checks |
+| `/api/referees?league=<id>` | Refresh one eligible league |
+| `/api/referees?league=<id>&read=1` | Read the saved referee refresh result |
+| `/api/data` | Read/refresh summaries within their six-hour schedule |
+| `/api/matches?date=YYYY-MM-DD&league=all` | Calendar/results for a Tbilisi calendar date |
+
+For referee maintenance, read the league list, then process only due leagues **sequentially**, with a 60-second request timeout. Read each result back using `read=1`; the `runId` must match and `persisted` must be `true`. A timeout alone does not prove that the server failed to save: inspect saved state before retrying.
+
+After the pass, read `/api/data` twice and compare `lastAttempt`, `refreshStatus`, `updatedFields`, `refreshErrors` and block dates. Preserve the six-hour interval. Refresh today's and yesterday's calendars using Asia/Tbilisi dates.
+
+## Code is not live data
+
+GitHub stores source code, tests and committed seed/reference snapshots. Production refresh results live in the site's persistent storage. Device-local favourites are not stored in GitHub. A GitHub push does not refresh production data or automatically publish a Sites version.
+
+## Checks
+
+```sh
+node tests/european-expansion.cjs
+node tests/data-reliability.cjs
+node tests/referee-hourly.cjs
+pnpm run test:qa
+pnpm exec tsc --noEmit
+pnpm build
+```
+
+Each `tests/*.cjs` file is an independent check. Some checks require the installed dependencies or a configured preview; inspect the script before running browser/network diagnostics.
+
+## Release snapshot and limitations
+
+This sync is based on **Sites v102**, source commit `eb8eb51fbdaf2e0e3127ce18a807f9b457225f79`, with this README added separately for GitHub. It includes the 11-competition expansion and the summary-cache merge fix.
+
+At handoff, coverage remained partial: some providers were blocked or had unconfirmed seasons, and the newly connected Europa/Conference leagues did not yet have fully confirmed tables, summaries or referee statistics. Check the live metadata rather than treating this README as a current data-status report.
+
+The v102 baseline had two TypeScript errors in `lib/fixture-display.ts`. This maintenance update adds explicit date-type guards and regression cases. Run the checks above when changing the code. Browser verification remains limited by preview infrastructure availability.
+
+## Security and deployment
+
+- Never commit access tokens, API keys, `.env` secrets, browser sessions or local runtime state.
+- Use supported temporary Sites access only for its intended site; never put credentials in URLs or logs.
+- Preserve the site's audience and project identity unless explicitly changing them.
+- Keep source sync, code publication and runtime data refresh as separate operations.
+- Use a review branch and pull request; do not overwrite collaborators' branches or force-push `main`.
+
+No reuse licence is granted by this README. Third-party assets and dependencies retain their respective licences.
