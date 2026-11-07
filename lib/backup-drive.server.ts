@@ -233,3 +233,18 @@ export async function driveStatus(req:Request,env:DriveEnv):Promise<Response>{
    providerAccessVerifiedNow:false,folderAccessVerified:false,offsiteVerified:false,backupEnabled:false});
  }catch(e){return errorReply(e)}
 }
+
+// Internal server-only bridge for the separately gated backup implementation.
+// It does not refresh, capture, upload, or expose credentials through any route.
+export async function authorizeDriveBackup(req:Request,env:DriveEnv){
+ if(req.method!=='POST')fail('method-not-allowed',405);
+ const c=await config(env);owner(req,c);
+ if(req.headers.get('Origin')!==SITE_ORIGIN||!['same-origin',null].includes(req.headers.get('Sec-Fetch-Site'))||new URL(req.url).search)fail('wrong-origin',403);
+ const row=await readConnection(c);if(!row)fail('not-connected',409);
+ const token=await tokenRecord(c,row);
+ if(token.expiresAt!==null&&token.expiresAt<=Date.now())fail('reauthorization-required',409);
+ const flow=await c.db.prepare("SELECT retry_at FROM backup_drive_flow WHERE id='primary' AND owner=?").bind(c.owner).first<{retry_at:number}>();
+ if(flow&&flow.retry_at>Date.now())throw new SafeError('cooldown',429,flow.retry_at);
+ return {db:c.db,owner:c.owner,clientId:c.clientId,clientSecret:c.secret,email:c.email,
+  permissionId:token.permissionId,refreshToken:token.refreshToken,connectionRevision:row.revision};
+}

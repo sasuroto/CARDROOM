@@ -1,5 +1,48 @@
 # CARDROOM handoff — 2026-11-06
 
+## Bounded Drive upload preparation — 7 November 2026, local only
+
+Owner: Codex, branch `feat/drive-backup-local-20261107`, based on PR #10 commit
+`22158260b86efa3b35ddde08afbf208f5f9ff620`. See
+[backup-drive-upload.md](backup-drive-upload.md). Adds a disabled, unexposed
+server implementation for a single encrypted upload to an explicitly configured
+private Drive folder, independent key custody, strict drive.file/account checks,
+bounded two-pass observed-stability capture, persistent upload intent/leases,
+readback verification and an offline encrypted SQLite recovery drill. The new
+schema-only migration affects upload telemetry only. There is no live route,
+schedule, retention deletion, provider request, real secret generation, OAuth
+grant, upload, production migration, deployment, push or main merge.
+
+A successful transfer is not an atomic snapshot or verified production recovery.
+The 2 MiB plaintext cap fails closed; all 17 R2 records and the detected v2/v3
+journal schema must be present and unchanged across both capture passes.
+Credentials, operational state and source-provider refreshes are excluded.
+Uncertain create outcomes retain the same preallocated ID; only a confirmed
+pre-send failure permits a new attempt. Capture deadlines cannot cancel an
+already-running platform R2/D1 read, but prevent all continuation reads/upload.
+SQL byte accounting now inspects the bounded ordered row prefix only.
+
+Independent Codex review identified key-encoding equivalence, unbounded awaited
+capture/SQL sums, and two known-pre-send failure paths that incorrectly became
+uncertain. All four P2 findings are corrected with regression tests; the final
+independent recheck confirmed them closed. No Claude review is claimed.
+Focused upload/recovery suite: 93 checks, including all three populated journal
+tables, original payloads, credential exclusion, account/folder restrictions,
+corruption, 403/429, timeouts, concurrency, reconnect, readback loss, key aliases,
+and standalone offline recovery. Archive v2: 22 checks; v3: 41 checks. TypeScript
+and targeted changed-file lint pass. Two earlier aggregate runs passed all 73
+suites. The final-code aggregate encountered the existing calendar-rate-limit
+timing assertion; its standalone repeat passed all 19 checks, and all remaining
+64 suites passed. Every final-code suite passed, but that interrupted aggregate
+is not called clean. Production build passed with the existing >500 kB chunk
+warning. General repository lint retains existing findings and is not claimed
+clean. No UI changes or browser QA are claimed.
+
+Next owner: release coordinator for explicit approval of secure configuration, per-file folder grant, one real test upload
+and independent isolated Cloudflare restore. Publication, live migration and
+existing-maintenance integration remain separate approval gates. Do not present
+this local preparation as working off-site protection.
+
 ## Exact-score archive compatibility — 7 November 2026, NOT deployed
 
 Owner: Codex, branch `fix/archive-exact11-20261107`, based on GitHub exact-score

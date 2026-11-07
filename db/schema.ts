@@ -28,3 +28,13 @@ export const backupDriveConnection=sqliteTable('backup_drive_connection',{
  id:text('id').primaryKey(),owner:text('owner').notNull(),revision:text('revision').notNull(),
  sealed:text('sealed').notNull(),
 });
+
+// One bounded in-flight upload. No archive payload, credentials or automatic deletion.
+export const backupDriveUpload=sqliteTable('backup_drive_upload',{
+ id:text('id').primaryKey(),owner:text('owner').notNull(),binding:text('binding').notNull(),
+ runKey:text('run_key').notNull(),attemptId:text('attempt_id').notNull(),fileId:text('file_id'),
+ phase:text('phase').notNull(),leaseUntil:integer('lease_until').notNull(),
+ archiveSha256:text('archive_sha256'),wireSha256:text('wire_sha256'),wireSize:integer('wire_size'),
+ startedAt:integer('started_at').notNull(),updatedAt:integer('updated_at').notNull(),
+ retryAt:integer('retry_at').notNull().default(0),lastError:text('last_error'),
+});
