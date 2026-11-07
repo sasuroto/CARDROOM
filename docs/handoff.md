@@ -1,5 +1,32 @@
 # CARDROOM handoff — 2026-11-06
 
+## Manual Drive upload HTTP boundary — 7 November 2026, local only
+
+Owner: Codex, branch `feat/drive-upload-route-local-20261107`, based on draft
+PR #11 commit `7add27bb08d5e31f50ef687fc4f712a2a4f2207d`. That PR's remote CI
+passed install, TypeScript, tests, build and responsive audit. This HTTP increment
+is separate, has not been pushed or deployed, and is not covered by that CI run.
+
+Adds a strict owner-only POST wrapper around the reviewed uploader. An explicit
+single-action JSON body, trusted Sites identity and exact origin are required.
+Body bytes/chunks/time are bounded. Every other HTTP method is explicitly denied;
+unauthorized and malformed requests cannot reach storage or providers. Response
+projection, fixed reason allowlists, private/no-store, CSP/no-referrer and no CORS
+avoid leaking payloads, secrets or unexpected runner fields. Default configuration
+still denies upload. No new UI, schedule, credential entry or access setup exists.
+
+Focused HTTP boundary tests: 122 checks. Existing upload/recovery: 93 checks.
+TypeScript, targeted changed-file lint and production build pass, as does the
+final sequential aggregate of all 74 suites. Independent security review found
+no blocker. Its additional enabled synthetic integration ran all 93 uploader
+checks through the real HTTP boundary, including five 201 successes and one
+200 duplicate, with fake Google and real in-memory SQLite. The reviewed route
+and test file hashes match this local source. No real access was involved.
+No browser/live Sites identity QA or real Google transfer is claimed. Required
+next steps remain secure owner/client/key provisioning, explicit folder grant,
+approved route/migration publication and an isolated real recovery test. Creating
+or configuring persistent access and keys requires the applicable confirmation.
+
 ## Bounded Drive upload preparation — 7 November 2026, local only
 
 Owner: Codex, branch `feat/drive-backup-local-20261107`, based on PR #10 commit

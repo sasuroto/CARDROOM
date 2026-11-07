@@ -123,6 +123,6 @@ async function reason(r,why){check(r.status==='error'&&r.reason===why,why+': '+J
  sql.exec('BEGIN');const insert=sql.prepare('INSERT INTO journal_forecasts VALUES (?,?,?,?,?)');
  for(let i=0;i<A.MAX_ROWS;i++)insert.run('epl:overflow-'+i,'epl','2026-11-07',stamp,'{}');sql.exec('COMMIT');
  await assert.rejects(()=>A.captureArchive(db,bucket),/row-limit/);checks++;
- check(!fs.readdirSync('app/api/backup-drive').includes('upload'),'no live HTTP upload route enabled');
+ check(fs.readFileSync('.env.example','utf8').includes('CARDROOM_DRIVE_UPLOAD_ENABLED=\n'),'HTTP upload remains disabled by default');
  console.log(`Backup Drive upload: ${checks} checks passed; all network and data synthetic.`);
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>{Date.now=realNow;sql.close()});
