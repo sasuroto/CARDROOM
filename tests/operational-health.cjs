@@ -63,6 +63,6 @@ global.fetch=()=>{throw Error('Health must not fetch upstream')};
  r=await route.GET(new Request('https://cardroom.invalid/api/health?url=https://other.example'));
  check(r.status===400,'no caller-defined keys or upstreams');
  env.BUCKET=make();r=await route.GET(new Request('https://cardroom.invalid/api/health'));h=await r.json();
- check(r.status===200&&h.referees.length===11,'all 11 configured leagues returned by route');
+ check(r.status===200&&h.referees.length===16,'all 16 configured leagues returned by route');
  console.log(`PASS ${checks} operational health checks: no upstream/writes, deadlines, coverage, storage failures and redaction.`);
 })().catch(e=>{console.error(e);process.exitCode=1});

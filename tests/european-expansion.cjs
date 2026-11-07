@@ -7,9 +7,9 @@ const {importWatchList}=require('../app/favorites.tsx');let checks=0;const check
 (async()=>{
  const previous=structuredClone(seed);previous.leagues=previous.leagues.filter(l=>!['uel','uecl'].includes(l.id));delete previous.refereesByLeague.uel;delete previous.refereesByLeague.uecl;
  previous.leagues[0].overview.goals=3.141;previous.leagues[0].overview.checkedAt='2026-11-05T00:00:00Z';previous.lastAttempt='2026-11-05T00:00:00Z';previous.blockStatus={'epl:overview':{nextAt:'2026-11-05T06:00:00Z'}};
- const merged=mergeDataSnapshot(seed,previous);check(merged.leagues.length===11,'old nine-league cache admits both new tournaments');check(merged.leagues[0].overview.goals===3.141&&merged.lastAttempt===previous.lastAttempt&&merged.blockStatus['epl:overview'].nextAt===previous.blockStatus['epl:overview'].nextAt,'existing data, dates and cooldown preserved');
+ const merged=mergeDataSnapshot(seed,previous);check(merged.leagues.length===16,'old nine-league cache admits both new tournaments');check(merged.leagues[0].overview.goals===3.141&&merged.lastAttempt===previous.lastAttempt&&merged.blockStatus['epl:overview'].nextAt===previous.blockStatus['epl:overview'].nextAt,'existing data, dates and cooldown preserved');
  const fresh=structuredClone(merged);fresh.leagues.find(l=>l.id==='uel').overview={goals:2.9,checkedAt:'2026-11-05T13:00:00Z'};
- const concurrent=mergeDataSnapshot(mergeDataSnapshot(seed,previous),fresh);check(concurrent.leagues.length===11&&concurrent.leagues.find(l=>l.id==='uel').overview.goals===2.9,'final save against old persisted cache retains new competition blocks');
+ const concurrent=mergeDataSnapshot(mergeDataSnapshot(seed,previous),fresh);check(concurrent.leagues.length===16&&concurrent.leagues.find(l=>l.id==='uel').overview.goals===2.9,'final save against old persisted cache retains new competition blocks');
  check(fs.readFileSync(require.resolve('../app/api/data/route.ts'),'utf8').includes('mergeDataSnapshot(load(latest),data)'),'refresh route normalizes the latest cache before final merge');
  for(const [id,slug,uid] of [['uel','uefa.europa','776'],['uecl','uefa.europa.conf','20296']]){
   const league=merged.leagues.find(l=>l.id===id);check(LEAGUES[id]===slug&&league.code==='EU'&&league.expectedTeamCount===36,'distinct provider and competition metadata');
@@ -26,6 +26,6 @@ const {importWatchList}=require('../app/favorites.tsx');let checks=0;const check
  }
  const today=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Tbilisi'}),key=`fixtures/v9/${today}/all/day.json`;
  values.set(key,{events:[],errors:[],checkedAt:new Date().toISOString(),competitionIds:previous.leagues.map(l=>l.id)});let calls=[];global.fetch=async url=>{calls.push(String(url));return Response.json({events:[]})};
- const all=await(await Calendar.GET(new Request('https://local/api/matches?date='+today+'&league=all'))).json();check(all.competitionIds.length===11&&calls.some(url=>url.includes('/uefa.europa/'))&&calls.some(url=>url.includes('/uefa.europa.conf/')),'fresh old all-league cache cannot hide added competitions');
+ const all=await(await Calendar.GET(new Request('https://local/api/matches?date='+today+'&league=all'))).json();check(all.competitionIds.length===16&&calls.some(url=>url.includes('/uefa.europa/'))&&calls.some(url=>url.includes('/uefa.europa.conf/')),'fresh old all-league cache cannot hide added competitions');
  console.log('PASS '+checks+' European expansion checks: migration, independent sources, missing values, tables, favourites, calendar coverage and verified hourly updates.');
 })().catch(e=>{console.error(e);process.exitCode=1});

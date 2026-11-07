@@ -2,7 +2,10 @@ import {LEAGUES} from './fixtures';
 
 const DAY=86400000,OFFSET=4*3600000;
 export const BACKUP_SLOTS=7,MAX_BACKUP_BYTES=4*1024*1024;
-const leagues=Object.keys(LEAGUES);
+// Preserve the v105 backup contract and already verified copies. Additional
+// competitions require a separately versioned backup migration, not relabelling
+// or overwriting the existing 12-record archive.
+const leagues=['epl','ucl','uel','uecl','laliga','segunda','seriea','bundesliga','ligue1','superlig','primeira'];
 export const BACKUP_RECORD_KEYS=['cardroom/data-v1.json',...leagues.map(id=>`referee-updates/v1/${id}.json`)];
 export function backupLocation(now:number){
  const day=new Date(now+OFFSET).toISOString().slice(0,10),slot=((Math.floor((now+OFFSET)/DAY)%BACKUP_SLOTS)+BACKUP_SLOTS)%BACKUP_SLOTS;

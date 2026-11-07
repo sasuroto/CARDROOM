@@ -17,12 +17,12 @@ This is a proposed division of work, not an automatic agent integration. Both ag
 3. Add regression tests, run TypeScript and relevant suites, then the existing CI checks/build. Inspect the diff for credentials and generated files.
 4. Ask the other agent/human to review the exact commit where available. Record absent independent review honestly.
 5. Publish through Sites with unchanged audience. Record version and source SHA; GitHub push alone is not a deployment.
-6. GET `/api/health` after deployment. Confirm schema, all 11 leagues and storage readability. Existing provider degradation is not a deployment success/failure proxy: compare against the pre-release baseline.
+6. GET `/api/health` after deployment. Confirm schema, all configured leagues (16 after the domestic expansion) and storage readability. Existing provider degradation is not a deployment success/failure proxy: compare against the pre-release baseline.
 7. Record handoff. If a release introduces a regression, redeploy the recorded prior known-good Sites version; do not reset the repository or erase production data. Restore compatibility before replaying jobs.
 
 ## Read-only monitoring
 
-`GET /api/health` reads only the saved summary and 11 fixed referee-report keys. It makes no upstream requests or writes. Query parameters are rejected.
+`GET /api/health` reads only the saved summary and configured referee-report keys (16 after the domestic expansion). It makes no upstream requests or writes. Query parameters are rejected. The v105 backup scope remains the original 11 referee reports plus summary; the five added referee reports and D1 journal are not covered.
 
 - HTTP 200 + `healthy`: inspected reports and summary coverage meet checks; not an uptime guarantee.
 - HTTP 200 + `degraded`: missing/invalid/overdue reports, stale or partial source data, or source errors. Inspect `alerts`, not just HTTP status.

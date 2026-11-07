@@ -5,7 +5,7 @@ import {espnOfficials} from './match-officials';
 import {currentAppointment} from './current-context';
 import {venueFields} from './match-location';
 import research from './match-research.json';
-export const LEAGUES:Record<string,string>={epl:'eng.1',ucl:'uefa.champions',uel:'uefa.europa',uecl:'uefa.europa.conf',laliga:'esp.1',segunda:'esp.2',seriea:'ita.1',bundesliga:'ger.1',ligue1:'fra.1',superlig:'tur.1',primeira:'por.1'};
+export const LEAGUES:Record<string,string>={epl:'eng.1',ucl:'uefa.champions',uel:'uefa.europa',uecl:'uefa.europa.conf',laliga:'esp.1',segunda:'esp.2',seriea:'ita.1',bundesliga:'ger.1',ligue1:'fra.1',superlig:'tur.1',primeira:'por.1',serieb:'ita.2',championship:'eng.2',ligue2:'fra.2',eredivisie:'ned.1',bundesliga2:'ger.2'};
 export const localDay=(date:string)=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(date));
 export function espn(url:string,bucket?:R2Bucket){return fetchEspn(url,bucket) as Promise<any>}
 export function curated(id:string):any{return currentAppointment(id)||research.fixtures.find(f=>f.id===id)}

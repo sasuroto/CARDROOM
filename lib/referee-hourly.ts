@@ -45,10 +45,11 @@ async function refresh(league:string,bucket:R2Bucket){
  if(cached&&Date.now()-Date.parse(cached.startedAt)<REFEREE_INTERVAL)return {...cached,stats:normalizeRefereeSeason(cached.stats),cached:true,persisted:true};
  const startedAt=new Date(Date.now()).toISOString(),deadline=Date.now()+45000,window=refereeWindow(),errors:string[]=[],config=(seeds as any)[league];
  const legacy=await readCache(bucket,'cardroom/data-v1.json');
- const options=[config,cached?.stats,legacy?.refereesByLeague?.[league]].filter(Boolean).sort((a,b)=>Date.parse(b.checkedAt||'')-Date.parse(a.checkedAt||''));
+ const options=[config,cached?.stats,legacy?.refereesByLeague?.[league]].filter(Boolean).sort((a,b)=>(Date.parse(b.checkedAt||'')||0)-(Date.parse(a.checkedAt||'')||0));
  let stats=normalizeRefereeSeason(structuredClone(options[0])),statsStatus='unavailable',events:any[]=[];
  // Footiqo's shared table does not provide a verified tournament/season parser yet.
  if(league==='primeira'){statsStatus='snapshot';errors.push('Статистика Primeira Liga: сохранённый срез; автоматическая проверка турнира и сезона не подключена.')}
+ else if(!config?.source){statsStatus='unavailable';errors.push('Статистика: проверенный сезонный источник пока не подключён.');}
  else try{
   const html=await(await hourlySource(bucket,config.source)).text();
   const checkedAt=new Date(Date.now()).toISOString(),parsed=parseSeasonalReferees(html,league,config.source,checkedAt,200),rows=parsed.rows;
@@ -81,7 +82,7 @@ async function refresh(league:string,bucket:R2Bucket){
   if(result.rateLimited)break;
  }
  const matches=events.map(e=>results.get(e.id)||{...e,...old.get(e.id),id:e.id,league});
- const statsBackoff=await readCache(bucket,`referee-updates/source-backoff/${new URL(config.source).hostname}.json`);
+ const statsBackoff=config?.source?await readCache(bucket,`referee-updates/source-backoff/${new URL(config.source).hostname}.json`):null;
  const sourceHealth={statistics:{source:config.source,httpStatus:statsBackoff?.status||null,retryAt:statsBackoff?.until>Date.now()?new Date(statsBackoff.until).toISOString():null},calendar:{source:'https://site.api.espn.com',errors:errors.filter(e=>e.startsWith('Календарь:'))}};
  const report={sourceHealth,appointmentCoverage:appointmentCoverage(matches),league,runId:crypto.randomUUID(),startedAt,completedAt:new Date(Date.now()).toISOString(),nextCheckAt:new Date(Date.parse(startedAt)+REFEREE_INTERVAL).toISOString(),window:{from:window.from,until:window.until,timezone:'Asia/Tbilisi'},stats,statsStatus,statsSource:config.source,matches,coverage:{found:events.length,checked:results.size,confirmed:matches.filter(m=>m.referee&&m.currentVerified&&!m.appointmentStale).length,missing:matches.filter(m=>!m.referee).length,deferred:Math.max(0,events.length-results.size)},errors};
  await writeCache(bucket,key,report);

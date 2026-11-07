@@ -16,7 +16,7 @@ interface SourceEvent {id?:unknown;type?:{type?:unknown};team?:SourceTeam;partic
 interface SourceCompetition {id?:unknown;date?:unknown;competitors?:unknown;status?:{type?:{state?:unknown};displayClock?:unknown}}
 interface SourceSummary {header?:{id?:unknown;league?:{slug?:unknown};competitions?:SourceCompetition[]};rosters?:unknown;keyEvents?:unknown;gameInfo?:{attendance?:unknown}}
 interface ValidSummary extends SourceSummary {header:{id?:unknown;league:{slug:string};competitions:[SourceCompetition & {competitors:(SourceCompetitor & {team:SourceTeam})[]},...SourceCompetition[]]}}
-const leagues:Record<string,string>={epl:'eng.1',ucl:'uefa.champions',uel:'uefa.europa',uecl:'uefa.europa.conf',laliga:'esp.1',segunda:'esp.2',seriea:'ita.1',bundesliga:'ger.1',ligue1:'fra.1',superlig:'tur.1',primeira:'por.1'};
+const leagues:Record<string,string>={epl:'eng.1',ucl:'uefa.champions',uel:'uefa.europa',uecl:'uefa.europa.conf',laliga:'esp.1',segunda:'esp.2',seriea:'ita.1',bundesliga:'ger.1',ligue1:'fra.1',superlig:'tur.1',primeira:'por.1',serieb:'ita.2',championship:'eng.2',ligue2:'fra.2',eredivisie:'ned.1',bundesliga2:'ger.2'};
 const text=(v:unknown,n=160)=>typeof v==='string'?v.replace(/[\u0000-\u001f]/g,' ').trim().slice(0,n):'';
 const id=(v:unknown)=>typeof v==='string'||typeof v==='number'?(/^\d{1,16}$/.test(String(v))?String(v):null):null;
 const date=(v:unknown)=>typeof v==='string'&&Number.isFinite(Date.parse(v))?v:null;

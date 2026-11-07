@@ -2,7 +2,7 @@ import {LEAGUES,espn} from './fixtures';
 import {cachedLeagueData,LEAGUE_DATA_TTL} from './league-data-cache';
 
 // ESPN's standing endpoint identifies its competition by uid rather than slug.
-const ESPN_LEAGUE_IDS:Record<string,string>={epl:'700',ucl:'775',uel:'776',uecl:'20296',laliga:'740',segunda:'3921',seriea:'730',bundesliga:'720',ligue1:'710',superlig:'3946',primeira:'715'};
+const ESPN_LEAGUE_IDS:Record<string,string>={epl:'700',ucl:'775',uel:'776',uecl:'20296',laliga:'740',segunda:'3921',seriea:'730',bundesliga:'720',ligue1:'710',superlig:'3946',primeira:'715',serieb:'3931',championship:'3914',ligue2:'3926',eredivisie:'725',bundesliga2:'3927'};
 export type StandingTeam={id:string;name:string;logo:string|null};
 export type StandingEntry=StandingTeam&{rank:number|null;played:number|null;won:number|null;drawn:number|null;lost:number|null;goalsFor:number|null;goalsAgainst:number|null;goalDifference:number|null;points:number|null;form:null;note:string|null};
 export type LeagueTable={league:string;season:number;seasonLabel:string;groups:{name:string;sourceName:string;entries:StandingEntry[]}[];teams:StandingTeam[];checkedAt:string|null;source:string;stale?:boolean;error?:string;attemptedAt?:string};

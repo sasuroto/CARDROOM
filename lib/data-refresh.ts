@@ -21,8 +21,8 @@ export function refreshTasks(data:any,refSeed:Record<string,any>):Task[]{
  const tasks:Task[]=[];
  for(const l of data.leagues){
   const ensure=(html:string)=>{const txt=clean(html);if(!txt.includes(l.season)&&!txt.includes(l.season.replace('/','/20')))throw new Error('Сезон не подтверждён')};
-  tasks.push({id:l.id+':cards',url:l.cards.source,checkedAt:l.cards.checkedAt,apply:(html,now)=>{ensure(html);const parsed=parseCards(html);if(parsed.n<l.cards.n)throw new Error('Уменьшилась выборка');l.cards={...l.cards,...parsed,checkedAt:now}}});
-  tasks.push({id:l.id+':overview',url:l.overview.source,checkedAt:l.overview.checkedAt,apply:(html,now)=>{ensure(html);l.overview={...l.overview,...parseOverview(html),checkedAt:now}}});
+  if(l.cards.source)tasks.push({id:l.id+':cards',url:l.cards.source,checkedAt:l.cards.checkedAt,apply:(html,now)=>{ensure(html);const parsed=parseCards(html);if(parsed.n<l.cards.n)throw new Error('Уменьшилась выборка');l.cards={...l.cards,...parsed,checkedAt:now}}});
+  if(l.overview.source)tasks.push({id:l.id+':overview',url:l.overview.source,checkedAt:l.overview.checkedAt,apply:(html,now)=>{ensure(html);l.overview={...l.overview,...parseOverview(html),checkedAt:now}}});
   if(l.id!=='segunda'&&l.teamSource&&l.teamRefreshMode!=='snapshot')tasks.push({id:l.id+':yellow',url:l.teamSource,checkedAt:l.teamCheckedAt,apply:(html,now)=>{
    ensure(html);const teams=parseTeams(html);if(teams.length<l.teams.length)throw new Error('Неполная выдача');for(const t of teams){const old=l.teams.find((x:any)=>x.name===t.name);if(old&&t.n<old.n)throw new Error('Устаревшая выборка')}
    l.teams=teams;l.teamCheckedAt=now;l.partial=teams.length<leagueSize(l.id);

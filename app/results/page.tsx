@@ -1,7 +1,7 @@
 'use client';
 import {useEffect,useState} from 'react';
 import './results.css';
-const leagues=[['all','Все турниры'],['epl','Premier League'],['ucl','Лига чемпионов'],['uel','Лига Европы'],['uecl','Лига конференций'],['laliga','La Liga'],['segunda','Segunda'],['seriea','Serie A'],['bundesliga','Bundesliga'],['ligue1','Ligue 1'],['superlig','Süper Lig'],['primeira','Primeira Liga']];
+const leagues=[['all','Все турниры'],['epl','Premier League'],['ucl','Лига чемпионов'],['uel','Лига Европы'],['uecl','Лига конференций'],['laliga','La Liga'],['segunda','Segunda'],['seriea','Serie A'],['bundesliga','Bundesliga'],['ligue1','Ligue 1'],['superlig','Süper Lig'],['primeira','Primeira Liga'],['serieb','Serie B'],['championship','Championship'],['ligue2','Ligue 2'],['eredivisie','Eredivisie'],['bundesliga2','2. Bundesliga']];
 const day=(n=0)=>new Date(Date.now()+4*3600000+n*86400000).toISOString().slice(0,10);
 const date=(s:string)=>s?new Date(s).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'—';
 const percent=(v:number|null)=>v===null?'—':`${Math.round(v*100)}%`;

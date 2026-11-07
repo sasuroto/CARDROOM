@@ -7,7 +7,7 @@ let checks=0;const check=(value,label)=>{assert.ok(value,label);checks++};
 (async()=>{
  const previous=structuredClone(seed);previous.leagues=previous.leagues.filter(l=>!['superlig','primeira'].includes(l.id));delete previous.refereesByLeague.superlig;delete previous.refereesByLeague.primeira;
  const merged=mergeDataSnapshot(seed,previous);
- check(merged.leagues.length===11,'existing persisted cache must retain new leagues');
+ check(merged.leagues.length===16,'existing persisted cache must retain new leagues');
  for(const [id,provider] of [['superlig','tur.1'],['primeira','por.1']]){
   const league=merged.leagues.find(l=>l.id===id);
   check(league&&league.season==='2026/27','season scoped metadata present');

@@ -5,6 +5,11 @@
   "refreshStatus": "updated",
   "scheduleEnabled": false,
   "leagues": [
+    {"id":"bundesliga2","name":"2. Bundesliga","country":"Германия","code":"DE","season":"2026/27","expectedTeamCount":18,"cards":{"n":null,"avg":null,"home":null,"away":null,"source":null,"checkedAt":null},"teams":[],"teamSource":null,"teamCheckedAt":null,"partial":true,"yellowSummary":null,"corners":[],"overview":{"goals":null,"btts":null,"shots":null,"fouls":null,"source":null,"checkedAt":null},"teamNote":"Календарь и таблица подключены. Сезонные сводки ещё не подтверждены."},
+    {"id":"serieb","name":"Serie B","country":"Италия","code":"IT","season":"2026/27","expectedTeamCount":20,"cards":{"n":null,"avg":null,"home":null,"away":null,"source":null,"checkedAt":null},"teams":[],"teamSource":null,"teamCheckedAt":null,"partial":true,"yellowSummary":null,"corners":[],"overview":{"goals":null,"btts":null,"shots":null,"fouls":null,"source":null,"checkedAt":null},"teamNote":"Календарь и таблица подключены. Сезонные сводки ещё не подтверждены."},
+    {"id":"championship","name":"Championship","country":"Англия","code":"EN","season":"2026/27","expectedTeamCount":24,"cards":{"n":null,"avg":null,"home":null,"away":null,"source":null,"checkedAt":null},"teams":[],"teamSource":null,"teamCheckedAt":null,"partial":true,"yellowSummary":null,"corners":[],"overview":{"goals":null,"btts":null,"shots":null,"fouls":null,"source":null,"checkedAt":null},"teamNote":"Календарь и таблица подключены. Сезонные сводки ещё не подтверждены."},
+    {"id":"ligue2","name":"Ligue 2","country":"Франция","code":"FR","season":"2026/27","expectedTeamCount":18,"cards":{"n":null,"avg":null,"home":null,"away":null,"source":null,"checkedAt":null},"teams":[],"teamSource":null,"teamCheckedAt":null,"partial":true,"yellowSummary":null,"corners":[],"overview":{"goals":null,"btts":null,"shots":null,"fouls":null,"source":null,"checkedAt":null},"teamNote":"Календарь и таблица подключены. Сезонные сводки ещё не подтверждены."},
+    {"id":"eredivisie","name":"Eredivisie","country":"Нидерланды","code":"NL","season":"2026/27","expectedTeamCount":18,"cards":{"n":null,"avg":null,"home":null,"away":null,"source":null,"checkedAt":null},"teams":[],"teamSource":null,"teamCheckedAt":null,"partial":true,"yellowSummary":null,"corners":[],"overview":{"goals":null,"btts":null,"shots":null,"fouls":null,"source":null,"checkedAt":null},"teamNote":"Календарь и таблица подключены. Сезонные сводки ещё не подтверждены."},
     {
       "id": "epl",
       "name": "Premier League",
@@ -1983,6 +1988,11 @@
   "refreshErrors": [],
   "parserVersion": 6,
   "refereesByLeague": {
+    "bundesliga2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+    "serieb": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+    "championship": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+    "ligue2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+    "eredivisie": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
     "epl": {
       "rows": [
         {

@@ -6,7 +6,7 @@ const KEY='cardroom:favorites:v1';
 export function parseFavorites(raw:string|null):Favorite[]{try{const value=JSON.parse(raw||'[]');return Array.isArray(value)?value.filter((x:any)=>x&&['league','team','match'].includes(x.kind)&&typeof x.id==='string'&&x.id.length<100&&typeof x.label==='string'&&x.label.length<200&&(!x.league||typeof x.league==='string')).slice(0,200):[]}catch{return []}}
 export function importWatchList(existing:Favorite[],raw:string|null):Favorite[]{
  if(!raw||raw.length>10000)return existing;
- const allowed=new Set(['epl','ucl','uel','uecl','laliga','segunda','seriea','bundesliga','ligue1','superlig','primeira']);
+ const allowed=new Set(['epl','ucl','uel','uecl','laliga','segunda','seriea','bundesliga','ligue1','superlig','primeira','serieb','championship','ligue2','eredivisie','bundesliga2']);
  const added=parseFavorites(raw).filter(x=>x.kind==='match'&&x.league&&allowed.has(x.league)&&new RegExp('^'+x.league+':\\d{5,12}$').test(x.id)).slice(0,20);
  return [...existing,...added.filter((x,i)=>!existing.some(y=>y.kind===x.kind&&y.id===x.id)&&added.findIndex(y=>y.id===x.id)===i)].slice(-200);
 }

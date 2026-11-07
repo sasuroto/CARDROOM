@@ -10,7 +10,7 @@ const get=async(date,league='all')=>(await Calendar.GET(new Request(`https://sit
 let checks=0;const check=(ok,msg)=>{assert.ok(ok,msg);checks++};
 (async()=>{
  const first=await get('2026-11-02');
- check(first.retryAfter===now+3600000&&first.errors.length===11,'calendar exposes provider retry deadline for all failed leagues');
+ check(first.retryAfter===now+3600000&&first.errors.length===16,'calendar exposes provider retry deadline for all failed leagues');
  check(calls.length===4,'first 429 stops new attempts after at most four already in-flight calls');
  check(values.get('referee-updates/source-backoff/site.api.espn.com.json')?.until===first.retryAfter,'cooldown is persisted for all routes and isolates');
  const changed=await get('2026-11-03','seriea');
@@ -49,7 +49,7 @@ let checks=0;const check=(ok,msg)=>{assert.ok(ok,msg);checks++};
  // leagues (22 day/previous-day calls) must fit the calendar work budget.
  let completed=0,calendarRequests=0,calendarFlight=0,calendarMax=0;const latencyStart=now;
  global.fetch=async()=>{calendarRequests++;calendarFlight++;calendarMax=Math.max(calendarMax,calendarFlight);await new Promise(resolve=>setImmediate(resolve));completed++;now=latencyStart+Math.ceil(completed/4)*2000;calendarFlight--;return Response.json({events:[]})};
- const allLeagues=await get('2026-11-07');check(calendarRequests===22&&allLeagues.errors.length===0&&calendarMax===4&&now-latencyStart===12000,'all 22 healthy requests complete with 2s latency without artificial missing leagues');
+ const allLeagues=await get('2026-11-07');check(calendarRequests===32&&allLeagues.errors.length===0&&calendarMax===4&&now-latencyStart===16000,'all 32 healthy requests complete with 2s latency without artificial missing leagues');
  // Independent modules model separate isolates: each has four slots. Shared R2
  // cooldown is enforced, but claiming an atomic four-request global cap is false.
  let crossFlight=0,crossMax=0;global.fetch=async()=>{crossFlight++;crossMax=Math.max(crossMax,crossFlight);await new Promise(resolve=>setImmediate(resolve));crossFlight--;return Response.json({ok:true})};

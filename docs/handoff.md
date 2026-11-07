@@ -1,5 +1,118 @@
 # CARDROOM handoff — 2026-11-06
 
+## GitHub source sync — 7 November 2026
+
+Owner: Codex. This increment mirrors published Sites v108 source
+`ab21b210cbd9bbad617cd8799ff93a480d45c91e` onto the existing PR #7 branch,
+whose previous GitHub head was `ceda5ab4f3440ea4687f18d0ea3910890065edbb`.
+It includes all 16 leagues, the portable-archive preparation, and the locked
+Drive connection page/OAuth foundation. GitHub-specific reliability notes and
+CI are preserved; generated build state, runtime exports and credentials are
+excluded. Exact-score 1:1 is a separate experimental review branch, not part of
+the published v108 source. Its original source commit is
+`0ee3e4d5283b4d9b2bd1b185b9254f1f5f0a83bc`.
+
+The older sections below are chronological implementation notes, not current
+deployment/configuration claims. v108 is already published; this GitHub sync
+does not publish another version, merge main, migrate live D1 or refresh data.
+The owner setup page still reports owner configuration missing. The existing
+CARDROOM Backups Drive folder was read on 7 November and is empty. No OAuth
+connection, archive upload or external recovery is claimed. Do not configure
+an owner from a screenshot identifier alone or commit that identifier/secrets.
+
+Verification: all 67 regression suites, TypeScript (no incremental output),
+and production build passed. The existing >500 kB chunk warning remains.
+Independent Codex review found no blocker for this GitHub-only sync and checked
+secret exclusion, 16-league propagation, disabled Drive and additive schema.
+The resulting GitHub commit and remote CI status are recorded in PR #7.
+Browser QA and real Google authorization remain unverified by this sync.
+
+## Drive connection page — approved locked release, publication pending
+
+Owner approved implementation and publication in this conversation. Adds
+`/backup-drive` with server-side owner authorization, native POST consent action,
+strict no-store/no-referrer/CSP, no JS and no secret inputs. Anonymous viewers
+can sign in through Sites. Until owner configuration exists, signed-in viewers
+see only their own trusted Site identity and explicit no-auto-enrollment text;
+no connection/storage access is allowed. Callback success AND failures navigate
+to a fixed clean page URL, never reflecting OAuth queries/provider payloads.
+
+Google client creation and old exposed secret revocation were confirmed by the
+owner's screenshots; the new secret is not provisioned to Sites. Runtime env
+revision 0 has no entries. OAuth stays disabled. No folder grant, upload, external
+backup, schedule change, personal-mail access or Google token exchange occurred.
+User must establish genuine Sites identity and use a supported private secret
+entry mechanism before enablement. Platform callback-query log safety and actual
+identity/cookie Google roundtrip remain enablement gates.
+
+Independent Codex review found no blocker to disabled publication. Added tests
+cover stored/expired/unknown states and prevent inconsistent status from enabling
+the form. Focused page: 43 checks; OAuth: 90 checks; TypeScript passed. Initial
+full regression run hit the existing calendar rate-limit timing assertion while
+build ran concurrently; standalone repeat passed all 19 checks. All 67 suites
+then passed sequentially (exit 0). Final production rebuild is part of packaging.
+Existing >500 kB bundle warning remains.
+Managed browser preview is unavailable: vinext reports another /site server,
+PID 14; no process was killed and no alternative server launched. Desktop/mobile
+visual QA and real Google consent are NOT claimed.
+
+Pre-release live v107 health is HTTP 200/degraded with readable storage; summary
+revision `3c7a9533-534b-4881-aff6-ead95f016b6d`, lastAttempt 15:30:44.964Z.
+EPL referee report was already overdue before this release. Other source/coverage
+alerts remain; no update endpoints were called. Post-release evidence must be
+recorded separately, not inferred from successful build.
+
+## Drive OAuth foundation — local only, not connected
+
+Owner: Codex, branch `feat/backup-drive-oauth`, base `178fd8d` (portable archive)
+on live v107. Refreshed Sites `main` still equals `d2f1dad`. Adds disabled-by-default
+owner-only start/callback/status routes, cookie-bound one-use D1 state, PKCE,
+account/scope validation and encrypted refresh-token storage with revision
+readback. Schema-only migration adds two separate OAuth tables; football journal,
+live recovery, sources, My Matches and schedules are unchanged. See
+`docs/backup-drive-oauth.md` for exact configuration, planned callback and gates.
+
+No real OAuth client, secret, encrypted token, external archive or background
+backup has been created by this code. The Google console configuration was done
+by the owner; Web client creation is paused. Connection UI, folder grant via
+Picker, uploader, independent archive key and real restore remain pending.
+External/Testing has a seven-day credential limit. Do not publish, change runtime
+configuration or claim working off-site protection without explicit approval.
+
+Independent Codex review (not Claude) identified a callback cookie race and
+unverified cooldown writes; both were fixed and independently rechecked. No
+remaining review blocker for this local-only foundation. Validation: all 66 test
+suites passed in the regression run; after review fixes, focused OAuth (90 checks)
+and archive credential-exclusion (22 checks) passed again. TypeScript and the
+production build passed; the existing >500 kB JavaScript chunk warning remains.
+No UI changes or browser/real-consent QA
+claims; publication and live configuration remain explicitly gated.
+
+## Portable archive v2 — local preparation only
+
+Owner: Codex, branch `feat/backup-export-v2`, based on published v107
+`d2f1dad3f0a5aeb359cf0209cdade328331a9355`. See `docs/archive-v2.md`.
+Fixed read-only capture covers summary + 16 referee reports and both published
+D1 journal tables, including all observation revisions. Offline drill restores
+only into in-memory SQLite. No routes, production writes, schedules, external
+accounts or live exports were added. Existing v105 backup contract is unchanged.
+The exact-score experiment remains separately committed on its own branch.
+
+Independent Codex review found and verified a fix for oversized D1 transfer.
+The focused archive suite passes 21 checks; legacy backup (35) and journal (61)
+checks, all 65 test suites, TypeScript and production build pass. Build retains the existing >500 kB
+chunk warning. No UI changes or browser QA claims. Real production capture,
+external storage/key custody, retention policy and isolated Cloudflare recovery
+remain release gates. Do not publish or claim off-site protection yet.
+
+## Domestic expansion (in verification)
+
+Owner: Codex. Adds Serie B, Championship, Ligue 2, Eredivisie and 2. Bundesliga (16 total; existing Bundesliga retained). ESPN 2026 standings identity and team counts were read directly: ita.2/3931/20, eng.2/3914/24, fra.2/3926/18, ned.1/725/18, ger.2/3927/18. Calendar/detail/journal routing uses the existing ESPN adapter. No new provider or invented season-summary/referee statistics: these remain null until a source is verified. Missing summary sources are not fetched; hourly appointment reports still persist with explicit statistics-unavailable status.
+
+Backup scope intentionally remains the original v105 summary + 11 referee reports (12 records), preserving existing verified copies. The five new referee reports and D1 journal are NOT covered. A versioned backup migration and external copy remain pending; do not change the old 12-record requirement to imply new coverage. Existing tasks enumerate the API league list; literal 11-league monitoring text needs a subsequent coordinated update. No schedule has been changed.
+
+Local preview QA blocked by an existing dev-server lock reported by the managed preview daemon; no process was killed. Current tests/build/publication evidence must be recorded after verification, not inferred from this note.
+
 ## Results journal increment
 
 Owner: Codex. Baseline Sites v105 / source `2df5a7836e9d4aa22c90342c33d3bd988f88ae50`.

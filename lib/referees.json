@@ -1,4 +1,9 @@
 {
+  "bundesliga2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "serieb": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "championship": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "ligue2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "eredivisie": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
   "epl": {
     "rows": [
       {

@@ -1,6 +1,6 @@
 export const SUMMARY_INTERVAL=6*60*60*1000;
 // Fallback competition sizes, not live league membership; prefer explicit expectedTeamCount when provided.
-export const leagueSize=(id:string)=>['bundesliga','ligue1','superlig','primeira'].includes(id)?18:['ucl','uel','uecl'].includes(id)?36:id==='segunda'?22:20;
+export const leagueSize=(id:string)=>['bundesliga','ligue1','superlig','primeira','ligue2','eredivisie','bundesliga2'].includes(id)?18:['ucl','uel','uecl'].includes(id)?36:id==='segunda'?22:id==='championship'?24:20;
 export function dataHealth(data:any,now=Date.now()){
  const blocks=(data.leagues||[]).flatMap((l:any)=>{
   const ref=data.refereesByLeague?.[l.id];
