@@ -34,13 +34,13 @@ export function resultObservation(match:any,kind:'score'|'analysis',now=Date.now
  const stats=(team:any,goals:number|null)=>Object.fromEntries(metrics.map(k=>[k,k==='goals'?goals:kind==='analysis'?num(team?.stats?.[k]):null]));
  return {schemaVersion:1,id:String(match.id),league:match.league,kickoff:new Date(match.date).toISOString(),home:match.home,away:match.away,homeId:match.homeId||h?.id||null,awayId:match.awayId||a?.id||null,kind,state:match.state,statusName:match.statusName||null,statusDetail:match.statusDetail||null,period:match.period??null,season:match.season||null,homeStats:stats(h,homeScore),awayStats:stats(a,awayScore),source:match.source,checkedAt:checked};
 }
-const regularFinal=(r:any)=>r?.state==='post'&&['STATUS_FULL_TIME','STATUS_FINAL'].includes(r.statusName)&&!(r.period>2)&&!/extra|penalt|shootout|дополн|пенальти/i.test(r.statusDetail||'');
+const regularFinal=(r:any)=>r?.state==='post'&&['STATUS_FULL_TIME','STATUS_FINAL'].includes(r.statusName)&&r.period===2&&!/extra|penalt|shootout|дополн|пенальти/i.test(r.statusDetail||'');
 export function evaluatePick(forecast:any,pick:any,observations:any[]){
  const latest=(kind:string)=>observations.filter(o=>o.kind===kind).sort((a,b)=>Date.parse(b.checkedAt)-Date.parse(a.checkedAt))[0];
  const scoreRow=latest('score'),detail=latest('analysis');
  const status=[scoreRow,detail].filter(Boolean).sort((a,b)=>Date.parse(b.checkedAt)-Date.parse(a.checkedAt))[0];
  if(!status)return {state:'pending',reason:'Результат ещё не получен',actual:null};
- const same=(r:any)=>r&&r.kickoff===forecast.kickoff&&r.home===forecast.home&&r.away===forecast.away&&(!r.homeId||String(r.homeId)===forecast.homeId)&&(!r.awayId||String(r.awayId)===forecast.awayId);
+ const same=(r:any)=>r&&r.kickoff===forecast.kickoff&&r.home===forecast.home&&r.away===forecast.away&&(!!r.homeId&&String(r.homeId)===forecast.homeId)&&(!!r.awayId&&String(r.awayId)===forecast.awayId);
  if(!same(status))return {state:'excluded',reason:'Изменилась дата или идентификация матча',actual:null};
  if(!regularFinal(status))return {state:'excluded',reason:'Нет подтверждённого финала основного времени',actual:null};
  const goalMarket=['result','goals','btts','home','away'].includes(pick.metric),r=goalMarket?status:detail;

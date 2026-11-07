@@ -1,3 +1,4 @@
+import {sourceDiagnostic,type SourceDiagnostic} from './espn-fetch';
 import {readCache,writeCache} from './cache';
 
 // The cache stores successful source responses only. An outage never replaces
@@ -6,7 +7,7 @@ const memory=new Map<string,{value:any;at:number}>();
 const pending=new Map<string,Promise<any>>();
 const failures=new Map<string,{until:number;result:any}>();
 export const LEAGUE_DATA_TTL=30*60*1000;
-export async function cachedLeagueData<T extends {checkedAt:string|null}>(bucket:R2Bucket|undefined,key:string,ttl:number,load:()=>Promise<T>,empty:()=>T):Promise<T&{stale?:boolean;error?:string;attemptedAt?:string}>{
+export async function cachedLeagueData<T extends {checkedAt:string|null}>(bucket:R2Bucket|undefined,key:string,ttl:number,load:()=>Promise<T>,empty:()=>T):Promise<T&{stale?:boolean;error?:string;attemptedAt?:string;diagnostic?:SourceDiagnostic}>{
  const now=Date.now(),retry=failures.get(key);
  if(retry&&retry.until>now)return retry.result;
  if(pending.has(key))return pending.get(key)!;
@@ -18,8 +19,8 @@ export async function cachedLeagueData<T extends {checkedAt:string|null}>(bucket
    const result=await load();memory.set(key,{value:result,at:now});failures.delete(key);
    if(memory.size>150)memory.delete(memory.keys().next().value!);
    await writeCache(bucket,key,result);return result;
-  }catch{
-   const result={...(cached||empty()),stale:!!cached,error:'Источник временно недоступен. Показан последний доступный срез.',attemptedAt:new Date().toISOString()};
+  }catch(error){
+   const result={...(cached||empty()),stale:!!cached,diagnostic:sourceDiagnostic(error),error:'Источник временно недоступен. Показан последний доступный срез.',attemptedAt:new Date().toISOString()};
    if(!cached)result.error='Источник временно недоступен. Подтверждённых данных пока нет.';
    failures.set(key,{until:now+60000,result});if(failures.size>150)failures.delete(failures.keys().next().value!);
    return result;
