@@ -6,14 +6,16 @@ async function drill(bundle){
  const metadata=await A.verifyArchive(bundle),db=new DatabaseSync(':memory:');
  try{
   db.exec(fs.readFileSync(require('node:path').join(__dirname,'../drizzle/0000_tough_mathemanic.sql'),'utf8'));
+  if(bundle.body.format==='cardroom-archive/3')db.exec(fs.readFileSync(require('node:path').join(__dirname,'../drizzle/0002_exact_score_11.sql'),'utf8'));
+  const schema=A.archiveTables(bundle.body);
   db.exec('BEGIN');
-  for(const [table,cols] of Object.entries(A.TABLES)){
+  for(const [table,cols] of Object.entries(schema)){
    const insert=db.prepare(`INSERT INTO ${table} (${cols.join(',')}) VALUES (${cols.map(()=>'?').join(',')})`);
    for(const row of bundle.body.tables[table])insert.run(...cols.map(c=>row[c]));
   }
   db.exec('COMMIT');
   if(db.prepare('PRAGMA integrity_check').get().integrity_check!=='ok')throw Error('sqlite-integrity');
-  const tables=Object.fromEntries(Object.entries(A.TABLES).map(([t,c])=>[t,db.prepare(`SELECT ${c.join(',')} FROM ${t} ORDER BY ${c[0]}`).all().map(r=>({...r}))]));
+  const tables=Object.fromEntries(Object.entries(schema).map(([t,c])=>[t,db.prepare(`SELECT ${c.join(',')} FROM ${t} ORDER BY ${c[0]}`).all().map(r=>({...r}))]));
   const records=JSON.parse(JSON.stringify(bundle.body.records));
   const roundtrip=await A.sealArchive({...bundle.body,tables,records});
   if(roundtrip.sha256!==bundle.sha256)throw Error('restore-mismatch');

@@ -1,4 +1,4 @@
-# Portable archive v2 — preparation, NOT deployed
+# Portable archive v2/v3 — preparation, NOT deployed
 
 This branch is based on published Sites v107. No HTTP route, production export,
 new schedule, external storage account, migration or production restore is added.
@@ -7,18 +7,34 @@ The legacy v105 twelve-record backup and its health contract remain unchanged.
 ## Scope
 
 `captureArchive` reads only fixed R2 keys (summary + all 16 configured referee
-reports) and both published D1 journal tables. It retains every observation
+reports) and the journal tables belonging to its detected schema. It retains every observation
 revision, original JSON payload string, committed_at, observed_at, checked_at,
 model version, null, source date and error. It does not export credentials,
 browser favourites, calendar/weather caches or infrastructure settings.
 
-The format is pinned to schema/version 107. Unknown journal tables or changed
-columns fail closed. The unpublished exact-score extension must be added to a
-new reviewed format before deploying that extension: it must never be silently
-omitted. The v107 migration in Git supplies the SQLite table/index definitions.
+Compatibility is explicit:
 
-Capture uses fixed reads only, never source handlers or SQL writes. A D1 batch
-collects rows; the overall R2 + D1 archive is NOT an atomic snapshot. Capture
+- `cardroom-archive/2`, `sourceVersion: 107`: the original two journal tables
+  from migration 0000, with or without migration 0001 (Drive credentials).
+  Existing v2 archives remain readable and restorable; they do not claim 1:1 coverage.
+- `cardroom-archive/3`, `sourceVersion: "0002_exact_score_11"`: all three journal
+  tables, including every `journal_exact11` row, even when that table is empty.
+  This source identifier denotes a migration, not a published Sites version.
+  Both models' original probabilities, versions, samples, provenance and nulls
+  are preserved inside the original payload, without recomputation.
+
+Unknown journal tables, added/removed/generated columns, changed column types,
+nullability, primary-key membership or defaults, unknown archive
+versions and mismatched version/table sets fail closed. Only fixed journal
+SELECTs are used; neither `backup_drive_connection` nor `backup_drive_flow` is
+read or exported. Other non-journal storage is outside this archive's scope.
+The manifest accepts no extra fields or tables. Migration files in Git supply
+fixed SQLite definitions for the drill. Exact forecasts must identify the known
+experiment, have eligible probabilities and obey computed <= committed < kickoff;
+identity and day must match. This checks integrity, not model accuracy.
+
+Capture uses fixed reads only, never source handlers or SQL writes. A schema-discovery read precedes a D1 batch which rechecks the journal table set
+and collects rows; the overall R2 + D1 archive is NOT an atomic snapshot. Capture
 start/end are recorded. Limits are 10,000 rows per table and 16 MiB; exceeding
 either fails, never silently truncates. Larger archives require a separately
 tested paginated format with a consistent cutoff, not increasing limits blindly.
@@ -31,9 +47,10 @@ a hash cannot protect against someone who can replace both data and hash.
 
 `node scripts/archive-drill.cjs` accepts archive JSON on stdin, no database path.
 It verifies the bundle, creates SQLite **only in memory**, applies the fixed
-v107 schema, inserts the original journal rows using bound parameters, checks
+schema appropriate to the archive (0000 for v2; 0000 + 0002 for v3), inserts the original journal rows using bound parameters, checks
 SQLite integrity, reads rows back and compares the full archive digest. R2 JSON
 records are round-tripped in memory. It prints counts/status only, no payloads.
+Credential migration 0001 is deliberately not applied to the drill target.
 This is NOT a Cloudflare restore, write-permission check or off-site restore.
 Use approved private transfer channels for real archives; do not commit, paste
 into chat or save them in shared folders. Tests use synthetic football records.
