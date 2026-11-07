@@ -75,7 +75,7 @@ export async function captureArchive(db:D1Database,bucket:R2Bucket):Promise<Arch
  const schema=same(found,Object.keys(TABLES_V3))?TABLES_V3:same(found,Object.keys(TABLES))?TABLES:null;
  if(!schema)throw Error('unsupported-schema');
  const budget=MAX_BYTES-size;
- const totalBytes=Object.entries(schema).map(([t,cols])=>`COALESCE((SELECT SUM(${cols.map(c=>`length(CAST(${c} AS BLOB))`).join('+')}) FROM ${t}),0)`).join('+');
+ const totalBytes=Object.entries(schema).map(([t,cols])=>`COALESCE((SELECT SUM(${cols.map(c=>`length(CAST(${c} AS BLOB))`).join('+')}) FROM (SELECT ${cols.join(',')} FROM ${t} ORDER BY ${cols[0]} LIMIT ${MAX_ROWS+1})),0)`).join('+');
  const result=await db.batch([
   db.prepare(list),
   ...Object.keys(schema).map(t=>db.prepare(`PRAGMA table_xinfo(${t})`)),
