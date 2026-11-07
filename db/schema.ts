@@ -1,4 +1,9 @@
 import {sqliteTable,text,index,integer} from 'drizzle-orm/sqlite-core';
+// Independent immutable extension: old forecasts remain byte-for-byte unchanged.
+export const exactForecasts=sqliteTable('journal_exact11',{
+ matchKey:text('match_key').primaryKey(),league:text('league').notNull(),day:text('day').notNull(),
+ committedAt:text('committed_at').notNull(),payload:text('payload').notNull(),
+},t=>[index('journal_exact11_day').on(t.day,t.league)]);
 // Append-only application journal. No UPDATE/DELETE operations in its writer.
 export const forecasts=sqliteTable('journal_forecasts',{
  matchKey:text('match_key').primaryKey(),league:text('league').notNull(),day:text('day').notNull(),

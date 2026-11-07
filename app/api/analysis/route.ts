@@ -1,4 +1,5 @@
 import {recordAnalysis} from '../../../lib/results-journal';
+import {exactAnalysis} from '../../../lib/exact-score-journal';
 import {savedAnalysis} from '../../../lib/analysis-fallback';
 import {readCache,writeCache} from '../../../lib/cache';
 import {env} from 'cloudflare:workers';
@@ -7,7 +8,7 @@ import {HISTORY_LIMIT,compactMatch,historyCandidates,buildHistory,playerCandidat
 export const dynamic='force-dynamic';
 export async function GET(req:Request){const q=new URL(req.url).searchParams,id=q.get('id')||'',league=q.get('league')||'';if(!/^\d{5,12}$/.test(id)||!LEAGUES[league])return Response.json({error:'Некорректный матч'},{status:400});
  const db=(env as unknown as {DB?:D1Database}).DB;
- const respond=async(value:any)=>Response.json({...value,journal:await recordAnalysis(db,bucket,id,league,value)},{headers:{'Cache-Control':'no-store'}});
+ const respond=async(value:any)=>Response.json({...value,journal:await recordAnalysis(db,bucket,id,league,value),exactScore11:await exactAnalysis(db,id,league,value)},{headers:{'Cache-Control':'no-store'}});
  const bucket=(env as unknown as {BUCKET?:R2Bucket}).BUCKET,key=`analysis/v11/${league}/${id}.json`;let cached:any=null;
  {cached=await readCache(bucket,key);const ttl=cached?.state==='in'?60000:300000;if(cached&&Date.now()-Date.parse(cached.checkedAt)<ttl)return respond(cached)}
  try{const d=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${id}`,bucket),base=compactMatch(d),schedules:Record<string,any>={},errors:string[]=[];

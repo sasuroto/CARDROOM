@@ -10,6 +10,7 @@ import {useMatchDetails} from './use-match-details';
 import {withAppointment} from '../lib/fixture-display';
 import MatchSamples from './match-samples';
 import DotPredict from './dot-predict';
+import ExactScore11 from './exact-score-11';
 import {buildMarkets} from '../lib/scenario-model';
 import {percent} from '../lib/probability-format';
 import {currentMatch} from '../lib/current-context';
@@ -52,6 +53,7 @@ export default function MatchReport({match:inputMatch,data,profile,showOverview=
  {loading&&<p role="status">Собираю матчи команд, удары и составы…</p>}{error&&<div className="notice">{error} {analysis?'Показан предыдущий срез.':''}</div>}{analysis?.stale&&<div className="notice">Показан сохранённый срез на указанную дату; текущие изменения ещё не подтверждены.</div>}
  <MatchFacts match={match} analysis={analysis} loading={loading}/>
  <DotPredict match={match} analysis={analysis} markets={markets} data={data} context={context} error={error} loading={loading} now={modelNow}/>
+ <ExactScore11 estimate={analysis?.exactScore11} matchId={String(match.id)} kickoff={match.date} league={match.league} home={match.home} away={match.away} loading={loading}/>
  <nav className="reportJumps" aria-label="Разделы разбора"><a href={'#samples-'+match.id} onClick={e=>{e.preventDefault();jump('samples-'+match.id)}}><CategoryIcon category="clubs"/>Сравнить команды</a><a href={'#scenarios-'+match.id} onClick={e=>{e.preventDefault();jump('scenarios-'+match.id)}}><CategoryIcon category="scenarios"/>Сценарии</a><a href={'#players-'+match.id} onClick={e=>{e.preventDefault();jump('players-'+match.id)}}><CategoryIcon category="players"/>Игроки</a><a href={'#numbers-'+match.id} onClick={e=>{e.preventDefault();jump('numbers-'+match.id)}}><CategoryIcon category="all"/>Все цифры</a><a href={'#history-'+match.id} onClick={e=>{e.preventDefault();jump('history-'+match.id)}}><CategoryIcon category="history"/>Прошлые игры</a></nav>
  <MatchSamples key={match.id+'-'+match.league} match={match} analysis={analysis} loading={loading}/>
  <ReadingGuide/>

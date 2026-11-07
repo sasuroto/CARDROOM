@@ -1,6 +1,7 @@
 'use client';
 import {useEffect,useState} from 'react';
 import './results.css';
+import {ExactJournalPanel} from '../exact-score-11';
 const leagues=[['all','Все турниры'],['epl','Premier League'],['ucl','Лига чемпионов'],['uel','Лига Европы'],['uecl','Лига конференций'],['laliga','La Liga'],['segunda','Segunda'],['seriea','Serie A'],['bundesliga','Bundesliga'],['ligue1','Ligue 1'],['superlig','Süper Lig'],['primeira','Primeira Liga'],['serieb','Serie B'],['championship','Championship'],['ligue2','Ligue 2'],['eredivisie','Eredivisie'],['bundesliga2','2. Bundesliga']];
 const day=(n=0)=>new Date(Date.now()+4*3600000+n*86400000).toISOString().slice(0,10);
 const date=(s:string)=>s?new Date(s).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'—';
@@ -17,6 +18,7 @@ export default function Results(){
  <div className="resultsModes" role="group" aria-label="Выборка сценариев"><button aria-pressed={!dot} onClick={()=>setDot(false)}>Все записанные сценарии</button><button aria-pressed={dot} onClick={()=>setDot(true)}>Только DOT</button><span>До 31 дня за один запрос · время Тбилиси</span></div>
  {loading&&<p role="status">Читаем сохранённые записи…</p>}{error&&<div className="resultsNotice" role="alert"><b>Данные журнала недоступны.</b><p>{error}</p><button onClick={()=>setReload(v=>v+1)}>Повторить чтение</button></div>}
  {data&&<>
+ <ExactJournalPanel data={data.exactScore11}/>
  <section className="resultsKPIs" aria-label="Итоги выборки"><article><span>Совпало / проверено</span><strong>{totals.hits}<small> / {totals.settled}</small></strong><p>{totals.settled?`${percent(totals.hitRate)} подтверждённых исходов`:'Проверенных исходов пока нет'}</p></article><article><span>Матчей в архиве</span><strong>{data.matches}</strong><p>{data.withForecast} с предматчевой записью · {data.withResult} с результатом</p></article><article><span>Ещё не оценено</span><strong>{totals.pending+totals.unverified}</strong><p>{totals.pending} ожидают · {totals.unverified} без подтверждения</p></article></section>
  <p className="resultsScope">{data.truncated?'Показаны только 200 матчей. Сократите период: итоги относятся лишь к показанной части.':'Это архив полученных данных, а не полное покрытие календаря.'} {totals.excluded>0&&`${totals.excluded} сценариев исключены из расчёта.`} Несколько сценариев одного матча зависимы: число исходов не равно числу независимых матчей.</p>
  {!data.rows.length?<section className="resultsEmpty"><h2>История начинается здесь.</h2><p>Пока в этом периоде нет сохранённых записей. Результаты добавляются при проверке календаря, прогнозы — при получении пригодного предматчевого анализа. Старые матчи без такого прогноза не входят в точность модели.</p></section>:<section className="resultsRows" aria-label="Матчи и результаты">{data.rows.map((row:any)=>{

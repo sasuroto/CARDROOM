@@ -1,6 +1,8 @@
 import {dotHistoryEvidence} from './dot-predict';
 import {refereeEvidence} from './referee-evidence';
 import {poissonUnder} from './market-model';
+// Separate experimental scenario: deliberately absent from PRIMARY_MARKETS and DOT.
+export {buildExactScore11} from './exact-score-history';
 export const SCENARIO_MODEL_VERSION='cardroom-scenarios/1';
 export const PRIMARY_MARKETS=['result','goals25','btts','home','away','corners95','yellow45','shots255','target95','fouls215'];
 const norm=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-zа-я0-9]/g,'');
