@@ -16,7 +16,7 @@ export async function GET(req:Request){
   if(!table.teams.some(t=>t.id===id))throw Error('Команда не подтверждена в турнире и сезоне');
   const errors:string[]=[],docs=await Promise.allSettled([false,true].map(async future=>{
    const key=`team-schedule/v1/${league}/${season}/${id}/${future?'fixtures':'results'}.json`;
-   return cachedLeagueData<{data:ReturnType<typeof parseTeamSchedule>|null;checkedAt:string|null}>(bucket,key,LEAGUE_DATA_TTL,async()=>({data:parseTeamSchedule(await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/teams/${id}/schedule?season=${season}${future?'&fixture=true':''}`),league,id,season),checkedAt:new Date().toISOString()}),()=>({data:null,checkedAt:null}));
+   return cachedLeagueData<{data:ReturnType<typeof parseTeamSchedule>|null;checkedAt:string|null}>(bucket,key,LEAGUE_DATA_TTL,async()=>({data:parseTeamSchedule(await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/teams/${id}/schedule?season=${season}${future?'&fixture=true':''}`,bucket),league,id,season),checkedAt:new Date().toISOString()}),()=>({data:null,checkedAt:null}));
   }));
   const events=new Map<string,any>();let team:TeamProfile['team']=null;let scheduleStale=false;
   docs.forEach((r,i)=>{if(r.status==='fulfilled'&&r.value.data){team=team||r.value.data.team;for(const e of r.value.data.events)events.set(e.id,{...e,checkedAt:r.value.checkedAt,stale:!!r.value.stale});if(r.value.stale){errors.push(i?'fixtures-stale':'results-stale');scheduleStale=true}}else{errors.push(i?'fixtures':'results');scheduleStale=true}});
@@ -30,7 +30,7 @@ export async function GET(req:Request){
    try{
     if(saved?.data&&Date.now()-Date.parse(saved.checkedAt)<86400000){events.set(event.id,applyTeamDetails(event,saved.data,season,saved.checkedAt));return}
     if(!shouldFetch){if(saved?.data)events.set(event.id,{...applyTeamDetails(event,saved.data,season,saved.checkedAt),detailsStale:true});return}
-    const data=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${event.id}`),checkedAt=new Date().toISOString(),compact=applyTeamDetails(event,data,season,checkedAt);
+    const data=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${event.id}`,bucket),checkedAt=new Date().toISOString(),compact=applyTeamDetails(event,data,season,checkedAt);
     events.set(event.id,compact);await writeCache(bucket,`history/v1/${league}/${event.id}.json`,{data,checkedAt});
    }catch{errors.push('details:'+event.id);if(saved?.data){try{events.set(event.id,{...applyTeamDetails(event,saved.data,season,saved.checkedAt),detailsStale:true})}catch{/* retain source schedule score */}}}
   }));

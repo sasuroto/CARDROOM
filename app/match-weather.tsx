@@ -7,11 +7,13 @@ const stamp=(value:string)=>new Date(value).toLocaleString('ru-RU',{timeZone:'As
 const pending=new Map<string,Promise<any>>();
 function loadWeather(url:string){let job=pending.get(url);if(!job){job=fetch(url).then(r=>{if(!r.ok)throw Error();return r.json()}).finally(()=>pending.delete(url));pending.set(url,job)}return job}
 export default function MatchWeather({id,league}:{id:string,league:string}){
- const [weather,setWeather]=useState<any>(null),[loading,setLoading]=useState(true);
- useEffect(()=>{let active=true;setWeather(null);setLoading(true);
-  async function load(){try{const data=await loadWeather(`/api/weather?id=${encodeURIComponent(id)}&league=${encodeURIComponent(league)}`);if(active)setWeather(data)}catch{if(active)setWeather((old:any)=>old?.status==='available'?{...old,stale:true,message:'Сохранённый прогноз. Источник временно недоступен.'}:{status:'unavailable',message:'Прогноз временно недоступен'})}finally{if(active)setLoading(false)}}
+ const key=league+':'+id;
+ const [result,setResult]=useState<any>(null);
+ const weather=result?.key===key?result.weather:null,loading=result?.key!==key;
+ useEffect(()=>{let active=true;
+  async function load(){try{const data=await loadWeather(`/api/weather?id=${encodeURIComponent(id)}&league=${encodeURIComponent(league)}`);if(active)setResult({key,weather:data})}catch{if(active)setResult((old:any)=>({key,weather:old?.key===key&&old.weather?.status==='available'?{...old.weather,stale:true,message:'Сохранённый прогноз. Источник временно недоступен.'}:{status:'unavailable',message:'Прогноз временно недоступен'}}))}}
   load();const timer=setInterval(load,3600000);return()=>{active=false;clearInterval(timer)};
- },[id,league]);
+ },[id,league,key]);
  const code=weather?.code,Icon=code===0||code===1?Sun:[95,96,97,99].includes(code)?CloudLightning:[71,73,75,77,85,86].includes(code)?CloudSnow:[51,53,55,56,57,61,63,65,66,67,80,81,82].includes(code)?CloudRain:Cloud,available=weather?.status==='available';
  return <section className="matchWeather matchWeatherCompact" aria-label="Погода к началу матча" aria-busy={loading}>
   <div className="weatherHeading"><span>ПОГОДА К НАЧАЛУ МАТЧА</span></div>

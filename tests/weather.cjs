@@ -1,6 +1,8 @@
 const fs=require('node:fs'),Module=require('node:module'),assert=require('node:assert/strict'),ts=require('typescript');
 for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
 const env={},load=Module._load;Module._load=function(id,...args){return id==='cloudflare:workers'?{env}:load.call(this,id,...args)};
+// Weather request counts exclude appointment adapters, which have their own suite.
+require('../lib/advance-officials.ts').getAdvanceOfficials=async()=>null;
 const {weatherAtKickoff,weatherWindow,weatherCityQuery,selectWeatherCity,weatherDescription,verifiedWeatherSnapshot,weatherVenue}=require('../lib/match-weather.ts'),Weather=require('../app/api/weather/route.ts');
 let n=0;const check=(v,s)=>{assert.ok(v,s);n++};
 const realNow=Date.now;let now=realNow();Date.now=()=>now;const kickoff=new Date(now+8*3600000);kickoff.setUTCMinutes(30,0,0);const date=kickoff.toISOString(),floor=Math.floor(kickoff.getTime()/3600000)*3600;
@@ -48,7 +50,7 @@ let requests=[];global.fetch=async url=>{requests.push(String(url));return Respo
  check((await Weather.GET(new Request(`https://site/api/weather?id=${id}&league=epl&latitude=0`))).status===400,'client cannot override location');
  values.get(`match/v6/epl/${id}.json`).city=null;data=await(await Weather.GET(req)).json();check(data.status==='unknown-location','no venue means explicit missing-location state');
  const React=require('react'),render=require('react-dom/server').renderToStaticMarkup,WeatherCard=require('../app/match-weather.tsx').default,originalState=React.useState;
- const ui=payload=>{React.useState=initial=>[initial===null?payload:false,()=>{}];try{return render(React.createElement(WeatherCard,{id,league:'epl'}))}finally{React.useState=originalState}};
+ const ui=payload=>{React.useState=initial=>[initial===null?{key:'epl:'+id,weather:payload}:false,()=>{}];try{return render(React.createElement(WeatherCard,{id,league:'epl'}))}finally{React.useState=originalState}};
  const successUI=ui({...data,status:'available',temperature:12,apparentTemperature:10,wind:4,precipitationProbability:0,checkedAt:stamp,forecastAt:date,kickoff:date,source:'https://open-meteo.com/'});check(successUI.includes('Ощущается')&&successUI.includes('10 °C')&&successUI.includes('Подробности и источник'),'compact card renders sourced feels-like and expandable metadata');
  const unavailableUI=ui(unavailable);check(unavailableUI.includes('Прогноз временно недоступен')&&!unavailableUI.includes('°C')&&unavailableUI.includes('Источник ограничил запросы'),'limited source without saved values cannot render fabricated weather');
  const staleUI=ui({...JSON.parse(JSON.stringify(values.get([...values.keys()].find(k=>k.includes('weather/matches/v3')&&k.includes(id))))),status:'available',temperature:12,apparentTemperature:null,wind:4,checkedAt:stamp,kickoff:date,forecastAt:date,stale:true});check(staleUI.includes('Сохранённый прогноз')&&staleUI.includes('Нет данных'),'saved forecast preserves timestamp and missing feels-like stays missing');

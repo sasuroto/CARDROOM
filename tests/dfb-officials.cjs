@@ -1,0 +1,23 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const {parseDFBOfficials,getDFBOfficials,applyDFBOfficials}=require('../lib/dfb-officials.ts');
+const block=(id,home='Bayern München',ref='Tobias Stieler')=>`<div id="match_${id}" class="c-MatchTable-row"><p>Samstag, 31.10.2026 18:30 Uhr</p><div class="c-MatchTable-col c-MatchTable-team c-MatchTable-team--home">${home}<img alt="${home}"></div><div class="c-MatchTable-col c-MatchTable-team c-MatchTable-team--away"><img alt="Borussia Dortmund">Borussia Dortmund</div><div class="c-MatchTable-referees"><a class="c-MatchTable-link">${ref} (SR)</a><a class="c-MatchTable-link">Jan Seidel (SR-A. 1)</a><a class="c-MatchTable-link">Rafael Foltyn (SR-A. 2)</a><a class="c-MatchTable-link">Florian Badstübner (4. Offizieller)</a><a class="c-MatchTable-link">Dr. Matthias Jöllenbeck (VA)</a><a class="c-MatchTable-link">Felix-Benjamin Schwermer (VA-A)</a></div></div>`;
+const html=`<h6 class="c-MatchTable-title">Bundesliga</h6>${block(2419379)}<h6>2. Bundesliga</h6>${block(111111,'Other','Wrong Referee')}`;
+const rows=parseDFBOfficials(html);assert.equal(rows.length,1);assert.equal(rows[0].referee,'Tobias Stieler');assert.equal(rows[0].assistants.length,2);assert.equal(rows[0].var,'Dr. Matthias Jöllenbeck');assert.throws(()=>parseDFBOfficials('<h6>2. Bundesliga</h6>'+block(1)));
+const match={id:'401884754',league:'bundesliga',home:'Bayern Munich',away:'Borussia Dortmund',date:'2026-10-31T17:30:00Z',homeScore:'2',awayScore:'1',state:'in',referee:'ESPN Referee',appointmentType:'ESPN',appointmentCheckedAt:'2026-10-31T21:00:00Z'},stamp='2026-10-31T18:00:00Z',report={rows,checkedAt:stamp};
+let out=applyDFBOfficials(match,report);assert.equal(out.referee,'Tobias Stieler');assert.equal(out.homeScore,'2');assert.equal(out.appointmentCheckedAt,stamp);assert.equal(out.appointmentConflict.referee,'ESPN Referee');
+for(const [home,away,officialHome,officialAway] of [['1. FC Union Berlin','FC Cologne','1. FC Union Berlin','1. FC Köln'],['Eintracht Frankfurt','Hamburg SV','Eintracht Frankfurt','Hamburger SV']])assert.equal(applyDFBOfficials({...match,home,away,date:'2026-11-01T14:30Z'},{...report,rows:[{...rows[0],day:'2026-11-01',home:officialHome,away:officialAway}]}).referee,'Tobias Stieler');
+for(const change of [{league:'segunda'},{away:'Other'},{date:'2026-11-01T17:30Z'}])assert.equal(applyDFBOfficials({...match,...change},report).referee,'ESPN Referee');
+assert.equal(applyDFBOfficials(match,{...report,rows:[...rows,...rows]}).referee,'ESPN Referee');
+const values=new Map(),bucket={get:async k=>values.has(k)?{json:async()=>structuredClone(values.get(k))}:null,put:async(k,v)=>values.set(k,JSON.parse(v))};
+const realNow=Date.now;let now=Date.parse(stamp),calls=0;Date.now=()=>now;
+(async()=>{
+ global.fetch=async()=>{calls++;return new Response(html)};
+ const first=await getDFBOfficials(bucket);assert.equal(first.stale,false);await getDFBOfficials(bucket);assert.equal(calls,1);
+ now+=3600001;global.fetch=async()=>{calls++;return new Response('',{status:429,headers:{'Retry-After':'7200'}})};
+ const failed=await getDFBOfficials(bucket);assert.equal(failed.checkedAt,first.checkedAt);assert.equal(failed.rows[0].referee,'Tobias Stieler');assert.equal(failed.stale,true);assert.equal(Date.parse(failed.nextCheckAt),now+7200000);await getDFBOfficials(bucket);assert.equal(calls,2);
+ out=applyDFBOfficials(match,failed);assert.equal(out.appointmentStale,true);assert.equal(out.appointmentCheckedAt,first.checkedAt);
+ now+=7200001;global.fetch=async()=>new Response('',{status:403});const forbidden=await getDFBOfficials(bucket);assert.equal(Date.parse(forbidden.nextCheckAt),now+6*3600000);
+ now+=6*3600000+1;global.fetch=async()=>new Response('<h6>Bundesliga</h6>'+block(2,'Other club'));const rotated=await getDFBOfficials(bucket);out=applyDFBOfficials(match,rotated);assert.equal(out.referee,'Tobias Stieler');assert.equal(out.appointmentCheckedAt,first.checkedAt);assert.equal(out.appointmentStale,true);
+ Date.now=realNow;console.log('PASS DFB: league/date/teams identity, crew, priority, score preservation, cooldown, 403/429, dated history.');
+})().catch(e=>{Date.now=realNow;console.error(e);process.exitCode=1});

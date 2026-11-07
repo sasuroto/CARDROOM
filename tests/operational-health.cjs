@@ -1,0 +1,68 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),ts=require('typescript'),Module=require('node:module');
+require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,f);
+const env={},load=Module._load;Module._load=function(id,...args){return id==='cloudflare:workers'?{env}:load.call(this,id,...args)};
+const {operationalHealth,HEALTH_GRACE_MS}=require('../lib/operational-health.ts'),{inspectCache,writeCache}=require('../lib/cache.ts');
+const now=Date.parse('2026-11-06T08:30:00Z'),iso=n=>new Date(n).toISOString(),stamp=iso(now),key='referee-updates/v1/epl.json';
+const summary={revision:'summary-1',lastAttempt:stamp,updatedFields:1,leagues:[{id:'epl',cards:{checkedAt:stamp},overview:{checkedAt:stamp},teams:[1],teamCheckedAt:stamp,corners:Array(20).fill(1),cornerSource:'fixed',cornerCheckedAt:stamp}],refereesByLeague:{epl:{checkedAt:stamp}},refreshErrors:[]};
+const report={league:'epl',runId:'run-1',startedAt:stamp,completedAt:stamp,nextCheckAt:iso(now+3600000),statsStatus:'updated',stats:{checkedAt:stamp},appointmentCoverage:{official:10,fallback:0,stale:0,missing:0,completed:0},errors:[]};
+let checks=0;const check=(v,msg)=>{assert.ok(v,msg);checks++};
+const make=()=>{const values=new Map([['cardroom/data-v1.json',structuredClone(summary)],[key,structuredClone(report)]]);return {values,get:async k=>values.has(k)?{json:async()=>structuredClone(values.get(k))}:null,put:async()=>{throw Error('Health must not write')}}};
+global.fetch=()=>{throw Error('Health must not fetch upstream')};
+(async()=>{
+ let b=make(),h=await operationalHealth(b,['epl'],now);
+ check(h.status==='healthy'&&h.readOnly&&h.schemaVersion===1,'healthy persisted state');
+ check(h.storage.state==='readable'&&!h.storage.writeVerifiedThisRequest&&!h.scheduler.verifiedThisRequest,'readability does not imply a tested write or scheduler');
+ check(h.referees[0].statistics.lastSuccess===stamp&&h.summary.revision==='summary-1','provenance retained');
+ h=await operationalHealth(b,['epl'],now+3600000);
+ check(h.referees[0].state==='due'&&h.status==='healthy','due alone is not a failure');
+ h=await operationalHealth(b,['epl'],now+3600000+HEALTH_GRACE_MS+1);
+ check(h.status==='degraded'&&h.alerts.some(a=>a.code==='referee-overdue'),'missed refresh detected after grace');
+ h=await operationalHealth(b,['epl'],now+7*3600000);
+ check(h.summary.state==='overdue'&&h.referees[0].statistics.state==='stale','old report does not imply current data');
+ b.values.get(key).statsStatus='unavailable';b.values.get(key).sourceHealth={statistics:{httpStatus:403,retryAt:iso(now+3600000)}};
+ h=await operationalHealth(b,['epl'],now);
+ check(h.status==='degraded'&&h.referees[0].statistics.httpStatus===403&&h.referees[0].statistics.lastSuccess===stamp,'blocked source retains last success');
+ b.values.get(key).statsStatus='snapshot';h=await operationalHealth(b,['epl'],now);
+ check(h.referees[0].statistics.state==='snapshot','manual snapshots not fresh');
+ b.values.get(key).stats=null;h=await operationalHealth(b,['epl'],now);
+ check(h.referees[0].statistics.state==='missing'&&h.referees[0].statistics.lastSuccess===null,'missing stats remain null');
+ b=make();b.values.get(key).appointmentCoverage.missing=2;h=await operationalHealth(b,['epl'],now);
+ check(h.alerts.some(a=>a.code==='appointments-incomplete'),'missing appointments flagged');
+ delete b.values.get(key).appointmentCoverage;h=await operationalHealth(b,['epl'],now);
+ check(h.referees[0].appointments===null&&h.alerts.some(a=>a.code==='appointment-coverage-unknown'),'absent counts not zero-filled');
+ for(const change of [{league:'ucl'},{completedAt:'bad'},{completedAt:iso(now+1)},{startedAt:iso(now+1)},{nextCheckAt:iso(now+24*3600000)},{runId:''}]){
+  b=make();Object.assign(b.values.get(key),change);h=await operationalHealth(b,['epl'],now);
+  check(h.referees[0].state==='invalid'&&!h.referees[0].storedReportReadable,'invalid identity/timestamps cannot look healthy');
+ }
+ b=make();h=await operationalHealth(b,['epl','uel'],now);
+ check(h.referees[1].state==='missing'&&h.summary.coverage.total===10&&h.summary.coverage.counts.missing===5,'all configured leagues covered, no seed fallback');
+ b.values.delete('cardroom/data-v1.json');h=await operationalHealth(b,['epl'],now);
+ check(h.summary.state==='missing'&&h.storage.state==='readable'&&h.status==='degraded','empty store differs from failed storage');
+ b.values.set('cardroom/data-v1.json',{leagues:[null]});h=await operationalHealth(b,['epl'],now);
+ check(h.summary.state==='invalid','corrupt summary reported');
+ b=make();delete b.values.get('cardroom/data-v1.json').revision;h=await operationalHealth(b,['epl'],now);
+ check(h.summary.state==='invalid','unversioned summary cannot pass as verified snapshot');
+ b=make();b.values.get('cardroom/data-v1.json').leagues[0].cards.checkedAt=iso(now+3600000);h=await operationalHealth(b,['epl'],now);
+ check(h.alerts.some(a=>a.code==='summary-invalid-block-date'),'future block timestamps cannot look healthy');
+ b=make();b.values.get(key).errors=['SECRET_EXCEPTION'];h=await operationalHealth(b,['epl'],now);
+ check(h.alerts.some(a=>a.code==='referee-source-errors')&&!JSON.stringify(h).includes('SECRET_EXCEPTION'),'raw source error redacted');
+ const logs=[],warn=console.warn;console.warn=(...v)=>logs.push(v.join(' '));
+ try{
+  const broken={get:async()=>{throw Error('PRIVATE_STORAGE_DETAIL')},put:async()=>{throw Error('PRIVATE_WRITE_DETAIL')}};
+  h=await operationalHealth(broken,['epl'],now);
+  check(h.status==='unavailable'&&h.storage.state==='read-error','read error is not missing data');
+  await writeCache(broken,'PRIVATE_KEY',{token:'SECRET'});
+  check(logs.some(l=>l.includes('write failed'))&&logs.every(l=>!l.includes('PRIVATE')&&!l.includes('SECRET')),'cache failures logged without raw details');
+  check((await inspectCache({get:async()=>({json:async()=>{throw Error('bad json')}})},'k')).status==='error','invalid JSON treated as read failure');
+ }finally{console.warn=warn}
+ h=await operationalHealth(undefined,['epl'],now);
+ check(h.status==='unavailable'&&h.storage.state==='unconfigured','missing binding not healthy');
+ const route=require('../app/api/health/route.ts');
+ let r=await route.GET(new Request('https://cardroom.invalid/api/health'));
+ check(r.status===503&&r.headers.get('Cache-Control')==='no-store','storage failure HTTP contract');
+ r=await route.GET(new Request('https://cardroom.invalid/api/health?url=https://other.example'));
+ check(r.status===400,'no caller-defined keys or upstreams');
+ env.BUCKET=make();r=await route.GET(new Request('https://cardroom.invalid/api/health'));h=await r.json();
+ check(r.status===200&&h.referees.length===16,'all 16 configured leagues returned by route');
+ console.log(`PASS ${checks} operational health checks: no upstream/writes, deadlines, coverage, storage failures and redaction.`);
+})().catch(e=>{console.error(e);process.exitCode=1});

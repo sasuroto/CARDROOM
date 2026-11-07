@@ -1,4 +1,9 @@
 {
+  "bundesliga2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "serieb": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "championship": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "ligue2": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
+  "eredivisie": {"rows":[],"source":null,"checkedAt":null,"partial":true,"refreshError":null,"seasonConfirmed":false,"dataNote":"Сезонная статистика ещё не подключена. Назначения проверяются отдельно по матчам."},
   "epl": {
     "rows": [
       {
@@ -767,6 +772,24 @@
     "checkedAt": "2026-10-16T08:05:18.839Z",
     "partial": true,
     "refreshError": null
+  },
+  "uel": {
+    "rows": [],
+    "source": "https://valuestats.com/en/league/europa-league/referees/",
+    "checkedAt": null,
+    "partial": true,
+    "refreshError": null,
+    "seasonConfirmed": false,
+    "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
+  },
+  "uecl": {
+    "rows": [],
+    "source": "https://valuestats.com/en/league/europa-conference-league/referees/",
+    "checkedAt": null,
+    "partial": true,
+    "refreshError": null,
+    "seasonConfirmed": false,
+    "dataNote": "Сезонная статистика ещё не подтверждена. Назначения проверяются отдельно по матчам."
   },
   "ucl": {
     "rows": [

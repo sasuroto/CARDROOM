@@ -7,6 +7,7 @@ const flags:Record<string,{file:string;label:string}>={
  FR:{file:'fr',label:'Флаг Франции'},
  TR:{file:'tr',label:'Флаг Турции'},
  PT:{file:'pt',label:'Флаг Португалии'},
+ NL:{file:'nl',label:'Флаг Нидерландов'},
 };
 
 export default function CountryFlag({code,className='code'}:{code:string;className?:string}){

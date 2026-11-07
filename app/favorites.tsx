@@ -4,10 +4,16 @@ export type FavoriteKind='league'|'team'|'match';
 export type Favorite={kind:FavoriteKind,id:string,label:string,league?:string};
 const KEY='cardroom:favorites:v1';
 export function parseFavorites(raw:string|null):Favorite[]{try{const value=JSON.parse(raw||'[]');return Array.isArray(value)?value.filter((x:any)=>x&&['league','team','match'].includes(x.kind)&&typeof x.id==='string'&&x.id.length<100&&typeof x.label==='string'&&x.label.length<200&&(!x.league||typeof x.league==='string')).slice(0,200):[]}catch{return []}}
+export function importWatchList(existing:Favorite[],raw:string|null):Favorite[]{
+ if(!raw||raw.length>10000)return existing;
+ const allowed=new Set(['epl','ucl','uel','uecl','laliga','segunda','seriea','bundesliga','ligue1','superlig','primeira','serieb','championship','ligue2','eredivisie','bundesliga2']);
+ const added=parseFavorites(raw).filter(x=>x.kind==='match'&&x.league&&allowed.has(x.league)&&new RegExp('^'+x.league+':\\d{5,12}$').test(x.id)).slice(0,20);
+ return [...existing,...added.filter((x,i)=>!existing.some(y=>y.kind===x.kind&&y.id===x.id)&&added.findIndex(y=>y.id===x.id)===i)].slice(-200);
+}
 const FavoritesContext=createContext({items:[] as Favorite[],ready:false,storageError:false,has:(_kind:FavoriteKind,_id:string):boolean=>false,toggle:(_kind:FavoriteKind,_id:string,_label:string,_league?:string)=>{}});
 export function FavoritesProvider({children}:{children:ReactNode}){
  const [items,setItems]=useState<Favorite[]>([]),[ready,setReady]=useState(false),[storageError,setStorageError]=useState(false);
- useEffect(()=>{try{setItems(parseFavorites(localStorage.getItem(KEY)))}catch{setStorageError(true)}setReady(true);const sync=(e:StorageEvent)=>{if(e.key===KEY)setItems(parseFavorites(e.newValue))};window.addEventListener('storage',sync);return()=>window.removeEventListener('storage',sync)},[]);
+ useEffect(()=>{try{setItems(importWatchList(parseFavorites(localStorage.getItem(KEY)),new URL(window.location.href).searchParams.get('watch')))}catch{setStorageError(true)}const currentUrl=new URL(window.location.href);if(currentUrl.searchParams.has('watch')){currentUrl.searchParams.delete('watch');window.history.replaceState(window.history.state,'',currentUrl.pathname+currentUrl.search+currentUrl.hash)}setReady(true);const sync=(e:StorageEvent)=>{if(e.key===KEY)setItems(parseFavorites(e.newValue))};window.addEventListener('storage',sync);return()=>window.removeEventListener('storage',sync)},[]);
  const has=(kind:FavoriteKind,id:string)=>items.some(x=>x.kind===kind&&x.id===id);
  useEffect(()=>{if(ready)try{localStorage.setItem(KEY,JSON.stringify(items));setStorageError(false)}catch{setStorageError(true)}},[items,ready]);
  const toggle=(kind:FavoriteKind,id:string,label:string,league?:string)=>setItems(old=>old.some(x=>x.kind===kind&&x.id===id)?old.filter(x=>x.kind!==kind||x.id!==id):[...old,{kind,id,label,league}].slice(-200));

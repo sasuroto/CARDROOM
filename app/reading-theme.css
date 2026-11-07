@@ -1,0 +1,371 @@
+/* Reference sampled palette: Misty Grey canvas, black navigation and acid-yellow highlights. */
+:root {
+  color-scheme: light;
+  --bg: #e0ddd8;
+  --white: #ffffff;
+  --surface: #d5d5d5;
+  --card: #c8d3c2;
+  --dot-accent: #cbfd62;
+  --menu-hover: #86bd6e;
+  --ink: #101010;
+  --muted: #171717;
+  --line: #cccccc;
+  --line-strong: #858b85;
+  --green: #459638;
+  --accent: #459638;
+  --accent-hover: #86bd6e;
+  --accent-soft: #e3efcc;
+  --accent-ink: #171717;
+  --control-active: #347c2c;
+  --control-active-hover: #286321;
+  --control-active-border: #286321;
+  --control-active-ink: #ffffff;
+  --link: #171717;
+  --focus: #101010;
+  --highlight: #cbfd62;
+  --charcoal: #303030;
+  --charcoal-deep: #101010;
+}
+body { background: var(--bg); font-weight: 500; }
+.updateDisclosure { margin-bottom: 22px; }
+.updateDisclosure > summary { width: fit-content; max-width: 100%; min-height: 44px; padding: 11px 14px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--card); color: var(--ink); cursor: pointer; font-size: 12px; line-height: 1.6; }
+.updateDisclosure > summary > span { font-weight: 400; }
+.updateDisclosure > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.updateDisclosure > .updateStatus { margin: 10px 0 0; }
+.serviceDisclosure { margin: 24px 0; }
+.serviceDisclosure > summary { width: fit-content; max-width: 100%; min-height: 44px; padding: 11px 14px; background: var(--card); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 8px; font-size: 12px; line-height: 1.6; cursor: pointer; }
+.serviceDisclosure > summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.comparison > div > div > i, .comparison > div:first-child > div > i, .insight > span { background: var(--highlight); color: var(--ink); }
+header, .dailyBar { background: var(--bg); }
+aside { background: var(--bg); }
+button, input, select { color: var(--ink); }
+.categoryLabel { display: inline-flex; align-items: center; gap: 9px; line-height: 1.45; }
+.categoryIcon { display: inline-block; flex: 0 0 auto; width: 20px; height: 20px; vertical-align: middle; color: currentColor; }
+.categoryIcon--yellow { color: #856117; fill: #f0dea6; }
+.categoryIcon--red { color: #a4443e; fill: #f3d9d4; }
+/* Text labels are always visible: icons complement, never replace, an accessible name. */
+.primaryTabs button, .secondaryTabs button, .marketTabs button,
+.matchCenterTabs button, .reportJumps a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.primaryTabs .categoryIcon, .secondaryTabs .categoryIcon,
+.marketTabs .categoryIcon, .matchCenterTabs .categoryIcon, .reportJumps .categoryIcon { width: 17px; height: 17px; }
+.matchCenterTabs button[aria-selected=true] { background: var(--control-active); color: var(--control-active-ink); border-color: var(--control-active-border); }
+.matchCenterTabs button, .marketTabs button, .secondaryTabs button { min-height: 44px; }
+.factGrid { gap: 12px; }
+.factGrid > div { padding: 16px; border-radius: 12px; box-shadow: 0 2px 4px #373a3005; }
+.factGrid .factCategory { min-height: 42px; color: var(--ink); align-items: center; }
+.factCategory > .categoryIcon { width: 30px; height: 30px; padding: 5px; border-radius: 9px; background: var(--surface); }
+.factCategory > .categoryIcon--yellow { background: #efe3bf; }
+.factCategory > .categoryIcon--red { background: #efdad6; }
+.factGrid .factCategory > span { font-size: 13px; font-weight: 700; color: var(--ink); }
+.factGrid .factTeam > span { font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.factGrid .factTeam > b { font-size: 28px; letter-spacing: -.5px; }
+.factTeam small, .factTeam details { line-height: 1.6; font-weight: 500; }
+.factTeam summary { min-height: 30px; padding-block: 5px; cursor: pointer; }
+.factTeam a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.factTeam .factUnavailable { color: var(--muted); }
+.predictionTop .categoryLabel { font-size: 12px; font-weight: 700; letter-spacing: 0; color: var(--ink); }
+.predictionTop .categoryIcon { width: 23px; height: 23px; }
+.heroStatGrid .categoryLabel { display: flex; min-height: 32px; line-height: 1.4; }
+.sampleComparison tbody th .categoryLabel { display: flex; }
+.frequencyGrid .categoryLabel, .sampleFrequencyGrid .categoryLabel { color: var(--ink); }
+.matchCoverageGrid .categoryLabel { display: flex; gap: 10px; color: var(--ink); }
+.matchCoverageGrid .categoryIcon { width: 22px; height: 22px; }
+/* Remove near-black reading surfaces without changing data states or layout. */
+.dashboardHero, .matchOverview, .refHeroTop, .insight, .selectedMatches {
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+}
+.dashboardHero p, .dashboardCounter small, .insight p, .refHeroName p,
+.refCountry, .heroFixture small { color: var(--muted); }
+.dashboardHero .eyebrow, .dashboardHero h1 em, .dashboardCounter i, .insight > span,
+.refHeroTop .eyebrow, .appointmentLine a { color: var(--link); }
+.dashboardHero h1 { color: var(--ink); }
+.matchOverview .overviewEyebrow, .matchOverview .overviewTopline,
+.matchOverview .overviewTeam > small, .matchOverview .overviewVersus > span,
+.matchOverview .overviewVersus > small, .matchOverview .overviewDetails dt,
+.matchOverview .overviewDetails dd small, .matchOverview .overviewDetails a,
+.matchOverview .overviewSource, .matchOverview .overviewAppointmentCheck,
+.matchOverview .overviewOfficials summary { color: var(--muted); }
+.matchOverview .overviewVersus > strong, .matchOverview .overviewStatus,
+.matchOverview .overviewContext > summary > span { color: var(--ink); }
+.matchOverview .overviewStatus { background: var(--white); border-color: var(--line-strong); }
+.matchOverview .overviewDetails, .matchOverview .overviewSource,
+.matchOverview .overviewContext { border-color: var(--line); }
+.matchOverview .overviewCrest { background: var(--white); border-color: var(--line); }
+.matchOverview .matchWeather { color: var(--ink); border-color: var(--line); }
+.matchOverview .matchWeatherCompact { background: var(--white); border-color: var(--line); }
+.matchOverview .matchWeather .weatherHeading, .matchOverview .matchWeather .weatherMetrics span,
+.matchOverview .matchWeather .weatherNote, .matchOverview .matchWeather .weatherSource,
+.matchOverview .matchWeatherCompact .weatherFeels, .matchOverview .matchWeatherCompact .weatherMain span,
+.matchOverview .matchWeatherCompact .weatherDetails summary { color: var(--muted); }
+.matchOverview .matchWeatherCompact .weatherDetails { border-color: var(--line); }
+.matchOverview .matchWeather .sourceWarning { color: #815526; }
+.selectedMatchCard { background: var(--white); border-color: var(--line); }
+.selectedMatchOpen { color: var(--ink); }
+.selectedMatchesHead p, .selectedMatchesHead small, .selectedMatchMeta,
+.selectedMatchesPinned .selectedMatchesHead h2 span, .selectedFreshness, .selectedReferee,
+.selectedReferee b { color: var(--muted); }
+.selectedReferee { border-color: var(--line); }
+.selectedCrestFallback { background: var(--surface); color: var(--ink); }
+.selectedPanelActions button { background: var(--white); color: var(--ink); border-color: var(--line-strong); }
+.selectedMatchesNotice, .selectedFreshness.isStale { color: #815526; }
+.selectedMatches.selectedMatchesPinned { background: var(--charcoal-deep); border-color: var(--charcoal-deep); color: var(--white); }
+.selectedMatchesPinned .selectedMatchesHead h2 { color: var(--white); }
+.selectedMatchesPinned .selectedMatchesHead p, .selectedMatchesPinned .selectedMatchesHead small,
+.selectedMatchesPinned .selectedMatchesHead h2 span { color: #cccccc; }
+.selectedMatchesPinned > .selectedMatchesNotice { color: #ffd7bf; }
+.selectedMatchesPinned .selectedMatchCard { color: var(--ink); }
+.selectedMatchesPinned .selectedMatchMeta b, .selectedMatchesPinned .selectedReferee.hasReferee b { color: var(--ink); }
+.selectedMatchesPinned .selectedPanelActions button:focus-visible { outline-color: var(--highlight); }
+.refDialog { background: var(--bg); box-shadow: 0 18px 70px #36393030; }
+.refDialog::backdrop, .searchDialog::backdrop { background: #3f413c80; backdrop-filter: blur(4px); }
+.heroClose { color: var(--ink); background: var(--white); }
+.calendarFreshness:not(.isStale), .notice, .sampleScopeCards > div { background: var(--surface); }
+.refDialog .dialogToolbar, .matchCenterTabs { background: var(--bg); }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--focus); outline-offset: 3px;
+}
+@media (max-width: 650px) {
+  .factGrid { gap: 10px; }
+  .factGrid > div { padding: 13px; }
+  .factGrid .factCategory { align-items: flex-start; gap: 7px; }
+  .factGrid .factCategory > span { font-size: 12px; padding-top: 3px; }
+  .factCategory > .categoryIcon { width: 27px; height: 27px; padding: 4px; }
+  .matchCenterTabs { padding-inline: 12px; }
+  .matchCenterTabs button { padding-inline: 11px; }
+  .factTeam summary { font-size: 11px; }
+}
+@media (max-width: 360px) {
+  .factGrid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+/* Keep every masthead label readable against the reference's dark navigation. */
+header { background: var(--charcoal-deep); color: var(--white); border-color: var(--charcoal); }
+header .brand, header .headerRight, header .public { color: var(--white); }
+header .brandSmall { color: #cccccc; }
+header .resultsNav { color: var(--highlight); font-size:14px; font-weight:700; white-space:nowrap; }
+@media(max-width:800px){header .headerRight{gap:10px}header .headerRight .public{display:none}header .resultsNav{font-size:12px}}
+/* The black masthead continues through the entire daily fixture strip. */
+.dailyBar { background: var(--charcoal-deep); color: var(--white); border-color: var(--charcoal-deep); }
+.dailyBarHead h2 { color: var(--white); }
+.dailyBarHead span, .dailyBarControls small, .dailyBar > .dailyHint,
+.dailyBar .dailyEmpty { color: #cccccc; }
+.dailyBar > .dailyNotice { color: #ffd7bf; }
+.dailyBar :focus-visible { outline-color: var(--highlight); }
+.dailyBar .refDialog { color: var(--ink); }
+.dashboardHero .dashboardCounter { background: var(--accent-soft); color: var(--ink); }
+/* Filled green badges use dark labels; active controls use a darker green with white text. */
+.dashboardHero .eyebrow, .dashboardCounter i, .insight > span,
+.refHeroTop .eyebrow, .appointmentLine a { color: var(--ink); }
+.refCurrentFixture { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.refCurrentFixture p { color: var(--muted); }
+.refResearchMetrics .categoryLabel, .tournamentCardStats .categoryLabel { display: flex; gap: 7px; }
+.tournamentCardStats .categoryIcon { width: 15px; height: 15px; }
+
+.primaryTabs { background: transparent; border-color: transparent; }
+
+/* Compact live chips and a clearer, larger match overview. */
+.calendarMatch.isLive .calendarStatus { align-self: flex-start; width: fit-content; flex: 0 0 auto; white-space: nowrap; }
+.matchOverview .overviewTopline { font-size: 14.4px; font-weight: 700; }
+.matchOverview .overviewEyebrow { font-size: 12px; }
+.matchOverview .overviewStatus { font-size: 13.2px; font-weight: 700; }
+.matchOverview .overviewTeam > strong { font-size: 28.8px; }
+.matchOverview.isCompact .overviewTeam > strong { font-size: 26.4px; }
+.matchOverview .overviewVersus > strong { font-size: 26.4px; }
+.matchOverview.isCompact .overviewVersus > strong { font-size: 33.6px; }
+.matchOverview .overviewVersus > span, .matchOverview .overviewVersus > small { font-size: 12px; font-weight: 700; }
+.matchOverview .overviewTeams { margin: 20px 0; }
+.matchOverview.isCompact .overviewTeams { padding: 8px 0; }
+.matchOverview .overviewContext > summary { font-size: 14.4px; font-weight: 700; }
+.matchOverview .overviewDetails { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 22px 32px; align-items: start; }
+.matchOverview .overviewVenue { grid-column: 1; grid-row: 1; }
+.matchOverview .overviewDateWeather { grid-column: 1; grid-row: 2; }
+.matchOverview .overviewReferee { grid-column: 2; grid-row: 1 / 3; border-left: 1px solid var(--line-strong); padding-left: 24px; }
+.matchOverview .overviewDetails dt { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.matchOverview .overviewDetails dd { font-size: 16.8px; font-weight: 700; line-height: 1.5; }
+.matchOverview .overviewDetails dd small, .matchOverview .overviewAppointmentCheck,
+.matchOverview .overviewDetails a, .matchOverview .overviewSource { font-size: 12px; font-weight: 600; line-height: 1.6; }
+.matchOverview .matchWeather p { font-size: 14.4px; font-weight: 700; }
+.matchOverview .matchWeatherCompact .weatherDetails :is(p, a, summary) { font-size: 12px; font-weight: 600; }
+@media(max-width:650px) {
+ .matchOverview .overviewTopline { font-size: 13.2px; }
+ .matchOverview .overviewEyebrow { font-size: 10.8px; }
+ .matchOverview .overviewStatus { font-size: 12px; }
+ .matchOverview .overviewTeam > strong { font-size: 20.4px; }
+ .matchOverview.isCompact .overviewTeam > strong { font-size: 19.2px; }
+ .matchOverview .overviewVersus > strong { font-size: 18px; }
+ .matchOverview.isCompact .overviewVersus > strong { font-size: 26.4px; }
+ .matchOverview .overviewVersus > span, .matchOverview .overviewVersus > small { font-size: 10.8px; }
+ .matchOverview .overviewContext > summary > span { font-size: 13.2px; }
+ .matchOverview .overviewDetails { grid-template-columns: minmax(0,1fr); gap: 20px; }
+ .matchOverview .overviewVenue, .matchOverview .overviewDateWeather, .matchOverview .overviewReferee { grid-column: 1; grid-row: auto; }
+ .matchOverview .overviewReferee { border-left: 0; border-top: 1px solid var(--line-strong); padding: 18px 0 0; }
+ .matchOverview .overviewDetails dd { font-size: 14.4px; }
+}
+.primaryTabs button { background: transparent; color: var(--white); border-color: transparent; }
+.primaryTabs button:hover { background: #414141; color: var(--white); }
+.primaryTabs button.active, .leagueBtn.selected { background: var(--control-active); color: var(--control-active-ink); border-color: var(--control-active-border); }
+.leagueBtn.selected small { opacity: 1; }
+.leagueBtn.selected .code { color: var(--white); }
+.selectedMatchCard.isLive, .calendarMatch.isLive { border-left: 4px solid var(--highlight); }
+.selectedMatchCard.isLive .selectedMatchMeta b, .calendarMatch.isLive .calendarStatus { background: var(--highlight); color: var(--ink); padding: 3px 6px; border-radius: 4px; }
+.liveStrip { background: var(--accent-soft); border-left: 4px solid var(--highlight); }
+header :focus-visible, .primaryTabs :focus-visible { outline-color: var(--highlight); }
+
+/* DOT shares v80 palette; scoped heading avoids global site-header rules. */
+.dotPredict { margin:24px 0; padding:24px; border:1px solid var(--line); border-left:4px solid var(--link); border-radius:16px; background:var(--surface); color:var(--ink); }
+.dotPredict .dotHeader { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; background:transparent; color:var(--ink); }
+.dotPredict h3 { font-size:28px; margin:6px 0; }
+.dotTag { font-size:12px; border:1px solid var(--line-strong); padding:7px 10px; border-radius:24px; }
+.dotGrid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:20px 0; }
+.dotGrid article { padding:20px; background:var(--white); border:1px solid var(--line); border-radius:12px; min-width:0; }
+.dotPredict h4 { font-size:18px; line-height:1.4; margin:14px 0; }
+.dotPredict p,.dotPredict li { font-size:14px; line-height:1.65; }
+.dotPredict a { color:var(--link); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.dotScore { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.dotScore strong { font-size:28px; color:var(--ink); }
+.dotScore span { font-size:12px; line-height:1.5; color:var(--muted); }
+.dotContext { border-top:1px solid var(--line); margin-top:20px; }
+.dotPredict ul { padding-left:20px; }
+.dotPredict li { margin:10px 0; }
+.dotNotice { padding:12px 16px; border-left:3px solid var(--line-strong); background:var(--white); }
+.dotPredict footer { margin-top:16px; font-size:12px; line-height:1.6; color:var(--muted); }
+.dotPredict summary { cursor:pointer; font-weight:600; }
+.dotPredict details { margin-top:18px; }
+@media(max-width:850px) { .dotGrid { grid-template-columns:1fr; } .dotPredict { padding:16px; } .dotGrid article { padding:16px; } }
+
+/* Sage-green reading panels use the uploaded swatch's sampled #c8d3c2.
+   Keep page chrome neutral and semantic status colors intact. */
+.tournamentCard, .dailyMatch, .dailyMatch:hover, .todayCard, .todayEmpty,
+.selectedMatchCard, .calendarMatch, .matchCard, .drawCard, .drawCard:first-child,
+.dashboardHero, .dashboardHero .dashboardCounter, .matchOverview,
+.refHeroTop, .refCurrentFixture, .refProfile, .refAnalysis article,
+.refResearchMetrics, .refResearchMetrics > div, .refBehavior,
+.kpi, .kpi.accent, .seasonTotals > div, .seasonTotals > div:last-child,
+.heroStatGrid > div, .heroStatGrid .highlight,
+.insight, .researchGrid article, .notice, .globalNotice, .updateStatus, .dataFreshness,
+.calendarFreshness, .calendarFreshness:not(.isStale), .calendarFreshness.isStale,
+.factGrid > div, .matchSamples, .sampleScopeCards > div,
+.frequencyGrid > div, .sampleFrequencyGrid > div, .teamSummary > div,
+.clubTile, .standingsWrap, .upcomingRows > button, .teamHistory > button,
+.matchCoverageGrid button, .matchCoverageGrid button:hover, .dossierBlock,
+.predictionGrid article, .predictionGrid article:first-child,
+.readablePredictions article, .readablePredictions article:first-child,
+.scorerGrid article, .scorerTeams > section, .scorerTeams article,
+.playerInsight, .playerNumbers > div, .playerFan,
+.betShortlist, .betCards > article, .forecastTable, .coverageNote,
+.readingGuide, .allScenarios, .matchRefereeTab,
+.matchOverview .matchWeatherCompact,
+.searchResults > button, .favoriteRow > button:first-child {
+  background: var(--card);
+}
+.leagueBtn:not(.selected), .leagueBtn:hover:not(.selected) { background: var(--card); }
+.calendarOpen:hover, .upcomingRows > button:hover, .teamHistory > button:hover,
+.searchResults > button:hover { background: var(--card); }
+.tournamentCard:hover, .dailyMatch:hover, .calendarMatch:hover { border-color: var(--green); }
+
+/* DOT is the primary analytic accent, not a success or accuracy indicator. */
+.dotPredict { background: var(--dot-accent); border-color: var(--link); border-left-width: 6px; box-shadow: 0 4px 16px #245d2014; }
+.dotPredict .dotTag { background: var(--charcoal-deep); color: var(--dot-accent); border-color: var(--charcoal-deep); font-weight: 700; }
+.dotPredict .dotGrid article, .dotPredict .dotNotice { background: var(--card); }
+.dotPredict .dotContext, .dotPredict footer { border-color: var(--line-strong); }
+
+/* Navigation is filled green; active state remains a distinct darker green. */
+.reportJumps a, .tabs button, .secondaryTabs button, .marketTabs button,
+.matchCenterTabs button, .segments button, .sampleSizeButtons button,
+.playerTeamFilters button, .dailyBarControls button, .selectedPanelActions button,
+.calendarCenter :is(.calendarDays, .calendarStatuses, .calendarPreferences, .calendarViewSwitch) button,
+.leagueBtn:not(.selected),
+.calendarCenter select, .sampleFilters select, .explorerActions select, .matchFilters select {
+  background: var(--green); color: var(--ink); border-color: var(--link);
+}
+.reportJumps a:hover, .tabs button:hover, .secondaryTabs button:hover, .marketTabs button:hover,
+.matchCenterTabs button:hover, .segments button:hover, .sampleSizeButtons button:hover,
+.playerTeamFilters button:hover, .dailyBarControls button:hover, .selectedPanelActions button:hover,
+.calendarCenter :is(.calendarDays, .calendarStatuses, .calendarPreferences, .calendarViewSwitch) button:hover,
+.leagueBtn:hover:not(.selected) {
+  background: var(--menu-hover); color: var(--ink); border-color: var(--link);
+}
+:is(.tabs, .secondaryTabs, .marketTabs, .matchCenterTabs, .segments, .sampleSizeButtons, .playerTeamFilters) button:is(.active, [aria-pressed=true], [aria-selected=true]),
+.calendarCenter :is(.calendarDays, .calendarStatuses, .calendarPreferences, .calendarViewSwitch) button[aria-pressed=true],
+.leagueBtn.selected {
+  background: var(--control-active); color: var(--control-active-ink); border-color: var(--control-active-border);
+}
+:is(.tabs, .secondaryTabs, .marketTabs, .matchCenterTabs, .segments, .sampleSizeButtons, .playerTeamFilters) button:is(.active, [aria-pressed=true], [aria-selected=true]):hover,
+.calendarCenter :is(.calendarDays, .calendarStatuses, .calendarPreferences, .calendarViewSwitch) button[aria-pressed=true]:hover,
+.leagueBtn.selected:hover {
+  background: var(--control-active-hover); color: var(--control-active-ink);
+}
+.reportJumps a:focus-visible { outline-color: var(--charcoal-deep); }
+.reportJumps a, .reportJumps a:hover { background: var(--highlight); color: var(--ink); border-color: var(--highlight); }
+.reportJumps a:hover { box-shadow: inset 0 0 0 2px var(--ink); }
+
+/* Sidebar cards share the sage reading surface; selection is marked by an inset outline. */
+aside .leagueBtn:not(.selected), aside .leagueBtn.selected,
+aside .leagueBtn:hover:not(.selected), aside .leagueBtn.selected:hover {
+  background: var(--card); color: var(--ink); border-color: var(--line-strong);
+}
+aside .leagueBtn.selected { border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+aside .leagueBtn small, aside .leagueBtn.selected small, aside .leagueBtn.selected .code { color: var(--ink); }
+.dailyBar > .dailyHint { display: none; }
+
+.globalTools > .dotLaunch, .globalTools > .dotLaunch:hover { background: var(--dot-accent); color: var(--ink); border-color: var(--dot-accent); font-weight: 800; min-height: 44px; }
+.globalTools > .dotLaunch:focus-visible { outline-color: var(--white); }
+.dotPicker { padding: 0; }
+.dotPickerToolbar { position: sticky; top: 0; z-index: 25; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 22px; background: var(--charcoal-deep); color: var(--white); }
+.dotPickerToolbar h2 { margin: 0; font-size: 22px; color: var(--dot-accent); }
+.dotPickerToolbar > div { display: flex; gap: 8px; flex-wrap: wrap; }
+.dotPickerToolbar button, .dotPickerFilters button { padding: 10px 14px; min-height: 44px; border: 1px solid var(--link); border-radius: 8px; background: var(--green); color: var(--ink); }
+.dotPickerToolbar button:focus-visible { outline-color: var(--dot-accent); }
+.dotPickerBody, .dotPickerReport { padding: 22px; }
+.dotPickerBody > p { line-height: 1.6; }
+.dotPickerFilters { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin: 22px 0; }
+.dotPickerFilters label { display: grid; gap: 7px; font-size: 13px; min-width: 0; flex: 1 1 170px; }
+.dotPickerFilters input, .dotPickerFilters select { width: 100%; min-width: 0; min-height: 44px; padding: 10px; border: 1px solid var(--line-strong); border-radius: 7px; background: var(--card); }
+.dotPickerGames { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.dotPickerGames button { display: grid; gap: 12px; text-align: left; padding: 20px; border: 1px solid var(--link); border-radius: 12px; background: var(--card); color: var(--ink); }
+.dotPickerGames button:hover { border-color: var(--charcoal-deep); }
+.dotPickerGames strong { overflow-wrap: anywhere; font-size: 18px; }
+.dotPickerGames span, .dotPickerGames small { font-size: 12px; }
+.dotPicker .dotPredict { scroll-margin-top: 90px; }
+.refDialog .matchCenterTabs, .reportJumps, .secondaryTabs, .marketTabs {
+  background: var(--charcoal-deep); border-color: var(--charcoal-deep); padding: 12px; gap: 8px; border-radius: 10px;
+}
+.refDialog .matchCenterTabs button { background: var(--green); color: var(--ink); border: 1px solid var(--control-active-border); }
+.refDialog .matchCenterTabs button[aria-selected=true] { background: var(--control-active); color: var(--control-active-ink); border-color: var(--control-active-border); box-shadow: inset 0 -3px var(--control-active-ink); }
+.refDialog .matchCenterTabs button:hover { background: var(--menu-hover); color: var(--ink); }
+.refDialog .matchCenterTabs button[aria-selected=true]:hover { background: var(--control-active-hover); color: var(--control-active-ink); }
+.refDialog .matchCenterTabs button:focus-visible, .reportJumps a:focus-visible { outline-color: var(--dot-accent); }
+.refDialog .dialogToolbar { background: var(--charcoal-deep); color: var(--white); }
+.dotPredict .dotContext { border: 0; }
+.dotPredict .dotContext > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; padding: 15px 18px; border-radius: 8px; background: var(--charcoal-deep); color: var(--dot-accent); list-style: none; }
+.dotPredict .dotContext > summary::-webkit-details-marker { display: none; }
+.dotContext > summary > span { font-size: 24px; transition: transform .15s; }
+.dotContext[open] > summary > span { transform: rotate(45deg); }
+.dotContext > summary:focus-visible { outline-color: var(--charcoal-deep); }
+.dotContextBody { padding-top: 10px; }
+.dotContext .dotFact, .dotContext .matchWeather { padding: 16px 18px; margin: 12px 0; background: var(--card); color: var(--ink); border-radius: 10px; border: 1px solid var(--line-strong); }
+.dotContext .dotFact h4 { margin-top: 0; }
+.dotContext .matchWeather :is(.weatherHeading,.weatherFeels,.weatherMiniMetrics,.weatherDetails summary) { color: var(--ink); }
+.dotContext .dotFact small { font-size: 12px; }
+/* Yellow marks the model number, never confidence or betting safety. */
+.readablePredictions .predictionTop { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: nowrap; gap: 16px; }
+.readablePredictions .predictionTop > .categoryLabel { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.readablePredictions .predictionTop .scenarioProbability { flex: 0 0 auto; align-items: flex-end; margin: 0; text-align: right; }
+.readablePredictions .predictionTop .scenarioProbability > strong { font-size: clamp(36px,4vw,52px); letter-spacing: -1px; }
+.readablePredictions .predictionTop .scenarioProbability > span { font-size: 11px; }
+.readablePredictions .scenarioProbability > strong, .dotScore strong {
+  display: inline-block; width: fit-content; max-width: 100%;
+  background: var(--highlight); color: var(--ink); padding: .12em .2em;
+  border-radius: 8px; box-decoration-break: clone;
+}
+@media(max-width:650px) {
+  .shell > header { height: auto; min-height: 72px; flex-wrap: wrap; gap: 12px; padding-block: 14px; }
+  .shell > header .globalTools { margin: 0 0 0 auto; gap: 6px; flex-wrap: wrap; }
+  .globalTools > .dotLaunch span { display: inline; }
+  .dotPickerToolbar { padding: 12px; flex-wrap: wrap; }
+  .dotPickerBody, .dotPickerReport { padding: 14px; }
+  .dotPickerGames { grid-template-columns: 1fr; }
+  .dotPicker .dotPredict { scroll-margin-top: 130px; }
+}
