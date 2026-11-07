@@ -1,5 +1,41 @@
 # CARDROOM handoff — 2026-11-06
 
+## Exact-score archive compatibility — 7 November 2026, NOT deployed
+
+Owner: Codex, branch `fix/archive-exact11-20261107`, based on GitHub exact-score
+review commit `8578437a9bfec0909acc305cace8bb2359df94f0`.
+Archive capture now detects the supported journal schema. Legacy schema emits
+unchanged v2; migration 0002 emits v3 covering `journal_exact11` as well as both
+original journals. v3 identifies migration `0002_exact_score_11`, not a new Sites
+release. The reader and isolated in-memory SQLite drill support both versions.
+Unknown journal schemas and invalid chronology/identity fail closed. Both Drive
+credential tables remain excluded; original payload strings and checksums roundtrip.
+See [archive-v2.md](archive-v2.md) for compatibility, scope and release gates.
+
+No production capture, live migration, Drive connection, upload, schedule change,
+provider request, deployment or main merge. Published v108 remains unchanged;
+v105 production recovery still covers only its original 12 R2 records. This fixes
+the prepared archive's compatibility blocker, not the outstanding browser QA,
+runtime fitting-cost assessment, external recovery or publication gates.
+Verification: legacy archive suite 22 checks; new real-SQLite archive suite 41
+checks (migrations 0000/0001/0002, all three populated tables, original payloads,
+digests, credentials excluded, empty exact table, schema race, unknown/generated
+columns and tables, chronology, identity, row/byte limits). TypeScript passed.
+All 70 suites passed in the first sequential run. The final-code rerun encountered
+the documented calendar-rate-limit timing assertion; its standalone repeat passed
+19 checks and all remaining suites passed sequentially. Every final-code suite
+therefore passed, but the interrupted aggregate is not described as a clean run.
+Production build passed with the existing >500 kB chunk warning. Dependencies were
+installed from the unchanged frozen lockfile with pnpm 11.25.0 on Node 24.22.1.
+
+Independent Codex static review found a generated-column omission through
+`table_info`; this was fixed with `table_xinfo`, hidden-column rejection and a
+SQLite regression. Final independent recheck found no remaining blocker for
+GitHub-only review; reviewer did not independently run tests/build. No new UI
+changes or browser QA are claimed. Generic CI responsive checks do not establish
+exact-score desktop/mobile user-flow QA. Next owner: parent release coordinator
+for GitHub draft publication and remote CI; production publication remains gated.
+
 ## Exact-score 1:1 GitHub review — 7 November 2026, NOT deployed
 
 Owner: Codex. Port of the separately saved experiment
@@ -13,8 +49,8 @@ The original audit had zero valid historical paired evaluations; live model
 accuracy is not established. The experiment is not covered by v105 recovery.
 The prepared archive-v2 capture is fail-closed: after migration 0002 adds the
 new table, it rejects the whole capture as unsupported-schema, rather than
-silently omitting the experiment. Before deployment: extend/version archive coverage,
-complete desktop/mobile browser QA, assess runtime fitting cost and obtain
+silently omitting the experiment. At that review, archive extension was still required; the later preparatory
+compatibility work above addresses it locally. Before deployment: complete desktop/mobile browser QA, assess runtime fitting cost and obtain
 explicit publication approval. See docs/exact-score-11.md for original evidence.
 Independent Codex review found no blocker for a draft GitHub-only PR. Real
 in-memory SQLite verified sequential migrations 0000/0001/0002, all five tables,
