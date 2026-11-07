@@ -1,0 +1,12 @@
+const fs=require('fs'),assert=require('node:assert/strict'),ts=require('typescript');
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,f);
+const React=require('react'),{renderToStaticMarkup:render}=require('react-dom/server'),{default:Card,ExactJournalPanel}=require('../app/exact-score-11.tsx');
+const props={matchId:'123456',kickoff:'2026-11-10T12:00:00Z',league:'epl',home:'Long Home Team Name',away:'Away Team'};
+const m={status:'ok',probability:.123,lambdaHome:1.4,lambdaAway:1.2,rho:-.1,version:'test-only'};
+const estimate={id:props.matchId,league:props.league,kickoff:props.kickoff,status:'ok',poisson:m,dc:m,training:{n:200,requiredMatches:100,sources:[]},journal:{persisted:true,committedAt:'2026-11-09T12:00:00Z'},display:'saved-before-kickoff'};
+let html=render(React.createElement(Card,{...props,estimate}));assert.ok(html.includes('12,3%')&&html.includes('Диксон')&&html.includes('ожидаемые голы')&&html.includes('Экспериментально'));
+html=render(React.createElement(Card,{...props,matchId:'999999',estimate}));assert.ok(!html.includes('12,3%')&&html.includes('другой дате или матчу'));
+html=render(React.createElement(Card,{...props,estimate:{status:'unavailable',poisson:{reason:'Нужно ≥100 матчей'},dc:{reason:'Недостаточно истории'}}}));assert.ok(html.includes('Недостаточно истории')&&!html.includes('0%'));
+html=render(React.createElement(ExactJournalPanel,{data:{status:'ok',rows:[],recorded:0,settled:0,unsettled:0,metrics:{}}}));assert.ok(html.includes('Ноль записей — не нулевая точность'));
+const css=fs.readFileSync('app/exact-score-11.css','utf8');assert.ok(css.includes('@media(max-width:640px)')&&css.includes('grid-template-columns:1fr')&&css.includes('overflow-x:auto'));
+console.log('PASS exact-score SSR states, navigation isolation and responsive CSS contracts. Browser layout is a separate check.');

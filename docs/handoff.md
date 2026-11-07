@@ -1,5 +1,27 @@
 # CARDROOM handoff — 2026-11-06
 
+## Exact-score 1:1 GitHub review — 7 November 2026, NOT deployed
+
+Owner: Codex. Port of the separately saved experiment
+`0ee3e4d5283b4d9b2bd1b185b9254f1f5f0a83bc`, stacked on the v108 GitHub sync.
+Model logic, chronology gates and the separate results panel are unchanged.
+The additive migration is renumbered to `0002_exact_score_11` and its snapshot
+regenerated so it follows, rather than replaces, the existing Drive migration.
+No production migration, forecast, provider request, deployment or main merge.
+
+The original audit had zero valid historical paired evaluations; live model
+accuracy is not established. The experiment is not covered by v105 recovery.
+The prepared archive-v2 capture is fail-closed: after migration 0002 adds the
+new table, it rejects the whole capture as unsupported-schema, rather than
+silently omitting the experiment. Before deployment: extend/version archive coverage,
+complete desktop/mobile browser QA, assess runtime fitting cost and obtain
+explicit publication approval. See docs/exact-score-11.md for original evidence.
+Independent Codex review found no blocker for a draft GitHub-only PR. Real
+in-memory SQLite verified sequential migrations 0000/0001/0002, all five tables,
+snapshot ancestry and unchanged existing table definitions. The original model,
+UI and focused tests match the saved experiment. Current full test/build results
+and remaining release gates are recorded in the separate PR.
+
 ## GitHub source sync — 7 November 2026
 
 Owner: Codex. This increment mirrors published Sites v108 source

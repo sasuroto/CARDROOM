@@ -15,6 +15,13 @@
       "when": 1793971619566,
       "tag": "0001_strong_black_knight",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1794055149541,
+      "tag": "0002_exact_score_11",
+      "breakpoints": true
     }
   ]
 }
