@@ -1,5 +1,34 @@
 # Drive upload and restore preparation, 7 November 2026
 
+## Local HTTP route increment (not published)
+
+The local branch `feat/drive-upload-route-local-20261107` adds
+`POST /api/backup-drive/upload`, based on draft PR #11 commit
+`7add27bb08d5e31f50ef687fc4f712a2a4f2207d`. It accepts only the trusted configured
+Sites owner, exact same-origin request target/Origin, JSON content type and the
+single action `{"action":"create-one-backup"}`. The body is limited to 128 bytes
+and two seconds. GET, HEAD, OPTIONS and other methods return 405 without storage
+or provider activity. Unauthorized requests never read storage.
+
+Responses use private/no-store, no-referrer, CSP, no framing and no CORS grants.
+Only allowlisted statuses/reasons and checked transfer metadata are returned;
+provider payloads and unexpected fields are never forwarded. Explicit upload,
+non-atomic acceptance and existing connection/key/folder gates still apply.
+The route remains disabled with default configuration. No UI button, schedule,
+secret entry, enrollment or credential generation is added. This route depends
+on Sites injecting the trusted user identity; do not expose a standalone server
+that accepts arbitrary identity headers. Real Sites request/identity/Origin
+behavior remains a publication-time QA gate.
+
+No part of this increment has been published to GitHub or Sites, and no live
+configuration, persistent access or data has changed. Before a real manual test:
+safely provision the approved client/owner/key configuration, obtain explicit
+per-file folder consent, approve the migration/route publication, and perform
+an independently retrieved isolated restore. Automatic operation and retention
+remain separate decisions.
+
+## PR #11 foundation (historical scope)
+
 Local-only branch `feat/drive-backup-local-20261107`, based on PR #10 commit
 `22158260b86efa3b35ddde08afbf208f5f9ff620`. No publication, migration, provider
 request, credential generation, OAuth grant, archive upload or schedule change

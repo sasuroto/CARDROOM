@@ -1,4 +1,4 @@
-// PREPARATION ONLY: no route imports this module, no cron or production writes run.
+// PREPARATION ONLY: gated manual route; no cron or enabled production writes.
 // Explicit owner action, fixed Drive hosts/folder, one bounded attempt, no deletion.
 import {authorizeDriveBackup,DRIVE_SCOPE,type DriveEnv} from './backup-drive.server';
 import {archiveKey,captureStableArchive,encryptArchive,decryptArchive,rejectCredentials,sha256,utf8,DRIVE_WIRE_LIMIT} from './backup-drive-archive.server';
@@ -115,8 +115,8 @@ async function verifyRemote(s:State,folderId:string,key:CryptoKey,headers:Record
  const bundle=await decryptArchive(wire,key,{folderId,attemptId:s.attempt_id});
  if(bundle.sha256!==s.archive_sha256)stop('remote-content-mismatch');
 }
-// Intended for a future reviewed owner-only route. No route or maintenance path
-// currently calls it. No arbitrary URL/file ID/body can influence the destination.
+// Called only by the gated manual owner route; never a maintenance schedule.
+// No arbitrary URL/file ID/body can influence the destination.
 export async function runDriveBackup(req:Request,env:UploadEnv){
  let a:Auth|undefined,s:State|undefined,intentConfirmed=false,createDispatched=false;
  try{
