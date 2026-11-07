@@ -241,3 +241,6 @@ button.favoriteButton:is([aria-pressed],:hover,:active,:focus-visible),
 
 /* Confirmed context must be visible on first open, not disguised as an empty card. */
 .overviewContext>summary>.overviewContextLabel{color:inherit;display:flex;align-items:center;gap:8px}.overviewContextToggle::after{content:"+";font-size:18px;line-height:1}.overviewContext[open] .overviewContextToggle::after{content:"−"}.overviewContext>summary:focus-visible{outline:2px solid var(--highlight);outline-offset:4px}
+
+/* Daily strip: retain per-match score provenance without changing My Matches. */
+.dailyMatch{height:auto;min-height:116px}.dailyProvenance{display:block;font-size:9px;line-height:1.4;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.dailyBarControls small{max-width:200px}
