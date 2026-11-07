@@ -1,5 +1,36 @@
 # CARDROOM handoff — 2026-11-06
 
+## Daily strip status provenance — 7 November 2026, GitHub review only
+
+Owner: Codex. Five-file patch stacked on PR #7, GitHub base
+`34d86f11bb77e6e90c81e0fff888130e75704c60` (v108 source mirror).
+The implementation and test blobs match the reviewed v111-based local fix
+`8c629404406d875550c1ea2057a3aa1c5624dafb`. The original strip, CSS and
+all imported calendar/status helpers match both bases byte-for-byte.
+This is not a v111 source sync: unrelated OAuth changes, runtime state and
+credentials are excluded, and the existing GitHub handoff is retained below.
+
+LIVE emphasis requires valid, non-stale status evidence at most two minutes old.
+The calendar attempt time is labelled separately from the match observation.
+Known scores survive transport failures, partial stale fallbacks and failed-league
+omissions. Future timestamps cannot overwrite confirmed scores or block recovery.
+My Matches, API routes and shared helpers are unchanged.
+
+Original v111-based verification: 45 focused checks, TypeScript, helper lint and
+production build passed. Independent review found no remaining blocker after
+fallback and future-timestamp fixes. Final full regression was 68/69, with only
+the known calendar-rate-limit.cjs:52 timing assertion failing; an earlier full
+run passed 69/69. Those results do not substitute for testing this adapted base.
+Adapted-base verification and remote CI results are recorded in the PR.
+Desktop/mobile browser QA remains unavailable locally because Chromium cannot
+create sockets. No visual rendering success is claimed.
+
+Review only. No deployment, main merge, credentials, access, provider refresh,
+runtime data or schedule change. The production source is v111 and differs
+from this GitHub base. Do not deploy this review branch as a production sync.
+Next owner: review coordinator to inspect exact-head CI and remaining UI QA.
+
+
 ## GitHub source sync — 7 November 2026
 
 Owner: Codex. This increment mirrors published Sites v108 source
