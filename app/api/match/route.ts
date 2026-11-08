@@ -6,7 +6,7 @@ import {enrichUEFACrew} from '../../../lib/uefa-crew';
 import {getDFBOfficials,applyDFBOfficials} from '../../../lib/dfb-officials';
 import {getAdvanceOfficials,applyAdvanceOfficials} from '../../../lib/advance-officials';
 import {applyCurrentAppointment} from '../../../lib/current-context';
-import {venueFields} from '../../../lib/match-location';
+import {venueFields,normalizeMatchLocation} from '../../../lib/match-location';
 import {espnOfficials} from '../../../lib/match-officials';
 import {env} from 'cloudflare:workers';
 import {LEAGUES,espn,curated} from '../../../lib/fixtures';
@@ -24,7 +24,7 @@ export async function GET(req:Request){
  const dfb=league==='bundesliga'?await getDFBOfficials(bucket):null;
  const advance=await getAdvanceOfficials(league,bucket);
  const finish=(match:any)=>{const m=applyCurrentAppointment(uefa?applyUEFAOfficials(match,uefa):match);return applyAdvanceOfficials(dfb?applyDFBOfficials(m,dfb):m,advance)};
- const enrich=async(match:any)=>enrichUEFACrew(finish(official?applyPLOfficials({...match,id,league},official):{...match,id,league}),bucket);
+ const enrich=async(match:any)=>enrichUEFACrew(normalizeMatchLocation(finish(official?applyPLOfficials({...match,id,league},official):{...match,id,league})),bucket);
  const ttl=matchTtl(cached),needsEvidence=q.get('evidence')==='1';
  if(cached&&(!needsEvidence||Object.prototype.hasOwnProperty.call(cached,'dossier')&&typeof cached.statusStale==='boolean')&&Date.now()-Date.parse(cached.fetchedAt)<ttl)return Response.json(await enrich(cached),{headers:{'Cache-Control':'no-store'}});
  try{
@@ -33,7 +33,7 @@ export async function GET(req:Request){
   const d=await espn(`https://site.api.espn.com/apis/site/v2/sports/soccer/${LEAGUES[league]}/summary?event=${id}`,bucket);
   if(String(d.header?.id)!==id&&!d.header?.competitions?.some((c:any)=>String(c.id)===id))throw Error('Некорректный матч');
   if(d.header?.league?.slug!==LEAGUES[league])throw Error('Другой турнир');
-  const c=d.header?.competitions?.[0],h=c?.competitors?.find((t:any)=>t.homeAway==='home'),a=c?.competitors?.find((t:any)=>t.homeAway==='away'),base={home:h?.team?.displayName,away:a?.team?.displayName,date:c?.date,state:c?.status?.type?.state,clock:c?.status?.displayClock,statusName:c?.status?.type?.name,statusDetail:c?.status?.type?.shortDetail,homeScore:h?.score,awayScore:a?.score,homeLogo:teamLogo(h?.team)||logoUrl(cached?.homeLogo)||logoUrl(known?.homeLogo),awayLogo:teamLogo(a?.team)||logoUrl(cached?.awayLogo)||logoUrl(known?.awayLogo)};
+  const c=d.header?.competitions?.[0],h=c?.competitors?.find((t:any)=>t.homeAway==='home'),a=c?.competitors?.find((t:any)=>t.homeAway==='away'),base={period:c?.status?.period??null,homeId:h?.team?.id??null,awayId:a?.team?.id??null,home:h?.team?.displayName,away:a?.team?.displayName,date:c?.date,state:c?.status?.type?.state,clock:c?.status?.displayClock,statusName:c?.status?.type?.name,statusDetail:c?.status?.type?.shortDetail,homeScore:h?.score,awayScore:a?.score,homeLogo:teamLogo(h?.team)||logoUrl(cached?.homeLogo)||logoUrl(known?.homeLogo),awayLogo:teamLogo(a?.team)||logoUrl(cached?.awayLogo)||logoUrl(known?.awayLogo)};
   const officials=espnOfficials(d.gameInfo?.officials||d.header?.competitions?.[0]?.officials||[]),now=new Date(Date.now()).toISOString();
   const previous=[cached,known].filter(m=>m?.referee).sort((a,b)=>appointmentTier(b)-appointmentTier(a)||Date.parse(b.appointmentCheckedAt||b.checkedAt)-Date.parse(a.appointmentCheckedAt||a.checkedAt))[0];
   const officialPrevious=!!previous?.referee&&appointmentTier(previous)===2&&(!previous.date||!c?.date||Date.parse(previous.date)===Date.parse(c.date));

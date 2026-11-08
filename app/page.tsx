@@ -16,7 +16,7 @@ import {calendarDay} from '../lib/calendar-scope';
 import {withAppointment} from '../lib/fixture-display';
 import {refereePeriod} from '../lib/referee-evidence';
 import ReadingGuide from './reading-guide';
-import DrawWatch from './draw-watch';
+import DrawWatch, {type DrawWatchSession} from './draw-watch';
 import AppointedReferees from './referee-research';
 import {PlayerResearchDirectory} from './player-intelligence';
 import refSeed from '../lib/referees.json';
@@ -35,6 +35,7 @@ export default function Home(){
  const [refSearch,setRefSearch]=useState(''),[minN,setMinN]=useState(0),[refSort,setRefSort]=useState('yellowTotal'),[selectedRef,setSelectedRef]=useState('');
  const [matchLeague,setMatchLeague]=useState('all'),[matchDate,setMatchDate]=useState(calendarDay),[calendarPinned,setCalendarPinned]=useState(false);
  const [view,setView]=useState('dashboard'),[teamId,setTeamId]=useState(''),[actionError,setActionError]=useState('');
+ const [drawSession]=useState<DrawWatchSession>(()=>new Map());
  const opening=useRef(0);
  const primaryTabs=[['matches','Матчи'],['standings','Таблица'],['clubs','Команды'],['players','Игроки'],['referees','Арбитры'],['overview','Статистика']];
  const statisticsTabs=['overview','teams','corners','draws','research','calculator'];
@@ -66,7 +67,7 @@ export default function Home(){
  <nav className="tabs primaryTabs" aria-label="Разделы">{primaryTabs.map(([id,label])=><button key={id} aria-current={primary===id?'page':undefined} className={primary===id?'active':''} onClick={()=>navigateTab(id)}><CategoryIcon category={id}/>{label}</button>)}</nav>{primary==='overview'&&<nav className="secondaryTabs" aria-label="Виды статистики">{tabs.filter(([id])=>statisticsTabs.includes(id)).map(([id,label])=><button key={id} aria-pressed={tab===id} onClick={()=>navigateTab(id)}><CategoryIcon category={id}/>{label}</button>)}</nav>}{primary==='referees'&&<nav className="secondaryTabs" aria-label="Статистика арбитров">{[['referees','Сезонная статистика'],['appointed','Назначения на матчи']].map(([id,label])=><button key={id} aria-pressed={tab===id} onClick={()=>navigateTab(id)}><CategoryIcon category={id}/>{label}</button>)}</nav>}
  <section id="content" className="content">{(tab==='standings'||tab==='clubs')&&<LeagueExplorer key={active} league={l} mode={tab} teamId={teamId} onTeam={id=>chooseTeam(active,id)} onMatch={openMatch}/>}{!['matches','standings','clubs'].includes(tab)&&<ReadingGuide/>}
  {tab==='matches'&&<><button className="outline" onClick={()=>navigateTab('draws')}>Сценарий 1:1 · ближайшие матчи →</button><MatchCenter key={active} data={data} autoUpcoming={!calendarPinned} onAutoDateChange={setMatchDate} league={matchLeague} onLeagueChange={filterCalendar} date={matchDate} onDateChange={date=>{setCalendarPinned(true);setMatchDate(date)}}/></>}
- {tab==='draws'&&<DrawWatch key={active} initialLeague={active} locked/>}
+ {tab==='draws'&&<DrawWatch key={active} initialLeague={active} locked session={drawSession}/>}
  {tab==='appointed'&&<><div className="notice">Текущее назначение и статистика судьи доступны в карточке каждой игры выбранного турнира.</div><MatchCenter key={active} data={data} league={active} date={matchDate} autoUpcoming={!calendarPinned} onAutoDateChange={setMatchDate} onLeagueChange={filterCalendar} onDateChange={date=>{setCalendarPinned(true);setMatchDate(date)}}/><details className="leagueArchive"><summary>Архив исследований арбитров этого турнира</summary><AppointedReferees key={active} league={active}/></details></>}
  {tab==='players'&&<><div className="notice">Откройте матч: внутри — до 3 игроков каждой команды по найденным минутам, составы, факты и ограничения источников.</div><MatchCenter key={active} data={data} league={active} date={matchDate} autoUpcoming={!calendarPinned} onAutoDateChange={setMatchDate} onLeagueChange={filterCalendar} onDateChange={date=>{setCalendarPinned(true);setMatchDate(date)}}/><details className="leagueArchive"><summary>Архив исследований игроков этого турнира</summary><PlayerResearchDirectory key={active} league={active}/></details></>}
  {tab==='teams'&&<><div className="sectionHead"><div><h3>Дисциплина команд</h3><p>{l.teamPeriod||'Только жёлтые карточки · весь сезон · основное время по методологии источника'}</p></div><button className="outline" onClick={download} disabled={!l.teams.length}>↓ CSV</button></div><div className="filters"><label className="search">⌕ <input aria-label="Поиск команды" placeholder="Найти команду…" value={search} onChange={e=>setSearch(e.target.value)}/></label><div className="segments">{[['yellow','Все матчи'],['home','Дома'],['away','В гостях']].map(([key,title])=><button key={key} className={venue===key?'active':''} onClick={()=>setVenue(key)}>{title}</button>)}</div></div>

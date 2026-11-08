@@ -12,7 +12,7 @@ check(next.referee==='Current Referee','missing response does not erase the conf
 check(next.stale&&next.error==='offline','source failure remains visible');
 check(mergeSelectedMatch(saved,{id:'99999',league:'epl',homeScore:'9'})===saved,'different fixture cannot overwrite a selected match');
 check(selectedMatchStatus({...saved,state:'post'})==='Завершён','finished status is explicit');
-check(selectedMatchStatus({...saved,statusName:'STATUS_HALFTIME'})==='Перерыв','halftime status is explicit');
+check(selectedMatchStatus({...saved,statusName:'STATUS_HALFTIME'},Date.parse(saved.fetchedAt))==='Перерыв','fresh halftime status is explicit');
 check(selectedMatchStatus({...saved,state:'post',statusName:'STATUS_FINAL_AET'}).includes('доп. время'),'extra-time status is explicit');
 check(selectedMatchStatus({id:'12345',league:'epl'})==='Загружаю…','unavailable data is not shown as a zero');
 console.log(`PASS ${checks} selected-match assertions: live updates, identity checks and missing-value preservation.`);

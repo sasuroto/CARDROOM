@@ -21,7 +21,7 @@ Module._load=function(id,...args){
   assert.ok(Date.parse(fresh)>=started);assert.ok(Date.parse(data.checkedAt)>Date.parse(oldDate));
   assert.equal(calls.filter(u=>u.includes('event=123456')).length,0,'no refetch of valid history cache');
   assert.equal(writes.find(w=>w.key==='history/v1/ucl/123457.json').value.checkedAt,fresh);
-  assert.equal(writes.find(w=>w.key==='analysis/v11/ucl/999999.json').value.history[0].events[0].checkedAt,oldDate);
+  assert.equal(writes.find(w=>w.key==='analysis/v12/ucl/999999.json').value.history[0].events[0].checkedAt,oldDate);
   console.log('PASS DOT API provenance: cached/new history dates preserved separately from summary time');
  }finally{Module._load=original}
 })().catch(e=>{console.error(e);process.exitCode=1});

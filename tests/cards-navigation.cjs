@@ -89,8 +89,11 @@ let n=0;const check=(x,s)=>{assert.ok(x,s);n++};
  check(window.location.hash==='#league/ucl/calculator'&&tabButton(tree,'Калькулятор','Виды статистики').props['aria-pressed']===true&&tabButton(tree,'Статистика').props['aria-current']==='page','calculator secondary route and both active navigation levels agree');
  tabButton(tree,'Сценарий 1:1','Виды статистики').props.onClick();tree=draw();
  check(window.location.hash==='#league/ucl/draws'&&tree.find(x=>x.type===DrawWatch)?.props.initialLeague==='ucl'&&tree.find(x=>x.type===DrawWatch)?.props.locked,'scenario secondary tab stays scoped to selected tournament');
+ const drawSession=tree.find(x=>x.type===DrawWatch).props.session;check(drawSession instanceof Map,'draw state belongs to the persistent page session');
  tabButton(tree,'Матчи').props.onClick();tree=draw();
  check(tree.find(x=>x.type===Center).props.date==='2026-10-14'&&!tree.find(x=>x.type===Center).props.autoUpcoming,'manual date survives secondary statistical navigation');
+ window.location.hash='#league/ucl/draws';listeners.popstate();tree=draw();check(tree.find(x=>x.type===DrawWatch).props.session===drawSession,'Forward restores the same per-league draw session');
+
  window.location.hash='#league/ucl/clubs/362';listeners.popstate();tree=draw();
  check(explorer(tree)?.props.teamId==='362'&&explorer(tree).props.league.id==='ucl'&&explorer(tree).props.mode==='clubs','browser Back restores scoped team profile deep link');
  window.location.hash='#league/ucl/standings';listeners.popstate();tree=draw();

@@ -1,3 +1,4 @@
+import {observationDigestFacts} from './observation-digest';
 // Preparation only: no route, schedule, production writer or external uploader.
 import {LEAGUES} from './fixtures';
 export const ARCHIVE_KEYS=['cardroom/data-v1.json',...Object.keys(LEAGUES).map(l=>`referee-updates/v1/${l}.json`)];
@@ -43,7 +44,7 @@ function validate(body:ArchiveBody){
 export async function sealArchive(body:ArchiveBody):Promise<Archive>{
  validate(body);const text=JSON.stringify(body);if(bytes(text).length>MAX_BYTES)throw Error('byte-limit');
  // Also validate the journal's original semantic digests, not only the container.
- for(const r of body.tables.journal_observations){const {checkedAt,...facts}=JSON.parse(r.payload);if(await hash(JSON.stringify(facts))!==r.digest||await hash(r.match_key+r.kind+checkedAt+r.digest)!==r.id)throw Error('observation-digest')}
+ for(const r of body.tables.journal_observations){const payload=JSON.parse(r.payload),checkedAt=payload.checkedAt;if(await hash(JSON.stringify(observationDigestFacts(payload)))!==r.digest||await hash(r.match_key+r.kind+checkedAt+r.digest)!==r.id)throw Error('observation-digest')}
  return {body,sha256:await hash(text)};
 }
 export async function verifyArchive(bundle:Archive){

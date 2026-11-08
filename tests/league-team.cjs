@@ -21,7 +21,7 @@ const detail=(e,yellow=0)=>({header:{id:e.id,league:{slug:'eng.1'},season:{year:
  const bad=table();bad.children[0].standings.entries[0].stats.find(s=>s.name==='wins').value=8;reject(()=>parseLeagueTable(bad,'epl',2026),'inconsistent games rejected');
  const unknown=table();unknown.children[0].standings.entries[0].stats=[];check(parseLeagueTable(unknown,'epl',2026).groups[0].entries[0].rank===null,'missing rank not inferred from row order');
  const ucl={...table(),uid:'s:600~l:775'};ucl.children[0].name='League Phase';check(parseLeagueTable(ucl,'ucl',2026).groups[0].name==='Общий этап','UCL phase preserved');
- const empty={...table(),children:[]};check(parseLeagueTable(empty,'epl',2026).teams.length===0,'valid empty table stays empty');
+ const empty={...table(),children:[]};reject(()=>parseLeagueTable(empty,'epl',2026),'empty table is not a successful snapshot');
  const ev=[event(501001,'2026-10-03T18:00Z'),event(501002,'2026-10-02T18:00Z','post',false),event(501003,'2026-10-01T18:00Z'),event(501004,'2026-11-01T18:00Z','pre'),event(501005,'2026-10-05T18:00Z','post',true,'ita.1'),event(501006,'2025-10-05T18:00Z','post',true,'eng.1',2025)];
  const parsed=parseTeamSchedule(schedule([...ev,ev[0]]),'epl','9345',2026);
  check(parsed.events.length===4,'other competitions/seasons and duplicate events removed');
@@ -59,7 +59,7 @@ const detail=(e,yellow=0)=>({header:{id:e.id,league:{slug:'eng.1'},season:{year:
  const before=calls;await cachedLeagueData(bucket,'test/stale',1,fail,base);check(before===calls,'failure backoff prevents rapid repeated upstream calls');
  const absent=await cachedLeagueData(bucket,'test/absent',1,fail,base);check(absent.checkedAt===null&&absent.error&&!absent.stale,'unavailable without cache has no fictional check time');
  let fetches=0,summaryFetches=0;const past=Array.from({length:20},(_,i)=>event(502000+i,`2026-09-${String(30-i).padStart(2,'0')}T18:00Z`)),future=[event(503000,'2026-11-01T18:00Z','pre')];
- global.fetch=async raw=>{fetches++;const u=new URL(raw);if(u.pathname.endsWith('/standings'))return Response.json(table());if(u.pathname.endsWith('/schedule'))return Response.json(schedule(u.searchParams.get('fixture')==='true'?future:past));if(u.pathname.endsWith('/summary')){summaryFetches++;const e=parseTeamSchedule(schedule(past),'epl','9345',2026).events.find(e=>e.id===u.searchParams.get('event'));return Response.json(detail(e))}throw Error('unexpected source')};
+ global.fetch=async raw=>{fetches++;const u=new URL(raw);if(u.pathname.endsWith('/standings')){const complete=table();complete.children[0].standings.entries=Array.from({length:20},(_,i)=>row(String(9345+i)));return Response.json(complete);}if(u.pathname.endsWith('/schedule'))return Response.json(schedule(u.searchParams.get('fixture')==='true'?future:past));if(u.pathname.endsWith('/summary')){summaryFetches++;const e=parseTeamSchedule(schedule(past),'epl','9345',2026).events.find(e=>e.id===u.searchParams.get('event'));return Response.json(detail(e))}throw Error('unexpected source')};
  const invalid=await Team.GET(new Request('https://local/api/team?league=epl&id=../../bad&season=2026'));check(invalid.status===400&&fetches===0,'invalid id makes no upstream request');
  const invalidLeague=await Standings.GET(new Request('https://local/api/standings?league=bad&season=2026'));check(invalidLeague.status===400&&fetches===0,'invalid league makes no upstream request');
  const response=await Team.GET(new Request('https://local/api/team?league=epl&id=9345&season=2026')),body=await response.json();
