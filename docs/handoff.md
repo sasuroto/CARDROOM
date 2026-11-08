@@ -1,5 +1,32 @@
 # CARDROOM handoff — 2026-11-06
 
+## GitHub v119 synchronization — 8 November 2026
+
+See [source-sync-v119.md](source-sync-v119.md) for the verified published calendar/summary source and GitHub validation. Older local-candidate wording is preserved as historical implementation evidence; it does not override the confirmed v119 publication.
+
+
+## Calendar admission and retry priority — 8 November 2026, local candidate
+
+Owner: Codex. Branch `fix/calendar-queue-fairness-20261108`, exact Sites v118
+source `8a17106295c16c6d880f66381a62add0fda84eda`. See [calendar-queue.md](calendar-queue.md)
+for implementation, scope, reproducible fixture measurements and validation.
+Four request-local query jobs replace eager 32/48-ticket submission. The ESPN
+queue, timeout, concurrency, pending limit and cooldown are unchanged. A 30-second
+**dispatch cutoff is not a total response deadline**. Started jobs are awaited.
+Never-dispatched coverage leads cached error priority on subsequent eligible
+attempts, including all-malformed responses. This depends on retained readable
+aggregate cache and is not durable/distributed fairness.
+
+Short explicit retry hints no longer remain behind a 5/30-minute partial-cache
+TTL; known provider cooldowns remain effective. Generic failure TTLs, successful
+cache TTLs, timestamps, fallback, scope and journal behavior are preserved.
+The new 64-check offline suite reproduces the old 28/32 request dropout and proves
+32/32 at 2.2 seconds. Workerd verifies independent calendar request ownership and
+cancellation. Full final validation and exact-commit review closeout are recorded
+in the linked note. No publication or provider/production call is included.
+
+
+
 ## GitHub v118 synchronization — 8 November 2026
 
 See [source-sync-v118.md](source-sync-v118.md) for the verified production baseline, scope, validation and excluded concurrent work. Imported production-source notes below retain historical local-candidate wording; they do not override the verified Sites v118 publication or authorize new deployment.

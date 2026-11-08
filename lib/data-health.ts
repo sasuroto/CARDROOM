@@ -1,4 +1,10 @@
 export const SUMMARY_INTERVAL=6*60*60*1000;
+export type DataBlockState='missing'|'unavailable'|'snapshot'|'stale'|'partial'|'fresh';
+// Shared precedence only; callers retain ownership of source dates and evidence.
+export function classifyDataBlock(checkedAt:unknown,manual:boolean,partial:boolean,error:unknown,now=Date.now()):DataBlockState{
+ const timestamp=typeof checkedAt==='string'?Date.parse(checkedAt):NaN;
+ return !Number.isFinite(timestamp)?'missing':error?'unavailable':manual?'snapshot':now-timestamp>SUMMARY_INTERVAL?'stale':partial?'partial':'fresh';
+}
 // Fallback competition sizes, not live league membership; prefer explicit expectedTeamCount when provided.
 export const leagueSize=(id:string)=>['bundesliga','ligue1','superlig','primeira','ligue2','eredivisie','bundesliga2'].includes(id)?18:['ucl','uel','uecl'].includes(id)?36:id==='segunda'?22:id==='championship'?24:20;
 export function dataHealth(data:any,now=Date.now()){
@@ -11,8 +17,7 @@ export function dataHealth(data:any,now=Date.now()){
    ['referees',ref?.checkedAt,ref?.refreshMode==='snapshot',!!ref?.partial]
   ].map(([key,checkedAt,manual,partial])=>{
    const error=key==='referees'?ref?.refreshError||(Date.parse(data.refereeUpdates?.[l.id]?.startedAt||'')>=Date.parse(ref?.checkedAt||'')?(data.refereeUpdates?.[l.id]?.errors||[]).find((e:string)=>e.startsWith('Статистика')):null):(data.refreshErrors||[]).find((e:string)=>e.startsWith(l.id+': '+key+':'));
-   const timestamp=typeof checkedAt==='string'?Date.parse(checkedAt):NaN;
-   const state=!Number.isFinite(timestamp)?'missing':error?'unavailable':manual?'snapshot':now-timestamp>SUMMARY_INTERVAL?'stale':partial?'partial':'fresh';
+   const state=classifyDataBlock(checkedAt,!!manual,!!partial,error,now);
    return {league:l.id,key,checkedAt:checkedAt||null,state,partial:!!partial};
   });
  });
