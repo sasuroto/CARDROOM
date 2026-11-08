@@ -1,0 +1,1 @@
+export type PeriodEvidence={version:1;method:'espn-summary-scoreboard';summary:{source:string;checkedAt:string;period:null};scoreboard:{source:string;checkedAt:string;period:2};match:{id:string;league:string;kickoff:string;homeId:string;awayId:string;homeScore:number;awayScore:number;statusName:string}};

@@ -1,0 +1,97 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone Node regression harness uses CommonJS. */
+const fs=require('node:fs'),ts=require('typescript'),assert=require('node:assert/strict');
+const restores=[];
+(async()=>{try{
+const extensions=Object.fromEntries(['.ts','.tsx'].map(ext=>[ext,require.extensions[ext]]));
+restores.push(()=>{for(const [ext,handler] of Object.entries(extensions)){if(handler)require.extensions[ext]=handler;else delete require.extensions[ext]}});
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,file);
+const {dailyMatches,dailyStatus,dailyStamp,mergeDailyMatches}=require('../lib/daily-strip.ts');
+let checks=0;const check=(value,message)=>{assert.ok(value,message);checks++};
+const now=Date.parse('2026-11-07T19:59:30Z'),base={id:'1',league:'epl',home:'Home',away:'Away',date:'2026-11-07T19:00:00Z',state:'in',homeScore:'2',awayScore:'1',clock:'61′',statusCheckedAt:'2026-11-07T19:59:00Z'};
+check(dailyStatus(base,now).live,'fresh live is highlighted');
+for(const patch of [{statusStale:true},{stale:true},{error:'offline'},{statusCheckedAt:undefined},{statusCheckedAt:'bad'},{statusCheckedAt:'2026-11-07T20:00:00Z'},{statusCheckedAt:'2026-11-07T19:00:00Z'}]){
+ const m={...base,...patch},s=dailyStatus(m,now);
+ check(!s.live&&!s.label.includes('LIVE')&&s.label==='Статус уточняется','stale/missing/invalid/future status cannot claim live');
+ check(s.showScore&&m.homeScore==='2'&&s.provenance.includes('Последний известный счёт'),'known score retained with provenance');
+}
+check(!dailyStatus(base,now+121000).live,'clock alone ages a live observation');
+check(!dailyStatus(base,now,true).live,'transport failure removes live emphasis');
+check(dailyStatus({...base,state:'post',statusName:'STATUS_FINAL'},now).label==='Завершён','confirmed FT remains FT');
+check(dailyStatus({...base,state:'post',statusName:'STATUS_FINAL',statusStale:true},now).label==='Завершён','old confirmed FT never reclassified live');
+check(dailyStatus({...base,state:'pre',statusName:'STATUS_SCHEDULED'},now).label==='Статус уточняется','elapsed scheduled kickoff does not invent live or FT');
+check(!dailyStatus({...base,state:'pre',statusName:'STATUS_POSTPONED'},now).showScore,'postponement does not invent score');
+check(dailyStatus({...base,statusName:'STATUS_HALFTIME'},now).label.includes('Перерыв'),'fresh halftime distinct');
+check(dailyStatus({...base,checkedAt:'2026-11-07T19:59:29Z',statusCheckedAt:'2026-11-06T12:00:00Z'},now).provenance.includes('06.11.2026'),'appointment/attempt date does not replace status observation');
+check(dailyStamp('bad')==='дата неизвестна','invalid timestamps are explicit');
+check(dailyMatches([base,{...base,id:'2',date:'2026-11-07T20:00:00Z'},{...base,id:'3',date:'bad'}],'2026-11-07','all',now).length===1,'Tbilisi boundary and invalid date filter');
+check(dailyMatches([base,{...base,id:'2',date:'2026-11-07T20:00:00Z'}],'2026-11-08','all',now+30000)[0].id==='2','midnight shows only new Tbilisi day');
+let merged=mergeDailyMatches([base],[{...base,homeScore:'1',awayScore:'0',statusCheckedAt:'2026-11-07T19:00:00Z',statusStale:true}],['epl'],'2026-11-07T19:59:29Z',now);
+check(merged[0].homeScore==='2'&&merged[0].awayScore==='1'&&merged[0].statusCheckedAt===base.statusCheckedAt,'partial stale fallback cannot erase newer score/provenance');
+check(!dailyStatus(merged[0],now).live,'failed league retained score not live');
+merged=mergeDailyMatches([base],[],['epl'],'2026-11-07T19:59:29Z',now);
+check(merged.length===1&&merged[0].homeScore==='2'&&merged[0].statusStale,'failed league omission retains confirmed card as stale');
+check(mergeDailyMatches([base],[],[],'2026-11-07T19:59:29Z',now).length===0,'successful empty calendar can remove fixture');
+merged=mergeDailyMatches([base],[{...base,homeScore:'1',statusCheckedAt:undefined}],[],'2026-11-07T19:59:29Z',now);
+check(merged[0].homeScore==='2'&&merged[0].statusCheckedAt===base.statusCheckedAt,'undated update cannot overwrite dated status');
+merged=mergeDailyMatches([base],[{...base,state:'post',homeScore:'3',statusCheckedAt:'2026-11-07T19:59:29Z'}],[],'2026-11-07T19:59:29Z',now);
+check(merged[0].homeScore==='3'&&merged[0].state==='post','new confirmed snapshot can advance to FT');
+merged=mergeDailyMatches([base],[{...base,homeScore:'9',statusCheckedAt:'2026-11-08T19:00:00Z'}],[],'2026-11-07T19:59:29Z',now);
+check(merged[0].homeScore==='2'&&merged[0].statusCheckedAt===base.statusCheckedAt&&!dailyStatus(merged[0],now).live,'future evidence cannot overwrite a confirmed score');
+merged=mergeDailyMatches([],[{...base,homeScore:'9',statusCheckedAt:'2026-11-08T19:00:00Z'}],[],'2026-11-07T19:59:29Z',now);
+merged=mergeDailyMatches(merged,[base],[],'2026-11-07T19:59:29Z',now);
+check(merged[0].homeScore==='2'&&merged[0].statusCheckedAt===base.statusCheckedAt&&dailyStatus(merged[0],now).live,'genuine observation recovers from future-first snapshot');
+// Deterministic hook harness: real component, fake timers and fetch. No provider requests.
+const React=require('react'),favorites=require('../app/favorites.tsx');
+const original={useState:React.useState,useEffect:React.useEffect,useRef:React.useRef},originalFavorites=favorites.useFavorites;
+const names=['setInterval','clearInterval','requestAnimationFrame','fetch'];
+const descriptors=Object.fromEntries(names.map(key=>[key,Object.getOwnPropertyDescriptor(globalThis,key)]));
+const {installClock}=require('./helpers/test-clock.cjs');
+const clock=installClock(now,{timers:false}),cleanups=[];
+restores.push(()=>{for(const cleanup of cleanups)cleanup();Object.assign(React,original);favorites.useFavorites=originalFavorites;clock.restore();for(const key of names){if(descriptors[key])Object.defineProperty(globalThis,key,descriptors[key]);else delete globalThis[key]}});
+let state=[],refs=[],effects=[],si=0,ri=0,intervals=[],calls=[];
+React.useState=initial=>{const i=si++;if(!(i in state))state[i]=typeof initial==='function'?initial():initial;return [state[i],v=>state[i]=typeof v==='function'?v(state[i]):v]};
+React.useRef=initial=>refs[ri++]|| (refs[ri-1]={current:initial});
+React.useEffect=(fn,deps)=>effects.push({fn,deps});
+favorites.useFavorites=()=>({ready:true,has:()=>false,toggle:()=>{}});
+global.setInterval=(fn,ms)=>{intervals.push({fn,ms});return intervals.length};global.clearInterval=()=>{};global.requestAnimationFrame=()=>{};
+global.fetch=(url,options)=>new Promise((resolve,reject)=>calls.push({url,options,resolve,reject}));
+const Component=require('../app/today-matches.tsx').default;
+const draw=()=>{si=0;ri=0;effects=[];return Component({data:{leagues:[]}})};
+const nodes=x=>x&&typeof x==='object'?[x,...React.Children.toArray(x.props?.children).flatMap(nodes)]:[];
+const text=x=>typeof x==='string'?x:typeof x==='number'?String(x):x&&typeof x==='object'?React.Children.toArray(x.props?.children).map(text).join(''):'';
+const flush=()=>new Promise(resolve=>setImmediate(resolve));
+
+ let tree=draw();const polling=effects.find(e=>e.deps?.length===3);const cleanup=polling.fn();cleanups.push(cleanup,effects.find(e=>e.deps?.length===0).fn());
+ check(calls.length===1,'initial calendar request');
+ check(calls[0].url.includes('date=2026-11-07'),'component requests the Tbilisi day of the shared virtual Date clock');
+ intervals.find(i=>i.ms===300000).fn();check(calls.length===1,'slow request prevents overlapping polls');
+ calls[0].resolve({ok:true,json:async()=>({events:[base],checkedAt:'2026-11-07T19:59:10Z',lastAttempt:'2026-11-07T19:59:20Z'})});await flush();tree=draw();
+ check(nodes(tree).some(n=>n.props?.className==='dailyMatch isLive'),'fresh card rendered live');
+ check(text(tree).includes('Попытка календаря · '+dailyStamp('2026-11-07T19:59:20Z')),'last attempt explicitly labelled attempt');
+ check(text(tree).includes('Данные на '+dailyStamp(base.statusCheckedAt)),'card displays actual successful observation');
+ intervals.find(i=>i.ms===300000).fn();calls[1].resolve({ok:true,json:async()=>({events:[{...base,homeScore:'1',awayScore:'0',statusCheckedAt:'2026-11-07T19:00:00Z',statusStale:true}],errors:['epl'],checkedAt:'2026-11-07T19:59:29Z'})});await flush();tree=draw();
+ check(text(tree).includes('Home2Away1')&&!text(tree).includes('Home1Away0'),'partial HTTP200 fallback preserves newer rendered score');
+ check(!nodes(tree).some(n=>n.props?.className==='dailyMatch isLive')&&text(tree).includes(dailyStamp(base.statusCheckedAt)),'partial response keeps last success time and removes LIVE');
+ intervals.find(i=>i.ms===300000).fn();calls[2].reject(Error('offline'));await flush();tree=draw();
+ check(!nodes(tree).some(n=>n.props?.className==='dailyMatch isLive'),'failed poll strips live styling');
+ check(text(tree).includes('Последний известный счёт')&&text(tree).includes('Home2Away1'),'failed poll keeps score');
+ intervals.find(i=>i.ms===300000).fn();cleanup();
+ calls[3].resolve({ok:true,json:async()=>({events:[{...base,homeScore:'9'}],checkedAt:'2026-11-07T19:59:29Z'})});await flush();tree=draw();
+ check(text(tree).includes('Home2Away1')&&!text(tree).includes('Home9'),'response after cleanup cannot mutate retained data');
+ const harness={useState:React.useState,useEffect:React.useEffect,useRef:React.useRef};
+ Object.assign(React,original);
+ const html=require('react-dom/server').renderToStaticMarkup(tree);
+ check(html.includes('Последний известный счёт')&&!html.includes('class="dailyMatch isLive"'),'SSR markup retains stale provenance without live class');
+ fs.writeFileSync('/tmp/cardroom-daily-strip-qa.html','<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+fs.readFileSync(require('node:path').join(__dirname,'../app/globals.css'),'utf8')+'</style><body>'+html+'</body></html>');
+ Object.assign(React,harness);
+ // The actual display-clock callback crosses Tbilisi midnight, then the new
+ // dependency starts a request for the new day. Explicit fixture dates stay intact.
+ await clock.advance(30000);intervals.find(i=>i.ms===15000).fn();tree=draw();
+ check(!text(tree).includes('Home2Away1')&&text(tree).includes('8 ноября'),'midnight tick excludes previous-day fixtures from the actual component');
+ cleanups.push(effects.find(e=>e.deps?.length===3).fn());
+ check(calls[4].url.includes('date=2026-11-08'),'after midnight the component polls the new Tbilisi day');
+ calls[4].resolve({ok:true,json:async()=>({events:[{...base,id:'2',date:'2026-11-07T20:00:00Z',home:'Next',statusCheckedAt:'2026-11-07T20:00:00Z'}],checkedAt:'2026-11-07T20:00:00Z'})});await flush();
+ tree=draw();
+ check(text(tree).includes('Next2Away1')&&nodes(tree).some(n=>n.props?.className==='dailyMatch isLive'),'new-day response renders live with the same virtual instant');
+ console.log(`PASS ${checks} daily strip freshness, provenance, race and rollover checks.`);
+}finally{for(const restore of restores.reverse())restore()}})().catch(e=>{console.error(e);process.exitCode=1});

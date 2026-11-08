@@ -1,3 +1,4 @@
+import {observationDigestFacts} from './observation-digest';
 import {LEAGUES} from './fixtures';
 import {inspectCache} from './cache';
 import {withAppointment} from './fixture-display';
@@ -19,7 +20,7 @@ export async function saveForecast(db:D1Database,snapshot:any){
  return {status:row.payload===payload?'forecast-recorded':'forecast-existing',persisted:true,committedAt:row.committed_at,modelVersion:saved.modelVersion,picks:saved.picks.length};
 }
 export async function saveObservation(db:D1Database,observation:any){
- const {checkedAt,...facts}=observation,key=matchKey(observation.league,observation.id),hash=await digest(JSON.stringify(facts)),id=await digest(key+observation.kind+checkedAt+hash);
+ const checkedAt=observation.checkedAt,key=matchKey(observation.league,observation.id),hash=await digest(JSON.stringify(observationDigestFacts(observation,Date.now()))),id=await digest(key+observation.kind+checkedAt+hash);
  // A single conditional INSERT is atomic. Equal/older or unchanged reports are not revisions.
  await db.prepare(`INSERT OR IGNORE INTO journal_observations (id,match_key,league,day,kind,observed_at,checked_at,digest,payload)
  SELECT ?,?,?,?,?,${utcNow},?,?,? WHERE NOT EXISTS (SELECT 1 FROM journal_observations WHERE match_key=? AND kind=? AND checked_at>=?)

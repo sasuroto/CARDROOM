@@ -10,7 +10,7 @@ const added=[['serieb','ita.2','3931',20],['championship','eng.2','3914',24],['l
  const tasks=refreshTasks(structuredClone(merged),refs);assert.ok(tasks.every(t=>typeof t.url==='string'&&t.url));
  for(const [id,slug,uid,size] of added){
   const l=merged.leagues.find(l=>l.id===id);assert.equal(LEAGUES[id],slug);assert.equal(l.expectedTeamCount,size);assert.equal(l.cards.avg,null);assert.equal(l.overview.checkedAt,null);assert.equal(refs[id].source,null);assert.ok(!tasks.some(t=>t.id.startsWith(id+':')));
-  const doc={uid:'s:600~l:'+uid,children:[{standings:{season:2026,entries:[]}}]};assert.equal(parseLeagueTable(doc,id,2026).league,id);assert.throws(()=>parseLeagueTable({...doc,uid:'s:600~l:700'},id,2026));
+  const doc={uid:'s:600~l:'+uid,children:[{standings:{season:2026,entries:[{team:{id:'1',displayName:'Fixture club'},stats:[]}]}}]};assert.equal(parseLeagueTable(doc,id,2026).league,id);assert.throws(()=>parseLeagueTable({...doc,uid:'s:600~l:700'},id,2026));
   const saved=new Map(),bucket={get:async key=>saved.has(key)?{json:async()=>saved.get(key)}:null,put:async(key,value)=>{saved.set(key,JSON.parse(value));return{etag:'1'}}};
   global.fetch=async url=>{assert.ok(String(url).includes('/'+slug+'/scoreboard'));return Response.json({events:[]})};
   const report=await refreshLeagueReferees(id,bucket);assert.equal(report.persisted,true);assert.equal(report.statsStatus,'unavailable');assert.equal(report.stats.checkedAt,null);assert.equal(report.sourceHealth.statistics.source,null);assert.ok(report.errors.some(e=>e.includes('не подключён')));

@@ -128,11 +128,30 @@ export async function startDrive(req:Request,env:DriveEnv):Promise<Response>{
  }catch(e){return errorReply(e)}
 }
 
+// Finite diagnostic labels only. Never inspect message, stack, cause or provider data.
+function transportCategory(error:unknown,deadline:boolean){
+ if(deadline)return 'deadline';
+ try{
+  const name=error&&typeof error==='object'?(error as {name?:unknown}).name:null;
+  switch(name){
+   case 'TypeError':return 'type-error';
+   case 'AbortError':return 'abort-error';
+   case 'TimeoutError':return 'timeout-error';
+   case 'Error':return 'error';
+  }
+ }catch{/* A hostile/unknown name getter is not diagnostic data. */}
+ return 'unknown';
+}
+
 // Fixed two-host transport. No redirect following, raw exception output, arbitrary URL or retry loop.
 async function googleJson(url:string,init:RequestInit,stage:'token'|'account'):Promise<Record<string,unknown>>{
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20_000);
+ let phase:'fetch'|'response'|'body'='fetch';
  try{
-  const response=await fetch(url,{...init,redirect:'error',signal:controller.signal,cache:'no-store'});
+  // Workers supports manual, not error. Never follow or inspect a redirect target.
+  const response=await fetch(url,{...init,redirect:'manual',signal:controller.signal,cache:'no-store'});
+  phase='response';
+  if(response.status>=300&&response.status<400)throw new SafeError(`google-${stage}-redirect-refused`,502,Date.now()+5*60_000);
   if(!response.ok){
    const now=Date.now(),retry=response.headers.get('Retry-After');
    let retryAt=now+(response.status===403?60*60_000:5*60_000);
@@ -140,6 +159,7 @@ async function googleJson(url:string,init:RequestInit,stage:'token'|'account'):P
    throw new SafeError(`google-${stage}-http-${response.status}`,502,retryAt);
   }
   if(Number(response.headers.get('Content-Length'))>32768)fail('google-response-too-large',502);
+  phase='body';
   const reader=response.body?.getReader();if(!reader)fail('google-invalid-response',502);
   const chunks:Uint8Array[]=[];let size=0;
   try{while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>32768)fail('google-response-too-large',502);chunks.push(value)}}
@@ -148,7 +168,10 @@ async function googleJson(url:string,init:RequestInit,stage:'token'|'account'):P
   let data:unknown;try{data=JSON.parse(new TextDecoder().decode(bytes))}catch{fail('google-invalid-response',502)}
   if(!data||typeof data!=='object'||Array.isArray(data))fail('google-invalid-response',502);
   return data as Record<string,unknown>;
- }catch(e){if(e instanceof SafeError)throw e;throw new SafeError('google-request-failed',502,Date.now()+5*60_000)}
+ }catch(e){
+  if(e instanceof SafeError)throw e;
+  throw new SafeError(`google-${stage}-${phase}-${transportCategory(e,controller.signal.aborted)}`,502,Date.now()+5*60_000);
+ }
  finally{clearTimeout(timer)}
 }
 

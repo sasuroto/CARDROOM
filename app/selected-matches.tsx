@@ -1,23 +1,29 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
 import {FavoriteStar,useFavorites} from './favorites';
-import {mergeMatchStatus,statusCheckedAt,statusIsStale} from '../lib/match-status-evidence';
+import {mergeMatchStatus,statusIsStale} from '../lib/match-status-evidence';
 import {panelStatus,nextDelay} from '../lib/match-status';
 
 const time=(value?:string)=>value?new Date(value).toLocaleTimeString('ru-RU',{timeZone:'Asia/Tbilisi',hour:'2-digit',minute:'2-digit'}):'—';
-const dateTime=(value?:string)=>value?new Date(value).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'—';
+const dateTime=(value?:string)=>value?new Date(value).toLocaleString('ru-RU',{timeZone:'Asia/Tbilisi',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'—';
+// Legacy checkedAt can describe an appointment, not a score observation.
+const selectedStatusCheckedAt=(match:Record<string,unknown>)=>typeof match.statusCheckedAt==='string'?match.statusCheckedAt:typeof match.fetchedAt==='string'?match.fetchedAt:undefined;
 
-export function mergeSelectedMatch(previous:any,next:any){
+export function mergeSelectedMatch(previous:any,next:any,now=Date.now()){
  if(!next||String(next.id)!==String(previous.id)||next.league!==previous.league)return previous;
- const result={...mergeMatchStatus(previous,next)};
  const observed=(value:unknown)=>typeof value==='string'?Date.parse(value):NaN;
+ const incomingTime=observed(selectedStatusCheckedAt(next)),previousTime=observed(selectedStatusCheckedAt(previous)),valid=Number.isFinite(incomingTime)&&incomingTime<=now;
+ // Unusable dates cannot replace a confirmed score or block genuine recovery.
+ const current=valid&&(!Number.isFinite(previousTime)||previousTime>now)?{...previous,statusCheckedAt:''}:previous;
+ const incoming=valid?next:{...next,statusCheckedAt:'',fetchedAt:undefined,statusStale:true,statusLastAttemptAt:new Date(now).toISOString(),statusError:incomingTime>now?'Дата подтверждения статуса в будущем.':'Дата подтверждения статуса неизвестна.'};
+ const result={...mergeMatchStatus(current,incoming)};
  const atLeastAsNew=(incoming:unknown,current:unknown)=>Number.isFinite(observed(incoming))&&(!Number.isFinite(observed(current))||observed(incoming)>=observed(current));
  // date belongs to the accepted status snapshot. Never reapply an older kickoff
  // after mergeMatchStatus has already rejected that response.
- if(atLeastAsNew(next.fetchedAt,previous.fetchedAt))for(const field of ['home','away','homeLogo','awayLogo','source','fetchedAt'])if(next[field]!==undefined&&next[field]!==null)result[field]=next[field];
+ if(observed(next.fetchedAt)<=now&&atLeastAsNew(next.fetchedAt,observed(previous.fetchedAt)>now?undefined:previous.fetchedAt))for(const field of ['home','away','homeLogo','awayLogo','source','fetchedAt'])if(next[field]!==undefined&&next[field]!==null)result[field]=next[field];
  // A dated, identity-checked saved fixture may seed an empty card, without
  // inventing status provenance or overwriting any newer existing metadata.
- if(Number.isFinite(observed(next.fetchedAt||next.checkedAt)))for(const field of ['home','away','date','homeLogo','awayLogo','source'])if((result[field]===undefined||result[field]===null||result[field]==='')&&typeof next[field]==='string'&&next[field]&&(field!=='date'||Number.isFinite(observed(next.date))))result[field]=next[field];
+ if(Number.isFinite(observed(next.fetchedAt||next.checkedAt))&&observed(next.fetchedAt||next.checkedAt)<=now)for(const field of ['home','away','date','homeLogo','awayLogo','source'])if((result[field]===undefined||result[field]===null||result[field]==='')&&typeof next[field]==='string'&&next[field]&&(field!=='date'||Number.isFinite(observed(next.date))))result[field]=next[field];
  const attempt=next.lastAttemptAt||next.statusLastAttemptAt||next.fetchedAt,previousAttempt=previous.lastAttemptAt||previous.statusLastAttemptAt||previous.fetchedAt;
  if(atLeastAsNew(attempt,previousAttempt)||!Number.isFinite(observed(attempt))&&(next.stale||next.error)){
   if(next.lastAttemptAt)result.lastAttemptAt=next.lastAttemptAt;
@@ -31,18 +37,20 @@ export function mergeSelectedMatch(previous:any,next:any){
  return result;
 }
 
-export function selectedMatchStatus(match:any,now=Date.now()){
+export function selectedMatchStatus(match:any,now=Date.now(),offline=false){
  const status=panelStatus(match,now);
+ if((status.kind==='live'||status.kind==='halftime')&&!selectedMatchFreshness(match,now,offline).fresh)return 'Статус уточняется';
  if(status.kind==='scheduled'&&match.date&&Date.parse(match.date)>=now)return time(match.date);
  if(status.kind!=='unavailable'&&status.kind!=='unknown')return status.label+(status.minute&&status.kind!=='halftime'?' · '+status.minute:'');
- return match.date?'Статус уточняется':match.error?'Нет данных':'Загружаю…';
+ return match.date?'Статус уточняется':match.statusError||match.error?'Нет данных':'Загружаю…';
 }
 
-export function selectedMatchFreshness(match:any,now=Date.now()){
- const timestamp=Date.parse(statusCheckedAt(match)||'');
- const fresh=!statusIsStale(match)&&Number.isFinite(timestamp)&&now-timestamp>=-60000&&now-timestamp<=120000;
+export function selectedMatchFreshness(match:any,now=Date.now(),offline=false){
+ const checked=selectedStatusCheckedAt(match),timestamp=Date.parse(checked||'');
+ const fresh=!offline&&!statusIsStale(match)&&Number.isFinite(timestamp)&&timestamp<=now&&now-timestamp<=120000;
+ const stamp=Number.isFinite(timestamp)?dateTime(checked)+(timestamp>now?' · дата в будущем':''):'дата неизвестна';
  const hasScore=panelStatus(match,now).showScore&&[match.homeScore,match.awayScore].some(value=>value!==undefined&&value!==null&&value!=='');
- return {fresh,label:!fresh&&hasScore?'Последний известный счёт'+(Number.isFinite(timestamp)?' · '+time(statusCheckedAt(match)):''):(match.statusError||(!match.statusCheckedAt&&match.error))?'Обновление недоступно':!Number.isFinite(timestamp)?'Счёт ещё не подтверждён':!fresh?'Сохранено '+time(statusCheckedAt(match)):'Данные на '+time(statusCheckedAt(match))};
+ return {fresh,label:!fresh&&hasScore?'Последний известный счёт · '+stamp:(match.statusError||(!match.statusCheckedAt&&match.error))?'Обновление недоступно':!Number.isFinite(timestamp)?'Счёт ещё не подтверждён':!fresh?'Сохранено '+stamp:'Данные на '+stamp};
 }
 
 function Crest({src,name}:{src?:string;name:string}){const [failed,setFailed]=useState(false);useEffect(()=>setFailed(false),[src]);return src&&!failed?<img src={src} alt="" onError={()=>setFailed(true)}/>:<span className="selectedCrestFallback" aria-hidden="true">{name.slice(0,2)}</span>}
@@ -61,7 +69,7 @@ export default function SelectedMatches({data,onOpen}:{data:any;onOpen:(match:an
   if(!chosen.length)return;
   const controller=new AbortController();
   let timer:ReturnType<typeof setTimeout>|null=null,running=false,failures=0;
-  const update=(id:string,value:any)=>setMatches(old=>{if(controller.signal.aborted)return old;const next={...old,[id]:value};matchesRef.current=next;return next});
+  const update=(id:string,value:any)=>{if(controller.signal.aborted)return;setNow(Date.now());setMatches(old=>{if(controller.signal.aborted)return old;const next={...old,[id]:value};matchesRef.current=next;return next})};
   const schedule=()=>{
    if(controller.signal.aborted)return;
    const values=chosen.map(item=>matchesRef.current[item.id]).filter(Boolean),stamp=Date.now();
@@ -96,7 +104,7 @@ export default function SelectedMatches({data,onOpen}:{data:any;onOpen:(match:an
   {!online&&<p className="selectedMatchesNotice" role="status">Нет соединения. Показаны последние сохранённые данные; после восстановления сети проверка продолжится.</p>}
   {favorites.storageError&&<p className="selectedMatchesNotice" role="status">Браузер не позволяет сохранить выбор. После закрытия он может потеряться.</p>}
   {failed>0&&<p className="selectedMatchesNotice" role="status">Не удалось подтвердить {failed} {failed===1?'матч':'матча/матчей'}. Сохранённые значения и прочерки не заменены нулями.</p>}
-  <div id="selected-matches-grid" className="selectedMatchesGrid" aria-label="Выбранные матчи, прокрутка в сторону">{chosen.map(item=>{const parts=item.id.split(':'),match=matches[item.id]||{id:parts.at(-1),league:item.league||parts[0],label:item.label},state=panelStatus(match,now),played=state.showScore,status=selectedMatchStatus(match,now),freshness=selectedMatchFreshness(match,now),names=String(item.label).split(' — '),home=match.home||names[0]||'Матч',away=match.away||names[1]||'';return <article key={item.id} className={'selectedMatchCard '+(state.polls&&freshness.fresh?'isLive':'')}>
+  <div id="selected-matches-grid" className="selectedMatchesGrid" aria-label="Выбранные матчи, прокрутка в сторону">{chosen.map(item=>{const parts=item.id.split(':'),match=matches[item.id]||{id:parts.at(-1),league:item.league||parts[0],label:item.label},state=panelStatus(match,now),played=state.showScore,status=selectedMatchStatus(match,now,!online),freshness=selectedMatchFreshness(match,now,!online),names=String(item.label).split(' — '),home=match.home||names[0]||'Матч',away=match.away||names[1]||'';return <article key={item.id} className={'selectedMatchCard '+(state.polls&&freshness.fresh?'isLive':'')}>
    <button className="selectedMatchOpen" onClick={()=>match.home&&match.away&&onOpen(match)} disabled={!match.home||!match.away} aria-label={`${home} — ${away}. ${status}. ${match.referee?'Арбитр: '+match.referee:match.state==='post'?'Имя арбитра не получено из источника':'Назначение арбитра уточняется'}. Открыть матч`}><span className="selectedMatchMeta"><span>{data.leagues.find((league:any)=>league.id===match.league)?.name||match.league}</span><b>{status}</b></span><span className={'selectedFreshness '+(!freshness.fresh?'isStale':'')}>{freshness.label}</span>{match.statusWarning&&<span className="selectedFreshness isStale">{match.statusWarning}</span>}<span className="selectedTeam"><Crest src={match.homeLogo} name={home}/><span>{home}</span><strong>{played?match.homeScore??'—':''}</strong></span><span className="selectedTeam"><Crest src={match.awayLogo} name={away}/><span>{away}</span><strong>{played?match.awayScore??'—':''}</strong></span><span className={'selectedReferee '+(match.referee?'hasReferee':'')}><span>Арбитр</span><b>{match.referee||(match.state==='post'?'Имя не получено':match.lastAttemptAt?'Назначение уточняется':'Проверяю…')}</b></span></button>
    <button className="selectedMatchRemove" aria-label={'Убрать с главного экрана: '+item.label} onClick={()=>favorites.toggle('match',item.id,item.label,item.league)}><FavoriteStar active/></button>
   </article>})}</div>

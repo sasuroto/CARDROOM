@@ -1,6 +1,6 @@
 import {KICKOFF_ACTIVE_WINDOW,panelStatus} from './match-status';
 import type {StatusRecord} from './match-status-evidence';
-import {mergeMatchStatus,normalizeStatusSnapshot,statusCheckedAt,statusIsStale} from './match-status-evidence';
+import {mergeMatchStatus,normalizeStatusSnapshot,statusCheckedAt,statusIsStale,STATUS_FIELDS} from './match-status-evidence';
 
 export const calendarDay=(now=Date.now())=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tbilisi',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now));
 export function calendarInterval(events:StatusRecord[],date:string,now=Date.now()){
@@ -19,7 +19,7 @@ export function mergeCalendarEvents(previous:StatusRecord[],incoming:StatusRecor
  return incoming.map(m=>{
  const prior=old.get(String(m.league)+':'+String(m.id));if(!prior)return {...m,...normalizeStatusSnapshot(m)};
  const status=mergeMatchStatus(prior,m),result={...prior,...m};
- for(const field of ['state','statusName','statusDetail','clock','homeScore','awayScore','date','home','away','statusCheckedAt','statusLastAttemptAt','statusSource','statusStale','statusError','statusWarning'])result[field]=status[field];
+ for(const field of [...STATUS_FIELDS,'date','home','away','statusCheckedAt','statusLastAttemptAt','statusSource','statusStale','statusError','statusWarning'])result[field]=status[field];
  if(Date.parse(String(m.fetchedAt||''))<Date.parse(String(prior.fetchedAt||'')))result.fetchedAt=prior.fetchedAt;
  return result;
  });

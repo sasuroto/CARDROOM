@@ -22,7 +22,7 @@ const connection=()=>sql.prepare("SELECT * FROM backup_drive_connection WHERE id
 const validToken={token_type:'Bearer',scope:O.DRIVE_SCOPE,access_token:'fixture-access',refresh_token:'fixture-refresh'};
 const validAccount={user:{emailAddress:'owner@example.test',permissionId:'fixture-permission'}};
 global.fetch=async(url,options)=>{
- calls.push({url,options});assert.equal(options.redirect,'error');assert.equal(options.cache,'no-store');assert.ok(options.signal);
+ calls.push({url,options});assert.equal(options.redirect,'manual');assert.equal(options.cache,'no-store');assert.ok(options.signal);
  assert.ok(['https://oauth2.googleapis.com/token','https://www.googleapis.com/drive/v3/about?fields=user(emailAddress,permissionId)'].includes(url));
  assert.ok(queue.length,'unexpected network request');const item=queue.shift();return typeof item==='function'?item(url,options):item;
 };
@@ -50,6 +50,7 @@ function resetFlow(){sql.exec('DELETE FROM backup_drive_flow');queue=[]}
  check(!writes&&!calls.length,'all preconditions fail without storage or provider writes');
  let r=await O.driveStatus(req('/api/backup-drive/status'),env);check((await r.json()).status==='not-connected'&&!writes&&!calls.length,'read-only missing status');
  let start=await begin();check(start.status===303,'start redirects to Google');
+ check(start.headers.get('Referrer-Policy')==='no-referrer','Google authorization redirect never forwards Referer');
  const url=new URL(start.headers.get('Location')),p=url.searchParams,flow=first();
  check(url.origin==='https://accounts.google.com'&&p.get('scope')===O.DRIVE_SCOPE&&p.get('access_type')==='offline'&&p.get('include_granted_scopes')==='false','least-privilege offline grant');
  check(p.get('redirect_uri')===O.CALLBACK_URI&&p.get('code_challenge_method')==='S256'&&p.get('code_challenge').length===43,'fixed callback and PKCE');
@@ -62,6 +63,7 @@ function resetFlow(){sql.exec('DELETE FROM backup_drive_flow');queue=[]}
  await reason(await O.finishDrive(new Request(cb.url,{headers:{...H,Cookie:cb.headers.get('Cookie')+'; '+cb.headers.get('Cookie')}}),env),'invalid-session');
  await reason(await O.finishDrive(callback(start,'&state=duplicate'),env),'invalid-callback');
  google();r=await O.finishDrive(cb,env);check(r.status===303&&r.headers.get('Location')===O.SITE_ORIGIN+'/api/backup-drive/status','successful callback strips auth code');
+ check(r.headers.get('Referrer-Policy')==='no-referrer','callback redirect never forwards auth code in Referer');
  check(calls.length===2&&queue.length===0,'one exchange and one account check');
  const exchange=calls[0].options.body;check(exchange.get('code')==='fixture-code'&&exchange.get('client_secret')===env.CARDROOM_DRIVE_CLIENT_SECRET&&exchange.get('code_verifier').length===43,'code and secret sent in body, verifier provided');
  check(!calls[0].url.includes('fixture')&&calls[1].options.headers.Authorization==='Bearer fixture-access','tokens only body/header on fixed destinations');
@@ -89,6 +91,22 @@ function resetFlow(){sql.exec('DELETE FROM backup_drive_flow');queue=[]}
   start=await begin();queue.push(Response.json({...validToken,...patch}));await reason(await O.finishDrive(callback(start),env),'offline-grant-incomplete');
   check(JSON.stringify(connection())===original,'incomplete or broad grant preserves old token');
  }
+ // Every 3xx is rejected at either Google stage, regardless of Location or body.
+ for(const stage of ['token','account'])for(let http=300;http<400;http++){
+  resetFlow();start=await begin();const before=calls.length;
+  if(stage==='account')queue.push(Response.json(validToken));
+  queue.push(new Response(null,{status:http,headers:{Location:'https://must-not-follow.invalid/?secret=PRIVATE_REDIRECT_SENTINEL','Retry-After':'0'}}));
+  const failed=await O.finishDrive(callback(start),env),body=await reason(failed,`google-${stage}-redirect-refused`);
+  check(failed.status===502&&first().last_error===`google-${stage}-redirect-refused`,'redirect returns and persists finite failure');
+  check(first().retry_at===clock+300000&&Date.parse(body.retryAt)===clock+300000,'redirect preserves minimum cooldown');
+  check(calls.length-before===(stage==='account'?2:1)&&queue.length===0,'redirect never triggers a follow-up request');
+  check(JSON.stringify(connection())===original&&!JSON.stringify(body).includes('PRIVATE_REDIRECT_SENTINEL'),'redirect preserves connection and hides target');
+  await reason(await O.startDrive(req('/api/backup-drive/start','POST'),env),'cooldown');
+ }
+ resetFlow();start=await begin();let redirectDetailsRead=0;
+ queue.push(()=>({status:302,get headers(){redirectDetailsRead++;throw Error('PRIVATE_REDIRECT_HEADER')},get body(){redirectDetailsRead++;throw Error('PRIVATE_REDIRECT_BODY')}}));
+ await reason(await O.finishDrive(callback(start),env),'google-token-redirect-refused');
+ check(redirectDetailsRead===0,'redirect target and body are never inspected');
  for(const http of [403,429,500]){
   resetFlow();start=await begin();queue.push(new Response('DO NOT EXPOSE',{status:http,headers:{'Retry-After':'7200'}}));
   const failed=await O.finishDrive(callback(start),env),body=await reason(failed,'google-token-http-'+http);
@@ -99,7 +117,52 @@ function resetFlow(){sql.exec('DELETE FROM backup_drive_flow');queue=[]}
  resetFlow();start=await begin();queue.push(Response.json(validToken),new Response('secret-body',{status:403}));
  await reason(await O.finishDrive(callback(start),env),'google-account-http-403');check(JSON.stringify(connection())===original,'account denial preserves old token');
  resetFlow();start=await begin();queue.push(()=>{throw Error('redirected URL with SECRET')});
- const network=await O.finishDrive(callback(start),env);await reason(network,'google-request-failed');check(first().retry_at>clock,'network failure persists cooldown');
+ const network=await O.finishDrive(callback(start),env);await reason(network,'google-token-fetch-error');check(first().retry_at>clock,'network failure persists cooldown');
+ // Finite diagnostics must not reflect exception data, even through hostile getters.
+ const sentinel='PRIVATE_DIAGNOSTIC_SENTINEL client_secret=hidden access_token=hidden refresh_token=hidden code=hidden owner@example.test https://hidden.test/';
+ let privateReads=0;
+ const hiddenError=(name)=>{
+  const e=new Error(sentinel);e.name=name;
+  for(const key of ['message','stack','cause'])Object.defineProperty(e,key,{get(){privateReads++;throw Error('private property inspected')}});
+  return e;
+ };
+ const diagnosticCases=[
+  ['fetch','type-error',()=>{throw hiddenError('TypeError')}],
+  ['fetch','abort-error',()=>{throw hiddenError('AbortError')}],
+  ['fetch','timeout-error',()=>{throw hiddenError('TimeoutError')}],
+  ['fetch','error',()=>{throw hiddenError('Error')}],
+  ['fetch','unknown',()=>{throw hiddenError(sentinel)}],
+  ['fetch','unknown',()=>{throw hiddenError({toString(){throw Error('coerced private name')}})}],
+  ['fetch','unknown',()=>{throw sentinel}],
+  ['fetch','unknown',()=>{const e=hiddenError('Error');Object.defineProperty(e,'name',{get(){throw Error(sentinel)}});throw e}],
+  ['response','type-error',()=>({get ok(){throw hiddenError('TypeError')}})],
+  ['response','error',()=>({ok:true,get headers(){throw hiddenError('Error')}})],
+  ['body','type-error',()=>new Response(new ReadableStream({start(c){c.error(hiddenError('TypeError'))}}))],
+  ['fetch','deadline',(_url,options)=>new Promise((_,reject)=>{
+   const fail=()=>reject(hiddenError('TypeError'));if(options.signal.aborted)fail();else options.signal.addEventListener('abort',fail,{once:true});
+  })],
+  ['body','deadline',(_url,options)=>new Response(new ReadableStream({start(c){
+   const fail=()=>c.error(hiddenError('TypeError'));if(options.signal.aborted)fail();else options.signal.addEventListener('abort',fail,{once:true});
+  }}))],
+ ];
+ for(const stage of ['token','account'])for(const [phase,category,failure] of diagnosticCases){
+  resetFlow();start=await begin();const before=calls.length,previous=JSON.stringify(connection()),expected=`google-${stage}-${phase}-${category}`;
+  if(stage==='account')queue.push(Response.json(validToken));queue.push(failure);
+  const realSetTimeout=global.setTimeout;let timers=0;
+  if(category==='deadline')global.setTimeout=(fn,ms,...args)=>{
+   if(ms!==20000||++timers!==(stage==='account'?2:1))return realSetTimeout(fn,ms,...args);
+   const id=realSetTimeout(()=>{},60000);queueMicrotask(()=>fn(...args));return id;
+  };
+  let failed;
+  try{failed=await O.finishDrive(callback(start),env)}finally{global.setTimeout=realSetTimeout}
+  const body=await reason(failed,expected);
+  check(failed.status===502&&failed.headers.get('Referrer-Policy')==='no-referrer','diagnostic failure keeps safe HTTP boundary');
+  check(first().last_error===expected&&first().retry_at===clock+300000&&Date.parse(body.retryAt)===clock+300000,'finite code and unchanged cooldown persisted');
+  check(!JSON.stringify(body).includes('PRIVATE_DIAGNOSTIC_SENTINEL')&&!JSON.stringify(first()).includes('PRIVATE_DIAGNOSTIC_SENTINEL')&&!privateReads,'private exception fields never read or reflected');
+  check(JSON.stringify(connection())===previous&&calls.length-before===(stage==='account'?2:1)&&queue.length===0,'failure never overwrites token or automatically retries');
+  await reason(await O.startDrive(req('/api/backup-drive/start','POST'),env),'cooldown');
+  check(calls.length-before===(stage==='account'?2:1),'cooldown prevents more Google calls');
+ }
  resetFlow();start=await begin();queue.push(new Response('x'.repeat(33000)));await reason(await O.finishDrive(callback(start),env),'google-response-too-large');
  resetFlow();start=await begin();queue.push(new Response('{bad'));await reason(await O.finishDrive(callback(start),env),'google-invalid-response');
  resetFlow();start=await begin();google({...validToken,refresh_token_expires_in:3600});

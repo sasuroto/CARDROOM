@@ -47,7 +47,16 @@ export function applyUEFAOfficials(match:any,report:any){
  if(!Number.isFinite(Date.parse(match.date)))return match;
  const day=new Date(match.date).toISOString().slice(0,10);
  const rows=report.rows.filter((r:any)=>r.day===day&&team(r.home)===team(match.home)&&team(r.away)===team(match.away));
- if(rows.length!==1)return match;
+ if(rows.length!==1){
+  if(match.referee)return match; // An absent row does not revoke an existing appointment.
+  const officialError=report.stale?'Не удалось проверить официальный список UEFA.':rows.length>1?'В официальном списке UEFA найдено неоднозначное назначение.':null;
+  const officialAt=report.lastAttemptAt||report.checkedAt,summaryAt=match.lastAttemptAt||match.statusLastAttemptAt;
+  const summaryFailure=!!match.error&&(!officialError||!Number.isFinite(Date.parse(officialAt||''))||Date.parse(summaryAt||'')>Date.parse(officialAt));
+  // Order the combined diagnostic by its newest actual source attempt, separate
+  // from the displayed failing source's time. Neither renews official evidence.
+  const diagnosticAt=Number.isFinite(Date.parse(summaryAt||''))&&(!Number.isFinite(Date.parse(officialAt||''))||Date.parse(summaryAt)>Date.parse(officialAt))?summaryAt:officialAt;
+  return {...match,appointmentError:summaryFailure?'Не удалось проверить имя арбитра в данных матча.':officialError,appointmentDiagnosticAt:diagnosticAt||match.appointmentDiagnosticAt,appointmentLastAttempt:(summaryFailure?summaryAt:officialError?officialAt:diagnosticAt)||match.appointmentLastAttempt};
+ }
  if(report.stale&&match.referee&&match.currentVerified&&Date.parse(match.appointmentCheckedAt||'')>=Date.parse(report.checkedAt||''))return match;
  const row=rows[0],missingError=match.error==='В свежем ответе нет имени арбитра. Сохранённое назначение повторно не подтверждено.';
  if(match.referee&&normal(match.referee)!==normal(row.referee))match={...match,assistants:null,var:null,avar:null,fourthOfficial:null,videoOfficials:null,crewSource:null,crewCheckedAt:null,crewLastAttemptAt:null,crewStale:true,crewComplete:false,crewError:null};

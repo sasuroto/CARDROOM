@@ -1,5 +1,6 @@
 import {mergeMatchStatus,statusCheckedAt} from './match-status-evidence';
 import {logoUrl} from './team-logo';
+import {normalizeMatchLocation} from './match-location';
 import {protectsAppointment,outranks,conflictNote,appointmentTier} from './referee-authority';
 
 export function latestMatchView(match:any,analysis:any){
@@ -19,6 +20,8 @@ export function withAppointment(match:any,details:any){
  else if(details.dossierError)out.dossierError=details.dossierError;
  for(const field of ['homeLogo','awayLogo']){const logo=logoUrl(details[field]);if(logo)out[field]=logo;}
  for(const field of ['venue','city','country'])if(details[field])out[field]=details[field];
+ const changedLocation=['venue','city','country'].some(field=>details[field]&&details[field]!==match[field]);
+ if(changedLocation||details.venueCitySource)for(const field of ['venueCityOriginal','venueCitySource'])out[field]=details[field]||null;
  const protectedOfficial=protectsAppointment(match,details),higher=outranks(details,match);
  const older=protectedOfficial||(!higher&&match.referee&&Date.parse(details.appointmentCheckedAt||details.checkedAt||'')<Date.parse(match.appointmentCheckedAt||''));
  if(protectedOfficial)out.appointmentConflict=conflictNote(match,details)||null;
@@ -43,6 +46,13 @@ export function withAppointment(match:any,details:any){
  }else if(!details.referee&&match.referee&&details.lastAttemptAt&&!(appointmentTier(match)===2&&appointmentTier(details)<2)){
   out.appointmentStale=true;out.currentVerified=false;out.appointmentError=details.error||'Свежий ответ не подтвердил сохранённое назначение.';
  }
- if(!older)out.appointmentLastAttempt=details.appointmentLastAttempt||details.lastAttemptAt||details.fetchedAt||match.appointmentLastAttempt;
- return out;
+ const diagnosticStamp=details.appointmentDiagnosticAt||details.appointmentLastAttempt||details.lastAttemptAt||details.fetchedAt,diagnosticAt=Date.parse(diagnosticStamp||''),priorDiagnosticAt=Date.parse(match.appointmentDiagnosticAt||match.appointmentLastAttempt||'');
+ const olderDiagnostic=!out.referee&&Number.isFinite(priorDiagnosticAt)&&(!Number.isFinite(diagnosticAt)||diagnosticAt<priorDiagnosticAt);
+ if(!out.referee&&!older&&!olderDiagnostic){
+  if(Number.isFinite(diagnosticAt))out.appointmentDiagnosticAt=diagnosticStamp;
+  if(Object.prototype.hasOwnProperty.call(details,'appointmentError'))out.appointmentError=details.appointmentError;
+  else if(details.error)out.appointmentError='Не удалось проверить назначение арбитра.';
+ }
+ if(!older&&!olderDiagnostic)out.appointmentLastAttempt=details.appointmentLastAttempt||details.lastAttemptAt||details.fetchedAt||match.appointmentLastAttempt;
+ return normalizeMatchLocation(out);
 }
